@@ -25,13 +25,20 @@
             {{ social.title }}
           </a>
         </div>
-        <div class="hidden">
+        <div>
           <p class="flex flex-col mb-4 text-2xl">
             {{ $t(`shared.footer.pages.title`) }}
           </p>
-          <a v-for="page in $t(`shared.footer.pages.links`)" :key="page.link" :href="page.link" class="underline mb-4 last:mb-0">
-            {{ page.title }}
-          </a>
+          <nuxt-link :to="localePath('index')">
+            <p class="mb-4 last:mb-0 hover:text-red-500 hover:underline">
+              Home
+            </p>
+          </nuxt-link>
+          <nuxt-link :to="localePath('portfolio')">
+            <p class="mb-4 last:mb-0 hover:text-red-500 hover:underline">
+              {{ $t('shared.header.works') }}
+            </p>
+          </nuxt-link>
         </div>
       </div>
       <div class="text-center text-xs relative" style="bottom: -220px;">

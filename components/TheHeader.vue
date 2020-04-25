@@ -4,16 +4,20 @@
       <div :class="containerClass">
         <div class="w-full">
           <div class="flex flex-row items-center justify-between">
-            <figure>
-              <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
-            </figure>
+            <nuxt-link :to="localePath('index')">
+              <figure>
+                <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
+              </figure>
+            </nuxt-link>
             <div class="flex flex-row items-center justify-between">
               <p class="mr-8 hover:text-gray-500 hidden">
                 About
               </p>
-              <p class="mr-8 hover:text-gray-500 hidden">
-                Works
-              </p>
+              <nuxt-link :to="localePath('portfolio')">
+                <p class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
+                  {{ $t('shared.header.works') }}
+                </p>
+              </nuxt-link>
               <p class="mr-8 hover:text-gray-500 hidden">
                 Blog
               </p>

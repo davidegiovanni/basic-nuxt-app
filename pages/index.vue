@@ -146,7 +146,7 @@
       <div :class="containerClass">
         <div class="flex flex-col sm:flex-row">
           <div class="flex-initial sm:mr-8">
-            <div class="bg-white h-full border-r-2 px-8 sm:px-10 py-8">
+            <div class="bg-white h-full border-b-2 sm:border-b-0 sm:border-r-2 sm:px-10 py-8">
               <div class="flex flex-row sm:flex-col justify-between">
                 <div v-for="number in $t(`home.sections.skills.numbers`)" :key="number.key">
                   <p class="text-5xl -mb-4">

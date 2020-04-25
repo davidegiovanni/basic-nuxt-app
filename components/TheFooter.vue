@@ -39,6 +39,9 @@
               {{ $t('shared.header.works') }}
             </p>
           </nuxt-link>
+          <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener" class="mb-4 last:mb-0 hover:text-red-500 hover:underline">
+            Blog
+          </a>
         </div>
       </div>
       <div class="text-center text-xs relative" style="bottom: -220px;">

@@ -18,9 +18,9 @@
                   {{ $t('shared.header.works') }}
                 </p>
               </nuxt-link>
-              <p class="mr-8 hover:text-gray-500 hidden">
+              <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener" class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
                 Blog
-              </p>
+              </a>
               <a href="mailto:davidegiovanni96@gmail.com" :title="$t('shared.header.action')">
                 <button class="py-2 px-4 bg-black hover:bg-gray-700 focus:bg-gray-800 text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
                   {{ $t('shared.header.action') }}

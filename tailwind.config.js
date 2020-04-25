@@ -5,7 +5,8 @@ module.exports = {
     }
   },
   variants: {
-    display: ['responsive']
+    display: ['responsive'],
+    padding: ['responsive', 'hover', 'focus', 'last'],
   },
   plugins: []
 }

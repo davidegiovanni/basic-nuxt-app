@@ -1,0 +1,136 @@
+{
+    "meta": {
+        "title": "Portfolio design",
+        "description": "Web app, brand per gruppi di empowerment e prodotti digitali progettati dal 2015 a oggi"
+    },
+    "title": "I miei lavori",
+    "works": [
+        {
+            "key": "personal-website",
+            "title": "Sito web personale",
+            "description": "Web app progettata su Figma, ottimizzata SEO e implementata con NuxtJS, TailwindCSS per lo stile e Now ZEIT per l'autodeploy con git",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "Prototyping"
+                },
+                {
+                    "key": "2",
+                    "title": "Visual design"
+                },
+                {
+                    "key": "3",
+                    "title": "Web app"
+                },
+                {
+                    "key": "4",
+                    "title": "SEO"
+                }
+            ],
+            "action": "Contattami",
+            "link":"mailto:davidegiovanni.com",
+            "image": "/images/home/personal-website-design.svg",
+            "background": "gray-200"
+        },
+        {
+            "key": "revas",
+            "title": "Revas",
+            "description": "Identità di brand e prodotto della piattaforma online per organizzazioni non profit sviluppata da Revas SRL Società Benefit",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "Branding"
+                },
+                {
+                    "key": "2",
+                    "title": "Product identity"
+                },
+                {
+                    "key": "3",
+                    "title": "Visual design"
+                },
+                {
+                    "key": "4",
+                    "title": "Logo design"
+                },
+                {
+                    "key": "5",
+                    "title": "Brand system"
+                }
+            ],
+            "action": "Visita il sito",
+            "link":"https://www.revas.app",
+            "image": "https://i.imgur.com/W7FPnJW.png",
+            "background": "purple-600"
+        },
+        {
+            "key": "voxel",
+            "title": "Voxel",
+            "description": "Workshop di ideazione di una brand identity di un gruppo di empowerment di Trento femminile tramite la tecnologia in occasione del loro rebrand",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "Branding"
+                },
+                {
+                    "key": "2",
+                    "title": "Workshop"
+                },
+                {
+                    "key": "3",
+                    "title": "Logo design"
+                },
+                {
+                    "key": "4",
+                    "title": "Ethics"
+                }
+            ],
+            "action": "",
+            "link":"",
+            "image": "https://i.imgur.com/PJgTg7a.png",
+            "background": "red-500"
+        },
+        {
+            "key": "adelante",
+            "title": "Adelante Display",
+            "description": "Typeface con richiami neo-deco che ho sviluppato per intestazioni decorative, prodotti stampati e per la crazione di loghi e identità di marchio",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "Lettering"
+                },
+                {
+                    "key": "2",
+                    "title": "Typography"
+                }
+            ],
+            "action": "Caso studio",
+            "link":"https://cdn.dribbble.com/users/1079878/screenshots/4102397/adelante-bottles.png",
+            "image": "https://cdn.dribbble.com/users/1079878/screenshots/4102397/adelante-bottles.png",
+            "background": "red-300"
+        },
+        {
+            "key": "starsy",
+            "title": "Starsy",
+            "description": "Progettazione di una UI tematica per un'applicazione educativa di scoperta delle stelle e delle costellazioni dello spazio con un chatbot integrato",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "App UI design"
+                },
+                {
+                    "key": "2",
+                    "title": "Product design"
+                },
+                {
+                    "key": "3",
+                    "title": "Illustration"
+                }
+            ],
+            "action": "Caso studio",
+            "link":"https://www.behance.net/gallery/59769047/Starsy-UX-Product-Designt",
+            "image": "https://cdn.dribbble.com/users/1079878/screenshots/3998099/star-app-dribbble.png",
+            "background": "indigo-600"
+        }
+    ]
+}

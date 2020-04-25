@@ -27,8 +27,8 @@
     </section>
     <section class="pb-16 pt-12">
       <div :class="containerClass">
-        <div class="bg-black flex flex-row flex-wrap">
-          <div class="text-white p-8 sm:p-16 w-full sm:w-1/2">
+        <div class="bg-black flex flex-row flex-wrap grid grid-cols-3">
+          <div class="text-white p-8 sm:p-16 col-span-3 md:col-span-1">
             <h2 class="text-2xl">
               {{ $t(`home.sections.lastproject.title`) }} <span class="opacity-50">{{ $t(`home.sections.lastproject.lastproject`) }}</span>
             </h2>
@@ -48,7 +48,7 @@
               </button>
             </a>
           </div>
-          <div :class="'text-white p-8 sm:p-16 w-full sm:w-1/2 bg-' + $t(`home.sections.lastproject.background`)">
+          <div :class="'text-white p-8 sm:p-16 col-span-3 md:col-span-2 bg-' + $t(`home.sections.lastproject.background`)">
             <figure class="w-full h-full">
               <img class="w-full h-full object-cover" src="/images/home/personal-website-design.svg" :alt="$t(`home.sections.lastproject.title`)" :title="$t(`home.sections.lastproject.title`)" loading="lazy">
             </figure>

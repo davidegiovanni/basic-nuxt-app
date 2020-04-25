@@ -15,7 +15,7 @@ export default {
     TheHeader,
     TheFooter
   }
-  
+
 }
 </script>
 

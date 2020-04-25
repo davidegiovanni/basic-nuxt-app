@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "title": "",
+        "description": ""
+    },
+    "sections": {
+        "header": {
+            "title": "Sviluppo personalità visive a brand e prodotti",
+            "activities": [
+                {
+                   "key": "1",
+                   "title": "Branding",
+                   "points": [
+                       "visual identity", "brand guidelines"
+                   ] 
+                },
+                {
+                    "key": "2",
+                    "title": "Systems",
+                    "points": [
+                        "design systems", "brand systems", "content systems"
+                    ] 
+                 },
+                 {
+                    "key": "3",
+                    "title": "Visual",
+                    "points": [
+                        "visual style", "visual language"
+                    ] 
+                 },
+                 {
+                    "key": "4",
+                    "title": "Illustration",
+                    "points": [
+                        "2D illustration"
+                    ] 
+                 },
+                 {
+                    "key": "5",
+                    "title": "Content",
+                    "points": [
+                        "content production", "content strategy"
+                    ] 
+                 },
+                 {
+                    "key": "6",
+                    "title": "Web",
+                    "points": [
+                        "NuxtJS & VueJS", "HTML & CSS", "Sass"
+                    ] 
+                 },
+                 {
+                    "key": "7",
+                    "title": "Ethics",
+                    "points": [
+                        "ethical design", "ethical branding"
+                    ] 
+                 },
+                 {
+                    "key": "8",
+                    "title": "Workshops",
+                    "points": [
+                        "visual brand design", "logo design"
+                    ] 
+                 }
+            ]
+        }
+    } 
+}

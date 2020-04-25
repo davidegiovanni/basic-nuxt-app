@@ -1,3 +1,7 @@
+import axios from './config/axios.config'
+import i18n from './config/i18n.config'
+import sitemap from './config/sitemap.config'
+
 export default {
   mode: 'spa',
   /*
@@ -11,10 +15,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
-      },
+        content: process.env.npm_package_description || ''
+      }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
@@ -29,11 +33,30 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/jsonld'
+  ],
+  buildModules: [
+    '@nuxtjs/eslint-module'
+  ],
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/robots',
+    'nuxt-i18n',
+    '@nuxtjs/sitemap'
+  ],
+  axios,
+  i18n,
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+    Allow: '/',
+    Sitemap: (process.env.BASE_URL || 'http://localhost:3000') + '/sitemap.xml'
+  },
+  sitemap,
   /*
    ** Build configuration
    */
@@ -41,6 +64,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
-  },
-};
+    extend (config, ctx) {}
+  }
+}

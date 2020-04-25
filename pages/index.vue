@@ -4,8 +4,8 @@
       <div :class="containerClass">
         <div class="md:w-2/3 w-full">
           <h1 :class="h1Class">
-            Sviluppo personalità visive a brand e prodotti
-          </h1> 
+            {{ $t(`home.sections.header.title`) }}
+          </h1>
         </div>
       </div>
     </section>
@@ -13,60 +13,12 @@
       <div :class="containerClass">
         <div class="md:w-2/3 w-full">
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
-            <div>
+            <div v-for="activity in $t(`home.sections.header.activities`)" :key="activity.key">
               <p class="text-2xl">
-                titolo
+                {{ activity.title }}
               </p>
-              <p>
-                sottotilolo
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl">
-                titolo
-              </p>
-              <p>
-                sottotilolo
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl">
-                titolo
-              </p>
-              <p>
-                sottotilolo
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl">
-                titolo
-              </p>
-              <p>
-                sottotilolo
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl">
-                titolo
-              </p>
-              <p>
-                sottotilolo
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl">
-                titolo
-              </p>
-              <p>
-                sottotilolo
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl">
-                titolo
-              </p>
-              <p>
-                sottotilolo
+              <p v-for="point in activity.points" :key="point.key">
+                {{ point }}
               </p>
             </div>
           </div>
@@ -116,7 +68,7 @@
         <div class="md:w-2/3 w-full">
           <h1 :class="h1Class">
             Sostenibilità, innanzitutto
-          </h1> 
+          </h1>
           <p>
             Sono specializzato nell’aiutare business e prodotti a creare sistemi di brand e linguaggi visivi che siano capaci di scalare nel tempo e nello spazio. Il mondo e la comunicazione sono in costante mutamento e i brand che sviluppo permettono di accompagnarne la crescita
           </p>
@@ -210,19 +162,25 @@
             <div class="bg-white shadow-lg px-8 sm:px-16 py-8">
               <div class="flex flex-row sm:flex-col">
                 <div class="mr-8">
-                  <p class="text-5xl"> 10 </p>
+                  <p class="text-5xl">
+                    10
+                  </p>
                   <p>
                     clienti
                   </p>
                 </div>
                 <div class="mr-8">
-                  <p class="text-5xl"> 1</p>
+                  <p class="text-5xl">
+                    1
+                  </p>
                   <p>
                     startup
                   </p>
                 </div>
                 <div>
-                  <p class="text-5xl"> 6 </p>
+                  <p class="text-5xl">
+                    6
+                  </p>
                   <p>
                     progetti di brand
                   </p>
@@ -337,16 +295,16 @@
 
 export default {
   components: {
-    
+
   },
   computed: {
-    sectionClass() {
+    sectionClass () {
       return 'py-16'
     },
-    containerClass() {
+    containerClass () {
       return 'max-w-screen-xl m-auto px-8'
     },
-    h1Class() {
+    h1Class () {
       return 'text-3xl md:text-5xl'
     }
   }

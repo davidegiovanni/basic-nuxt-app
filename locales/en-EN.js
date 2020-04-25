@@ -1,6 +1,6 @@
-import home from './_it-IT/home.json'
-import shared from './_it-IT/shared.json'
-import schema from './_it-IT/schema.json'
+import home from './_en-EN/home.json'
+import shared from './_en-EN/shared.json'
+import schema from './_en-EN/schema.json'
 
 const data = {
   home,

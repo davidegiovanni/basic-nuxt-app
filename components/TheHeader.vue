@@ -5,21 +5,21 @@
         <div class="w-full">
           <div class="flex flex-row items-center justify-between">
             <figure>
-              <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" alt="">
+              <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
             </figure>
             <div class="flex flex-row items-center justify-between">
-              <p class="mr-8 hover:text-gray-500 hidden sm:inline-block">
+              <p class="mr-8 hover:text-gray-500 hidden">
                 About
               </p>
-              <p class="mr-8 hover:text-gray-500 hidden sm:inline-block">
+              <p class="mr-8 hover:text-gray-500 hidden">
                 Works
               </p>
-              <p class="mr-8 hover:text-gray-500 hidden sm:inline-block">
+              <p class="mr-8 hover:text-gray-500 hidden">
                 Blog
               </p>
-              <a href="mailto:davidegiovanni96@gmail.com">
+              <a href="mailto:davidegiovanni96@gmail.com" :title="$t('shared.header.action')">
                 <button class="py-2 px-4 bg-black hover:bg-gray-700 focus:bg-gray-800 text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
-                  Contact me
+                  {{ $t('shared.header.action') }}
                 </button>
               </a>
             </div>

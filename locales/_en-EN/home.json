@@ -1,6 +1,6 @@
 {
     "meta": {
-        "title": "Brand Designer e Creative Developer",
+        "title": "Brand Designer e CReative Developer",
         "description": "Come brand designer mi occupo di sviluppare brand identity a marchi e prodotti. Come creative developer, sviluppo web app moderne e SEO friendly"
     },
     "sections": {
@@ -68,7 +68,7 @@
         "lastproject": {
         "lastproject": "Ultimo progetto",
           "title": "Sito web personale",
-          "description": "Web app progettata su Figma, ottimizzata SEO e implementata con NuxtJS, TailwindCSS per lo stile e Now ZEIT per l'autodeploy con git",
+          "description": "Web app progettata su Figma e implementata con NUxtJS, TailwindCSS per lo stile e Now ZEIT per l'autodeploy con git con ottmizizzazione tecnica SEO",
           "points": [
             "Prototyping", "Visual design", "Web app", "SEO"
           ],

@@ -3,7 +3,7 @@
     <section v-for="(work, index) in $t(`portfolio.works`)" :key="work.key" class="pt-16">
       <div :class="containerClass">
         <h1 v-if="index === 0" class="text-3xl md:text-5xl pb-16 text-white">
-            {{ $t(`portfolio.title`) }}
+          {{ $t(`portfolio.title`) }}
         </h1>
         <a :href="work.link">
           <div class="bg-gray-900 flex flex-row flex-wrap grid grid-cols-3">
@@ -60,7 +60,7 @@
                 <p class="text-2xl">
                   {{ activity.title }}
                 </p>
-                <p class="hidden lg:inline-block" v-for="point in activity.points" :key="point.key">
+                <p v-for="point in activity.points" :key="point.key" class="hidden lg:inline-block">
                   {{ point }}
                 </p>
               </div>

@@ -4,11 +4,13 @@
       <div :class="containerClass">
         <div class="w-full">
           <div class="flex flex-row items-center justify-between">
-            <nuxt-link :to="localePath('index')">
-              <figure>
-                <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
-              </figure>
-            </nuxt-link>
+            <a @click="menuOpen = false">
+              <nuxt-link :to="localePath('index')">
+                <figure>
+                  <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
+                </figure>
+              </nuxt-link>
+            </a>
             <div class="flex flex-row items-center justify-between">
               <p class="mr-8 hover:text-gray-500 hidden">
                 About
@@ -22,12 +24,46 @@
                 Blog
               </a>
               <a href="mailto:davidegiovanni96@gmail.com" :title="$t('shared.header.action')">
-                <button class="py-2 px-4 bg-black hover:bg-gray-700 focus:bg-gray-800 text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
+                <button class="hidden md:inline-block py-2 px-4 bg-black hover:bg-gray-700 focus:bg-gray-800 text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg mr-4 md:mr-0">
                   {{ $t('shared.header.action') }}
                 </button>
               </a>
+              <a class="cursor-pointer inline-block md:hidden py-2 px-4 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-lg" @click="toggleMenu">
+                . . .
+              </a>
             </div>
           </div>
+        </div>
+        <div class="bg-white w-screen shadow-lg absolute left-0 py-8 px-8" :class="[{ 'inline-block:': menuOpen }, { 'hidden': !menuOpen }]">
+          <div class="bg-black py-4 px-4 mb-8">
+            <p class="text-white text-2xl">
+              {{ $t('shared.header.works') }}
+            </p>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="p-10" style="background-image:url(/images/home/personal-website-design.svg); background-size: cover; background-position: center;" />
+              <div class="p-10" style="background-image:url(https://i.imgur.com/PJgTg7a.png); background-size: cover; background-position: center;" />
+              <div class="p-10" style="background-image:url(https://cdn.dribbble.com/users/1079878/screenshots/4102397/adelante-bottles.png); background-size: cover; background-position: center;" />
+              <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 text-center">
+                <a @click="menuOpen = !menuOpen">
+                  <nuxt-link class="text-white text-md" :to="localePath('portfolio')">
+                    Vedi tutti
+                  </nuxt-link>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+              <div class="flex flex-col items-center justify-center bg-gray-200 px-8 py-4 text-center">
+                <p class="text-2xl underline">
+                  Blog
+                </p>
+              </div>
+            </a>
+          </div>
+          <button class="py-4 px-4 bg-black w-full text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
+            {{ $t('shared.header.action') }}
+          </button>
         </div>
       </div>
     </section>
@@ -40,6 +76,11 @@ export default {
   components: {
 
   },
+  data () {
+    return {
+      menuOpen: false
+    }
+  },
   computed: {
     sectionClass () {
       return 'py-4'
@@ -49,6 +90,11 @@ export default {
     },
     h1Class () {
       return 'text-3xl '
+    }
+  },
+  methods: {
+    toggleMenu () {
+      this.menuOpen = !this.menuOpen
     }
   }
 }

@@ -1,41 +1,43 @@
 <template>
   <div class="bg-black">
-    <section v-for="(work, index) in $t(`portfolio.works`)" :key="work.key" class="pt-32">
+    <section v-for="(work, index) in $t(`portfolio.works`)" :key="work.key" class="pt-16">
       <div :class="containerClass">
         <h1 v-if="index === 0" class="text-3xl md:text-5xl pb-16 text-white">
             {{ $t(`portfolio.title`) }}
         </h1>
-        <div class="bg-gray-900 flex flex-row flex-wrap grid grid-cols-3">
-          <div class="text-white p-8 sm:p-16 col-span-3 md:col-span-1">
-            <h2 class="text-2xl">
-              {{ work.title }} <span v-if="index === 0" class="opacity-50">{{ $t(`home.sections.lastproject.lastproject`) }}</span>
-            </h2>
-            <p class="text-white mb-16 mt-8 leading-loose">
-              {{ work.description }}
-              <ul class="list-disc list-inside mt-8">
-                <li v-for="point in work.points" :key="point.key" class="mt-4">
-                  {{ point.title }}
-                </li>
-              </ul>
-            </p>
-            <a v-if="work.link" :href="work.link" :title="work.action">
-              <button class="py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg">
-                <span class="opacity-100 text-white">
-                  {{ work.action }}
-                </span>
-              </button>
-            </a>
+        <a :href="work.link">
+          <div class="bg-gray-900 flex flex-row flex-wrap grid grid-cols-3">
+            <div class="text-white p-8 sm:p-16 col-span-3 lg:col-span-1">
+              <h2 class="text-2xl">
+                {{ work.title }} <span v-if="index === 0" class="opacity-50">{{ $t(`home.sections.lastproject.lastproject`) }}</span>
+              </h2>
+              <p class="text-white mb-16 mt-8 leading-loose hidden md:inline-block">
+                {{ work.description }}
+                <ul class="list-disc list-inside mt-8">
+                  <li v-for="point in work.points" :key="point.key" class="mt-4">
+                    {{ point.title }}
+                  </li>
+                </ul>
+              </p>
+              <a v-if="work.link" :href="work.link" :title="work.action">
+                <button class="hidden md:inline-block py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg">
+                  <span class="opacity-100 text-white">
+                    {{ work.action }}
+                  </span>
+                </button>
+              </a>
+            </div>
+            <div :class="'text-white p-8 sm:p-16 col-span-3 lg:col-span-2 bg-' + work.background">
+              <figure class="w-full h-full">
+                <img class="w-full h-full object-cover" :src="work.image" :alt="work.title" :title="work.title" loading="lazy">
+              </figure>
+            </div>
           </div>
-          <div :class="'text-white p-8 sm:p-16 col-span-3 md:col-span-2 bg-' + work.background">
-            <figure class="w-full h-full">
-              <img class="w-full h-full object-cover" :src="work.image" :alt="work.title" :title="work.title" loading="lazy">
-            </figure>
-          </div>
-        </div>
+        </a>
       </div>
     </section>
     <section class="py-24" />
-    <section class="bg-white pb-16 pt-24">
+    <section class="bg-white pb-16 pt-12">
       <div :class="containerClass">
         <div class="flex flex-col sm:flex-row">
           <div class="flex-initial sm:mr-8">
@@ -53,12 +55,12 @@
             </div>
           </div>
           <div class="flex-1 sm:px-16 pt-16 sm:ml-2 sm:pt-0">
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-20">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-2 sm:gap-20">
               <div v-for="activity in $t(`home.sections.skills.activities`)" :key="activity.key">
                 <p class="text-2xl">
                   {{ activity.title }}
                 </p>
-                <p v-for="point in activity.points" :key="point.key">
+                <p class="hidden lg:inline-block" v-for="point in activity.points" :key="point.key">
                   {{ point }}
                 </p>
               </div>

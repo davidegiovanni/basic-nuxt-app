@@ -148,8 +148,8 @@
           {{ $t(`portfolio.title`) }}
         </h1>
         <div class="grid grid-cols-2 gap-2 md:gap-8">
-          <div v-for="(work) in $t(`portfolio.works`)" :key="work.key" class="col-span-1 p-16 md:p-48" :style="'background-image:url(' + work.image +'); background-size: cover; background-position: center;'" />
-          <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 p-8 md:p-16 md:p-48">
+          <div v-for="(work) in $t(`portfolio.works`)" :key="work.key" class="col-span-1 p-16 md:p-32 lg:p-48" :style="'background-image:url(' + work.image +'); background-size: cover; background-position: center;'" />
+          <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 p-8 md:p-16 lg:p-24 text-center">
             <nuxt-link class="text-white hover:underline text-lg m-auto" :to="localePath('portfolio')">
               Vedi tutti
             </nuxt-link>

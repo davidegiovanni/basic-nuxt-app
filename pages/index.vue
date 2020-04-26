@@ -142,7 +142,22 @@
         </div>
       </div>
     </section>
-    <section class="pb-16 pt-12">
+    <section class="bg-black pb-24 pt-16">
+      <div :class="containerClass">
+        <h1 class="text-3xl md:text-5xl pb-8 text-white">
+          {{ $t(`portfolio.title`) }}
+        </h1>
+        <div class="grid grid-cols-2 gap-2 md:gap-8">
+          <div v-for="(work) in $t(`portfolio.works`)" :key="work.key" class="col-span-1 p-16 md:p-48" :style="'background-image:url(' + work.image +'); background-size: cover; background-position: center;'"/>
+          <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 p-8 md:p-16 md:p-48">
+            <nuxt-link class="text-white hover:underline text-lg m-auto" :to="localePath('portfolio')">
+              Vedi tutti
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pb-16 pt-24">
       <div :class="containerClass">
         <div class="flex flex-col sm:flex-row">
           <div class="flex-initial sm:mr-8">

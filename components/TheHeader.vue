@@ -28,8 +28,11 @@
                   {{ $t('shared.header.action') }}
                 </button>
               </a>
-              <a class="cursor-pointer inline-block md:hidden py-2 px-4 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-lg" @click="toggleMenu">
-                . . .
+              <a class="cursor-pointer inline-block md:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-lg" @click="toggleMenu">
+                <figure>
+                  <img v-if="menuOpen === false" src="/icons/menu.svg" alt="Menu Icon" title="menu" style="width: 32px;">
+                  <img v-if="menuOpen === true" src="/icons/menu-close.svg" alt="Close Menu Icon" title="close menu" style="width: 32px;">
+                </figure>
               </a>
             </div>
           </div>

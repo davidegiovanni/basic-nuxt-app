@@ -12,12 +12,12 @@
     <section class="pb-16">
       <div :class="containerClass">
         <div class="md:w-2/3 w-full">
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8">
             <div v-for="activity in $t(`home.sections.header.activities`)" :key="activity.key">
               <p class="text-2xl">
                 {{ activity.title }}
               </p>
-              <p v-for="point in activity.points" :key="point.key">
+              <p v-for="point in activity.points" :key="point.key" class="hidden lg:inline-block">
                 {{ point }}
               </p>
             </div>
@@ -28,11 +28,11 @@
     <section class="pb-16 pt-12">
       <div :class="containerClass">
         <div class="bg-black flex flex-row flex-wrap grid grid-cols-3">
-          <div class="text-white p-8 sm:p-16 col-span-3 md:col-span-1">
+          <div class="text-white p-8 sm:p-16 col-span-3 lg:col-span-1">
             <h2 class="text-2xl">
               {{ $t(`home.sections.lastproject.title`) }} <span class="opacity-50">{{ $t(`home.sections.lastproject.lastproject`) }}</span>
             </h2>
-            <p class="text-white mb-16 mt-8 leading-loose">
+            <p class="text-white mb-16 mt-8 leading-loose hidden md:inline-block">
               {{ $t(`home.sections.lastproject.description`) }}
               <ul class="list-disc list-inside mt-8">
                 <li v-for="point in $t(`home.sections.lastproject.points`)" :key="point.point" class="mt-4">
@@ -41,14 +41,14 @@
               </ul>
             </p>
             <a href="mailto:davidegiovanni96@gmail.com" :title="$t(`home.sections.lastproject.action`)">
-              <button class="py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg">
+              <button class="hidden md:inline-block py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg">
                 <span class="opacity-100 text-white">
                   {{ $t(`home.sections.lastproject.action`) }}
                 </span>
               </button>
             </a>
           </div>
-          <div :class="'text-white p-8 sm:p-16 col-span-3 md:col-span-2 bg-' + $t(`home.sections.lastproject.background`)">
+          <div :class="'text-white p-8 sm:p-16 col-span-3 lg:col-span-2 bg-' + $t(`home.sections.lastproject.background`)">
             <figure class="w-full h-full">
               <img class="w-full h-full object-cover" src="/images/home/personal-website-design.svg" :alt="$t(`home.sections.lastproject.title`)" :title="$t(`home.sections.lastproject.title`)" loading="lazy">
             </figure>
@@ -160,12 +160,12 @@
             </div>
           </div>
           <div class="flex-1 sm:px-16 pt-16 sm:ml-2 sm:pt-0">
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-20">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-2 sm:gap-20">
               <div v-for="activity in $t(`home.sections.skills.activities`)" :key="activity.key">
                 <p class="text-2xl">
                   {{ activity.title }}
                 </p>
-                <p v-for="point in activity.points" :key="point.key">
+                <p class="hidden lg:inline-block" v-for="point in activity.points" :key="point.key">
                   {{ point }}
                 </p>
               </div>

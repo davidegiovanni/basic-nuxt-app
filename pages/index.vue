@@ -50,7 +50,7 @@
           </div>
           <div :class="'text-white p-8 sm:p-16 col-span-3 lg:col-span-2 bg-' + $t(`home.sections.lastproject.background`)">
             <figure class="w-full h-full">
-              <img class="w-full h-full object-cover" src="/images/home/personal-website-design.svg" :alt="$t(`home.sections.lastproject.title`)" :title="$t(`home.sections.lastproject.title`)" loading="lazy">
+              <img class="w-full h-full object-cover" src="/images/portfolio/dogs-app.gif" :alt="$t(`home.sections.lastproject.title`)" :title="$t(`home.sections.lastproject.title`)" loading="lazy">
             </figure>
           </div>
         </div>

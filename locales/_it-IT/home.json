@@ -67,13 +67,13 @@
         },
         "lastproject": {
         "lastproject": "Ultimo progetto",
-          "title": "Sito web personale",
-          "description": "Web app progettata su Figma, ottimizzata SEO e implementata con NuxtJS, TailwindCSS per lo stile e Now ZEIT per l'autodeploy con git",
+          "title": "Pawsome",
+          "description": "Concept app per l'edizione 2020 del concorso Designflows indetto da Bending Spoons. App per appassionati di cani con contenuti e mappe esplorative",
           "points": [
-            "Prototyping", "Visual design", "Web app", "SEO"
+            "App design", "Illustrazione", "Product Identity"
           ],
           "action": "Contattami",
-          "background": "gray-400"
+          "background": "yellow-300"
         },
         "sustainability": {
             "title": "Sostenibilità, innanzitutto",

@@ -43,9 +43,9 @@
               {{ $t('shared.header.works') }}
             </p>
             <div class="grid grid-cols-2 gap-2">
-              <div class="p-10" style="background-image:url(/images/home/personal-website-design.svg); background-size: cover; background-position: center;" />
+              <div class="p-10" style="background-image:url(/images/portfolio/personal-website.png); background-size: cover; background-position: center;" />
               <div class="p-10" style="background-image:url(https://i.imgur.com/PJgTg7a.png); background-size: cover; background-position: center;" />
-              <div class="p-10" style="background-image:url(https://cdn.dribbble.com/users/1079878/screenshots/4102397/adelante-bottles.png); background-size: cover; background-position: center;" />
+              <div class="p-10" style="background-image:url(/images/portfolio/dogs-app.gif); background-size: cover; background-position: center;" />
               <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 text-center">
                 <a @click="menuOpen = !menuOpen">
                   <nuxt-link class="text-white text-md" :to="localePath('portfolio')">

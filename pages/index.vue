@@ -158,7 +158,7 @@
       </div>
     </section>
     <transition name="fade">
-      <section v-show="visibility" class="bg-black pb-24 pt-16">
+      <section v-show="visibility === true" class="bg-black pb-24 pt-16">
         <div :class="containerClass">
           <h1 class="text-3xl md:text-5xl pb-8 text-white">
             {{ $t(`portfolio.title`) }}
@@ -245,7 +245,7 @@ export default {
       this.visibility = true
     },
     showDiv () {
-      window.setTimeout(this.makeVisible(), 10000)
+      setTimeout(function () { this.makeVisible() }.bind(this), 3000)
     }
   },
   head () {

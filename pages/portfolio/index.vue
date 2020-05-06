@@ -18,7 +18,7 @@
                 </li>
               </ul>
             </p>
-            <a class="inline-block mt-4 py-2 px-4 text-white bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg" v-if="work.link" :href="work.link" :title="work.action">
+            <a v-if="work.link" class="inline-block mt-4 py-2 px-4 text-white bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg" :href="work.link" :title="work.action">
               {{ work.action }}
             </a>
           </div>

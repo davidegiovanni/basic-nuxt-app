@@ -5,35 +5,29 @@
         <h1 v-if="index === 0" class="text-3xl md:text-5xl pb-16 text-white">
           {{ $t(`portfolio.title`) }}
         </h1>
-        <a :href="work.link">
-          <div class="bg-gray-900 flex flex-row flex-wrap grid grid-cols-3">
-            <div class="text-white p-8 sm:p-16 col-span-3 lg:col-span-1">
-              <h2 class="text-2xl">
-                {{ work.title }} <span v-if="index === 0" class="opacity-50">{{ $t(`home.sections.lastproject.lastproject`) }}</span>
-              </h2>
-              <p class="text-white mb-16 mt-8 leading-loose hidden md:inline-block">
-                {{ work.description }}
-                <ul class="list-disc list-inside mt-8">
-                  <li v-for="point in work.points" :key="point.key" class="mt-4">
-                    {{ point.title }}
-                  </li>
-                </ul>
-              </p>
-              <a v-if="work.link" :href="work.link" :title="work.action">
-                <button class="hidden md:inline-block py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg">
-                  <span class="opacity-100 text-white">
-                    {{ work.action }}
-                  </span>
-                </button>
-              </a>
-            </div>
-            <div :class="'text-white p-8 sm:p-16 col-span-3 lg:col-span-2 bg-' + work.background">
-              <figure class="w-full h-full">
-                <img class="w-full h-full object-cover" :src="work.image" :alt="work.title" :title="work.title" loading="lazy">
-              </figure>
-            </div>
+        <div class="bg-gray-900 flex flex-row flex-wrap grid grid-cols-3">
+          <div class="text-white p-8 sm:p-16 col-span-3 lg:col-span-1">
+            <h2 class="text-2xl">
+              {{ work.title }} <span v-if="index === 0" class="opacity-50">{{ $t(`home.sections.lastproject.lastproject`) }}</span>
+            </h2>
+            <p class="text-white mb-16 mt-8 leading-loose hidden md:inline-block">
+              {{ work.description }}
+              <ul class="list-disc list-inside mt-8">
+                <li v-for="point in work.points" :key="point.key" class="mt-4">
+                  {{ point.title }}
+                </li>
+              </ul>
+            </p>
+            <a class="inline-block mt-4 py-2 px-4 text-white bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg" v-if="work.link" :href="work.link" :title="work.action">
+              {{ work.action }}
+            </a>
           </div>
-        </a>
+          <div :class="'text-white p-8 sm:p-16 col-span-3 lg:col-span-2 bg-' + work.background">
+            <figure class="w-full h-full">
+              <img class="w-full h-full object-cover" :src="work.image" :alt="work.title" :title="work.title" loading="lazy">
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
     <section class="py-24" />

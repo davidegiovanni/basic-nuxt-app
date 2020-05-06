@@ -4,13 +4,11 @@
       <div :class="containerClass">
         <div class="w-full">
           <div class="flex flex-row items-center justify-between">
-            <a @click="menuOpen = false">
-              <nuxt-link :to="localePath('index')">
-                <figure>
-                  <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
-                </figure>
-              </nuxt-link>
-            </a>
+            <nuxt-link :to="localePath('index')" @click.native="menuOpen = false">
+              <figure>
+                <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
+              </figure>
+            </nuxt-link>
             <div class="flex flex-row items-center justify-between">
               <nuxt-link :to="localePath('me')">
                 <p class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
@@ -49,28 +47,18 @@
               <div class="p-10" style="background-image:url(https://i.imgur.com/PJgTg7a.png); background-size: cover; background-position: center;" />
               <div class="p-10" style="background-image:url(/images/portfolio/dogs-app.gif); background-size: cover; background-position: center;" />
               <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 text-center">
-                <a @click="menuOpen = !menuOpen">
-                  <nuxt-link class="text-white text-md" :to="localePath('portfolio')">
-                    Vedi tutti
-                  </nuxt-link>
-                </a>
+                <nuxt-link class="text-white text-md" :to="localePath('portfolio')" @click.native="menuOpen = !menuOpen">
+                  Vedi tutti
+                </nuxt-link>
               </div>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-3 mb-8">
-            <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
-              <div class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full">
-                <p class="text-xl underline">
-                  Blog
-                </p>
-              </div>
+            <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+              Blog
             </a>
-            <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
-              <div class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center">
-                <p class="text-xl underline">
-                  Chi sono
-                </p>
-              </div>
+            <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+              Chi sono
             </a>
           </div>
           <button class="py-4 px-4 bg-black w-full text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">

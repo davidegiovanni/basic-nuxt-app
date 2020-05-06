@@ -3,7 +3,10 @@ import i18n from './config/i18n.config'
 import sitemap from './config/sitemap.config'
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
+  env: {
+    BASE_URL: 'https://davidegiovanni.com/'
+  },
   /*
    ** Headers of the page
    */

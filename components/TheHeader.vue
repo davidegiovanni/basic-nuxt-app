@@ -12,9 +12,11 @@
               </nuxt-link>
             </a>
             <div class="flex flex-row items-center justify-between">
-              <p class="mr-8 hover:text-gray-500 hidden">
-                About
-              </p>
+              <nuxt-link :to="localePath('me')">
+                <p class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
+                  {{ $t('shared.header.about') }}
+                </p>
+              </nuxt-link>
               <nuxt-link :to="localePath('portfolio')">
                 <p class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
                   {{ $t('shared.header.works') }}
@@ -57,9 +59,16 @@
           </div>
           <div class="grid grid-cols-2 gap-3 mb-8">
             <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
-              <div class="flex flex-col items-center justify-center bg-gray-200 px-8 py-4 text-center">
-                <p class="text-2xl underline">
+              <div class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full">
+                <p class="text-xl underline">
                   Blog
+                </p>
+              </div>
+            </a>
+            <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+              <div class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center">
+                <p class="text-xl underline">
+                  Chi sono
                 </p>
               </div>
             </a>

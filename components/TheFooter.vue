@@ -34,6 +34,11 @@
               Home
             </p>
           </nuxt-link>
+          <nuxt-link :to="localePath('me')">
+            <p class="mb-4 last:mb-0 hover:text-indigo-500 hover:underline">
+              {{ $t('shared.header.about') }}
+            </p>
+          </nuxt-link>
           <nuxt-link :to="localePath('portfolio')">
             <p class="mb-4 last:mb-0 hover:text-indigo-500 hover:underline">
               {{ $t('shared.header.works') }}

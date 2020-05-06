@@ -1,16 +1,25 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "nuxt.config.js",
-        "use": "@nuxtjs/now-builder",
-        "config": {
-            "serverFiles": [
-                "config/**",
-                "locales/**",
-                "./.nuxt/dist/sitemap-routes.json"
-            ]
-        }
+  "version": 2,
+  "name": "https://davidegiovanni.com/",
+  "build": {
+      "env": {
+          "BASE_URL": "https://davidegiovanni.com/"
       }
-    ]
-  }
+  },
+  "env": {
+      "BASE_URL": "https://davidegiovanni.com/" 
+  },
+  "builds": [
+      {
+          "src": "nuxt.config.js",
+          "use": "@nuxtjs/now-builder",
+          "config": {
+              "serverFiles": [
+                  "config/**",
+                  "locales/**",
+                  "./.nuxt/dist/sitemap-routes.json"
+              ]
+          }
+      }
+  ]
+}

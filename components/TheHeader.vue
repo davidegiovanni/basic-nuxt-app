@@ -6,7 +6,7 @@
           <div class="flex flex-row items-center justify-between">
             <nuxt-link :to="localePath('index')" @click.native="menuOpen = false">
               <figure>
-                <img class="w-10 h-10 rounded-full" src="https://avatars1.githubusercontent.com/u/33760151?s=460&u=790f8ff6d4dfdef82885785b411e0633296affc1&v=4" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
+                <img class="w-10 h-10 rounded-full" src="/images/shared/favicon.png" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
               </figure>
             </nuxt-link>
             <div class="flex flex-row items-center justify-between">

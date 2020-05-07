@@ -68,8 +68,13 @@
             {{ $t(`home.sections.sustainability.description`) }}
           </p>
         </div>
-        <transition name="fade">
-          <div v-if="visibilityLate" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16">
+        <transition name="fade" mode="out-in">
+          <div v-if="!visibilityLate" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="start">
+            <div class="bg-green-100 col-span-1 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
+            <div class="bg-pink-100 col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
+            <div class="bg-indigo-100 col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
+          </div>
+          <div v-if="visibilityLate" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="end">
             <div class="col-span-1 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1534364432722-54585249d766?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
             <div class="col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
             <div class="col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
@@ -112,14 +117,21 @@
               {{ link.title }}
             </p>
           </div>
-          <transition name="fade">
+          <transition name="fade" mode="out-in">
             <div
-              v-if="visibilityLate"
-              class="col-span-5 sm:col-span-3 py-32"
-              style="background-image: url('https://images.unsplash.com/photo-1470110385011-8c66cb46f0e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-              :alt="$t(`home.sections.businessvalue.title`)"
+              v-if="!visibility"
+              class="bg-gray-200 col-span-5 sm:col-span-3 py-32"
               :title="$t(`home.sections.businessvalue.title`)"
               loading="lazy"
+              key="start"
+            />
+            <div
+              v-if="visibility"
+              class="col-span-5 sm:col-span-3 py-32"
+              style="background-image: url('https://images.unsplash.com/photo-1470110385011-8c66cb46f0e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+              :title="$t(`home.sections.businessvalue.title`)"
+              loading="lazy"
+              key="end"
             />
           </transition>
         </div>
@@ -149,21 +161,25 @@
             </div>
           </div>
         </div>
-        <transition name="fade">
-          <div v-if="visibilityLatest" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16">
+        <transition name="fade" mode="out-in">
+          <div v-if="!visibility" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="start">
+            <div class="bg-purple-200 col-span-1 sm:col-span-4 bg-black py-32 sm:py-64" :title="$t(`home.sections.ethics.title`)" loading="lazy" />
+            <div class="bg-orange-200 col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" :title="$t(`home.sections.ethics.title`)" loading="lazy" />
+          </div>
+          <div v-if="visibility" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="end">
             <div class="col-span-1 sm:col-span-4 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1522543558187-768b6df7c25c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.ethics.title`)" :title="$t(`home.sections.ethics.title`)" loading="lazy" />
             <div class="col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.ethics.title`)" :title="$t(`home.sections.ethics.title`)" loading="lazy" />
           </div>
         </transition>
       </div>
     </section>
-    <transition name="fade">
-      <section v-show="visibilityLatest" class="bg-black pb-24 pt-16">
-        <div :class="containerClass">
-          <h1 class="text-3xl md:text-5xl pb-8 text-white">
-            {{ $t(`portfolio.title`) }}
-          </h1>
-          <div class="grid grid-cols-2 gap-2 md:gap-8">
+    <section class="bg-black pb-24 pt-16">
+      <div :class="containerClass">
+        <h1 class="text-3xl md:text-5xl pb-8 text-white">
+          {{ $t(`portfolio.title`) }}
+        </h1>
+        <transition name="fade" mode="out-in">
+          <div v-if="visibility" class="grid grid-cols-2 gap-2 md:gap-8" key="one">
             <div v-for="(work) in $t(`portfolio.works`)" :key="work.key" class="col-span-1 p-16 md:p-32 lg:p-48" :style="'background-image:url(' + work.image +'); background-size: cover; background-position: center;'" />
             <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 p-8 md:p-16 lg:p-24 text-center">
               <nuxt-link class="text-white hover:underline text-lg m-auto" :to="localePath('portfolio')">
@@ -171,9 +187,12 @@
               </nuxt-link>
             </div>
           </div>
-        </div>
-      </section>
-    </transition>
+          <div v-if="!visibilityLate" class="grid grid-cols-2 gap-2 md:gap-8" key="two">
+            <div v-for="(work) in $t(`portfolio.works`)" :key="work.key" class="bg-gray-800 col-span-1 p-16 md:p-32 lg:p-48" />
+          </div>
+        </transition>
+      </div>
+    </section>
     <section class="pb-16 pt-24">
       <div :class="containerClass">
         <div class="flex flex-col sm:flex-row">
@@ -224,8 +243,7 @@ export default {
   data () {
     return {
       visibility: false,
-      visibilityLate: false,
-      visibilityLatest: false
+      visibilityLate: false
     }
   },
   computed: {
@@ -242,7 +260,6 @@ export default {
   mounted () {
     this.showDiv()
     this.showDivLate()
-    this.showDivLatest()
   },
   methods: {
     makeVisible () {
@@ -251,17 +268,11 @@ export default {
     makeVisibleLate () {
       this.visibilityLate = true
     },
-    makeVisibleLatest () {
-      this.visibilityLatest = true
-    },
     showDiv () {
       setTimeout(function () { this.makeVisible() }.bind(this), 1000)
     },
     showDivLate () {
-      setTimeout(function () { this.makeVisibleLate() }.bind(this), 4000)
-    },
-    showDivLatest () {
-      setTimeout(function () { this.makeVisibleLatest() }.bind(this), 6000)
+      setTimeout(function () { this.makeVisibleLate() }.bind(this), 3000)
     }
   },
   head () {
@@ -286,7 +297,7 @@ export default {
 
 <style lang="scss" scoped>
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 4s;
+  transition: opacity 2s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

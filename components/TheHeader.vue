@@ -42,7 +42,7 @@
           </div>
         </div>
         <transition name="slideDown" mode="out-in">
-          <div v-if="menuOpen" class="origin-top bg-white w-screen shadow-lg absolute left-0 p-8 overflow-hidden">
+          <div v-if="menuOpen" class="origin-top bg-white w-screen shadow-lg absolute left-0 p-8 overflow-hidden z-20">
             <transition name="fade" mode="out-in" appear>
               <div class="origin-top">
                 <div class="bg-black py-4 px-4 mb-8">
@@ -64,9 +64,9 @@
                   <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
                     Blog
                   </a>
-                  <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+                  <nuxt-link class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" :to="localePath('me')" @click.native="menuOpen = !menuOpen">
                     Chi sono
-                  </a>
+                  </nuxt-link>
                 </div>
                 <button class="py-4 px-4 bg-black w-full text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
                   {{ $t('shared.header.action') }}

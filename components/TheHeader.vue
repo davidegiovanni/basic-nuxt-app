@@ -29,42 +29,52 @@
                 </button>
               </a>
               <a class="cursor-pointer inline-block md:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-lg" @click="toggleMenu">
-                <figure>
-                  <img v-if="menuOpen === false" src="/icons/menu.svg" alt="Menu Icon" title="menu" style="width: 32px;">
-                  <img v-if="menuOpen === true" src="/icons/menu-close.svg" alt="Close Menu Icon" title="close menu" style="width: 32px;">
-                </figure>
+                <transition mode="out-in">
+                  <figure v-if="menuOpen === false">
+                    <img src="/icons/menu.svg" alt="Menu Icon" title="menu" style="width: 32px;">
+                  </figure>
+                  <figure v-if="menuOpen === true">
+                    <img src="/icons/menu-close.svg" alt="Close Menu Icon" title="close menu" style="width: 32px;">
+                  </figure>
+                </transition>
               </a>
             </div>
           </div>
         </div>
-        <div class="bg-white w-screen shadow-lg absolute left-0 py-8 px-8" :class="[{ 'inline-block:': menuOpen }, { 'hidden': !menuOpen }]">
-          <div class="bg-black py-4 px-4 mb-8">
-            <p class="text-white text-2xl">
-              {{ $t('shared.header.works') }}
-            </p>
-            <div class="grid grid-cols-2 gap-2">
-              <div class="p-10" style="background-image:url(/images/portfolio/personal-website.png); background-size: cover; background-position: center;" />
-              <div class="p-10" style="background-image:url(https://i.imgur.com/PJgTg7a.png); background-size: cover; background-position: center;" />
-              <div class="p-10" style="background-image:url(/images/portfolio/dogs-app.gif); background-size: cover; background-position: center;" />
-              <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 text-center">
-                <nuxt-link class="text-white text-md" :to="localePath('portfolio')" @click.native="menuOpen = !menuOpen">
-                  Vedi tutti
-                </nuxt-link>
+        <transition name="slideDown" mode="out-in">
+          <div v-if="menuOpen" class="origin-top bg-white w-screen shadow-lg absolute left-0 p-8 overflow-hidden">
+            <transition name="fade" mode="out-in" appear>
+              <div class="origin-top">
+                <div class="bg-black py-4 px-4 mb-8">
+                  <p class="text-white text-2xl">
+                    {{ $t('shared.header.works') }}
+                  </p>
+                  <div class="grid grid-cols-2 gap-2">
+                    <div class="p-10" style="background-image:url(/images/portfolio/personal-website.png); background-size: cover; background-position: center;" />
+                    <div class="p-10" style="background-image:url(https://i.imgur.com/PJgTg7a.png); background-size: cover; background-position: center;" />
+                    <div class="p-10" style="background-image:url(/images/portfolio/dogs-app.gif); background-size: cover; background-position: center;" />
+                    <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 text-center">
+                      <nuxt-link class="text-white text-md" :to="localePath('portfolio')" @click.native="menuOpen = !menuOpen">
+                        Vedi tutti
+                      </nuxt-link>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3 mb-8">
+                  <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+                    Blog
+                  </a>
+                  <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+                    Chi sono
+                  </a>
+                </div>
+                <button class="py-4 px-4 bg-black w-full text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
+                  {{ $t('shared.header.action') }}
+                </button>
               </div>
-            </div>
+            </transition>
           </div>
-          <div class="grid grid-cols-2 gap-3 mb-8">
-            <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
-              Blog
-            </a>
-            <a class="flex flex-col items-center justify-center bg-gray-200 px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
-              Chi sono
-            </a>
-          </div>
-          <button class="py-4 px-4 bg-black w-full text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
-            {{ $t('shared.header.action') }}
-          </button>
-        </div>
+        </transition>
       </div>
     </section>
   </div>
@@ -99,3 +109,34 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.slideDown-enter-active, .slideDown-leave-active {
+  transition: height 1s cubic-bezier(0,.54,.58,.91), padding 1s;
+}
+
+.slideDown-enter-to, .slideDown-leave {
+  height: 500px;
+  padding: 2rem;
+}
+
+.slideDown-enter, .slideDown-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  height: 0;
+  padding: 0 2rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s, transform 0.3s cubic-bezier(0,.54,.58,.91);
+}
+
+.fade-enter-to, .fade-leave {
+  opacity: 100;
+  transform: translateY(0px);
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
+</style>

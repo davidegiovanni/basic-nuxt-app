@@ -69,12 +69,12 @@
           </p>
         </div>
         <transition name="fade" mode="out-in">
-          <div v-if="!visibilityLate" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="start">
+          <div v-if="!visibility" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="start">
             <div class="bg-green-100 col-span-1 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
             <div class="bg-pink-100 col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
             <div class="bg-indigo-100 col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
           </div>
-          <div v-if="visibilityLate" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="end">
+          <div v-if="visibility" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16" key="end">
             <div class="col-span-1 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1534364432722-54585249d766?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
             <div class="col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
             <div class="col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
@@ -196,8 +196,8 @@
     <section class="pb-16 pt-24">
       <div :class="containerClass">
         <div class="flex flex-col sm:flex-row">
-          <div class="flex-initial sm:mr-8">
-            <div class="bg-white h-full border-b-2 sm:border-b-0 sm:border-r-2 sm:px-10 py-8">
+          <div class="sm:mr-8">
+            <div class="bg-white h-full border-b-2 sm:border-b-0 sm:border-r-2 sm:px-10 pb-8">
               <div class="flex flex-row sm:flex-col justify-between">
                 <div v-for="number in $t(`home.sections.skills.numbers`)" :key="number.key">
                   <p class="text-5xl -mb-4">
@@ -211,7 +211,7 @@
             </div>
           </div>
           <div class="flex-1 sm:px-16 pt-16 sm:ml-2 sm:pt-0">
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-2 sm:gap-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8">
               <div v-for="activity in $t(`home.sections.skills.activities`)" :key="activity.key">
                 <p class="text-2xl">
                   {{ activity.title }}

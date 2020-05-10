@@ -31,11 +31,11 @@
       </div>
     </section>
     <section class="py-24" />
-    <section class="bg-white pb-16 pt-12">
+    <section class="pb-16 pt-24 bg-white">
       <div :class="containerClass">
         <div class="flex flex-col sm:flex-row">
-          <div class="flex-initial sm:mr-8">
-            <div class="bg-white h-full border-b-2 sm:border-b-0 sm:border-r-2 sm:px-10 py-8">
+          <div class="sm:mr-8">
+            <div class="bg-white h-full border-b-2 sm:border-b-0 sm:border-r-2 sm:px-10 pb-8">
               <div class="flex flex-row sm:flex-col justify-between">
                 <div v-for="number in $t(`home.sections.skills.numbers`)" :key="number.key">
                   <p class="text-5xl -mb-4">
@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="flex-1 sm:px-16 pt-16 sm:ml-2 sm:pt-0">
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-2 sm:gap-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8">
               <div v-for="activity in $t(`home.sections.skills.activities`)" :key="activity.key">
                 <p class="text-2xl">
                   {{ activity.title }}

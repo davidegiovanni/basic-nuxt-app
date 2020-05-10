@@ -6,7 +6,7 @@
           <div class="flex flex-row items-center justify-between">
             <nuxt-link :to="localePath('index')" @click.native="menuOpen = false">
               <figure>
-                <img class="w-10 h-10 rounded-full" src="/images/shared/favicon.png" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
+                <img class="w-12 h-12 rounded-full" src="/images/shared/favicon.png" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
               </figure>
             </nuxt-link>
             <div class="flex flex-row items-center justify-between">
@@ -28,7 +28,7 @@
                   {{ $t('shared.header.action') }}
                 </button>
               </a>
-              <a class="cursor-pointer inline-block md:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-lg" @click="toggleMenu">
+              <a class="cursor-pointer inline-block md:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-full" @click="toggleMenu">
                 <transition mode="out-in">
                   <figure v-if="menuOpen === false">
                     <img src="/icons/menu.svg" alt="Menu Icon" title="menu" style="width: 32px;">

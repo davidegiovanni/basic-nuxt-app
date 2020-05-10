@@ -22,7 +22,7 @@
               {{ work.action }}
             </a>
           </div>
-          <div :class="'text-white p-8 sm:p-16 col-span-3 lg:col-span-2 bg-' + work.background">
+          <div :class="'text-white col-span-3 lg:col-span-2 bg-' + work.background">
             <figure class="w-full h-full">
               <img class="w-full h-full object-cover" :src="work.image" :alt="work.title" :title="work.title" loading="lazy">
             </figure>

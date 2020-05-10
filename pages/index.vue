@@ -48,7 +48,7 @@
               </button>
             </a>
           </div>
-          <div :class="'text-white p-8 sm:p-16 col-span-3 lg:col-span-2 bg-' + $t(`home.sections.lastproject.background`)">
+          <div :class="'text-white col-span-3 lg:col-span-2 bg-' + $t(`home.sections.lastproject.background`)">
             <transition name="fade">
               <figure v-if="visibility" class="w-full h-full">
                 <img class="w-full h-full object-cover" src="/images/portfolio/dogs-app.gif" :alt="$t(`home.sections.lastproject.title`)" :title="$t(`home.sections.lastproject.title`)" loading="lazy">

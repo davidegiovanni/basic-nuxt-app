@@ -90,7 +90,7 @@
               {{ $t(`home.sections.centraltruth.title`) }}
             </h2>
             <p>
-              S{{ $t(`home.sections.centraltruth.description`) }}
+              {{ $t(`home.sections.centraltruth.description`) }}
             </p>
           </div>
           <div class="col-span-3 sm:col-span-1">

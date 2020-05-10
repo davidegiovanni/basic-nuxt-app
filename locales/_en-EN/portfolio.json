@@ -1,10 +1,83 @@
 {
     "meta": {
-        "title": "Portfolio design",
+        "title": "Portfolio Brand e Siti Web",
         "description": "Web app, brand per gruppi di empowerment e prodotti digitali progettati dal 2015 a oggi"
     },
     "title": "I miei lavori",
     "works": [
+        {
+            "key": "pawsome-app",
+            "title": "Pawsome",
+            "description": "Concept app per l'edizione 2020 del concorso Designflows indetto da Bending Spoons. App per appassionati di cani con contenuti e mappe esplorative",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "App design"
+                },
+                {
+                    "key": "2",
+                    "title": "Illustrazione"
+                },
+                {
+                    "key": "3",
+                    "title": "Product identity"
+                }
+            ],
+            "action": "Contattami",
+            "link":"mailto:davidegiovanni.com",
+            "image": "/images/portfolio/dogs-app.gif",
+            "background": "yellow-300"
+        },
+        {
+            "key": "maestro-app",
+            "title": "Maestro",
+            "description": "Concept app arrivata tra i 40 finalisti dei 1000 partecipanti all'edizione 2019 del concorso Designflows di Bending Spoons. App per appassionati di musica classica con percorso di learning gamificato.",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "App design"
+                },
+                {
+                    "key": "2",
+                    "title": "Illustrazione"
+                },
+                {
+                    "key": "3",
+                    "title": "Product identity"
+                }
+            ],
+            "action": "Contattami",
+            "link":"mailto:davidegiovanni.com",
+            "image": "/images/portfolio/music-app.png",
+            "background": "gray-800"
+        },
+        {
+            "key": "holy-david-website",
+            "title": "Holy David",
+            "description": "Web app con forte ottimizzazione SEO sviluppata con NuxtJS e TailwindCSS come rappresentazione delle opere dell'artista contemporaneo Holy David",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "Prototyping"
+                },
+                {
+                    "key": "2",
+                    "title": "Visual design"
+                },
+                {
+                    "key": "3",
+                    "title": "Web app"
+                },
+                {
+                    "key": "4",
+                    "title": "SEO"
+                }
+            ],
+            "action": "Visita il sito",
+            "link":"https://holydavid.now.sh",
+            "image": "/images/portfolio/holydavid.png",
+            "background": "gray-100"
+        },
         {
             "key": "personal-website",
             "title": "Sito web personale",
@@ -29,8 +102,8 @@
             ],
             "action": "Contattami",
             "link":"mailto:davidegiovanni.com",
-            "image": "/images/home/personal-website-design.svg",
-            "background": "gray-200"
+            "image": "/images/portfolio/personal-website.png",
+            "background": "gray-300"
         },
         {
             "key": "revas",
@@ -60,13 +133,13 @@
             ],
             "action": "Visita il sito",
             "link":"https://www.revas.app",
-            "image": "https://i.imgur.com/W7FPnJW.png",
-            "background": "purple-600"
+            "image": "/images/portfolio/revas-app-brand.png",
+            "background": "purple-800"
         },
         {
             "key": "voxel",
             "title": "Voxel",
-            "description": "Workshop di ideazione di una brand identity di un gruppo di empowerment di Trento femminile tramite la tecnologia in occasione del loro rebrand",
+            "description": "Workshop di ideazione di una brand identity per il gruppo trentino di empowerment femminile nel moondo delle professioni STEM in occasione del loro rebrand",
             "points": [
                 {
                     "key": "1",

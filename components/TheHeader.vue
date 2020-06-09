@@ -28,13 +28,19 @@
                   {{ $t('shared.header.action') }}
                 </button>
               </a>
-              <a :class="{'bg-gray-500': darkMode }" class="cursor-pointer inline-block md:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-full" @click="toggleMenu">
+              <a :class="{'bg-gray-800 hover:bg-gray-800 focus:bg-gray-800': darkMode }" class="cursor-pointer inline-block md:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-full" @click="toggleMenu">
                 <transition mode="out-in">
-                  <figure v-if="menuOpen === false">
+                  <figure v-if="menuOpen === false && !darkMode">
                     <img src="/icons/menu.svg" alt="Menu Icon" title="menu" style="width: 32px;">
                   </figure>
-                  <figure v-if="menuOpen === true">
+                  <figure v-if="menuOpen === true && !darkMode">
                     <img src="/icons/menu-close.svg" alt="Close Menu Icon" title="close menu" style="width: 32px;">
+                  </figure>
+                  <figure v-if="menuOpen === false && darkMode">
+                    <img src="/icons/menu-white.svg" alt="Menu Icon" title="menu" style="width: 32px;">
+                  </figure>
+                  <figure v-if="menuOpen === true && darkMode">
+                    <img src="/icons/menu-close-white.svg" alt="Close Menu Icon" title="close menu" style="width: 32px;">
                   </figure>
                 </transition>
               </a>
@@ -45,7 +51,7 @@
           <div v-if="menuOpen" :class="{ 'bg-black text-white': darkMode, 'bg-white': !darkMode}" class="origin-top w-screen shadow-lg absolute left-0 p-8 overflow-hidden z-20">
             <transition name="fade" mode="out-in" appear>
               <div class="origin-top">
-                <div class="bg-black py-4 px-4 mb-8">
+                <div class="bg-black py-4 mb-8">
                   <p class="text-white text-2xl">
                     {{ $t('shared.header.works') }}
                   </p>
@@ -61,14 +67,14 @@
                   </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3 mb-8">
-                  <a :class="{ 'bg-gray-900': darkMode, 'bg-gray-200': !darkMode }" class="flex flex-col items-center justify-center px-2 py-4 text-center h-full text-xl underline" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
+                  <a :class="{ 'bg-gray-900': darkMode, 'bg-gray-200': !darkMode }" class="flex flex-col items-center justify-center px-2 py-4 text-center h-full text-md" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
                     Blog
                   </a>
-                  <nuxt-link :class="{ 'bg-gray-900': darkMode, 'bg-gray-200': !darkMode }" class="flex flex-col items-center justify-center px-2 py-4 text-center h-full text-xl underline" :to="localePath('me')" @click.native="menuOpen = !menuOpen">
+                  <nuxt-link :class="{ 'bg-gray-900': darkMode, 'bg-gray-200': !darkMode }" class="flex flex-col items-center justify-center px-2 py-4 text-center h-full text-md" :to="localePath('me')" @click.native="menuOpen = !menuOpen">
                     Chi sono
                   </nuxt-link>
                 </div>
-                <button :class="{ 'bg-indigo-700': darkMode, 'bg-black': !darkMode }" class="py-4 px-4 w-full text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg hoverable">
+                <button :class="{ 'bg-indigo-700': darkMode, 'bg-black': !darkMode }" class="py-4 px-4 w-full text-lg text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg hoverable">
                   {{ $t('shared.header.action') }}
                 </button>
               </div>

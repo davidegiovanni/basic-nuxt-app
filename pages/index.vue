@@ -41,7 +41,7 @@
               </ul>
             </p>
             <a href="mailto:davidegiovanni96@gmail.com" :title="$t(`home.sections.lastproject.action`)">
-              <button class="hidden md:inline-block py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg">
+              <button class="hoverable hidden md:inline-block py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-800 shadow-lg text-white hover:shadow-xl focus:shadow-md rounded-lg">
                 <span class="opacity-100 text-white">
                   {{ $t(`home.sections.lastproject.action`) }}
                 </span>
@@ -301,5 +301,11 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.hoverable:hover {
+  transition: all 0.5s ease;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
 }
 </style>

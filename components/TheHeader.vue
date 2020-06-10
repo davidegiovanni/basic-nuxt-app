@@ -51,7 +51,7 @@
           <div v-if="menuOpen" :class="{ 'bg-black text-white': darkMode, 'bg-white': !darkMode}" class="origin-top w-screen shadow-lg absolute left-0 p-8 overflow-hidden z-20">
             <transition name="fade" mode="out-in" appear>
               <div class="origin-top">
-                <div class="bg-black py-4 mb-8">
+                <div :class="{'px-4': !darkMode }" class="bg-black py-4 mb-8">
                   <p class="text-white text-2xl">
                     {{ $t('shared.header.works') }}
                   </p>

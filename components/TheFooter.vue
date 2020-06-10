@@ -7,7 +7,7 @@
             {{ $t(`shared.footer.ideas`) }}
           </p>
           <a class="text-4xl -mt-6 hover:text-teal-500" href="mailto:davidegiovanni96@gmail.com">
-           {{ $t(`shared.footer.action`) }}
+            {{ $t(`shared.footer.action`) }}
           </a>
         </div>
         <div class="flex flex-col mr-16 sm:mx-16">

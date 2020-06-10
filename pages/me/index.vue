@@ -7,7 +7,7 @@
             {{ $t(`about.header.title`) }}
           </h1>
           <p>
-             {{ $t(`about.header.description`) }}
+            {{ $t(`about.header.description`) }}
           </p>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16">
@@ -22,7 +22,7 @@
         <div class="grid grid-cols-5 gap-8">
           <div class="col-span-5 sm:col-span-2 py-8">
             <h2 :class="h1Class" class="leading-normal mb-6">
-               {{ $t(`about.sections.freelancing.title`) }}
+              {{ $t(`about.sections.freelancing.title`) }}
             </h2>
             <p class=" mb-6">
               {{ $t(`about.sections.freelancing.description`) }}
@@ -74,7 +74,7 @@
         <div class="grid grid-cols-5 gap-8">
           <div class="col-span-5 sm:col-span-2 py-8">
             <h2 :class="h1Class" class="leading-normal mb-6">
-               {{ $t(`about.sections.lgbt.title`) }}
+              {{ $t(`about.sections.lgbt.title`) }}
             </h2>
             <p class=" mb-6">
               {{ $t(`about.sections.lgbt.description`) }}

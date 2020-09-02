@@ -3,12 +3,14 @@
     <the-header />
     <nuxt />
     <the-footer />
+    <the-cookie-banner class="fixed left-0 bottom-0 w-full md:w-cookie-banner md:m-4" />
   </div>
 </template>
 
 <script>
 import TheHeader from '@/components/TheHeader'
 import TheFooter from '@/components/TheFooter'
+import TheCookieBanner from '@/components/TheCookieBanner'
 
 export default {
   jsonld () {
@@ -52,7 +54,8 @@ export default {
   },
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    TheCookieBanner
   },
   head () {
     const i18nSeo = this.$nuxtI18nSeo()

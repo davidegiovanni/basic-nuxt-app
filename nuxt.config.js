@@ -43,8 +43,12 @@ export default {
     '~/plugins/jsonld'
   ],
   buildModules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: 'UA-80324273-1'
+  },
   /*
    ** Nuxt.js modules
    */

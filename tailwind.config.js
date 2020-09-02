@@ -2,6 +2,11 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Urbane', 'sans-serif']
+    },
+    extend: {
+      width: {
+        'cookie-banner': '300px'
+      }
     }
   },
   variants: {

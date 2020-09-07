@@ -1,0 +1,53 @@
+{
+    "meta": {
+        "title": "Brand Designer and Visual Identity Manager",
+        "description": "I design brands and visual identities your target will love and that will make you reach your business goals"
+    },
+    "sections": {
+        "header": {
+            "title": "The design of the brand your customers will love starts here.",
+            "description": "Give your target a brand they will instantly recognise - and never forget. It all starts here with me"
+        },
+        "jobs": {
+            "intro": "I have a growth-oriented design approach for brands",
+            "differentiate": {
+                "intro": "Brand Identity",
+                "title": "Your target will always recognise you. And will forget your competitors.",
+                "description": "A brand with a cheap visual identity will get lost between competitors and will be forgotten by customers. That's the reason why many businesses fail even if they have amazing value propositions. We'll work together to:",
+                "action": "See how",
+                "jobs": {
+                    "one": {
+                        "title": "Build a crystal clear and strong brand image"
+                    },
+                    "two": {
+                        "title": "Make your brand perfect for your customers"
+                    },
+                    "three": {
+                        "title": "Design a unified brand communication"
+                    }
+                }
+            },
+            "grow": {
+                "intro": "Brand Communication",
+                "title": "Your communication will go straight to your target's heart. Always.",
+                "description": "Communication is the foundation of building a great brand and can make it or break it for the success of the brand itself. A great brand helps you deliver your messages to the right target and convinces buyers. We'll build it together by:",
+                "action": "Learn how",
+                "jobs": {
+                    "one": {
+                        "title": "Writing brand guidelines for real life use cases"
+                    },
+                    "two": {
+                        "title": "Empowering your team to build assets for long"
+                    },
+                    "three": {
+                        "title": "Designing a brand that will grow as your business grow"
+                    }
+                }
+            }
+        },
+        "switch": {
+            "title": "Brand images that get results: more than just a simple logo",
+            "action": "See how it works"
+        }
+    } 
+}

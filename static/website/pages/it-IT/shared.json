@@ -51,5 +51,10 @@
                 }
             ]
         }
+    },
+    "cookie-banner": {
+        "description": "🍪 Utilizzo i cookies di Google Analytics e di Facebook in formato anonimo per fornire una migliore esperienza di navigazione del sito e per analizzare il traffico. Per maggiori informazioni, vedi l'Informativa Cookies",
+        "ok": "OK",
+        "policy": "Informativa"
     }
 }

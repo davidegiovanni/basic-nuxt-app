@@ -1,13 +1,15 @@
-import home from './_en-EN/home.json'
-import shared from './_en-EN/shared.json'
-import schema from './_en-EN/schema.json'
-import portfolio from './_en-EN/portfolio.json'
+import home from '@/static/website/pages/en-EN/home.json'
+import shared from '@/static/website/pages/en-EN/shared.json'
+import schema from '@/static/website/pages/en-EN/schema.json'
+import portfolio from '@/static/website/pages/en-EN/portfolio.json'
+import about from '@/static/website/pages/en-EN/me.json'
 
 const data = {
   home,
   shared,
   schema,
-  portfolio
+  portfolio,
+  about
 }
 
 export default () => {

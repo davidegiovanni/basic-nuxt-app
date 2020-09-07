@@ -162,48 +162,6 @@
             "link":"",
             "image": "https://i.imgur.com/PJgTg7a.png",
             "background": "red-500"
-        },
-        {
-            "key": "adelante",
-            "title": "Adelante Display",
-            "description": "Typeface con richiami neo-deco che ho sviluppato per intestazioni decorative, prodotti stampati e per la crazione di loghi e identità di marchio",
-            "points": [
-                {
-                    "key": "1",
-                    "title": "Lettering"
-                },
-                {
-                    "key": "2",
-                    "title": "Typography"
-                }
-            ],
-            "action": "Caso studio",
-            "link":"https://cdn.dribbble.com/users/1079878/screenshots/4102397/adelante-bottles.png",
-            "image": "https://cdn.dribbble.com/users/1079878/screenshots/4102397/adelante-bottles.png",
-            "background": "red-300"
-        },
-        {
-            "key": "starsy",
-            "title": "Starsy",
-            "description": "Progettazione di una UI tematica per un'applicazione educativa di scoperta delle stelle e delle costellazioni dello spazio con un chatbot integrato",
-            "points": [
-                {
-                    "key": "1",
-                    "title": "App UI design"
-                },
-                {
-                    "key": "2",
-                    "title": "Product design"
-                },
-                {
-                    "key": "3",
-                    "title": "Illustration"
-                }
-            ],
-            "action": "Caso studio",
-            "link":"https://www.behance.net/gallery/59769047/Starsy-UX-Product-Designt",
-            "image": "https://cdn.dribbble.com/users/1079878/screenshots/3998099/star-app-dribbble.png",
-            "background": "indigo-600"
         }
     ]
 }

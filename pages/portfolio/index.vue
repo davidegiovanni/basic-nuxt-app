@@ -31,43 +31,6 @@
       </div>
     </section>
     <section class="py-24" />
-    <section class="pb-16 pt-32 bg-white">
-      <div :class="containerClass">
-        <div class="flex flex-col sm:flex-row">
-          <div class="sm:mr-8">
-            <div class="bg-white h-full border-b-2 sm:border-b-0 sm:border-r-2 sm:px-10 pb-8">
-              <div class="flex flex-row sm:flex-col justify-between">
-                <div v-for="number in $t(`home.sections.skills.numbers`)" :key="number.key" class="pr-8 md:pr-0 md:mb-12">
-                  <p class="text-5xl -mb-4">
-                    {{ number.number }}
-                  </p>
-                  <p class="text-md text-gray-700">
-                    {{ number.title }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex-1 sm:px-16 pt-16 sm:ml-2 sm:pt-0">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-12">
-              <div v-for="activity in $t(`home.sections.skills.activities`)" :key="activity.key">
-                <p class="text-2xl mb-6">
-                  {{ activity.title }}
-                </p>
-                <p v-for="point in activity.points" :key="point.key" class="hidden lg:inline-block mb-4">
-                  {{ point }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="bg-white pb-16 pt-12">
-      <div :class="containerClass">
-        <hr class="border-t-2">
-      </div>
-    </section>
   </div>
 </template>
 

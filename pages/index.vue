@@ -215,9 +215,9 @@ export default {
     background-image: url('/website/images/index/more-than-a-logo-mobile.png');
   }
 
-@screen lg {
-  .has-background-image {
-    background-image: url('/website/images/index/more-than-a-logo.png');
-  }
-}
+// @screen lg {
+//   .has-background-image {
+//     background-image: url('/website/images/index/more-than-a-logo.png');
+//   }
+// }
 </style>

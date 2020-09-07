@@ -62,9 +62,9 @@
         </div>
         <transition name="fade" mode="out-in">
           <div v-if="!visibility" key="start" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16 animate-pulse">
-            <div class="bg-green-100 col-span-1 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
-            <div class="bg-pink-100 col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
-            <div class="bg-indigo-100 col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
+            <div class="bg-green-100 col-span-1 bg-black py-32 sm:py-64" :title="$t(`home.sections.jobs.differentiate.intro`)" loading="lazy" />
+            <div class="bg-pink-100 col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" :title="$t(`home.sections.jobs.differentiate.title`)" loading="lazy" />
+            <div class="bg-indigo-100 col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" :title="$$t(`home.sections.jobs.differentiate.description`)" loading="lazy" />
           </div>
           <div v-if="visibility" key="end" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16">
             <div class="col-span-1 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
@@ -105,9 +105,9 @@
         </div>
         <transition name="fade" mode="out-in">
           <div v-if="!visibility" key="start" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16 animate-pulse">
-            <div class="bg-green-100 col-span-1 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
-            <div class="bg-pink-100 col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
-            <div class="bg-indigo-100 col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />
+            <div class="bg-green-100 col-span-1 bg-black py-32 sm:py-64" :title="$t(`home.sections.jobs.grow.intro`)" loading="lazy" />
+            <div class="bg-pink-100 col-span-1 sm:col-span-2 bg-black py-32 sm:py-64" :title="$t(`home.sections.jobs.grow.title`)" loading="lazy" />
+            <div class="bg-indigo-100 col-span-2 sm:col-span-3 bg-black py-32 sm:py-64" :title="$t(`home.sections.jobs.grow.description`)" loading="lazy" />
           </div>
           <div v-if="visibility" key="end" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16">
             <div class="col-span-1 bg-black py-32 sm:py-64" style="background-image: url('https://images.unsplash.com/photo-1577412827102-fc566d0e7cae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center; background-repeat: no-repeat;" :alt="$t(`home.sections.sustainability.title`)" :title="$t(`home.sections.sustainability.title`)" loading="lazy" />

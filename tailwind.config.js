@@ -8,7 +8,7 @@ module.exports = {
         'cookie-banner': '300px'
       },
       height: {
-        '500': '600px'
+        500: '600px'
       }
     }
   },

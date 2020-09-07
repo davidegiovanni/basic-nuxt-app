@@ -10,7 +10,7 @@
             <h2 class="text-lg md:text-2xl" style="line-height: 1.5;">
               {{ $t(`home.sections.header.description`) }}
             </h2>
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-down mt-8 w-8 h-8 animate-bounce"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-down mt-8 w-8 h-8 animate-bounce"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
     <section class="py-24 bg-gray-200 px-8">
       <div class="container mx-auto">
         <div class="w-full md:w-2/3 text-center mx-auto">
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="presentation-chart-line w-10 h-10 mx-auto mb-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="presentation-chart-line w-10 h-10 mx-auto mb-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
           <h2 class="text-2xl md:text-5xl mb-4" style="line-height: 1.2;">
             {{ $t(`home.sections.jobs.intro`) }}
           </h2>

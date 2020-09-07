@@ -23,7 +23,8 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "showdown": "^1.9.1",
-    "tailwindcss": "^1.8.4"
+    "tailwindcss": "^1.8.4",
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

@@ -11,6 +11,10 @@ export default {
     'brand/index': {
       en: '/design-winning-brand-image',
       it: '/immagine-di-brand-vincente'
+    },
+    'communication/index': {
+      en: '/strong-brand-communication',
+      it: '/comunicazione-di-brand-efficace'
     }
   },
   locales: [

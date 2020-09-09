@@ -7,6 +7,10 @@ export default {
     'about/index': {
       en: '/about-me',
       it: '/chi-sono'
+    },
+    'brand/index': {
+      en: '/design-winning-brand-image',
+      it: '/immagine-di-brand-vincente'
     }
   },
   locales: [

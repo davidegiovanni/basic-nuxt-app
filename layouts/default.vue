@@ -3,7 +3,7 @@
     <the-header />
     <nuxt />
     <the-footer />
-    <the-cookie-banner class="fixed right-0 bottom-0 w-full md:w-cookie-banner" />
+    <the-cookie-banner class="fixed right-0 bottom-0 w-full md:w-cookie-banner z-50" />
   </div>
 </template>
 

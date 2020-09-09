@@ -53,12 +53,14 @@
               </div>
             </div>
           </div>
-          <button class="py-4 px-6 text-lg text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg bg-black">
-            <span class="flex items-center hover:animate-pulse">
-              {{ $t(`home.sections.jobs.differentiate.action`) }}
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </span>
-          </button>
+          <nuxt-link :to="localePath('brand')">
+            <div class="py-4 px-6 inline-block text-lg text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg bg-black">
+              <span class="flex items-center hover:animate-pulse">
+                {{ $t(`home.sections.jobs.differentiate.action`) }}
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
+            </div>
+          </nuxt-link>
         </div>
         <transition name="fade" mode="out-in">
           <div v-if="!visibility" key="start" class="grid grid-cols-2 sm:grid-cols-6 gap-3 sm:gap-6 pt-16 animate-pulse">
@@ -199,7 +201,7 @@ export default {
 
 <style lang="scss" scoped>
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
+  transition: opacity 0.9s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

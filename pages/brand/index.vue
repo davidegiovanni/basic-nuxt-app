@@ -32,7 +32,7 @@
       </div>
     </section>
     <section class="lg:relative lg:h-screen">
-      <div class="lg:absolute flex items-center h-full w-full p-8 z-20">
+      <div class="lg:absolute flex items-center h-full w-full mt-8 md:p-8 z-20">
         <div :class="containerClass">
           <div class="lg:w-2/3 w-full">
             <p class="font-medium mb-4 border-b-4 border-indigo-600 inline-block h-10 text-md md:text-xl">
@@ -71,7 +71,7 @@
           <img class="object-cover h-full w-full" src="https://images.unsplash.com/photo-1573515159471-0eb7ec72912c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" :alt="$t(`brand.sections.header.title`)">
         </figure>
       </transition>
-      <div class="lg:absolute transform lg:translate-x-64 lg:ml-32 flex items-center h-full w-full p-8 z-20">
+      <div class="lg:absolute transform lg:translate-x-64 lg:ml-32 flex items-center h-full w-full md:p-8 z-20">
         <div :class="containerClass">
           <div class="lg:w-2/3 w-full">
             <p class="font-medium mb-4 border-b-4 border-indigo-600 inline-block h-10 text-md md:text-xl">
@@ -98,7 +98,7 @@
       </div>
     </section>
     <section class="lg:relative lg:h-screen">
-      <div class="lg:absolute flex items-center h-full w-full p-8 z-20">
+      <div class="lg:absolute flex items-center h-full w-full md:p-8 z-20">
         <div :class="containerClass">
           <div class="lg:w-2/3 w-full">
             <p class="font-medium mb-4 border-b-4 border-indigo-600 inline-block h-10 text-md md:text-xl">
@@ -129,6 +129,23 @@
           <img class="object-cover h-full w-full" src="https://images.unsplash.com/flagged/photo-1574164908900-6275ca361157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" :alt="$t(`brand.sections.header.title`)">
         </figure>
       </transition>
+    </section>
+    <section class="py-12 md:py-24 bg-gray-200 px-8">
+      <div class="container mx-auto">
+        <div class="w-full mx-auto flex flex-col text-center mx-auto">
+          <p class="text-5xl">
+            👋
+          </p>
+          <h2 class="text-2xl md:text-5xl mb-8" style="line-height: 1.2;">
+            {{ $t('brand.sections.goodbye.title') }}
+          </h2>
+          <div class="md:w-2/3 mx-auto md:grid md:grid-cols-3 md:gap-4">
+            <p v-for="point in $t('brand.sections.goodbye.points')" :key="point.key" class="bg-white p-4 text-xl md:text-2xl mb-8 md:mb-16 border-b-4 shadow-lg border-indigo-600" style="line-height: 1.2;">
+              {{ point }}
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="px-4 py-48 md:py-64 bg-gray-200 has-background-image" style="background-size: cover; background-position: right bottom; background-repeat: no-repeat;">
       <div class="container mx-auto md:mb-32 lg:mb-0">

@@ -62,6 +62,14 @@
         "switch": {
             "title": "Immagini di brand che ottengono risultati: molto più di un semplice logo",
             "action": "Scopri come funziona"
+        },
+        "goodbye": {
+            "title": "Di' addio a",
+            "points": [
+                "Immagini di brand che pensi siano bellissime ma che in realtà non comunicano nulla del tuo business",
+                "Loghi di bassa qualità che non colpiscono il cuore del tuo target e ti fanno passare inosservato",
+                "Manuali di brand statici e inutilizzabili che fanno solo confusione ai team"
+            ]
         }
     } 
 }

@@ -127,12 +127,14 @@
           <h2 class="text-2xl md:text-5xl mb-8" style="line-height: 1.2;">
             {{ $t(`home.sections.switch.title`) }}
           </h2>
-          <button class="bg-black py-4 px-6 text-lg text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
-            <span class="flex items-center">
-              {{ $t(`home.sections.switch.action`) }}
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </span>
-          </button>
+          <a href="mailto:davidegiovanni96@gmail.com">
+            <div class="bg-black py-4 px-6 text-lg inline-block text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
+              <span class="flex items-center hover:animate-pulse tracking-widest">
+                {{ $t(`home.sections.switch.action`) }}
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </section>

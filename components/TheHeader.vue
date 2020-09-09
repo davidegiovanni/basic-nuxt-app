@@ -4,44 +4,55 @@
       <div :class="containerClass">
         <div class="w-full">
           <div class="flex flex-row items-center justify-between">
-            <nuxt-link :to="localePath('index')" @click.native="menuOpen = false">
-              <figure>
-                <img class="w-12 h-12 rounded-full pulsing" src="/images/shared/favicon.png" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
-              </figure>
-            </nuxt-link>
+            <div class="flex flex-row items-center">
+              <nuxt-link :to="localePath('index')" @click.native="menuOpen = false">
+                <figure>
+                  <img class="w-12 h-12 rounded-full pulsing" src="/images/shared/favicon.png" :alt="$t('shared.header.image.alt')" :title="$t('shared.header.image.title')" loading="lazy">
+                </figure>
+              </nuxt-link>
+              <nuxt-link :to="localePath({ name: 'brand', query: { from: 'navbar-desktop'}})">
+                <p class="ml-8 hover:text-indigo-500 hidden lg:inline-block">
+                  Immagine di brand
+                </p>
+              </nuxt-link>
+              <nuxt-link :to="localePath({ name: 'communication', query: { from: 'navbar-desktop'}})">
+                <p class="ml-8 hover:text-indigo-500 hidden lg:inline-block">
+                  Comunicazione di brand
+                </p>
+              </nuxt-link>
+            </div>
             <div class="flex flex-row items-center justify-between">
-              <nuxt-link :to="localePath('me')">
-                <p class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
+              <nuxt-link :to="localePath({ name: 'me', query: { from: 'navbar-desktop'}})">
+                <p class="mr-8 hover:text-indigo-500 hidden lg:inline-block">
                   {{ $t('shared.header.about') }}
                 </p>
               </nuxt-link>
-              <nuxt-link :to="localePath('portfolio')">
-                <p class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
-                  {{ $t('shared.header.works') }}
-                </p>
-              </nuxt-link>
-              <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener" class="mr-8 hover:text-indigo-500 hidden sm:inline-block">
+              <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener" class="mr-8 hover:text-indigo-500 hidden lg:inline-block">
                 Blog
               </a>
               <a href="mailto:davidegiovanni96@gmail.com" :title="$t('shared.header.action')">
-                <button :class="{ 'bg-indigo-700': darkMode, 'bg-black': !darkMode }" class="hidden md:inline-block py-2 px-4 hover:bg-gray-700 focus:bg-gray-800 text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg mr-4 md:mr-0 hoverable">
+                <button :class="{ 'bg-indigo-700': darkMode, 'bg-black': !darkMode }" class="hidden lg:inline-block py-2 px-4 hover:bg-gray-700 focus:bg-gray-800 text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg mr-4 md:mr-0 hoverable">
                   {{ $t('shared.header.action') }}
                 </button>
               </a>
-              <a :class="{'bg-gray-800 hover:bg-gray-800 focus:bg-gray-800': darkMode }" class="cursor-pointer inline-block md:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-gray-800 rounded-full" @click="toggleMenu">
+              <a :class="{'bg-gray-800 hover:bg-gray-800 focus:bg-gray-800 text-white': darkMode }" class="cursor-pointer inline-block lg:hidden py-2 px-2 bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 rounded-full" @click="toggleMenu">
                 <transition mode="out-in">
-                  <figure v-if="menuOpen === false && !darkMode">
-                    <img src="/icons/menu.svg" alt="Menu Icon" title="menu" style="width: 32px;">
-                  </figure>
-                  <figure v-if="menuOpen === true && !darkMode">
-                    <img src="/icons/menu-close.svg" alt="Close Menu Icon" title="close menu" style="width: 32px;">
-                  </figure>
-                  <figure v-if="menuOpen === false && darkMode">
-                    <img src="/icons/menu-white.svg" alt="Menu Icon" title="menu" style="width: 32px;">
-                  </figure>
-                  <figure v-if="menuOpen === true && darkMode">
-                    <img src="/icons/menu-close-white.svg" alt="Close Menu Icon" title="close menu" style="width: 32px;">
-                  </figure>
+                  <svg
+                    v-if="menuOpen === false"
+                    class="w-6 h-6 stroke-current"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                  <svg
+                    v-if="menuOpen === true"
+                    class="w-6 h-6 stroke-current"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </transition>
               </a>
             </div>
@@ -51,29 +62,44 @@
           <div v-if="menuOpen" :class="{ 'bg-black text-white': darkMode, 'bg-white': !darkMode}" class="origin-top w-screen shadow-lg absolute left-0 p-8 overflow-hidden z-20">
             <transition name="fade" mode="out-in" appear>
               <div class="origin-top">
-                <div :class="{'px-4': !darkMode }" class="bg-black py-4 mb-8">
-                  <p class="text-white text-2xl">
-                    {{ $t('shared.header.works') }}
-                  </p>
-                  <div class="grid grid-cols-2 gap-2">
-                    <div class="p-10" style="background-image:url(/images/portfolio/personal-website.png); background-size: cover; background-position: center;" />
-                    <div class="p-10" style="background-image:url(https://i.imgur.com/PJgTg7a.png); background-size: cover; background-position: center;" />
-                    <div class="p-10" style="background-image:url(/images/portfolio/dogs-app.gif); background-size: cover; background-position: center;" />
-                    <div class="flex flex-col items-center justify-center bg-gray-900 col-span-1 text-center">
-                      <nuxt-link class="text-white text-md" :to="localePath('portfolio')" @click.native="menuOpen = !menuOpen">
-                        Vedi tutti
-                      </nuxt-link>
-                    </div>
+                <p class="text-xl text-gray-600">
+                  Servizi
+                </p>
+                <nuxt-link :to="localePath({name: 'brand', query: { from: 'navbar-mobile'}})">
+                  <div class="mb-4 flex items-center justify-between border-b-2 border-gray-light">
+                    <p class="text-2xl">
+                      Immagine di brand
+                    </p>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </div>
-                </div>
-                <div class="grid grid-cols-2 gap-3 mb-8">
-                  <a :class="{ 'bg-gray-900': darkMode, 'bg-gray-200': !darkMode }" class="flex flex-col items-center justify-center px-2 py-4 text-center h-full text-md" href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener">
-                    Blog
-                  </a>
-                  <nuxt-link :class="{ 'bg-gray-900': darkMode, 'bg-gray-200': !darkMode }" class="flex flex-col items-center justify-center px-2 py-4 text-center h-full text-md" :to="localePath('me')" @click.native="menuOpen = !menuOpen">
-                    Chi sono
-                  </nuxt-link>
-                </div>
+                </nuxt-link>
+                <nuxt-link :to="localePath({name: 'communication', query: { from: 'navbar-mobile'}})">
+                  <div class="mb-4 pb-4 flex justify-between items-center border-b-2 border-gray-light" >
+                    <p class="text-2xl" style="line-height: 1;">
+                      Comunicazione di brand
+                    </p>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </nuxt-link>
+                <p class="text-xl text-gray-600">
+                  Altro
+                </p>
+                <nuxt-link :to="localePath({name: 'me', query: { from: 'navbar-mobile'}})">
+                  <div class="mb-4 flex items-center justify-between border-b-2 border-gray-light">
+                    <p class="text-2xl">
+                      Chi sono
+                    </p>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </nuxt-link>
+                <a href="https://medium.com/@davidegiovanni96">
+                  <div class="mb-8 pb-4 flex justify-between items-center border-b-2 border-gray-light" >
+                    <p class="text-2xl" style="line-height: 1;">
+                      Blog
+                    </p>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </a>
                 <button :class="{ 'bg-indigo-700': darkMode, 'bg-black': !darkMode }" class="py-4 px-4 w-full text-lg text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg hoverable">
                   {{ $t('shared.header.action') }}
                 </button>
@@ -128,7 +154,7 @@ export default {
 }
 
 .slideDown-enter-to, .slideDown-leave {
-  height: 500px;
+  height: 480px;
   padding: 2rem;
 }
 

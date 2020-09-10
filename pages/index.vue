@@ -127,7 +127,7 @@
           <h2 class="text-2xl md:text-5xl mb-8" style="line-height: 1.2;">
             {{ $t(`home.sections.switch.title`) }}
           </h2>
-          <a href="mailto:davidegiovanni96@gmail.com">
+          <a href="https://form.typeform.com/to/BR9qD3pl">
             <div class="bg-black py-4 px-6 text-lg inline-block text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
               <span class="flex items-center hover:animate-pulse tracking-widest">
                 {{ $t(`home.sections.switch.action`) }}

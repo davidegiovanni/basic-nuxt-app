@@ -30,7 +30,7 @@
               <a href="https://medium.com/@davidegiovanni96" target="_blank" rel="noopener" class="mr-8 hover:text-indigo-500 hidden lg:inline-block">
                 Blog
               </a>
-              <a href="mailto:davidegiovanni96@gmail.com" :title="$t('shared.header.action')">
+              <a href="https://form.typeform.com/to/BR9qD3pl" :title="$t('shared.header.action')">
                 <button :class="{ 'bg-indigo-700': darkMode, 'bg-black': !darkMode }" class="hidden lg:inline-block py-2 px-4 hover:bg-gray-700 focus:bg-gray-800 text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg mr-4 md:mr-0 hoverable">
                   {{ $t('shared.header.action') }}
                 </button>

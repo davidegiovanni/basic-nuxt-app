@@ -69,7 +69,7 @@
               {{ social.title }}
             </a>
           </div>
-          <a href="mailto:davidegiovanni96@gmail.com">
+          <a href="https://form.typeform.com/to/BR9qD3pl">
             <div class="bg-black py-4 px-6 mt-4 inline-block text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg">
               <span class="flex items-center hover:animate-pulse tracking-widest">
                 Scrivimi

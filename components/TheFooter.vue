@@ -79,8 +79,22 @@
           </a>
         </div>
       </div>
-      <div class="text-center text-xs relative" style="bottom: -100px;">
-        {{ $t(`shared.footer.copyright`) }}
+      <div>
+        <p class="flex flex-col mt-8 mb-2 text-2xl">
+          🌍 Scegli la lingua
+        </p>
+        <div class="flex">
+          <nuxt-link :class="[{ 'text-gray-600 bg-gray-200 rounded-lg px-2': this.$i18n.locale === 'it'}, { 'hover:text-gray-500': this.$i18n.locale !== 'it' }]" class="mr-8 hover:text-gray-500" :to="switchLocalePath('it')">Italian</nuxt-link>
+          <nuxt-link :class="[{ 'text-gray-600 bg-gray-200 rounded-lg px-2': this.$i18n.locale === 'en'}, { 'hover:text-gray-500': this.$i18n.locale !== 'en' }]" :to="switchLocalePath('en')">English</nuxt-link>
+        </div>
+      </div>
+      <div class="text-sm relative flex items-center justify-between" style="bottom: -100px;">
+        <a class="hover:text-purple-600" href="/cookie-policy.pdf">
+          Cookie Policy
+        </a>
+        <p>
+          {{ $t(`shared.footer.copyright`) }}
+        </p>
       </div>
     </footer>
   </div>

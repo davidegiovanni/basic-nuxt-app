@@ -1,74 +1,71 @@
 {
     "meta": {
-        "title": "Immagine di brand",
-        "description": "Fai crescere l'azienda e diffondi il tuo prodotto con una immagine di brand perfetta per il tuo target - e per sbaragliare la competizione."
+        "title": "Comunicazione di brand",
+        "description": "Convinci i clienti e raggiungi il tuo target ideale con una comunicazione di brand unificata, coerente e sempre efficace."
     },
     "sections": {
         "header": {
-            "title": "Il tuo target ti riconoscerà sempre. E dimenticherà i competitors.",
-            "description": "Fai crescere l'azienda e diffondi il tuo prodotto con una immagine di brand perfetta per il tuo target - e per sbaragliare la competizione."
+            "title": "La tua comunicazione andrà dritta al cuore dei tuoi clienti. Sempre.",
+            "description": "Convinci i clienti e raggiungi il tuo target ideale con una comunicazione di brand unificata, coerente e sempre efficace."
         },
         "jobs": {
-            "intro": "Progetta una immagine di brand che ti faccia crescere e attirare clienti",
+            "intro": "Progetta una comunicazione di brand che ti faccia crescere e attirare clienti",
             "brand": {
-                "intro": "Brand forte",
-                "title": "Una immagine di brand forte e chiara per il tuo business. E nulla di meno.",
-                "description": "Alla base del mio processo creativo c'è una attenta analisi del tuo business. Valori, idee, business plan: tutto per collegare l'immagine a quello che il tuo brand è e vuole dire. Così il tuo target non potrà che amare l'immagine che presenti.",
+                "intro": "Brand generativo",
+                "title": "Il tuo team saprà sviluppare il tuo brand nel tempo. È una promessa",
+                "description": "Il bello di un bel brand è quando dopo essere nato cresce e si rafforza nel tempo. Se il team non riesce a costruire una immagine di brand che è stata progettata con cura, rischia di produrre materiali e assets che danneggiano la comunicazione e allontanano i clienti. Sta al designer fornire gli strumenti per farlo.",
                 "action": "Scopri come",
                 "jobs": {
                     "one": {
-                        "title": "Creo una immagine di brand che si differenzia dai competitors"
+                        "title": "Consegno al tuo team un design system completo e accessibile"
                     },
                     "two": {
-                        "title": "Costruisco una immagine di brand che rispecchi al 100% i valori"
-                    },
-                    "three": {
-                        "title": "Creo una brand identity che crescerà assieme al tuo business senza problemi"
+                        "title": "Scrivo documentazione basata su casi concreti e con tanti esempi"
                     }
                 }
             },
             "target": {
-                "intro": "Colpisci il target",
-                "title": "Il brand perfetto per i clienti perfetti. E i guadagni fioccano.",
-                "description": "Se una immagine di brand non parla ai clienti che vuoi raggiungere, rischi di perdere importanti fette di nuovi acquirenti. Io studio il target, il suo stile e i competitors per creare il brand che li faccia innamorare.",
+                "intro": "Brand e collaborazione",
+                "title": "Uno per tutti e tutti per uno. Un brand pensato per la collaborazione di team.",
+                "description": "Il potere di un brand sta nei team che si occupano della sua comunicazione. Un team lasciato da solo non genera nulla di efficace. Nel mio processo creativo penso sempre a chi poi dovrà costruire la comunicazione futura di un business.",
                 "action": "Scopri come",
                 "jobs": {
                     "one": {
-                        "title": "Analizzo e studio il tuo target al meglio"
+                        "title": "Creo linee guida per produrre contenuti diversi nel tempo"
                     },
                     "two": {
-                        "title": "Crei una immagine di brand che si connetta con lo stile del target"
+                        "title": "Penso a tutti i canali di comunicazione e alla loro evoluzione con casi d'uso"
                     },
                     "three": {
-                        "title": "Ascolto quello che vuole il target e adatto il brand nel tempo"
+                        "title": "Consegno un design system in uno strumento pensato per la collaborazione di team"
                     }
                 }
             },
             "communication": {
-                "intro": "Comunicazione unificata",
-                "title": "Uno. Cento. Mille canali. La comunicazione del tuo brand sempre coerente. Ed efficace.",
-                "description": "I canali di comunicazione per raggiungere i clienti sono tanti e diversi come i team che se ne occupano. Se non c'è un modo per uniformare la produzione di brand assets, rischi di avere una immagine frammentata e non unificata, rovinando l'impressione che hai sul target e l'efficacia dei messaggi. Io per te:",
+                "intro": "Brand che crescono",
+                "title": "Il tuo business crescerà nel tempo. E farà così anche il tuo brand.",
+                "description": "Un business oggi contiene in potenza i semi del business che sarà domani. Una immagine di brand che dura nel tempo vive con forza assieme ai clienti presenti e futuri. Le immagini di brand che costruisco sono flessibili e non limitano il business solo a quello che è oggi, ma anche a quello che punta a essere domani.",
                 "action": "Scopri come",
                 "jobs": {
                     "one": {
-                        "title": "Creo design systems modulari per i diversi team"
+                        "title": "Studio e progetto l'immagine con forme e stile che dureranno nel tempo"
                     },
                     "two": {
-                        "title": "Scrivo linee guida per creare sempre nuovi brand assets"
+                        "title": "Rendo facile e accessibile il brand ai dipendenti per il suo sviluppo"
                     }
                 }
             }
         },
         "switch": {
-            "title": "Immagini di brand che ottengono risultati: molto più di un semplice logo",
-            "action": "Scopri come funziona"
+            "title": "Comincia a raggiungere il cuore dei tuoi clienti",
+            "action": "Scrivimi"
         },
         "goodbye": {
-            "title": "Di' addio a",
+            "title": "Puoi salutare per sempre",
             "points": [
-                "Immagini di brand che pensi siano bellissime ma che in realtà non comunicano nulla del tuo business",
-                "Loghi di bassa qualità che non colpiscono il cuore del tuo target e ti fanno passare inosservato",
-                "Manuali di brand statici e inutilizzabili che fanno solo confusione ai team"
+                "Piccoli e limitati manuali di brand che non aiutano il team a creare nuovi assets",
+                "Designer che consegnano gli assets e poi non abilitano il team a utilizzarli",
+                "Loghi e immagini che limitano fortemente il brand nel suo sviluppo in altri mercati o con altri target"
             ]
         }
     } 

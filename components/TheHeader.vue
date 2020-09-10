@@ -20,6 +20,11 @@
                   Comunicazione di brand
                 </p>
               </nuxt-link>
+              <nuxt-link :to="localePath({ name: 'portfolio', query: { from: 'navbar-desktop'}})">
+                <p class="ml-8 hover:text-indigo-500 hidden lg:inline-block">
+                  Lavori
+                </p>
+              </nuxt-link>
             </div>
             <div class="flex flex-row items-center justify-between">
               <nuxt-link :to="localePath({ name: 'me', query: { from: 'navbar-desktop'}})">
@@ -92,14 +97,22 @@
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </div>
                 </nuxt-link>
-                <a href="https://medium.com/@davidegiovanni96">
+                <nuxt-link :to="localePath({name: 'portfolio', query: { from: 'navbar-mobile'}})" @click.native="menuOpen = false">
+                  <div class="mb-4 flex items-center justify-between border-b-2 border-gray-light">
+                    <p class="text-2xl">
+                      Lavori
+                    </p>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                </nuxt-link>
+                <!-- <a href="https://medium.com/@davidegiovanni96">
                   <div class="mb-8 pb-4 flex justify-between items-center border-b-2 border-gray-light" >
                     <p class="text-2xl" style="line-height: 1;">
                       Blog
                     </p>
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </div>
-                </a>
+                </a> -->
                 <button :class="{ 'bg-indigo-700': darkMode, 'bg-black': !darkMode }" class="py-4 px-4 w-full text-lg text-white shadow-lg hover:shadow-xl focus:shadow-md rounded-lg hoverable">
                   {{ $t('shared.header.action') }}
                 </button>

@@ -4,9 +4,9 @@ export default {
   strategy: 'prefix',
   parsePages: false,
   pages: {
-    'about/index': {
-      en: '/about-me',
-      it: '/chi-sono'
+    'me/index': {
+      en: '/not-just-a-brand-designer',
+      it: '/non-solo-un-brand-designer'
     },
     'brand/index': {
       en: '/design-winning-brand-image',
@@ -15,6 +15,10 @@ export default {
     'communication/index': {
       en: '/strong-brand-communication',
       it: '/comunicazione-di-brand-efficace'
+    },
+    'portfolio/index': {
+      en: '/brand-design-works-and-projects',
+      it: '/lavori-e-progetti-di-brand-design'
     }
   },
   locales: [

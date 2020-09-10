@@ -1,63 +1,42 @@
 {
     "meta": {
         "title": "Chi sono",
-        "description": "Mi chiamo Davide Giovanni Steccanella e sono un brand designer e creative web developer. Sviluppo loghi e identità di marchio sostenibili ed efficaci."
+        "description": "Sono Davide Giovanni Steccanella. Sono un brand designer che ha fatto della multidisciplinarietà la sua forza e che punta a un design aperto e inclusivo."
     },
     "header": {
-        "title": "Conosciamoci un po'",
-        "description": "Mi chiamo Davide Giovanni Steccanella, classe 1996, e da quando ho 19 mi sono occupato di brand, loghi, immagine e comunicazione dell'identità del marchio. Per fornire un servizio completo, preferisco un approccio multidisciplinare: psicologia, sviluppo web, customer experience e sales vengono inclusi nel mio processo di brand. Quando ho aperto una startup, ho imparato il valore della sostenibilità di un progetto e dell'importanza del valorizzare le risorse umane coinvolte nei progetti."
+        "title": "Un brand designer. Ma non solo",
+        "description": "Le immagini di marchio e i brand sono l'interfaccia che mette in relazione business e persone. La mia teoria è che il brand che vive a lungo è quello che crea una relazione di mutuo supporto con le persone. Dai e ti sarà dato. Ho studiato scienze cognitive, aperto una startup e imparato le fini tecniche del visual design per far sì che i business abbiano i migliori strumenti per costruire una immagine che si relazioni davvero con le persone."
     },
     "sections": {
+        "numbers": [
+            {
+                "number": "5",
+                "title": "Anni di esperienza lavorativa"
+            },
+            {
+                "number": "3",
+                "title": "Anni di startup di prodotto"
+            },
+            {
+                "number": "9",
+                "title": "Progetti di brand e comunicazione"
+            }
+        ],
         "freelancing": {
-            "title": "Il freelancing e l'ascolto del cliente",
-            "description": "Un logo e brand designer freelance è un imprenditore di sè stesso in primis ma anche una risorsa che acquista valore solo quando capisce chiaramente i bisogni e le necessità del cliente. Per sviluppare marchi e brand identity da freelancer, le qualità più alte che ho acquisito sono la comunicazione effettuata in maniera chiara e sviluppare brand assets chiari e usabili da tutti gli stakeholder e shareholders."
+            "title": "Una formazione a tutto tondo. E a tutta birra.",
+            "description": "All'università ho studiato scienze cognitive e neuroscienze. Nel mentre, ho seguito corsi di perfezionamento di design grafico e scienze della comunicazione. Assieme alle conoscenze, ho abbinato tante sfide dalle UX Challenge agli Hackathon, dalle pubblicazioni sul design digitale al branding di un intero festival universitario. La parola d'ordine: multidisciplinarietà."
         },
         "japan": {
-            "title": "Psicologia, Giappone e ricerca",
+            "title": "Ramen, Hizakaya e team multisciplinari",
             "description": "Nel 2018, Tokyo è stata la mia casa per tre mesi nell'ambito di un progetto di ricerca della Chiba University. Ho lavorato con professionisti nel mondo dell'architettura, dello urban design e della salute medica e imparato il valore del confronto e della ricerca sul campo, interagendo con figure professionali anche molto distanti tra loro."
         },
         "startup": {
-            "title": "L'esperienza della startup di prodotto",
-            "description": "Aprire una startup a 21 anni è già un'impresa di suo. Se poi questa startup nasce per sviluppare una piattaforma SaaS venduta alle non profit italiane, la sfida è tripla. In questi anni di startup, ho aumentato le mie conoscenze legate all'implementazione tecnica dei prodotti digitali e assimilato con mano la capacità del design agile di implementare obiettivi di business e strategia aziendali. Ho anche imparato che non è mai troppo presto per un gin tonic del pomeriggio🍸"
+            "title": "E perchè non aprire anche una startup?",
+            "description": "Tornato dal Giappone, la ruota non si è fermata. In vista di un ambizioso progetto, ho voluto partecipare alla nascita di Revas SRL Società Benefit, per costruire un prodotto pensato per portare le organizzazioni non profit nel futuro del cloud. Business, finance, backend, marketing, sales. Con la startup, i cappelli da indossare sono diventati molti. E il design si è arricchito di tutte queste nuove conoscenze."
         },
         "lgbt": {
-            "title": "Diritti civili e diversità 🏳️‍🌈",
-            "description": "Come membro della comunità LGBTQAI+ e non solo, ritengo che oggi più che mai il design, i brand e il business abbiano un enorme potere di plasmare la cultura delle persone tramite gli oggetti che usano ogni giorno. E il miglior modo per creare prodotti rappresentativi e vicini alle persone, è tramite team con livelli di diversità (genere, etnia, religione, età, orientamento sessuale, bacground) elevati. Per questo mi impegno per fare la mia parte nel dare accesso a risorse e strumenti, per favorire l'inclusione tramite l'apprendimento e la conoscenza."
-        },
-        "together": {
-            "title": "Cosa possiamo fare assieme",
-            "services": [
-                {
-                    "icon": "🌺",
-                    "title": "Sviluppare una brand identity di un business o prodotto",
-                    "description": "Dopo un'analisi degli obiettivi di business e dei valori, mi occupo di creare un'immagine di brand agilmente, in modo tale da poterla implementare subito nella comunicazione, e la struttura alla base che permette di farla crescere in maniera sostenibile."
-                },
-                {
-                    "icon": "🌱",
-                    "title": "Fare un rebrand di una brand identity esistente",
-                    "description": "Gli obiettivi di business e le strategie cambiano con il tempo e la brand identity sviluppata un tempo può non essere adeguata alla nuova situazione. In base alle nuove esigenze, sviluppiamo agilmente un'immagine di brand nuova e sostenibile, adatta alle nuove esigenze comunicative."
-                },
-                {
-                    "icon": "🗂",
-                    "title": "Creare un brand design system per i tuoi brand assets",
-                    "description": "Per mantere la comunicazione di brand coerente attraverso tutti i canali e sintonizzare i team che usano i brand assets, sostengo lo sviluppo di documentazione e design systems del brand per fornire ai team un'unica fonte di verità aggiornata."
-                },
-                {
-                    "icon": "🌿",
-                    "title": "Sviluppare uno stile visivo scalabile",
-                    "description": "Un'immagine di brand è formata anche dallo stile visivo che l'accompagna (foto, grafiche, siti web, pubblicità, ecc.). Grazie allo sviluppo di design systems e documentazione, accompagno lo sviluppo di uno stile visivo identificativo che possa essere adattato a diversi mezzi e formati di comunicazione."
-                },
-                {
-                    "icon": "📰",
-                    "title": "Progettare una content strategy on brand",
-                    "description": "Un brand è comunicazione e la comunicazione passa attraverso i contenuti. I canali di comunicazione e le modalità sono tante, quindi assieme sviluppiamo tecniche e strumenti per creare contenuti on brand su larga scala, mantenendo unità e coerenza."
-                },
-                {
-                    "icon": "🖥",
-                    "title": "Creare un sito brandizzato altamente performante",
-                    "description": "Un sito web come portale di comunicazione del brand genera molto valore. Con le mie conoscenze, posso sviluppare un sito web brandizzato con forte ottimizzazione tecnica SEO (come quello che stai navigando ora)"
-                }
-            ]
+            "title": "La mia missione: un design aperto e inclusivo",
+            "description": "Un mondo dove regna la discriminazione è un mondo che non vive al massimo delle sue potenzialità. I designer costruiscono prodotti che i business generano e i prodotti influenzano le nostre vite di tutti giorni. Il mio obiettivo finale è portare più voci nel mondo del design possibili, per riflettere la varietà del mondo negli oggetti che tutti usiamo. Per non escludere nessuno e far accedere tutte e tutti alle medesime opportunità."
         }
     }
 }

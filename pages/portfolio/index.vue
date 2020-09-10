@@ -1,19 +1,19 @@
 <template>
   <div class="bg-black">
     <section v-for="(work, index) in $t(`portfolio.works`)" :key="work.key" class="pt-16">
-      <div :class="containerClass">
-        <h1 v-if="index === 0" class="text-3xl md:text-5xl pb-16 text-white">
+      <div class="container mx-auto px-4">
+        <h1 v-if="index === 0" class="text-2xl md:text-5xl pb-16 text-white">
           {{ $t(`portfolio.title`) }}
         </h1>
         <div class="bg-gray-900 flex flex-row flex-wrap grid grid-cols-3">
           <div class="text-white p-8 sm:p-16 col-span-3 lg:col-span-1">
-            <h2 class="text-2xl">
-              {{ work.title }} <span v-if="index === 0" class="opacity-50">{{ $t(`home.sections.lastproject.lastproject`) }}</span>
+            <h2 class="text-2xl" style="line-height: 1.5;">
+              {{ work.title }} <span v-if="index === 0" class="opacity-50" style="line-height: 1.5;">{{ $t(`portfolio.last`) }}</span>
             </h2>
-            <p class="text-white mb-16 mt-8 leading-loose hidden md:inline-block">
+            <p class="text-white mb-16 mt-8 hidden md:inline-block" style="line-height: 1.6;">
               {{ work.description }}
               <ul class="list-disc list-inside mt-8">
-                <li v-for="point in work.points" :key="point.key" class="mt-4">
+                <li v-for="point in work.points" :key="point.key" class="mt-4" style="line-height: 1.5;">
                   {{ point.title }}
                 </li>
               </ul>

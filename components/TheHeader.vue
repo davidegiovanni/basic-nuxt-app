@@ -65,7 +65,7 @@
                 <p class="text-xl text-gray-600">
                   Servizi
                 </p>
-                <nuxt-link :to="localePath({name: 'brand', query: { from: 'navbar-mobile'}})">
+                <nuxt-link :to="localePath({name: 'brand', query: { from: 'navbar-mobile'}})" @click.native="menuOpen = false">
                   <div class="mb-4 flex items-center justify-between border-b-2 border-gray-light">
                     <p class="text-2xl">
                       Immagine di brand
@@ -73,7 +73,7 @@
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-right w-6 h-6 ml-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </div>
                 </nuxt-link>
-                <nuxt-link :to="localePath({name: 'communication', query: { from: 'navbar-mobile'}})">
+                <nuxt-link :to="localePath({name: 'communication', query: { from: 'navbar-mobile'}})" @click.native="menuOpen = false">
                   <div class="mb-4 pb-4 flex justify-between items-center border-b-2 border-gray-light" >
                     <p class="text-2xl" style="line-height: 1;">
                       Comunicazione di brand
@@ -84,7 +84,7 @@
                 <p class="text-xl text-gray-600">
                   Altro
                 </p>
-                <nuxt-link :to="localePath({name: 'me', query: { from: 'navbar-mobile'}})">
+                <nuxt-link :to="localePath({name: 'me', query: { from: 'navbar-mobile'}})" @click.native="menuOpen = false">
                   <div class="mb-4 flex items-center justify-between border-b-2 border-gray-light">
                     <p class="text-2xl">
                       Chi sono

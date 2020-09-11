@@ -7,6 +7,33 @@
     "last": "Ultimo progetto",
     "works": [
         {
+            "key": "brandy",
+            "title": "Brandy",
+            "description": "Brandy è un blog di articoli, storie e risorse per tutti coloro che si occupano di immagine e comunicazione di brand. È un brand che parla di creatività e regole, secco, forte e pensato per portare il brand design e i brand designer italiani in un futuro migliore.",
+            "points": [
+                {
+                    "key": "1",
+                    "title": "Costruzione Immagine di brand"
+                },
+                {
+                    "key": "2",
+                    "title": "Sviluppo brand system e documentazione"
+                },
+                {
+                    "key": "3",
+                    "title": "Progettazione comunicazione di brand"
+                },
+                {
+                    "key": "4",
+                    "title": "Sviluppo web"
+                }
+            ],
+            "action": "Contattami",
+            "link":"https://form.typeform.com/to/BR9qD3pl",
+            "image": "/website/images/portfolio/brandy.png",
+            "background": "gray-100"
+        },
+        {
             "key": "holy-david-website",
             "title": "Holy David",
             "description": "Per Holy David, misterioso pittore contemporaneo italiano, ho sviluppato una completa identità di brand con una immagine definita intorno al suo target di riferimento, collezionisti d'arte e galleristi, e al suo stile di comunicazione, business-oriented ma anche spigliato e ironico.",

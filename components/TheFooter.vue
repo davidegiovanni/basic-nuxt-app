@@ -3,7 +3,7 @@
     <footer :class="containerClass">
       <div class="flex flex-col flex-wrap">
         <div class="mb-8 sm:mb-0 md:w-1/2">
-          <p class="text-4xl" >
+          <p class="text-4xl">
             Davide Giovanni Steccanella
           </p>
           <p class="text-2xl text-gray-700" style="line-height: 1.5;">
@@ -84,8 +84,12 @@
           🌍 Scegli la lingua
         </p>
         <div class="flex">
-          <nuxt-link :class="[{ 'text-gray-600 bg-gray-200 rounded-lg px-2': this.$i18n.locale === 'it'}, { 'hover:text-gray-500': this.$i18n.locale !== 'it' }]" class="mr-8 hover:text-gray-500" :to="switchLocalePath('it')">Italian</nuxt-link>
-          <nuxt-link :class="[{ 'text-gray-600 bg-gray-200 rounded-lg px-2': this.$i18n.locale === 'en'}, { 'hover:text-gray-500': this.$i18n.locale !== 'en' }]" :to="switchLocalePath('en')">English</nuxt-link>
+          <nuxt-link :class="[{ 'text-gray-600 bg-gray-200 rounded-lg px-2': this.$i18n.locale === 'it'}, { 'hover:text-gray-500': this.$i18n.locale !== 'it' }]" class="mr-8 hover:text-gray-500" :to="switchLocalePath('it')">
+            Italian
+          </nuxt-link>
+          <nuxt-link :class="[{ 'text-gray-600 bg-gray-200 rounded-lg px-2': this.$i18n.locale === 'en'}, { 'hover:text-gray-500': this.$i18n.locale !== 'en' }]" :to="switchLocalePath('en')">
+            English
+          </nuxt-link>
         </div>
       </div>
       <div class="text-sm relative flex items-center justify-between" style="bottom: -100px;">

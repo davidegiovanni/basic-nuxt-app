@@ -79,7 +79,7 @@
                   </div>
                 </nuxt-link>
                 <nuxt-link :to="localePath({name: 'communication', query: { from: 'navbar-mobile'}})" @click.native="menuOpen = false">
-                  <div class="mb-4 pb-4 flex justify-between items-center border-b-2 border-gray-light" >
+                  <div class="mb-4 pb-4 flex justify-between items-center border-b-2 border-gray-light">
                     <p class="text-2xl" style="line-height: 1;">
                       Comunicazione di brand
                     </p>

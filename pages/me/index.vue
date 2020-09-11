@@ -41,10 +41,10 @@
               📐
             </p>
             <h2 class="text-2xl md:text-5xl mb-4" style="line-height: 1.2;">
-             {{ $t(`about.sections.freelancing.title`) }}
+              {{ $t(`about.sections.freelancing.title`) }}
             </h2>
             <h3 class="text-lg md:text-2xl" style="line-height: 1.5;">
-               {{ $t(`about.sections.freelancing.description`) }}
+              {{ $t(`about.sections.freelancing.description`) }}
             </h3>
           </div>
         </div>
@@ -105,7 +105,7 @@
               🏳️‍🌈
             </p>
             <h2 class="text-2xl md:text-5xl mb-4" style="line-height: 1.2;">
-             {{ $t(`about.sections.lgbt.title`) }}
+              {{ $t(`about.sections.lgbt.title`) }}
             </h2>
             <h3 class="text-lg md:text-2xl" style="line-height: 1.5;">
               {{ $t(`about.sections.lgbt.description`) }}

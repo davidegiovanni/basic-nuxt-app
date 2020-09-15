@@ -58,7 +58,7 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/sitemap',
     ['storyblok-nuxt', {
-      accessToken: 'gYHLHlzSVBKFkmc2FvxqQwtt',
+      accessToken: 'QGwiVCrUJQxvJ2gabiRkswtt',
       cacheProvider: 'memory'
     }]
   ],

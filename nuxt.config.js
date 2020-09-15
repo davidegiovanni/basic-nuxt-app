@@ -56,7 +56,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/robots',
     'nuxt-i18n',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['storyblok-nuxt', {
+      accessToken: 'gYHLHlzSVBKFkmc2FvxqQwtt',
+      cacheProvider: 'memory'
+    }]
   ],
   axios,
   i18n,

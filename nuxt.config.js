@@ -1,83 +1,65 @@
-import axios from './config/axios.config'
-import i18n from './config/i18n.config'
-import sitemap from './config/sitemap.config'
+import axios from './config/axios.config.ts'
+import i18n from './config/i18n.config.ts'
 
 export default {
-  mode: 'universal',
-  env: {
-    BASE_URL: 'https://davidegiovanni.com/'
-  },
-  /*
-   ** Headers of the page
-   */
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: ' %s - Davide Giovanni Steccanella',
+    titleTemplate: ' %s | Davide Giovanni Steccanella',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      },
-      { name: 'theme-color', content: '#ffffff' }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/images/shared/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/website/images/shared/favicon.png' },
+      { rel: 'stylesheet', href: 'https://fonts.gstatic.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com'},
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet'}
     ]
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
-  css: [
-    '@/assets/style/index.scss'
-  ],
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [
-    '~/plugins/jsonld'
-  ],
-  buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/google-analytics'
-  ],
-  googleAnalytics: {
-    id: 'UA-80324273-1'
+  env: {
+    BASE_URL: process.env.BASE_URL  
   },
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/robots',
-    'nuxt-i18n',
-    '@nuxtjs/sitemap',
-    ['storyblok-nuxt', {
-      accessToken: 'QGwiVCrUJQxvJ2gabiRkswtt',
-      cacheProvider: 'memory'
-    }]
+  // Global CSS (https://go.nuxtjs.dev/config-css)
+  css: [
+    '@/assets/tailwind.css'
   ],
-  axios,
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  plugins: [
+  ],
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss'
+  ],
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+    'nuxt-i18n',
+    '@nuxtjs/robots'
+  ],
   i18n,
+  axios,
   robots: {
     UserAgent: '*',
-    Disallow: '',
-    Allow: '/',
-    Sitemap: (process.env.BASE_URL || 'http://localhost:3000') + '/sitemap.xml'
+    Disallow: '/'
   },
-  sitemap,
-  /*
-   ** Build configuration
-   */
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend (config, ctx) {}
+    extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.ya?ml$/,
+        use: 'js-yaml-loader'
+      })
+    }
   }
 }

@@ -2,27 +2,29 @@
   "version": 2,
   "name": "https://davidegiovanni.com/",
   "build": {
-      "env": {
-          "BASE_URL": "https://davidegiovanni.com/"
-      }
+    "env": {
+      "BASE_URL": "https://davidegiovanni.com/"
+    }
   },
   "env": {
-      "BASE_URL": "https://davidegiovanni.com/" 
+    "BASE_URL": "https://davidegiovanni.com/"
   },
   "builds": [
-      {
-          "src": "nuxt.config.js",
-          "use": "@nuxtjs/now-builder",
-          "config": {
-              "serverFiles": [
-                  "config/**",
-                  "locales/**",
-                  "./.nuxt/dist/sitemap-routes.json"
-              ]
-          }
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {
+        "serverFiles": [
+          "config/**",
+          "locales/**",
+          "./.nuxt/dist/sitemap-routes.json"
+        ]
       }
+    }
   ],
   "scope": "ACCOUNT_NAME",
-  "regions": ["bru1"],
+  "regions": [
+    "bru1"
+  ],
   "public": false
 }

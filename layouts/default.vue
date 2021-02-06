@@ -1,75 +1,41 @@
 <template>
-  <div>
-    <the-header />
-    <nuxt />
-    <the-footer />
-    <the-cookie-banner class="fixed right-0 bottom-0 w-full md:w-cookie-banner z-50" />
+  <div :class="mainWrapperClass">
+    <div :class="routeWrapperClass">
+      <nuxt :class="routeClass" />
+    </div>
   </div>
 </template>
 
-<script>
-import TheHeader from '@/components/TheHeader'
-import TheFooter from '@/components/TheFooter'
-import TheCookieBanner from '@/components/TheCookieBanner'
+<script lang="ts">
+import {Vue, Prop, Component } from 'vue-property-decorator'
 
-export default {
-  jsonld () {
-    return {
-      '@context': 'http://schema.org',
-      '@type': 'Service',
-      name: this.$t('schema.service.name'),
-      category: 'design',
-      serviceType: ['Brand design', 'Logo design', 'Design systems', 'Sviluppo marchio e immagine coordinata', 'Content strategy'],
-      url: process.env.BASE_URL,
-      areaServed: {
-        '@type': 'State',
-        name: 'Italia'
-      },
-      provider: {
-        '@type': 'Person',
-        name: 'Davide Giovanni Steccanella',
-        email: 'davidegiovanni96@gmail.com',
-        jobTitle: ['brand designer', 'visual designer', 'UI designer', 'Augmented Reality designer', 'SparkAR Creator'],
-        knowsLanguage: [
-          {
-            '@type': 'Language',
-            name: 'Italiano',
-            alternateName: 'it'
-          },
-          {
-            '@type': 'Language',
-            name: 'English',
-            alternateName: 'en'
-          }
-        ]
-      },
-      sameAs: [
-        'https://dribbble.com/davidegiovanni',
-        'https://github.com/davidegiovanni',
-        'https://www.behance.net/dvgs',
-        'https://www.linkedin.com/in/davidegiovanni96/',
-        'https://medium.com/@davidegiovanni96'
-      ]
-    }
-  },
-  components: {
-    TheHeader,
-    TheFooter,
-    TheCookieBanner
-  },
-  head () {
-    const i18nSeo = this.$nuxtI18nSeo()
-    return {
-      htmlAttrs: {
-        ...i18nSeo.htmlAttrs
-      },
-      meta: [
-        ...i18nSeo.meta
-      ],
-      link: [
-        ...i18nSeo.link
-      ]
-    }
+@Component({})
+export default class LayoutDefault extends Vue {
+
+//styles
+
+  get mainWrapperClass () {
+    return 'min-h-screen relative bg-gray-900'
+  }
+
+  get routeWrapperClass () {
+    return 'min-h-screen flex flex-col'
+  }
+
+  get routeClass () {
+    return 'flex-1'
+  }
+
+  get gradientWrapper () {
+    return 'fixed top-0 left-0 w-screen h-screen flex-1 min-h-screen flex flex-col overflow-hidden'
+  }
+
+  get gradientOverlayClass () {
+    return 'h-screen w-full relative z-50 bg-white bg-opacity-95'
+  }
+
+  get gradientInnerContainerClass () {
+    return 'h-screen w-full absolute top-0 left-0 bg-black'
   }
 }
 </script>

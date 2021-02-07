@@ -12,7 +12,7 @@
                 {{ $t('shared.errors.notfound.title') }}
               </h1>
             </div>
-            <h2 class="mt-2 md:mt-6 mb-4 md:mb-8 md:text-xl">
+            <h2 class="mt-2 md:mt-6 mb-4 md:mb-8 md:text-xl text-white">
               {{ $t('shared.errors.notfound.description1') }}
               <br>
               <span class="my-2 rounded bg-white bg-opacity-25 px-2 py-1 inline-block">
@@ -38,7 +38,7 @@
                 {{ $t('shared.errors.notfound.title') }}
               </h1>
             </div>
-            <h2 class="mt-2 md:mt-6 mb-4 md:mb-8 md:text-xl">
+            <h2 class="mt-2 md:mt-6 mb-4 md:mb-8 md:text-xl text-white">
               {{ $t('shared.errors.notfound.description1') }}
               <br>
               <span class="my-2 rounded bg-white bg-opacity-25 px-2 py-1 inline-block">
@@ -64,7 +64,7 @@
                 {{ $t('shared.errors.api.title') }}
               </h1>
             </div>
-            <h2 class="mt-2 md:mt-6 mb-4 md:mb-8 md:text-xl">
+            <h2 class="mt-2 md:mt-6 mb-4 md:mb-8 md:text-xl text-white">
               {{ $t('shared.errors.api.description') }}
             </h2>
             <a href="mailto:davidegiovanni96@gmail.com" class="bg-white text-black inline-block rounded-full px-8 py-2 text-xl hover:bg-opacity-75">

@@ -8,6 +8,11 @@ errors:
     description1: Prova a vedere se hai per caso scritto male l'url. Vedo che il post che hai scritto è
     description2: È corretto? Se lo è, allora forse ho spostato questo post oppure l'ho cancellato. Ti chiedo scusa! Prova a vedere se tornando alla home riesci a trovarlo
     action: Andiamo alla home
+  notfoundpage:
+    title: Questo pagina non esiste!
+    description1: Prova a vedere se hai per caso scritto male l'url. Vedo che la pagina che hai scritto è
+    description2: È corretta? Se lo è, allora forse ho spostato questa pagina oppure l'ho cancellata. Ti chiedo scusa! Prova a vedere se tornando alla home riesci a trovarla
+    action: Andiamo alla home
 post:
   hi: Ciao
   iam: Mi chiamo

@@ -1,5 +1,6 @@
 import axios from './config/axios.config.ts'
 import i18n from './config/i18n.config.ts'
+import sitemap from './config/sitemap.config.ts'
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -45,13 +46,16 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-i18n',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
   i18n,
   axios,
+  sitemap,
   robots: {
     UserAgent: '*',
-    Disallow: '/'
+    Disallow: '/',
+    Sitemap: (process.env.BASE_URL + '/sitemap.xml')
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

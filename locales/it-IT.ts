@@ -1,7 +1,9 @@
 import index from '@/static/website/pages/it-IT/index/index.yaml'
+import shared from '@/static/website/pages/it-IT/shared/shared.yaml'
 
 const data = {
-    index
+    index,
+    shared
   }
   
 export default () => {

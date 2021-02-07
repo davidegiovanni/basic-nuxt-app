@@ -1,0 +1,15 @@
+errors:
+  api:
+    title: C'è un problema di connessione
+    description: Di solito, questo accade per due motivi - o c'è un problema con i server del mio sito web o forse la tua connessione non riesce a collegarsi a Internet. Prova a controllare. Se continui a vedere questo messaggio, allora è un errore da parte del mio sito web. Scrivimi pure che vedo di sistemare il prima possibile!
+    action: Scrivimi
+  notfound:
+    title: Questo post non esiste!
+    description1: Prova a vedere se hai per caso scritto male l'url. Vedo che il post che hai scritto è
+    description2: È corretto? Se lo è, allora forse ho spostato questo post oppure l'ho cancellato. Ti chiedo scusa! Prova a vedere se tornando alla home riesci a trovarlo
+    action: Andiamo alla home
+post:
+  hi: Ciao
+  iam: Mi chiamo
+  brand: Sono un brand designer. E anche di più. Ti piace quello che leggi?
+  visit: Visita il mio sito

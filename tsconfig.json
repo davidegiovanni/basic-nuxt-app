@@ -27,7 +27,9 @@
       "@types/node",
       "@nuxt/types",
       "nuxt-i18n",
-      "@nuxtjs/axios"
+      "@nuxtjs/axios",
+      "@types/showdown",
+      "showdown"
     ]
   },
   "exclude": [

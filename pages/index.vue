@@ -85,11 +85,14 @@
 </template>
 
 <script lang="ts">
-import {Vue, Prop, Component } from 'vue-property-decorator'
+import {Vue, Prop, Component } from 'nuxt-property-decorator'
 import metadata from '@/utils/metadata.ts'
 
 @Component({
-  head (this: Index): object {
+})
+export default class Index extends Vue {
+
+  head () {
     return {
       title: this.$t('index.meta.title'),
       meta: metadata({
@@ -109,8 +112,8 @@ import metadata from '@/utils/metadata.ts'
       }
     }
   }
-})
-export default class Index extends Vue {
+  
+  // ListPublicContents per tutti i post di una directory e GetPublicDirectory dettagli Directory
 
   get titleClass () {
     return 'text-3xl md:text-4xl lg:text-6xl font-bold leading-tight relative z-50'

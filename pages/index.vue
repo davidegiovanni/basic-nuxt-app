@@ -63,20 +63,41 @@
       </div>
     </div>
     <div>
-      <div :class="sectionClass" class="bg-black">
+      <div :class="sectionClass" class="bg-black mb-4">
         <div class="flex items-center justify-center h-full">
           <div>
             <img class="mx-auto w-48 lg:w-1/5 mb-6" src="/website/images/shared/me.png" :alt="$t('index.contacts.title')">
               <div class="mx-auto lg:w-2/3 text-center">
                 <h2 :class="titleClass" style="background: #FF512F; background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  background: linear-gradient(to right, #DD2476, #FF512F); background-clip: text; background-clip: text; -webkit-background-clip: text; color: transparent;">
-                  {{ $t('index.contacts.title') }}
+                  {{ $t('shared.blog.title') }}
                 </h2>
+                <h3 class="text-white lg:text-2xl">
+                  {{ $t('shared.blog.description') }}
+                </h3>
               </div>
               <div class="text-center mt-8">
-                <a class="bg-white inline-block mx-auto rounded-full px-8 py-2 text-xl hover:bg-opacity-75" href="https://form.typeform.com/to/BR9qD3pl">
-                  {{ $t('index.contacts.action') }}
-                </a>
+                <nuxt-link :to="localePath('blog')" class="bg-white inline-block mx-auto rounded-full px-8 py-2 text-xl hover:bg-opacity-75" href="https://form.typeform.com/to/BR9qD3pl">
+                  {{ $t('shared.blog.action') }}
+                </nuxt-link>
               </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="bg-black rounded-3xl bg-black p-6 md:p-12">
+        <div class="flex items-center justify-center h-full">
+          <div>
+            <div class="mx-auto lg:w-2/3 text-center">
+              <h2 :class="titleClass" style="background: #FF512F; background: -webkit-linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);  background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%); background-clip: text; background-clip: text; -webkit-background-clip: text; color: transparent;">
+                {{ $t('index.contacts.title') }}
+              </h2>
+            </div>
+            <div class="text-center mt-8">
+              <a class="bg-white inline-block mx-auto rounded-full px-8 py-2 text-xl hover:bg-opacity-75" href="https://form.typeform.com/to/BR9qD3pl">
+                {{ $t('index.contacts.action') }}
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -115,7 +115,7 @@
                   <p class="text-lg mb-4">
                     {{ $t('shared.post.brand') }}
                   </p>
-                  <nuxt-link :to="localePath('index')" class="bg-white text-black inline-block rounded-full px-8 py-2 text-xl hover:bg-opacity-75">
+                  <nuxt-link :to="localePath('blog')" class="bg-white text-black inline-block rounded-full px-8 py-2 text-xl hover:bg-opacity-75">
                     {{ $t('shared.post.visit') }}
                   </nuxt-link>
                 </div>

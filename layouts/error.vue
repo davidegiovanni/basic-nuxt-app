@@ -63,7 +63,7 @@ export default class ErrorPage extends Vue {
   }
 
   get sectionClass () {
-    return 'rounded-3xl lg:h-screen p-12 overflow-hidden relative'
+    return 'rounded-3xl lg:h-screen p-6 md:p-12 overflow-hidden relative'
   }
 }
 </script>

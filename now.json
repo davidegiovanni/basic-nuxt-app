@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "name": "https://davidegiovanni.com/",
+  "name": "https://davidegiovanni.com",
   "build": {
     "env": {
-      "BASE_URL": "https://davidegiovanni.com/"
+      "BASE_URL": "https://davidegiovanni.com"
     }
   },
   "env": {
-    "BASE_URL": "https://davidegiovanni.com/"
+    "BASE_URL": "https://davidegiovanni.com"
   },
   "builds": [
     {

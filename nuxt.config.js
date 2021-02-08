@@ -38,7 +38,8 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -52,6 +53,9 @@ export default {
   i18n,
   axios,
   sitemap,
+  googleAnalytics: {
+    id: 'UA-80324273-1'
+  },
   robots: {
     UserAgent: '*',
     Allow: '/',

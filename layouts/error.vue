@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import {Vue, Component } from 'nuxt-property-decorator'
-import metadata from '@/utils/metadata.ts'
+import metadata from '@/utils/metadata'
 
 @Component({
 })
@@ -42,7 +42,7 @@ export default class ErrorPage extends Vue {
         title: this.$t('shared.errors.notfoundpage.title'),
         description: this.$t('shared.errors.notfoundpage.title'),
         url: process.env.BASE_URL + this.$route.path,
-        image: process.env.BASE_URL + '/website/images/shared/og-image.png'
+        image: process.env.BASE_URL + '/website/images/shared/first-mesh.png'
       }),
       link: [
         {

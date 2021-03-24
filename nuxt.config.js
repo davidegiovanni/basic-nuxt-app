@@ -47,7 +47,6 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-i18n',
-    '@nuxtjs/robots',
     '@nuxtjs/sitemap'
   ],
   i18n,
@@ -55,11 +54,6 @@ export default {
   sitemap,
   googleAnalytics: {
     id: 'UA-80324273-1'
-  },
-  robots: {
-    UserAgent: '*',
-    Allow: '/',
-    Sitemap: (process.env.BASE_URL + '/sitemap.xml')
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

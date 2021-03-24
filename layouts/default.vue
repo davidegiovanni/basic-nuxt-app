@@ -15,7 +15,7 @@ export default class LayoutDefault extends Vue {
 //styles
 
   get mainWrapperClass () {
-    return 'min-h-screen relative bg-gray-900'
+    return 'min-h-screen relative bg-black'
   }
 
   get routeWrapperClass () {

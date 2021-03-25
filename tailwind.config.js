@@ -10,6 +10,9 @@ module.exports = {
       'display': ['Domine', 'serif']
     },
     extend: {
+      screens: {
+        '3xl': '1600px',
+      },
       spacing: {
         'half': '50%',
         80: '80%',

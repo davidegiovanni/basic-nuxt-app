@@ -44,8 +44,8 @@
         </div>
       </div>
       <div :class="sectionClass" class="bg-gray-900 md:col-span-2 pt-64 md:pt-0 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-75">
-          <video class="w-full h-full object-cover" loop autoplay muted playsinline>
+        <div class="absolute top-0 left-0 w-full h-full opacity-75 rounded-3xl">
+          <video class="w-full h-full object-cover rounded-3xl overflow-hidden" loop autoplay muted playsinline>
             <source src="/website/videos/cloud.mp4" type="video/mp4">
           </video>
         </div>
@@ -78,8 +78,8 @@
         </div>
       </div>
       <div :class="sectionClass" class="bg-gray-900 md:col-span-5 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-75">
-          <video class="w-full h-full object-cover" loop autoplay muted playsinline>
+        <div class="absolute top-0 left-0 w-full h-full opacity-75 rounded-3xl overflow-hidden">
+          <video class="w-full h-full object-cover rounded-3xl" loop autoplay muted playsinline>
             <source src="/website/videos/purpose.mp4" type="video/mp4">
           </video>
         </div>
@@ -102,7 +102,7 @@
             </h3>
           </div>
         </div>
-        <div class="absolute bottom-0 inset-x-0 mx-auto md:w-4/5 transform md:translate-y-4 lg:translate-y-32 overflow-hidden">
+        <div class="absolute bottom-0 inset-x-0 mx-auto w-4/5 transform translate-y-16 md:translate-y-0 lg:translate-y-32 overflow-hidden">
           <img class="relative h-full w-full object-cover transform origin-bottom-left hover:rotate-6 transition duration-300 ease-in-out delay-300 z-20" src="/website/images/shared/disconnected.png" :alt="$t('index.philosophy.title')">
           <img class="h-full w-full object-cover absolute top-0 left-0 z-10 transform translate-y-6 animate-pulse" src="/website/images/shared/behind-phones.png" :alt="$t('index.philosophy.title')">
         </div>

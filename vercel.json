@@ -21,10 +21,5 @@
         ]
       }
     }
-  ],
-  "scope": "ACCOUNT_NAME",
-  "regions": [
-    "bru1"
-  ],
-  "public": false
+  ]
 }

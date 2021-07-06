@@ -1,22 +1,26 @@
 meta:
-    title: 😌 Ciao, sono Davide
-    description: Mi chiamo Davide Giovanni Steccanella. Sono laureato in scienze cognitive. Costruisco brand. Credo nel potere della leggerezza. Sogno una tecnologia diversa. Parliamo.
+  title: Ciao, sono Davide Steccanella
+  description: Mi chiamo Davide Giovanni Steccanella. Sono laureato in scienze cognitive e lavoro a Revas Società Benefit come designer per portare le organizzazioni nel futuro del lavoro.
 bravo:
-  title: 😌 Ciao, sono Davide
-  description: Mi chiamo Davide Giovanni Steccanella. Credo in un mondo di pari opportunità. Credo in una tecnologia umana e lenta. Amo l'arte e la magia delle neuroscienze. Credo nel potere della comunicazione di trasformare la vita delle persone. E lavoro perchè questo accada. In meglio.
-colours:
+  title: Ciao, sono Davide
+  description: Mi chiamo Davide Giovanni Steccanella. Sono laureato in scienze cognitive e lavoro a Revas Società Benefit come designer per portare le organizzazioni nel futuro del lavoro.
+hiring:
+  title: A Revas stiamo assumendo!
+  action: Scopri di più
+degree:
   title: Sono laureato in scienze cognitive
   description: Grafica, imprenditorialità, psicologia, tecnologia, filosofia. Per destreggiarsi nel mondo di oggi e crescere, è importante conoscere tanti ambiti e fare tante esperienze. E soprattutto, imparare a essere flessibili e adattarsi alle nuove sfide. Ho cominciato come studente di psicologia, ho aperto un'azienda, partecipato a ricerche in Giappone e continuato a esplorare i mondi dell'arte e del tech. E sono appena all'inizio.
-brand:
-  title: Costruisco brand
+revas:
+  title: Sono designer a Revas Società Benefit
   description: Mi piacciono i brand perchè sono il regno della psicologia comportamentale ed economica. Ho cominciato a costruire brand partendo dal loro visual e poi ne ho approfondito l'aspetto cognitivo e comunicativo. Il mio obiettivo è costruire brand e risorse che siamo strumenti potenti in mano ai comunicatori di domani
-italian:
+  action: Scopri di più
+light:
   title: Credo nel potere della leggerezza
   description: Perchè la gravità è la qualità degli oggetti che affondano.
 differences:
   title: Sogno una tecnologia diversa
   description: Credo nel potere del design e della comunicazione di avere effetti a lungo termine sulla vita delle persone. La tecnologia offre strumenti potenti. Vedo un futuro dove le persone non sono più utenti passivi che subiscono la tecnologia, ma suoi liberi utilizzatori. Vedo un futuro dove tutti e tutte hanno la possibilità di esprimersi, in una società che cresce grazie alla valorizzazione di ogni sua risorsa e di ogni sua minoranza.
-life:
+sum:
   title: Il tutto è molto di più che la somma delle singole parti
   description: 
 unplugged:

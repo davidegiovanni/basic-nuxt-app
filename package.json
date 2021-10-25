@@ -25,6 +25,7 @@
     "nuxt-i18n": "^6.16.0",
     "nuxt-property-decorator": "^2.9.1",
     "query-string": "^7.0.1",
+    "scrollmagic": "^2.0.8",
     "showdown": "^1.9.1",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2"
@@ -41,7 +42,8 @@
     "babel-eslint": "^10.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.10.0",
-    "eslint-plugin-nuxt": "^1.0.0"
+    "eslint-plugin-nuxt": "^1.0.0",
+    "nuxt-gsap-module": "^1.5.0"
   },
   "husky": {
     "hooks": {

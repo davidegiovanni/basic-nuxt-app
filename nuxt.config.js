@@ -16,19 +16,17 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.gstatic.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet'}
-    ]
+    ],
+    script: []
   },
   env: {
     BASE_URL: process.env.BASE_URL  
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/tailwind.css'
-  ],
+  css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -38,7 +36,8 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'nuxt-gsap-module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -51,6 +50,12 @@ export default {
   i18n,
   axios,
   sitemap,
+  gsap: {
+    extraPlugins: {
+      scrollTo: true,
+      scrollTrigger: true
+    }
+  },
   googleAnalytics: {
     id: 'UA-80324273-1'
   },

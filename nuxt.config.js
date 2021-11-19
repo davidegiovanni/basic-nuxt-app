@@ -15,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/website/images/shared/favicon.png' },
       { rel: 'stylesheet', href: 'https://fonts.gstatic.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com'},
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet'}
     ],
     script: []
   },
@@ -53,7 +53,8 @@ export default {
   gsap: {
     extraPlugins: {
       scrollTo: true,
-      scrollTrigger: true
+      scrollTrigger: true,
+      text: true
     }
   },
   googleAnalytics: {

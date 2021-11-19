@@ -1,6 +1,6 @@
 <template>
-  <div :class="mainWrapperClass">
-    <div :class="routeWrapperClass">
+  <div id="layout" :class="mainWrapperClass">
+    <div v-if="!hideNuxt" :class="routeWrapperClass">
       <nuxt :class="routeClass" />
     </div>
   </div>
@@ -12,8 +12,25 @@ import {Vue, Prop, Component } from 'nuxt-property-decorator'
 @Component({})
 export default class LayoutDefault extends Vue {
 
+  mounted () {
+    window.addEventListener('resize', this.reload);
+    setTimeout(() => {
+      this.hideNuxt = false
+    }, 1500)
+  }
+
 //styles
 
+  hideNuxt = true
+  reload () {
+    this.hideNuxt = true
+    setTimeout(() => {
+      document.location.reload()
+    }, 500)
+    setTimeout(() => {
+      this.hideNuxt = false
+    }, 3000)
+  }
   get mainWrapperClass () {
     return 'min-h-screen relative bg-black'
   }

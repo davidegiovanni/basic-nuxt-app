@@ -13,7 +13,18 @@ import {Vue, Prop, Component } from 'nuxt-property-decorator'
 export default class LayoutDefault extends Vue {
 
   mounted () {
-    window.addEventListener('resize', this.reload);
+    const width: any = window.innerWidth
+    window.addEventListener('resize', () => {
+      if (window.innerWidth !== width) {
+        this.hideNuxt = true
+        setTimeout(() => {
+          document.location.reload()
+        }, 500)
+        setTimeout(() => {
+          this.hideNuxt = false
+        }, 3000)
+      }
+    });
     setTimeout(() => {
       this.hideNuxt = false
     }, 1500)

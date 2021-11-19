@@ -57,10 +57,10 @@
           <h2 id="conquerText2" class="text-white font-display text-3xl lg:text-6xl mb-2">
             dei competitors
           </h2>
-          <h2 id="conquerText3" class="text-white font-display text-4xl mb-2">
+          <h2 id="conquerText3" class="text-white font-display text-4xl lg:text-6xl mb-2">
             del web
           </h2>
-          <h2 class="relative bottom-0 right-0 text-white font-display text-5xl mb-2 inline-flex">
+          <h2 class="relative bottom-0 right-0 text-white font-display text-5xl lg:text-6xl mb-2 inline-flex">
             <span id="conquerText4">del mond</span><span id="o" class="inline-block">o</span>
           </h2>
         </div>

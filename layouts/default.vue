@@ -75,6 +75,13 @@ export default class LayoutDefault extends Vue {
 <style scoped>
 @font-face {
   font-family: 'Basteleur-Bold';
-  src: local('Basteleur-Bold'), url('@/static/website/fonts/Basteleur-Bold.woff') format('woff');
+  src: local('Basteleur-Bold'), url('@/static/website/fonts/Basteleur-Bold.woff') format('woff2');
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
 }
 </style>

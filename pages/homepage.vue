@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black">
+  <div class="bg-black overflow-hidden">
     <index-page />
   </div>
 </template>

@@ -6,8 +6,9 @@ module.exports = {
   purge: [],
   theme: {
     fontFamily: {
-      'sans': ['Manrope', 'sans-serif'],
-      'display': ['Basteleur-Bold', 'serif']
+      'sans': ['itc-avant-garde-gothic-pro', 'sans-serif'],
+      'display': ['tuppence', 'serif'],
+      'mono': ['Basteleur-Bold', 'serif']
     },
     scale: {
       '0': '0',
@@ -55,7 +56,13 @@ module.exports = {
         'volume-shadow-inset': '0px -0.75px 0.75px rgba(0,0,0,0.25),0px 1px 2px rgba(255,255,255,0.2),inset 0px 1px 4px rgba(0,0,0,0.15), 0px -0.75px 0.75px rgba(0,0,0,0.25),0px 1px 2px rgba(255,255,255,0.18),inset 0px 2px 5px rgba(0,0,0,0.2)'
       },
       colors: {
-        arancione: '#FF7A00'
+        'arancione': '#FF7A00',
+        'pesca': '#FF8888',
+        'viola': '#6700A6',
+        'porpora': '#A6001E',
+        'ghiaccio': '#BAFFFB',
+        'notte': '#003667',
+        'muschio': '#007D76'
       }
     },
   },

@@ -26,10 +26,10 @@
       </div>
     </div>
     <section id="headerSection" class="text-white h-screen overflow-hidden z-30 flex items-center justify-center">
-      <div class="w-full max-w-screen-xl lg:mx-auto h-5/6 lg:h-full 2xl:h-5/6 flex flex-col items-center justify-between text-center">
+      <div class="w-full max-w-screen-xl lg:mx-auto h-full md:h-5/6 lg:h-full 2xl:h-5/6 flex flex-col items-center justify-between text-center">
         <div class="w-full h-16" />
         <div class="overflow-hidden pb-8 px-4 md:px-0">
-          <h2 id="headerTagline" class="text-white text-5xl md:text-6xl font-thin w-10/12 md:max-w-screen-sm mx-auto">
+          <h2 id="headerTagline" class="text-white text-4xl md:text-6xl font-thin w-10/12 md:max-w-screen-sm mx-auto">
             Il tuo biglietto per un brand mai visto prima 
           </h2>
         </div>
@@ -66,10 +66,10 @@
         </div>
       </div>
       <div id="brandBeauty" class="relative z-30 font-display text-4xl">
-        <h2 id="beautiful" class="font-display flex flex-col md:flex-row items-center justify-center text-white">
+        <h2 id="beautiful" class="font-display flex flex-col md:flex-row items-center justify-center text-white text-2xl lg:text-4xl">
           <span id="with" class="block md:pr-3">Con un brand</span> <span class="block" id="outside">bellissimo fuori</span>
         </h2>
-        <h2 id="inside" class="text-white text-center">
+        <h2 id="inside" class="text-white text-center text-2xl lg:text-4xl">
           E fantastico dentro
         </h2>
       </div>
@@ -81,7 +81,7 @@
         <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
           <div id="decorations" class="w-full h-full border-2 border-white rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
           <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo.svg" alt="">
-          <h2 id="processTitle" class="font-display w-full w-2/3 mx-auto text-2xl lg:text-5xl">
+          <h2 id="processTitle" class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
             Un processo di branding mai visto prima
           </h2>
           <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo.svg" alt="">
@@ -92,7 +92,7 @@
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
             <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
-            <h2 class="font-display w-full w-2/3 mx-auto text-2xl lg:text-5xl">
+            <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Super pieno di scienza
             </h2>
             <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
@@ -102,7 +102,7 @@
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
             <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
-            <h2 class="font-display w-full w-2/3 mx-auto text-2xl lg:text-5xl">
+            <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Ispirato al Design Sprint di Google
             </h2>
             <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
@@ -112,7 +112,7 @@
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
             <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
-            <h2 class="font-display w-full w-2/3 mx-auto text-2xl lg:text-5xl">
+            <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Per brand che funzionano
             </h2>
             <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
@@ -122,7 +122,7 @@
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
             <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
-            <h2 class="font-display w-full w-2/3 mx-auto text-2xl lg:text-5xl">
+            <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               E basta.
             </h2>
             <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
@@ -147,7 +147,7 @@
     </section>
     <div id="websiteBoxSection" class="h-screen w-screen flex items-center justify-scenter relative">
       <section id="websiteBoxSection" class="h-5/6 lg:h-full 2xl:h-5/6 w-full container mx-auto p-8 overflow-hidden flex flex items-center justify-center">
-        <div id="websiteBox" class="w-full h-full mx-auto border border-white p-4 md:p-8 lg:p-16 overflow-hidden relative">
+        <div id="websiteBox" class="w-full h-full mx-auto border border-white p-2 md:p-8 lg:p-16 overflow-hidden relative">
           <div class="w-full flex items-center justify-between h-10 border-t bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute bottom-0 inset-x-0 z-40">
             <p class="text-white border-r border-current px-4">
               {{ time }}
@@ -210,7 +210,7 @@
                 </p>
                 <img id="popUp1Text" class="absolute top-0 inset-0 object-cover w-full h-full" src="https://media0.giphy.com/media/l0HeaNsyouA7XetWw/giphy.gif?cid=ecf05e475khgv862sq653rb0n102or2ml4qlzcc0ji8x6qia&rid=giphy.gif&ct=g" alt="">
               </div>
-              <div id="popUp2" :style="`width: 100% !important; height: ${popUp2Hidden.offsetHeight}px !important;`" class="transform translate-y-48 md:translate-x-16 lg:-translate-x-16 lg:translate-y-96 relative border border-white px-8 pt-16 pb-8 md:p-16 xl:p-32 lg:mr-8 bg-purple-500 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
+              <div id="popUp2" :style="`width: 100% !important; height: ${popUp2Hidden.offsetHeight}px !important;`" class="transform translate-y-4 md:translate-x-16 lg:-translate-x-16 lg:translate-y-96 relative border border-white px-8 pt-16 pb-8 md:p-16 xl:p-32 lg:mr-8 bg-purple-500 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
                 <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
                   <div class="inline-flex items-center">
                     <span v-for="n in 3" :key="n" class="rounded-full bg-white h-3 w-0.5 mr-1" />
@@ -227,47 +227,6 @@
             </p>
           </div>
           <div class="hidden w-full">
-            <h3 class="text-2xl md:text-4xl lg:text-6xl text-white w-full xl:w-4/5 h-full mx-auto mb-72 px-8">
-              Sviluppa il tuo brand e poi portalo alla conquista del web con un sito web degno della sua bellezza. E con delle performance stellari su ogni tipo di dispositivo.
-            </h3>
-            <div class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 lg:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                Performance <span id="ovalText" class="text-4xl lg:text-6xl">Stellari</span>
-              </p>
-              <div class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/5wWf7GZPPlIvA2DyR6o/giphy.gif?cid=ecf05e475dnh6t2amj7neusm5ys9xuawjbvng97q9b01ww4q&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <div class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 lg:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                SEO <span id="ovalText" class="text-4xl lg:text-6xl">Impeccabile</span>
-              </p>
-              <div class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/gNIcntbUWI1XO/giphy.gif?cid=ecf05e47h4ii0z15v1ayr34ruv2hsole5hy3t2yea86t004j&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <div class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 lg:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                Animazioni <span id="ovalText" class="text-4xl lg:text-6xl">Brillanti</span>
-              </p>
-              <div class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media3.giphy.com/media/26uf8tQf6WVQPxP9u/giphy.gif?cid=ecf05e47z5q6158s9i9uoxldz8oawhubgll4xnkfjxt56y5z&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <div class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 lg:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                Design <span id="ovalText" class="text-4xl lg:text-6xl">Unico</span>
-              </p>
-              <div class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/dXXujUmfpS3XG/giphy.gif?cid=ecf05e47j852sb0w4phhxdff2e7vkyreabec72qica6rk1qm&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <h3 class="font-display text-center text-4xl lg:text-6xl text-white w-full md:w-2/3 lg:w-1/2 mx-auto pt-32 pb-64 md:py-64">
-              La naturale estensione online del tuo brand
-            </h3>
-            <p class="font-display text-center text-white w-full md:w-2/3 lg:w-1/2 mx-auto pb-64 lg:pb-96">
-              (come questo sito web qui)
-            </p>
             <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 transform -translate-4 lg:-translate-x-12">
               <div id="popUp1Hidden" class="relative border border-white p-8 md:p-16 xl:p-32 lg:ml-8 w-96 overflow-hidden w-full md:w-4/5 lg:w-3/5 2xl:max-w-screen-md">
                 <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
@@ -292,16 +251,13 @@
                 <img class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="">
               </div>
             </div>
-            <p class="transform translate-y-96 font-display text-center text-white w-full mx-auto pt-96">
-              (grazie RevasOS, il workOS del futuro!)
-            </p>
           </div>
         </div>
       </section>
     </div>
     <section id="partnerTextSection" class="h-screen w-screen flex items-center justify-center p-4">
       <div class="w-full max-w-screen-lg mx-auto">
-        <h2 class="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-display">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display">
           <span id="questionPartner" class="text-white leading-tight">Davide è un buon partner per il mio brand?</span>
           <span id="designPartner" class="text-white opacity-50 leading-tight">progetta dall’inizio alla fine il brand</span>
           <span id="brainPartner" class="text-white leading-tight text-pesca"><span class="text-white opacity-50">con</span> il potere delle neuroscienze,</span>
@@ -344,7 +300,7 @@
           </div>
           <div id="brainDSection" class="bg-pesca lg:col-span-2 h-full flex items-center justify-center px-2 py-8 lg:py-16">
             <h3 id="brainD" class="mx-auto w-10/12 text-porpora md:text-xl lg:text-2xl ">
-              Davide costruisce brand che vanno oltre la bellezza e del piacere. Ogni brand è curato nel minimo dettaglio con tutta l'attenzione alle avanguardie delle scienze cognitive. Con Davide, avrai un brand che farà emozionare, un logo che rimarrà impresso nella memoria e una presenza come tu e nemmeno i tuoi competitors avete mai visto prima
+              Davide costruisce brand che vanno oltre la bellezza. Ogni brand è curato nel minimo dettaglio con tutta l'attenzione alle avanguardie delle scienze cognitive. Con Davide, avrai un brand che farà emozionare, un logo che rimarrà impresso nella memoria e una presenza come tu e nemmeno i tuoi competitors avete mai visto prima
             </h3>
           </div>
           <div id="moreTSection" class="bg-black lg:col-span-5  h-full flex items-center justify-center px-2 py-8 lg:py-16 xl:py-32">
@@ -367,16 +323,14 @@
     </section>
     <section id="contacts" class="w-screen">
       <div class="w-full max-w-screen-xl justify-center mx-auto px-2 md:px-8 mb-8 md:mb-16 xl:mb-24">
-        <div class="h-16 md:h-32 lg:h-40 w-full opacity-0" />
-        <h2 id="swText" class="font-display text-pesca text-2xl md:text-9xl text-center">
+        <h2 id="swText" class="font-display text-pesca text-5xl md:text-9xl text-center mt-16 md:mt-32 lg:mt-40">
           Negli ultimi anni, altri brand hanno deciso il meglio per il loro futuro
         </h2>
-        <h3 id ="cta" class="font-mono text-white text-2xl md:text-6xl lg:text-7xl xl:text-9xl text-center w-full mx-auto max-w-screen-xl">
+        <h3 id ="cta" class="font-mono text-white text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-center w-full mx-auto max-w-screen-xl mt-16 md:mt-32 lg:mt-40">
           Ora tocca al tuo
         </h3>
-        <div class="h-16 md:h-32 lg:h-40 w-full opacity-0" />
         <a href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener">
-          <div id="contactButton" class="border overflow-hidden relative border-white py-16 md:py-32 w-full md:w-2/3 xl:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+          <div id="contactButton" class="border overflow-hidden relative border-white py-16 md:py-32 w-full md:w-2/3 xl:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24 mt-16 md:mt-32 lg:mt-40 hover:bg-pesca" style="border-radius: 100%;">
             <div id="contactText" class="flex items-center">
               <p id="contact" v-for="n in 5" :key="n" class="text-4xl lg:text-6xl w-full h-full inline-flex items-center justify-center text-white font-display">
                 Contattami
@@ -386,6 +340,7 @@
         </a>
       </div>
     </section>
+    <div class="w-screen" style="height: 50vh;" />
   </div>
 </template>
 
@@ -419,7 +374,8 @@ export default Vue.extend({
       popUp1Hidden: '',
       popUp2Hidden: '',
       contactText: '',
-      contact: ''
+      contact: '',
+      pauseTextScroll: false
     }
   },
   head (): any {},
@@ -860,7 +816,7 @@ export default Vue.extend({
       this.$gsap.timeline(
         {
           scrollTrigger: {
-            trigger: '#swText',
+            trigger: '#contacts',
             start: '50% 50%',
             pin: true,
             anticipatePin: 1,
@@ -870,18 +826,73 @@ export default Vue.extend({
         }
       )
       .from('#swText', {opacity: 0, y: 100, duration: 1, ease: "power2"}, '>+=1')
-      .to('#swText', {y: -200, color: '#BAFFFB', duration: 10, ease: "power2"})
+      .to('#swText', { color: '#BAFFFB', duration: 10, ease: "power2"})
       .from('#cta', {opacity: 0, y: 100, ease: "power2"}, '>+=2')
       .from('#contactButton', {y: 100, opacity: 0, ease: "power2"}, '>+=2')
     },
     infiniteLoopText () {
-      const wordWidth = this.contact.getBoundingClientRect().width
-      const width = this.contactText.getBoundingClientRect().width
-      this.$gsap.timeline({ repeat: -1})
-      .to('#contactText', { x: -width, duration: 5, ease: 'linear'})
-      .to('#contact', { opacity: 0, stagger: 1}, '<+=0.5')
-      .to('#contact', { x: (width), stagger: 1}, '<+=0.5')
-      .to('#contact', { opacity: 100, stagger: 1}, '<+=0.5')
+      const words = this.$gsap.utils.toArray("#contact")
+      const loop = this.horizontalLoop(words, {repeat: -1, speed: 1})
+      const tl = this.$gsap.timeline({ repeat: -1})
+      tl.to(loop, {})
+    },
+    horizontalLoop(items: any, config: any) {
+      const gsap = this.$gsap
+      items = gsap.utils.toArray(items);
+      config = config || {};
+      let tl = gsap.timeline({repeat: config.repeat, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
+        length = items.length,
+        startX = items[0].offsetLeft,
+        times: any = [],
+        widths: any = [],
+        xPercents: any = [],
+        curIndex = 0,
+        pixelsPerSecond = (config.speed || 1) * 100,
+        snap = config.snap === false ? (v: any) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+        totalWidth, curX, distanceToStart, distanceToLoop, item, i;
+      gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
+        xPercent: (i: any, el: any) => {
+          let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
+          xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
+          return xPercents[i];
+        }
+      });
+      gsap.set(items, {x: 0});
+      totalWidth = items[length-1].offsetLeft + xPercents[length-1] / 100 * widths[length-1] - startX + items[length-1].offsetWidth * gsap.getProperty(items[length-1], "scaleX") + (parseFloat(config.paddingRight) || 0);
+      for (i = 0; i < length; i++) {
+        item = items[i];
+        curX = xPercents[i] / 100 * widths[i];
+        distanceToStart = item.offsetLeft + curX - startX;
+        distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+        tl.to(item, {xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
+          .fromTo(item, {xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
+          .add("label" + i, distanceToStart / pixelsPerSecond);
+        times[i] = distanceToStart / pixelsPerSecond;
+      }
+      const toIndex = function (index: any, vars: any) {
+        vars = vars || {};
+        (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
+        let newIndex = gsap.utils.wrap(0, length, index),
+          time = times[newIndex];
+        if (time > tl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
+          vars.modifiers = {time: gsap.utils.wrap(0, tl.duration())};
+          time += tl.duration() * (index > curIndex ? 1 : -1);
+        }
+        curIndex = newIndex;
+        vars.overwrite = true;
+        return tl.tweenTo(time, vars);
+      }
+      tl.next = (vars: any) => toIndex(curIndex+1, vars);
+      tl.previous = (vars: any) => toIndex(curIndex-1, vars);
+      tl.current = () => curIndex;
+      tl.toIndex = (index: any, vars: any) => toIndex(index, vars);
+      tl.times = times;
+      tl.progress(1, true).progress(0, true); // pre-render for performance
+      if (config.reversed) {
+        tl.vars.onReverseComplete();
+        tl.reverse();
+      }
+      return tl;
     }
   }
 })

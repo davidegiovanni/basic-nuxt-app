@@ -60,8 +60,8 @@
           <h2 id="conquerText3" class="text-white font-display text-5xl lg:text-6xl mb-2">
             del web
           </h2>
-          <div class="relative bottom-0 right-0 text-white font-display text-5xl lg:text-6xl mb-2 inline-flex" style="transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0);">
-            <h2 id="conquerText4">del mond</h2><span id="o">o</span>
+          <div class="relative bottom-0 right-0 text-white font-display text-5xl lg:text-6xl mb-2 inline-flex items-baseline" style="transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0);">
+            <h2 id="conquerText4">del mondo</h2><span class="block relative w-16 h-16" id="o"><img class="absolute top-0 w-full h-full" src="/website/images/homepage/lilplanet.png" alt=""></span>
           </div>
         </div>
       </div>
@@ -74,58 +74,48 @@
         </h2>
       </div>
       <img id="earth" class="fixed top-0 inset-0 w-full h-full transform scale-600 lg:scale-200 z-20 object-contain" src="/website/images/homepage/earth.png" alt="">
-      <img id="core" class="fixed opacity-0 top-0 inset-0 w-full h-full z-10 object-cover" src="/website/images/homepage/core.png" alt="">
+      <img id="core" class="fixed opacity-0 top-0 inset-0 w-full h-full z-10 object-cover" src="/website/images/homepage/core.svg" alt="">
     </section>
     <section id="methodSection" class="h-full w-screen flex flex-col items-center justify-center">
       <div id="orangeCircle" class="relative bg-arancione w-11/12 md:w-1/2 mx-auto rounded-full pb-full md:pb-half">
         <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
-          <div id="decorations" class="w-full h-full border-2 border-white rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
-          <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo.svg" alt="">
           <h2 id="processTitle" class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
             Un processo di branding mai visto prima
           </h2>
-          <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo.svg" alt="">
+         <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/orangediscdeco.svg" alt="">
         </div>
       </div>
       <div id="whiteCircles" class="h-full absolute top-0 w-full flex items-center justify-start">
         <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
-            <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
-            <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Super pieno di scienza
             </h2>
-            <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
+            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="">
           </div>
         </div>
         <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
-            <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
-            <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Ispirato al Design Sprint di Google
             </h2>
-            <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
+            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="">
           </div>
         </div>
         <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
-            <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
-            <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Per brand che funzionano
             </h2>
-            <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
+            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="">
           </div>
         </div>
         <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
-            <div id="decorations" class="w-full h-full border-2 border-black rounded-full absolute top-0 inset-0" style="transform: scale(0.92);"/>
-            <img id="decorations" class="absolute left-0 lg:ml-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               E basta.
             </h2>
-            <img id="decorations" class="absolute right-0 lg:mr-3 mx-auto w-8 lg:w-10" src="/website/images/shared/davide-logo-black.svg" alt="">
+            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="">
           </div>
         </div>
       </div>
@@ -292,13 +282,13 @@
                 Che rimangono in testa.
               </h2>
             </div>
-            <div id="brainTImageBox" class="bg-notte w-full pb-64 lg:h-1/2 border-t border-white relative">
+            <div id="brainTImageBox" class="overflow-hidden  bg-notte w-full pb-64 lg:h-1/2 border-t border-white relative">
               <div id="brainTImage" class="absolute top-0 inset-0 w-full h-full flex items-center justify-center">
-                <img src="/website/images/homepage/logo-crepuscolo.svg" alt="">
+                <img src="/website/images/homepage/logo-crepuscolo.png" alt="">
               </div>
             </div>
           </div>
-          <div id="brainDSection" class="bg-pesca lg:col-span-2 h-full flex items-center justify-center px-2 py-8 lg:py-16">
+          <div id="brainDSection" class="overflow-hidden  bg-pesca lg:col-span-2 h-full flex items-center justify-center px-2 py-8 lg:py-16">
             <h3 id="brainD" class="mx-auto w-10/12 text-porpora md:text-xl lg:text-2xl ">
               Davide costruisce brand che vanno oltre la bellezza. Ogni brand è curato nel minimo dettaglio con tutta l'attenzione alle avanguardie delle scienze cognitive. Con Davide, avrai un brand che farà emozionare, un logo che rimarrà impresso nella memoria e una presenza come tu e nemmeno i tuoi competitors avete mai visto prima
             </h3>
@@ -308,9 +298,9 @@
               Un brand designer per te. E anche molto di piu.
             </h2>
           </div>
-          <div id="moreTImageBox"  class="lg:col-span-2 h-72 lg:h-full flex items-center justify-center px-2 py-8 lg:py-16 bg-muschio relative">
-            <div id="moreTImage" class="absolute top-0 w-full h-full inset-0 flex items-center justify-center">
-              <img class="h-full w-auto" src="/website/images/homepage/logo-alba.svg" alt="">
+          <div id="moreTImageBox"  class="overflow-hidden lg:col-span-2 h-72 lg:h-full flex items-center justify-center px-2 py-8 lg:py-16 bg-muschio relative">
+            <div id="moreTImage" class="absolute inset-0 w-8/12 mx-auto my-auto h-4/5 flex items-center justify-center">
+              <img class="h-full w-auto mx-auto" src="/website/images/homepage/logo-alba.png" alt="">
             </div>
           </div>
           <div id="moreDSection" class="bg-black lg:col-span-3 h-full flex items-center justify-center px-2 py-8 lg:py-16">
@@ -323,7 +313,7 @@
     </section>
     <section id="contacts" class="w-screen">
       <div class="w-full max-w-screen-xl justify-center mx-auto px-2 md:px-8 mb-8 md:mb-16 xl:mb-24">
-        <h2 id="swText" class="font-display text-pesca text-5xl md:text-9xl text-center mt-16 md:mt-32 lg:mt-40">
+        <h2 id="swText" class="font-display text-pesca text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-center">
           Negli ultimi anni, altri brand hanno deciso il meglio per il loro futuro
         </h2>
         <h3 id ="cta" class="font-mono text-white text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-center w-full mx-auto max-w-screen-xl mt-16 md:mt-32 lg:mt-40">
@@ -551,7 +541,7 @@ export default Vue.extend({
 
       .to('#conquerListWrapper', { yPercent: -75}, '>')
       .from('#conquerText4', { opacity: 0 }, '<')
-      .from('#o', { opacity: 0 }, '<')
+      .from('#o', { opacity: 0, y: 20 }, '<+=1')
 
       .to('#conquerTitle', { opacity: 0 }, '<')
       .to('#conquerText1', { opacity: 0 }, '<+=0.1')
@@ -816,19 +806,27 @@ export default Vue.extend({
       this.$gsap.timeline(
         {
           scrollTrigger: {
-            trigger: '#contacts',
-            start: '50% 50%',
+            trigger: '#swText',
+            start: '50 50%',
             pin: true,
             anticipatePin: 1,
-            end: `bottom top`,
+            end: `+=100%`,
             scrub: 1
           }
         }
       )
       .from('#swText', {opacity: 0, y: 100, duration: 1, ease: "power2"}, '>+=1')
       .to('#swText', { color: '#BAFFFB', duration: 10, ease: "power2"})
-      .from('#cta', {opacity: 0, y: 100, ease: "power2"}, '>+=2')
-      .from('#contactButton', {y: 100, opacity: 0, ease: "power2"}, '>+=2')
+      this.$gsap.from('#cta', {scrollTrigger: {
+          trigger: '#cta',
+          start: 'top center',
+          toggleActions: "play none none reverse"
+        },opacity: 0, y: 100, ease: "power2"})
+      this.$gsap.from('#contactButton', {scrollTrigger: {
+          trigger: '#contactButton',
+          start: 'top center',
+          toggleActions: "play none none reverse"
+        },y: 100, opacity: 0, ease: "power2"})
     },
     infiniteLoopText () {
       const words = this.$gsap.utils.toArray("#contact")

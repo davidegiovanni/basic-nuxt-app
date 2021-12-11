@@ -66,10 +66,10 @@
         </div>
       </div>
       <div id="brandBeauty" class="relative z-30 font-display text-4xl">
-        <h2 id="beautiful" class="font-display flex flex-col md:flex-row items-center justify-center text-white text-2xl lg:text-4xl">
+        <h2 id="beautiful" class="font-display flex flex-col md:flex-row items-center justify-center text-white text-4xl xl:text-6xl">
           <span id="with" class="block md:pr-3">Con un brand</span> <span class="block" id="outside">bellissimo fuori</span>
         </h2>
-        <h2 id="inside" class="text-white text-center text-2xl lg:text-4xl">
+        <h2 id="inside" class="text-white text-center text-4xl xl:text-6xl">
           E fantastico dentro
         </h2>
       </div>
@@ -145,13 +145,17 @@
             davidegiovanni.com
           </p>
         </div>
-        <h3 id="websiteText" class="w-10/12 lg:w-2/3 mx-auto text-xl md:text-2xl lg:text-4xl xl:text-6xl text-white">
+        <h3 id="websiteText" class="w-10/12 lg:w-2/3 mx-auto text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl text-white">
           Sviluppa il tuo brand e poi portalo alla conquista del web con un sito web degno della sua bellezza. E con delle performance stellari su ogni tipo di dispositivo.
         </h3>
+        <img class="absolute top-0 inset-0 w-full h-full object-cover mix-blend-overlay" src="/website/images/homepage/scanline.gif" alt="">
+        <img class="absolute top-0 inset-0 w-full h-full object-cover opacity-40 mix-blend-hard-light z-50" src="/website/images/homepage/scanline.jpg" alt="">
+        <img class="absolute bottom-0 right-0 w-10 md:w-32 m-6 md:m-16" src="/website/images/homepage/lstar.svg" alt="">
+        <img class="absolute top-0 left-0 w-10 md:w-32 m-6 md:m-16" src="/website/images/shared/davide-logo.svg" alt="">
       </div>
     </section>
     <section class="relative max-w-screen-xl mx-auto px-4">
-      <div id="oval1" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+      <div id="oval1" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
         <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
           Performance <span id="ovalText1" class="text-4xl lg:text-6xl">Stellari</span>
         </p>
@@ -159,7 +163,7 @@
           <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/5wWf7GZPPlIvA2DyR6o/giphy.gif?cid=ecf05e475dnh6t2amj7neusm5ys9xuawjbvng97q9b01ww4q&rid=giphy.gif&ct=g" alt="">
         </div>
       </div>
-      <div id="oval2" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+      <div id="oval2" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
         <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
           SEO <span id="ovalText2" class="text-4xl lg:text-6xl">Impeccabile</span>
         </p>
@@ -167,7 +171,7 @@
           <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/gNIcntbUWI1XO/giphy.gif?cid=ecf05e47h4ii0z15v1ayr34ruv2hsole5hy3t2yea86t004j&rid=giphy.gif&ct=g" alt="">
         </div>
       </div>
-      <div id="oval3" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+      <div id="oval3" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
         <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
           Animazioni <span id="ovalText3" class="text-4xl lg:text-6xl">Brillanti</span>
         </p>
@@ -175,7 +179,7 @@
           <img class="h-full w-full object-cover" src="https://media3.giphy.com/media/26uf8tQf6WVQPxP9u/giphy.gif?cid=ecf05e47z5q6158s9i9uoxldz8oawhubgll4xnkfjxt56y5z&rid=giphy.gif&ct=g" alt="">
         </div>
       </div>
-      <div id="oval4" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+      <div id="oval4" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
         <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
           Design <span id="ovalText4" class="text-4xl lg:text-6xl">Unico</span>
         </p>
@@ -189,8 +193,8 @@
       <p id="likeThisText" class="font-display text-center text-white w-full mx-auto mb-64 lg:mb-96">
         (come questo sito web qui)
       </p>
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 mb-96 pb-48">
-        <div id="popUp1" class="relative border w-full h-full border-white p-8 md:p-16 xl:p-32 lg:ml-8 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 mb-96 pb-48 relative">
+        <div id="popUp1" class="relative border w-10/12 md:w-8/12 lg:w-full h-400 lg:h-auto border-white p-8 md:p-16 xl:p-32 lg:ml-8 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
           <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
             <div class="inline-flex items-center">
               <span v-for="n in 3" :key="n" class="rounded-full h-3 w-3 border mr-2" />
@@ -201,19 +205,21 @@
           </p>
           <img id="popUp1Text" class="absolute top-0 inset-0 object-cover w-full h-full" src="https://media0.giphy.com/media/l0HeaNsyouA7XetWw/giphy.gif?cid=ecf05e475khgv862sq653rb0n102or2ml4qlzcc0ji8x6qia&rid=giphy.gif&ct=g" alt="">
         </div>
-        <div id="popUp2" class="w-full h-full transform translate-y-4 md:translate-x-16 lg:-translate-x-16 lg:translate-y-96 relative border border-white px-8 pt-16 pb-8 md:p-16 xl:p-32 lg:mr-8 bg-purple-500 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
-          <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
-            <div class="inline-flex items-center">
-              <span v-for="n in 3" :key="n" class="rounded-full bg-white h-3 w-0.5 mr-1" />
+        <div class="relative w-full h-400 lg:h-auto">
+          <div id="popUp2" class="w-10/12 md:w-8/12 lg:w-full h-400 lg:h-auto absolute bottom-0 right-0 lg:-translate-x-16 lg:translate-y-96 lg:relative border border-white px-8 pt-24 pb-8 md:px-16 xl:p-32 lg:mr-8 bg-purple-500 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
+            <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
+              <div class="inline-flex items-center">
+                <span v-for="n in 3" :key="n" class="rounded-full bg-white h-3 w-0.5 mr-1" />
+              </div>
             </div>
+            <h2 id="popUp2Text" class="font-display text-4xl lg:text-6xl text-white relative z-10">
+              Ma è pure una meraviglia da gestire. Anche senza esperienza tecnica
+            </h2>
+            <img id="popUp1Text" class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="">
           </div>
-          <h2 id="popUp2Text" class="font-display text-2xl md:text-4xl lg:text-6xl text-white relative z-10">
-            Ma è pure una meraviglia da gestire. Anche senza esperienza tecnica
-          </h2>
-          <img id="popUp1Text" class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="">
         </div>
       </div>
-      <p id="revas" class="font-display text-center text-white w-full mx-auto mt-96">
+      <p id="revas" class="font-display text-center text-white w-full mx-auto lg:mt-96">
         (grazie RevasOS, il workOS del futuro!)
       </p>
     </section>
@@ -242,7 +248,7 @@
             </h2>
           </div>
           <div id="brandwebDSection" class="bg-black lg:col-span-3 h-full flex items-center justify-center px-2 py-8 lg:py-16">
-            <h3 id="brandwebD" class="mx-auto w-10/12 md:text-xl lg:text-2xl text-white">
+            <h3 id="brandwebD" class="mx-auto w-10/12 text-xl lg:text-2xl text-white">
               Quando i brand designer e chi poi  costruisce il brand online sono in sintonia è pura magia. E quando lo stesso brand designer è anche lo sviluppatore allora si vola nel futuro. Con Davide, hai una filiera di produzione che ti porta ad avere un grande brand e poi avere un grande brand online. Per conquistare il futuro, oggi.
             </h3>
           </div>
@@ -261,7 +267,7 @@
             </div>
           </div>
           <div id="brainDSection" class="overflow-hidden  bg-pesca lg:col-span-2 h-full flex items-center justify-center px-2 py-8 lg:py-16">
-            <h3 id="brainD" class="mx-auto w-10/12 text-porpora md:text-xl lg:text-2xl ">
+            <h3 id="brainD" class="mx-auto w-10/12 text-porpora text-xl lg:text-2xl ">
               Davide costruisce brand che vanno oltre la bellezza. Ogni brand è curato nel minimo dettaglio con tutta l'attenzione alle avanguardie delle scienze cognitive. Con Davide, avrai un brand che farà emozionare, un logo che rimarrà impresso nella memoria e una presenza come tu e nemmeno i tuoi competitors avete mai visto prima
             </h3>
           </div>
@@ -276,7 +282,7 @@
             </div>
           </div>
           <div id="moreDSection" class="bg-black lg:col-span-3 h-full flex items-center justify-center px-2 py-8 lg:py-16">
-            <h2 id="moreD" class="mx-auto w-10/12 text-white lg:col-span-2 md:text-xl lg:text-2xl h-full">
+            <h2 id="moreD" class="mx-auto w-10/12 text-white lg:col-span-2 text-xl lg:text-2xl h-full">
               Perchè accontentarsi solo di un semplice designer? Con Davide hai a disposizione molto più un brand designer di primissima qualità. Alle sue spalle c’è la potenza di Revas,  la startup innovativa e società benefit che ha costruito RevasOS. In questo modo, che sia il giorno del lancio o fra dieci anni in tutto il mondo, il tuo brand non perderà un colpo e avrà i migliori strumenti tecnologici per crescere a lungo.
             </h2>
           </div>
@@ -285,14 +291,14 @@
     </section>
     <section id="contacts" class="w-screen">
       <div class="w-full max-w-screen-xl justify-center mx-auto px-2 md:px-8 mb-8 md:mb-16 xl:mb-24">
-        <h2 id="swText" class="font-display text-pesca text-2xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-center">
+        <h2 id="swText" class="font-display text-pesca text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-center">
           Negli ultimi anni, altri brand hanno deciso il meglio per il loro futuro
         </h2>
-        <h3 id ="cta" class="font-mono text-white text-2xl md:text-6xl lg:text-7xl xl:text-9xl text-center w-full mx-auto max-w-screen-xl mt-16 md:mt-32 lg:mt-40">
+        <h3 id ="cta" class="font-mono text-white text-2xl md:text-6xl lg:text-7xl text-center w-full mx-auto max-w-screen-xl mt-16 md:mt-32 lg:mt-40">
           Ora tocca al tuo
         </h3>
         <a href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" @mouseleave="togglePlay(), toggleLoop()" @mouseenter="togglePlay(), toggleLoop()">
-          <div id="contactButton" class="border overflow-hidden relative border-white py-16 md:py-32 w-2/3 mx-auto mx-auto flex items-center justify-center mb-16 lg:mb-24 mt-16 md:mt-32 lg:mt-40" style="border-radius: 100%;">
+          <div id="contactButton" class="border overflow-hidden relative border-white py-16 md:py-32 w-full md:w-2/3 mx-auto mx-auto flex items-center justify-center mb-16 lg:mb-24 mt-16 md:mt-32 lg:mt-40" style="border-radius: 100%;">
             <div id="contactText" class="flex items-center">
               <p id="contact" v-for="n in 5" :key="n" class="text-4xl lg:text-6xl w-full h-full inline-flex items-center justify-center text-white font-display">
                 Contattami
@@ -308,7 +314,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import metadata from '@/utils/metadata'
 
 export default Vue.extend({
   data: function (): any {
@@ -333,8 +338,7 @@ export default Vue.extend({
       isDesktop: false,
       isBigDesktop: false,
       isHugeDesktop: false,
-      popUp1Hidden: '',
-      popUp2Hidden: '',
+      popUp2: '',
       contactText: '',
       contact: '',
       pauseTextScroll: false,
@@ -343,7 +347,6 @@ export default Vue.extend({
       textLoopTl: (() => {})
     }
   },
-  head (): any {},
   mounted (): any {
     this.windowWidth = window.innerWidth
     this.windowHeight = window.innerHeight
@@ -355,8 +358,7 @@ export default Vue.extend({
     this.websiteBox = document.getElementById('websiteBox')
     this.wwwTextPlaceholder = document.getElementById('wwwTextPlaceholder')
     this.boxScroller =  document.getElementById('boxScroller')
-    this.popUp1Hidden = document.getElementById('popUp1Hidden')
-    this.popUp2Hidden = document.getElementById('popUp2Hidden')
+    this.popUp2 = document.getElementById('popUp2')
     this.contactText = document.getElementById('contactText')
     this.contact = document.getElementById('contact')
     this.currentTime()

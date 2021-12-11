@@ -135,116 +135,88 @@
         </div>
       </div>
     </section>
-    <div id="websiteBoxSection" class="h-screen w-screen flex items-center justify-scenter relative">
-      <section id="websiteBoxSection" class="h-5/6 lg:h-full 2xl:h-5/6 w-full container mx-auto p-8 overflow-hidden flex flex items-center justify-center">
-        <div id="websiteBox" class="w-full h-full mx-auto border border-white p-2 md:p-8 lg:p-16 overflow-hidden relative">
-          <div class="w-full flex items-center justify-between h-10 border-t bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute bottom-0 inset-x-0 z-40">
-            <p class="text-white border-r border-current px-4">
-              {{ time }}
-            </p>
-            <p class="text-white border-l border-current px-4">
-              davidegiovanni.com
-            </p>
-          </div>
-          <div id="boxScroller" class="relative z-20 w-full">
-            <h3 id="websiteText" class="text-2xl md:text-4xl lg:text-6xl text-white w-full xl:w-4/5 h-full mx-auto mb-72 px-8">
-              Sviluppa il tuo brand e poi portalo alla conquista del web con un sito web degno della sua bellezza. E con delle performance stellari su ogni tipo di dispositivo.
-            </h3>
-            <div id="oval" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 xl:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                Performance <span id="ovalText" class="text-4xl lg:text-6xl">Stellari</span>
-              </p>
-              <div id="ovalBg" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/5wWf7GZPPlIvA2DyR6o/giphy.gif?cid=ecf05e475dnh6t2amj7neusm5ys9xuawjbvng97q9b01ww4q&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <div id="oval" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 xl:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                SEO <span id="ovalText" class="text-4xl lg:text-6xl">Impeccabile</span>
-              </p>
-              <div id="ovalBg" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/gNIcntbUWI1XO/giphy.gif?cid=ecf05e47h4ii0z15v1ayr34ruv2hsole5hy3t2yea86t004j&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <div id="oval" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 xl:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                Animazioni <span id="ovalText" class="text-4xl lg:text-6xl">Brillanti</span>
-              </p>
-              <div id="ovalBg" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media3.giphy.com/media/26uf8tQf6WVQPxP9u/giphy.gif?cid=ecf05e47z5q6158s9i9uoxldz8oawhubgll4xnkfjxt56y5z&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <div id="oval" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 xl:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
-              <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
-                Design <span id="ovalText" class="text-4xl lg:text-6xl">Unico</span>
-              </p>
-              <div id="ovalBg" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-                <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/dXXujUmfpS3XG/giphy.gif?cid=ecf05e47j852sb0w4phhxdff2e7vkyreabec72qica6rk1qm&rid=giphy.gif&ct=g" alt="">
-              </div>
-            </div>
-            <h3 id="extensionText" class="font-display text-center text-4xl lg:text-6xl text-white w-full md:w-2/3 xl:w-1/2 mx-auto pt-32 pb-64 md:py-64">
-              La naturale estensione online del tuo brand
-            </h3>
-            <p id="likeThisText" class="font-display text-center text-white w-full md:w-2/3 xl:w-1/2 mx-auto pb-64 lg:pb-96">
-              (come questo sito web qui)
-            </p>
-            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 transform -translate-4 lg:-translate-x-12">
-              <div id="popUp1" :style="`width: 100% !important; height: ${popUp1Hidden.offsetHeight}px !important;`" class="relative border border-white p-8 md:p-16 xl:p-32 lg:ml-8 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
-                <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
-                  <div class="inline-flex items-center">
-                    <span v-for="n in 3" :key="n" class="rounded-full h-3 w-3 border mr-2" />
-                  </div>
-                </div>
-                <p id="popUp1Text" class="mt-10 text-4xl lg:text-6xl text-white pr-16 relative z-10">
-                  E non solo è bellissimo da vedere
-                </p>
-                <img id="popUp1Text" class="absolute top-0 inset-0 object-cover w-full h-full" src="https://media0.giphy.com/media/l0HeaNsyouA7XetWw/giphy.gif?cid=ecf05e475khgv862sq653rb0n102or2ml4qlzcc0ji8x6qia&rid=giphy.gif&ct=g" alt="">
-              </div>
-              <div id="popUp2" :style="`width: 100% !important; height: ${popUp2Hidden.offsetHeight}px !important;`" class="transform translate-y-4 md:translate-x-16 lg:-translate-x-16 lg:translate-y-96 relative border border-white px-8 pt-16 pb-8 md:p-16 xl:p-32 lg:mr-8 bg-purple-500 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
-                <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
-                  <div class="inline-flex items-center">
-                    <span v-for="n in 3" :key="n" class="rounded-full bg-white h-3 w-0.5 mr-1" />
-                  </div>
-                </div>
-                <h2 id="popUp2Text" class="font-display text-2xl md:text-4xl lg:text-6xl text-white relative z-10">
-                  Ma è pure una meraviglia da gestire. Anche senza esperienza tecnica
-                </h2>
-                <img id="popUp1Text" class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="">
-              </div>
-            </div>
-            <p id="revas" class="transform translate-y-96 font-display text-center text-white w-full mx-auto pt-96">
-              (grazie RevasOS, il workOS del futuro!)
-            </p>
-          </div>
-          <div class="hidden w-full">
-            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 transform -translate-4 lg:-translate-x-12">
-              <div id="popUp1Hidden" class="relative border border-white p-8 md:p-16 xl:p-32 lg:ml-8 w-96 overflow-hidden w-full md:w-4/5 lg:w-3/5 2xl:max-w-screen-md">
-                <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
-                  <div class="inline-flex items-center">
-                    <span v-for="n in 3" :key="n" class="rounded-full h-3 w-3 border mr-2" />
-                  </div>
-                </div>
-                <p  class="mt-10 text-4xl lg:text-6xl text-white pr-16 relative z-10">
-                  E non solo è bellissimo da vedere
-                </p>
-                <img  class="absolute top-0 inset-0 object-cover w-full h-full" src="https://media0.giphy.com/media/l0HeaNsyouA7XetWw/giphy.gif?cid=ecf05e475khgv862sq653rb0n102or2ml4qlzcc0ji8x6qia&rid=giphy.gif&ct=g" alt="">
-              </div>
-              <div id="popUp2Hidden" class="transform translate-y-48 md:translate-x-16 lg:-translate-x-16 lg:translate-y-96 relative border border-white px-8 pt-16 pb-8 md:p-16 xl:p-32 lg:mr-8 h-full bg-purple-500 overflow-hidden w-full md:w-4/5 lg:w-3/5 2xl:max-w-screen-md">
-                <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
-                  <div class="inline-flex items-center">
-                    <span v-for="n in 3" :key="n" class="rounded-full bg-white h-3 w-0.5 mr-1" />
-                  </div>
-                </div>
-                <h2 class="font-display text-2xl md:text-4xl lg:text-6xl text-white relative z-10">
-                  Ma è pure una meraviglia da gestire. Anche senza esperienza tecnica
-                </h2>
-                <img class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="">
-              </div>
-            </div>
-          </div>
+    <section id="websiteBoxSection" class="w-screen relative h-screen w-full container mx-auto p-8 overflow-hidden flex items-center justify-center">
+      <div id="websiteBox" class="w-full h-5/6 lg:h-full 2xl:h-5/6 mx-auto border border-white p-2 md:p-8 lg:p-16 overflow-hidden relative flex items-center justify-center">
+        <div class="w-full flex items-center justify-between h-10 border-t bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute bottom-0 inset-x-0 z-40">
+          <p class="text-white border-r border-current px-4">
+            {{ time }}
+          </p>
+          <p class="text-white border-l border-current px-4">
+            davidegiovanni.com
+          </p>
         </div>
-      </section>
-    </div>
+        <h3 id="websiteText" class="w-10/12 lg:w-2/3 mx-auto text-xl md:text-2xl lg:text-4xl xl:text-6xl text-white">
+          Sviluppa il tuo brand e poi portalo alla conquista del web con un sito web degno della sua bellezza. E con delle performance stellari su ogni tipo di dispositivo.
+        </h3>
+      </div>
+    </section>
+    <section class="relative max-w-screen-xl mx-auto px-4">
+      <div id="oval1" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+        <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
+          Performance <span id="ovalText1" class="text-4xl lg:text-6xl">Stellari</span>
+        </p>
+        <div id="ovalBg1" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
+          <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/5wWf7GZPPlIvA2DyR6o/giphy.gif?cid=ecf05e475dnh6t2amj7neusm5ys9xuawjbvng97q9b01ww4q&rid=giphy.gif&ct=g" alt="">
+        </div>
+      </div>
+      <div id="oval2" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+        <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
+          SEO <span id="ovalText2" class="text-4xl lg:text-6xl">Impeccabile</span>
+        </p>
+        <div id="ovalBg2" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
+          <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/gNIcntbUWI1XO/giphy.gif?cid=ecf05e47h4ii0z15v1ayr34ruv2hsole5hy3t2yea86t004j&rid=giphy.gif&ct=g" alt="">
+        </div>
+      </div>
+      <div id="oval3" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+        <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
+          Animazioni <span id="ovalText3" class="text-4xl lg:text-6xl">Brillanti</span>
+        </p>
+        <div id="ovalBg3" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
+          <img class="h-full w-full object-cover" src="https://media3.giphy.com/media/26uf8tQf6WVQPxP9u/giphy.gif?cid=ecf05e47z5q6158s9i9uoxldz8oawhubgll4xnkfjxt56y5z&rid=giphy.gif&ct=g" alt="">
+        </div>
+      </div>
+      <div id="oval4" class="border relative overflow-hidden border-white py-16 md:py-32 w-full mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
+        <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
+          Design <span id="ovalText4" class="text-4xl lg:text-6xl">Unico</span>
+        </p>
+        <div id="ovalBg4" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
+          <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/dXXujUmfpS3XG/giphy.gif?cid=ecf05e47j852sb0w4phhxdff2e7vkyreabec72qica6rk1qm&rid=giphy.gif&ct=g" alt="">
+        </div>
+      </div>
+      <h3 id="extensionText" class="font-display text-center text-4xl lg:text-6xl text-white w-full mx-auto mt-32 mb-64 md:my-64">
+        La naturale estensione online del tuo brand
+      </h3>
+      <p id="likeThisText" class="font-display text-center text-white w-full mx-auto mb-64 lg:mb-96">
+        (come questo sito web qui)
+      </p>
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 mb-96 pb-48">
+        <div id="popUp1" class="relative border w-full h-full border-white p-8 md:p-16 xl:p-32 lg:ml-8 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
+          <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
+            <div class="inline-flex items-center">
+              <span v-for="n in 3" :key="n" class="rounded-full h-3 w-3 border mr-2" />
+            </div>
+          </div>
+          <p id="popUp1Text" class="mt-10 text-4xl lg:text-6xl text-white pr-16 relative z-10">
+            E non solo è bellissimo da vedere
+          </p>
+          <img id="popUp1Text" class="absolute top-0 inset-0 object-cover w-full h-full" src="https://media0.giphy.com/media/l0HeaNsyouA7XetWw/giphy.gif?cid=ecf05e475khgv862sq653rb0n102or2ml4qlzcc0ji8x6qia&rid=giphy.gif&ct=g" alt="">
+        </div>
+        <div id="popUp2" class="w-full h-full transform translate-y-4 md:translate-x-16 lg:-translate-x-16 lg:translate-y-96 relative border border-white px-8 pt-16 pb-8 md:p-16 xl:p-32 lg:mr-8 bg-purple-500 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
+          <div class="w-full flex items-center justify-between h-10 border-b px-4 bg-black bg-opacity-50 backdrop-filter backdrop-saturate-200 backdrop-blur-2xl border-white absolute top-0 inset-x-0 z-30">
+            <div class="inline-flex items-center">
+              <span v-for="n in 3" :key="n" class="rounded-full bg-white h-3 w-0.5 mr-1" />
+            </div>
+          </div>
+          <h2 id="popUp2Text" class="font-display text-2xl md:text-4xl lg:text-6xl text-white relative z-10">
+            Ma è pure una meraviglia da gestire. Anche senza esperienza tecnica
+          </h2>
+          <img id="popUp1Text" class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="">
+        </div>
+      </div>
+      <p id="revas" class="font-display text-center text-white w-full mx-auto mt-96">
+        (grazie RevasOS, il workOS del futuro!)
+      </p>
+    </section>
     <section id="partnerTextSection" class="h-screen w-screen flex items-center justify-center p-4">
       <div class="w-full max-w-screen-lg mx-auto">
         <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display">
@@ -313,14 +285,14 @@
     </section>
     <section id="contacts" class="w-screen">
       <div class="w-full max-w-screen-xl justify-center mx-auto px-2 md:px-8 mb-8 md:mb-16 xl:mb-24">
-        <h2 id="swText" class="font-display text-pesca text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-center">
+        <h2 id="swText" class="font-display text-pesca text-2xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-center">
           Negli ultimi anni, altri brand hanno deciso il meglio per il loro futuro
         </h2>
-        <h3 id ="cta" class="font-mono text-white text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-center w-full mx-auto max-w-screen-xl mt-16 md:mt-32 lg:mt-40">
+        <h3 id ="cta" class="font-mono text-white text-2xl md:text-6xl lg:text-7xl xl:text-9xl text-center w-full mx-auto max-w-screen-xl mt-16 md:mt-32 lg:mt-40">
           Ora tocca al tuo
         </h3>
-        <a href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener">
-          <div id="contactButton" class="border overflow-hidden relative border-white py-16 md:py-32 w-full md:w-2/3 xl:w-1/2 mx-auto flex items-center justify-center mb-16 lg:mb-24 mt-16 md:mt-32 lg:mt-40 hover:bg-pesca" style="border-radius: 100%;">
+        <a href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" @mouseleave="togglePlay(), toggleLoop()" @mouseenter="togglePlay(), toggleLoop()">
+          <div id="contactButton" class="border overflow-hidden relative border-white py-16 md:py-32 w-2/3 mx-auto mx-auto flex items-center justify-center mb-16 lg:mb-24 mt-16 md:mt-32 lg:mt-40" style="border-radius: 100%;">
             <div id="contactText" class="flex items-center">
               <p id="contact" v-for="n in 5" :key="n" class="text-4xl lg:text-6xl w-full h-full inline-flex items-center justify-center text-white font-display">
                 Contattami
@@ -365,7 +337,10 @@ export default Vue.extend({
       popUp2Hidden: '',
       contactText: '',
       contact: '',
-      pauseTextScroll: false
+      pauseTextScroll: false,
+      play: false,
+      rainbowTl: (() => {}),
+      textLoopTl: (() => {})
     }
   },
   head (): any {},
@@ -396,6 +371,8 @@ export default Vue.extend({
     this.scrollWhy()
     this.scrollContacts()
     this.infiniteLoopText()
+    this.scrollData()
+    this.rainbowBackground()
   },
   computed: {},
   methods: {
@@ -611,40 +588,162 @@ export default Vue.extend({
       }, '>+=1.2')
     },
     scrollWebPage () {
-      const startingY = this.windowWidth <= 480 ?  this.websiteBox.getBoundingClientRect().height / 4 : this.websiteBox.getBoundingClientRect().height / 12
-      this.$gsap.timeline(
+      const tl = this.$gsap.timeline(
         { 
           scrollTrigger: {
             trigger: '#websiteBoxSection',
             start: '50% 50%',
             pin: true,
             anticipatePin: 1,
-            end: `${this.boxScroller.offsetHeight}px top`,
+            end: `bottom top`,
             scrub: 1
           }
         }
       )
-      .set('#popUp1', { opacity: 0 }, 0)
-      .set('#popUp2', { opacity: 0 }, 0)
-      .from('#websiteBox', { opacity: 0 })
-      .from('#websiteBox', { width: 0 })
-      .from('#websiteBox', { height: 0, y: -100, duration: 4, padding: 0 })
-      .to( '#boxScroller', { y: startingY, duration: 1 }, '>+=1')
-      .from('#websiteText', { y: 50, opacity: 0, duration: 1 }, '>')
-      .to( '#boxScroller', { y: -this.boxScroller.offsetHeight, duration: 20 }, '>+=1')
-      .from('#oval', { y: 100, opacity: 0, stagger: 1 }, '<')
-      .from('#ovalText', { y: 10, opacity: 0, duration: 0.8, stagger: 0.4 }, '<+=0.5')
-      .from('#ovalBg', { opacity: 0, stagger: 0.4 }, '<')
-      .from('#extensionText', { opacity: 0, y: 20, duration: 2, }, '>')
-      .from('#likeThisText', { opacity: 0, y: 20, duration: 2, }, '>')
-      .from('#popUp1', { height: 0, width: 0, padding: 0, opacity: 0, duration: 2, }, '<-=0.5')
-      .from('#popUp1Text', { opacity: 0 }, '>')
-      .from('#popUp2', { height: 0, width: 0, padding: 0, opacity: 0, duration: 2, }, '<')
-      .from('#popUp2Text', { opacity: 0 }, '>-=0.5')
-      .from('#revas', { opacity: 0, y: 20, duration: 2, }, '>+=0.5')
-      .to('#websiteBox', { height: 0, y: -100, duration: 4, padding: 0 })
-      .to('#websiteBox', { width: 0 })
-      .to('#websiteBox', { opacity: 0 })
+      tl.from('#websiteBox', { opacity: 0 })
+      tl.from('#websiteBox', { width: 0 })
+      tl.from('#websiteBox', { height: 0, y: -100, duration: 4, padding: 0 })
+      tl.from('#websiteText', { y: 50, opacity: 0, duration: 1 }, '>')
+      tl.to('#websiteText', { y: -100, opacity: 0, duration: 1 }, '>+=2')
+      tl.to('#websiteBox', { height: 0, y: -100, duration: 4, padding: 0 }, '>+=2')
+      tl.to('#websiteBox', { width: 0 })
+      tl.to('#websiteBox', { opacity: 0 })
+    },
+    scrollData () {
+      this.$gsap.from('#oval1', { 
+        scrollTrigger: {
+          trigger: '#oval1',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        y: 100, opacity: 0 })
+      this.$gsap.from('#ovalText1', { 
+        scrollTrigger: {
+          trigger: '#oval1',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        y: 10, opacity: 0 })
+      this.$gsap.from('#oval2', { 
+        scrollTrigger: {
+          trigger: '#oval2',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        y: 100, opacity: 0 })
+      this.$gsap.from('#ovalText2', { 
+        scrollTrigger: {
+          trigger: '#oval2',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        y: 10, opacity: 0 })
+      this.$gsap.from('#oval3', { 
+        scrollTrigger: {
+          trigger: '#oval3',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        y: 100, opacity: 0 })
+      this.$gsap.from('#ovalText3', { 
+        scrollTrigger: {
+          trigger: '#oval3',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        y: 10, opacity: 0 })
+      this.$gsap.from('#oval4', { 
+        scrollTrigger: {
+          trigger: '#oval4',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        y: 100, opacity: 0 })
+      this.$gsap.from('#ovalText4', { 
+        scrollTrigger: {
+          trigger: '#oval4',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        y: 10, opacity: 0 })
+      this.$gsap.from('#ovalBg1', { 
+        scrollTrigger: {
+          trigger: '#oval1',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0 })
+      this.$gsap.from('#ovalBg2', { 
+        scrollTrigger: {
+          trigger: '#oval2',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0 })
+      this.$gsap.from('#ovalBg3', { 
+        scrollTrigger: {
+          trigger: '#oval3',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0 })
+      this.$gsap.from('#ovalBg4', { 
+        scrollTrigger: {
+          trigger: '#oval4',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0 })
+      this.$gsap.from('#extensionText', { 
+        scrollTrigger: {
+          trigger: '#extensionText',
+          start: 'center 60%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0, y: 20 })
+      this.$gsap.from('#likeThisText', { 
+        scrollTrigger: {
+          trigger: '#likeThisText',
+          start: 'center 70%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0, y: 20 })
+      this.$gsap.from('#popUp1', { 
+        scrollTrigger: {
+          trigger: '#popUp1',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        height: 0, width: 0, padding: 0, opacity: 0 })
+      this.$gsap.from('#popUp1Text', { 
+        scrollTrigger: {
+          trigger: '#popUp1',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0, delay: 1 })
+      this.$gsap.from('#popUp2', { 
+        scrollTrigger: {
+          trigger: '#popUp2',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        height: 0, width: 0, padding: 0, opacity: 0 })
+      this.$gsap.from('#popUp2Text', { 
+        scrollTrigger: {
+          trigger: '#popUp2',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0, delay: 1 })
+      this.$gsap.from('#revas', { 
+        scrollTrigger: {
+          trigger: '#revas',
+          start: 'top 70%',
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0, y: 20 })
+    
     },
     scrollPartnership () {
       this.$gsap.timeline(
@@ -654,7 +753,7 @@ export default Vue.extend({
             start: '50% 50%',
             pin: true,
             anticipatePin: 1,
-            end: `bottom+=400% top`,
+            end: `+=400%`,
             scrub: 1
           }
         }
@@ -674,7 +773,8 @@ export default Vue.extend({
       this.$gsap.from('#whiteBgWhy', {
         scrollTrigger: {
           trigger: '#gridWhySection',
-          start: 'top 80%',
+          start: 'top 50%',
+          end: 'bottom bottom',
           toggleActions: "play none none reverse"
         },
         width: 0,
@@ -684,7 +784,7 @@ export default Vue.extend({
       this.$gsap.from('#brandwebTSection', {
         scrollTrigger: {
           trigger: '#brandwebTSection',
-          start: 'center center',
+          start: 'top 50%',
           toggleActions: "play none none reverse"
         },
         backgroundColor: 'black'
@@ -692,28 +792,26 @@ export default Vue.extend({
       this.$gsap.from('#brandwebT', {
         scrollTrigger: {
           trigger: '#brandwebTSection',
-          start: 'center center',
+          start: 'top 45%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
-        y: 20,
-        delay: 0.5
+        y: 20
       })
       this.$gsap.from('#brandwebD', {
         scrollTrigger: {
           trigger: '#brandwebDSection',
-          start: 'center center',
+          start: 'top 45%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
-        y: 20,
-        delay: 1
+        y: 20
       })
       // brain
       this.$gsap.from('#brainT', {
         scrollTrigger: {
           trigger: '#brainTSection',
-          start: 'top center',
+          start: 'top 45%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
@@ -722,26 +820,24 @@ export default Vue.extend({
       this.$gsap.from('#brainDSection', {
         scrollTrigger: {
           trigger: '#brainDSection',
-          start: 'top center',
+          start: 'top 50%',
           toggleActions: "play none none reverse"
         },
         backgroundColor: 'black',
-        delay: 0.5
       })
       this.$gsap.from('#brainD', {
         scrollTrigger: {
           trigger: '#brainDSection',
-          start: 'top center',
+          start: 'top 45%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
-        y: 20,
-        delay: 1
+        y: 20
       })
       this.$gsap.from('#brainTImageBox', {
         scrollTrigger: {
           trigger: '#brainTImageBox',
-          start: 'top center',
+          start: 'top 50%',
           toggleActions: "play none none reverse"
         },
         backgroundColor: 'black',
@@ -749,7 +845,7 @@ export default Vue.extend({
       this.$gsap.from('#brainTImage', {
         scrollTrigger: {
           trigger: '#brainTImage',
-          start: 'center center',
+          start: '50% 50%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
@@ -759,7 +855,7 @@ export default Vue.extend({
       this.$gsap.from('#moreT', {
         scrollTrigger: {
           trigger: '#moreTSection',
-          start: 'top center',
+          start: 'top 50%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
@@ -768,26 +864,24 @@ export default Vue.extend({
       this.$gsap.from('#moreDSection', {
         scrollTrigger: {
           trigger: '#moreDSection',
-          start: 'top center',
+          start: 'top 45%',
           toggleActions: "play none none reverse"
         },
-        backgroundColor: 'black',
-        delay: 0.5
+        backgroundColor: 'black'
       })
       this.$gsap.from('#moreD', {
         scrollTrigger: {
           trigger: '#moreDSection',
-          start: 'top center',
+          start: 'top 50%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
-        y: 20,
-        delay: 1
+        y: 20
       })
       this.$gsap.from('#moreTImageBox', {
         scrollTrigger: {
           trigger: '#moreTImageBox',
-          start: 'top center',
+          start: 'top 50%',
           toggleActions: "play none none reverse"
         },
         backgroundColor: 'black',
@@ -795,7 +889,7 @@ export default Vue.extend({
       this.$gsap.from('#moreTImage', {
         scrollTrigger: {
           trigger: '#moreTImage',
-          start: 'top center',
+          start: 'top 50%',
           toggleActions: "play none none reverse"
         },
         opacity: 0,
@@ -807,7 +901,7 @@ export default Vue.extend({
         {
           scrollTrigger: {
             trigger: '#swText',
-            start: '50 50%',
+            start: '50% 50%',
             pin: true,
             anticipatePin: 1,
             end: `+=100%`,
@@ -819,36 +913,46 @@ export default Vue.extend({
       .to('#swText', { color: '#BAFFFB', duration: 10, ease: "power2"})
       this.$gsap.from('#cta', {scrollTrigger: {
           trigger: '#cta',
-          start: 'top center',
+          start: 'top 80%',
           toggleActions: "play none none reverse"
         },opacity: 0, y: 100, ease: "power2"})
       this.$gsap.from('#contactButton', {scrollTrigger: {
           trigger: '#contactButton',
-          start: 'top center',
+          start: 'top 80%',
           toggleActions: "play none none reverse"
         },y: 100, opacity: 0, ease: "power2"})
     },
     infiniteLoopText () {
       const words = this.$gsap.utils.toArray("#contact")
-      const loop = this.horizontalLoop(words, {repeat: -1, speed: 1})
+      const loop = this.horizontalLoop(words, {repeat: -1, speed: 2})
       const tl = this.$gsap.timeline({ repeat: -1})
       tl.to(loop, {})
+    },
+    rainbowBackground () {
+      this.rainbowTl = this.$gsap.timeline({ speed: 1, paused: true, repeat: -1, yoyo: true})
+      this.rainbowTl.to('#contactButton', {backgroundColor: '#FF7A00', duration: 1})
+      this.rainbowTl.to('#contactButton', {backgroundColor: '#FF8888', duration: 1})
+      this.rainbowTl.to('#contactButton', {backgroundColor: '#6700A6', duration: 1})
+      this.rainbowTl.to('#contactButton', {backgroundColor: '#A6001E', duration: 1})
+      this.rainbowTl.to('#contactButton', {backgroundColor: '#003667', duration: 1})
+      this.rainbowTl.to('#contactButton', {backgroundColor: '#007D76', duration: 1})
+      this.rainbowTl.to('#contactButton', {backgroundColor: '#FF7A00', duration: 1})
     },
     horizontalLoop(items: any, config: any) {
       const gsap = this.$gsap
       items = gsap.utils.toArray(items);
       config = config || {};
-      let tl = gsap.timeline({repeat: config.repeat, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
-        length = items.length,
+      this.textLoopTl = gsap.timeline({repeat: config.repeat, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => this.this.textLoopTl.totalTime(this.this.textLoopTl.rawTime() + this.this.textLoopTl.duration() * 100)})
+      let length = items.length,
         startX = items[0].offsetLeft,
         times: any = [],
         widths: any = [],
         xPercents: any = [],
         curIndex = 0,
         pixelsPerSecond = (config.speed || 1) * 100,
-        snap = config.snap === false ? (v: any) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+        snap = config.snap === false ? (v: any) => v : gsap.utils.snap(config.snap || 1),
         totalWidth, curX, distanceToStart, distanceToLoop, item, i;
-      gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
+      gsap.set(items, {
         xPercent: (i: any, el: any) => {
           let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
           xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
@@ -862,35 +966,41 @@ export default Vue.extend({
         curX = xPercents[i] / 100 * widths[i];
         distanceToStart = item.offsetLeft + curX - startX;
         distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
-        tl.to(item, {xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
+        this.textLoopTl.to(item, {xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
           .fromTo(item, {xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
           .add("label" + i, distanceToStart / pixelsPerSecond);
         times[i] = distanceToStart / pixelsPerSecond;
       }
-      const toIndex = function (index: any, vars: any) {
+      const toIndex =  (index: any, vars: any) => {
         vars = vars || {};
         (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
         let newIndex = gsap.utils.wrap(0, length, index),
           time = times[newIndex];
-        if (time > tl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
-          vars.modifiers = {time: gsap.utils.wrap(0, tl.duration())};
-          time += tl.duration() * (index > curIndex ? 1 : -1);
+        if (time > this.textLoopTl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
+          vars.modifiers = {time: gsap.utils.wrap(0, this.textLoopTl.duration())};
+          time += this.textLoopTl.duration() * (index > curIndex ? 1 : -1);
         }
         curIndex = newIndex;
         vars.overwrite = true;
-        return tl.tweenTo(time, vars);
+        return this.textLoopTl.tweenTo(time, vars);
       }
-      tl.next = (vars: any) => toIndex(curIndex+1, vars);
-      tl.previous = (vars: any) => toIndex(curIndex-1, vars);
-      tl.current = () => curIndex;
-      tl.toIndex = (index: any, vars: any) => toIndex(index, vars);
-      tl.times = times;
-      tl.progress(1, true).progress(0, true); // pre-render for performance
+      this.textLoopTl.next = (vars: any) => toIndex(curIndex+1, vars);
+      this.textLoopTl.previous = (vars: any) => toIndex(curIndex-1, vars);
+      this.textLoopTl.current = () => curIndex;
+      this.textLoopTl.toIndex = (index: any, vars: any) => toIndex(index, vars);
+      this.textLoopTl.times = times;
+      this.textLoopTl.progress(1, true).progress(0, true); // pre-render for performance
       if (config.reversed) {
-        tl.vars.onReverseComplete();
-        tl.reverse();
+        this.textLoopTl.vars.onReverseComplete();
+        this.textLoopTl.reverse();
       }
-      return tl;
+      return this.textLoopTl;
+    },
+    togglePlay() {
+      this.rainbowTl.paused(!this.rainbowTl.paused())
+    },
+    toggleLoop() {
+      this.textLoopTl.paused(!this.textLoopTl.paused())
     }
   }
 })

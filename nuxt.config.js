@@ -9,10 +9,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { name: 'theme-color', content: '#FF7A00' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/website/images/shared/favicon.png' },
+      { rel: 'apple-touch-icon', href: '/website/images/shared/apple-touch-icon.png' },
       { rel: 'stylesheet', href: 'https://fonts.gstatic.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700&display=swap'},

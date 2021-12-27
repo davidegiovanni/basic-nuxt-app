@@ -41,7 +41,8 @@ module.exports = {
       height: {
         300: '300px',
         400: '400px',
-        500: '500px'
+        500: '500px',
+        600: '600px'
       },
       width: {
         '50vw': '50vw',

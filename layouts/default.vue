@@ -1,8 +1,8 @@
 <template>
   <div id="layout" :class="mainWrapperClass">
-    <div id="cursor" class="fixed left-0 top-0 shadow w-2 h-2 bg-white rounded-full pointer-events-none user-select-none" style="z-index: 10000; opacity: 1 !important;"/>
-    <div id="cursor2" class="fixed shadow left-0 top-0 w-8 h-8 border border-white rounded-full pointer-events-none user-select-none" style="z-index: 10000; opacity: 1 !important;"/>
-    <div id="showBox" class="fixed pointer-events-none user-select-none top-0 inset-0 w-screen h-screen flex flex-col items-center justify-center text-white" style="z-index: 1000;">
+    <div id="cursor" class="hidden lg:block fixed left-0 top-0 shadow w-2 h-2 bg-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
+    <div id="cursor2" class="hidden lg:block fixed shadow left-0 top-0 w-8 h-8 border border-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
+    <div id="showBox" class="fixed pointer-events-none select-none top-0 inset-0 w-screen h-screen flex flex-col items-center justify-center text-white" style="z-index: 1000;">
       <div class="overflow-hidden mb-8" style="z-index: 1001;">
         <div id="loader" class="font-display text-6xl xl:text-9xl" style="z-index: 1001;">
           {{ loadAmount }}
@@ -19,6 +19,31 @@
       <div id="box4" class="w-1/2 h-1/2 absolute bottom-0 right-0 bg-black" style="z-index: 1000;" />
     </div>
     <div v-if="!hideNuxt" :class="routeWrapperClass">
+      <div v-if="!isMenuOpen" class="w-32 md:w-52 fixed top-0 right-0 flex items-center justify-end pt-4 lg:pt-2 pr-4 lg:pr-8" style="z-index: 55;">
+        <button @click="toggleMenu()" class="w-32 md:w-48 h-12 md:h-16 border border-white text-white bg-black flex items-center justify-center backdrop-filter backdrop-blur-lg hover:bg-white hover:bg-opacity-25 bg-black bg-opacity-25 font-display" style="border-radius: 100%;">
+          Menu
+        </button>
+      </div>
+      <div v-if="isMenuOpen" class="w-screen h-screen fixed top-0 inset-0" style="z-index: 998;">
+        <div class="w-full h-full border-4 border-white bg-arancione text-white bg-opacity-25 backdrop-filter backdrop-blur-2xl backdrop-saturate-200 overflow-hidden flex flex-col items-center justify-between py-16" style="border-radius: 100%;">
+          <div>
+            <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16" alt="Stella stilizzata">
+          </div>
+          <div class="flex flex-col items-center justify-center w-full">
+            <button @click="goToContacts()" class="w-1/2 hover:text-arancione mb-16 pb-16 border-b-2 border-white font-display text-2xl md:text-5xl lg:text-6xl">
+              I. Contact me
+            </button>
+            <button @click="toggleMenu()" class="w-1/2 hover:text-arancione font-display text-2xl md:text-5xl lg:text-6xl">
+              II. Close Menu
+            </button>
+          </div>
+          <div class="font-display text-center">
+            Davide G. Steccanella — Italy
+            <br>
+            © {{ currentYear }}
+          </div>
+        </div>
+      </div>
       <nuxt :class="routeClass" />
     </div>
   </div>
@@ -34,6 +59,7 @@ export default Vue.extend({
       loadAmount: 0,
       loadTl: (() => {}),
       window: {},
+      isMenuOpen: false
     }
   },
   head (): any {
@@ -81,7 +107,7 @@ export default Vue.extend({
       this.hasCookiesConsent = ''
     }
     //
-    console.log("%cI'm a designer with creative development skills - you found me! Nice to meet you, I shake you warmlu by the hand. Wanna get in touch? Just email me at davidegiovanni96@gmail.com","font-size: 15px")
+    console.log("%cI'm a designer with creative development skills - you found me! Nice to meet you, I shake you warmly by the hand. Wanna get in touch? Just email me at davidegiovanni96@gmail.com","font-size: 15px")
   },
   methods: {
     reload () {
@@ -124,6 +150,7 @@ export default Vue.extend({
           this.loadAmount < 50 ? this.loadAmount += 1 : this.loadAmount += 5 
         } else {
           clearInterval(intervalId)
+          this.$store.dispatch('changeIndexReady')
           this.loadTl.paused(!this.loadTl.paused())
         }
       }
@@ -170,11 +197,19 @@ export default Vue.extend({
     consentCookies () {
       this.hasCookiesConsent = 'true'
       localStorage[`davidegiovanni_cookie`] = 'true'
+    },
+    goToContacts () {
+      this.toggleMenu()
+      const scrollToY = document.body.scrollHeight - 100
+      this.$gsap.to(window, {duration: 1, scrollTo: scrollToY, ease: "none"})
+    },
+    toggleMenu () {
+      this.isMenuOpen = !this.isMenuOpen
     }
   },
   computed: {
     mainWrapperClass () {
-      return 'min-h-screen bg-black'
+      return 'min-h-screen bg-black overflow-x-hidden'
     },
     routeWrapperClass () {
       return 'min-h-screen flex flex-col'

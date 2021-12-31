@@ -2,18 +2,18 @@
   <div class="overflow-hidden">
     <div class="flex items-start w-screen justify-center fixed top-0 inset-x-0 z-50">
       <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  id="curtainLeft" :style="`width: ${(windowWidth - curtainWidth) / 2}px; min-width: 500px;`" class="flex-1" src="/website/images/shared/curtain-left.svg" alt="Parte sinistra della cortina di un teatro">
-      <div id="logoWrapper" :style="`width: ${curtainWidth}px; flex: 0 0 ${curtainWidth}px;`" class="relative flex-grow h-24 bg-arancione border-b border-l border-r rounded-b-full border-white overflow-hidden">
-        <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  class="absolute top-0 inset-x-0 mt-4 mx-auto w-12 lg:w-16" src="/website/images/shared/davide-logo.svg" alt="Logo di Davide, composto da tre ovali in fila">
+      <button @click="scrollTop()" id="logoWrapper" :style="`width: ${curtainWidth}px; flex: 0 0 ${curtainWidth}px;`" class="relative flex-grow h-24 bg-arancione border-b border-l border-r rounded-b-full border-white overflow-hidden">
+        <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  class="absolute top-0 inset-x-0 mt-4 mx-auto w-12 lg:w-16" src="/website/images/shared/davide-logo.svg" style="z-index: 999;" alt="Logo di Davide, composto da tre ovali in fila">
         <div id="logoName" class="absolute inset-x-0 mx-auto top-0 inset-y-0 h-full flex items-center justify-center">
           <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  class="h-32 lg:h-40 transform -translate-x-1" src="/website/images/shared/davide.svg" alt="Immagine con il testo in grassetto Davide">
         </div>
-        <div id="scrollCommand" class="absolute bottom-0 inset-x-0 mx-auto mb-20 py-2 text-center">
-          <p class="text-xl mt-5 translate-y-1 font-medium transform rotate-90 text-white bg-arancione relative z-10">
+        <div id="scrollCommand" class="absolute bottom-0 inset-x-0 w-full mb-8 text-center flex items-center justify-center">
+          <p class="sr-only relative z-10">
             Scroll
           </p>
-          <div class="absolute rounded-full top-0 inset-0 w-0.5 h-32 bg-white mx-auto transform -translate-y-4" />
+          <div id="scrollHint" class="absolute rounded-full bottom-0 w-2 h-2 border-2 border-white" />
         </div>
-      </div>
+      </button>
       <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  id="curtainRight" :style="`width: ${(windowWidth - curtainWidth) / 2}px; min-width: 500px;`" class="flex-1" src="/website/images/shared/curtain-right.svg" alt="Parte destra della cortina di un teatro">
     </div>
     <div id="curtainWrapper" class="flex justify-center items-start z-20 overflow-hidden w-screen">
@@ -292,7 +292,7 @@
         </div>
       </div>
     </section>
-    <section id="lookAtTheProjects" class="w-screen mt-64 font-display text-7xl lg:text-9xl">
+    <section id="lookAtTheProjects" class="w-screen mt-64 font-display text-5xl md:text-7xl lg:text-9xl">
       <div id="lookHere">
         <h2 style="text-stroke: 1px white;">
           Guarda qui
@@ -347,7 +347,7 @@
         </a>
       </div>
     </section>
-    <div class="w-screen" style="height: 50vh;" />
+    <div class="w-screen" style="height: 20vh;" />
   </div>
 </template>
 
@@ -401,6 +401,7 @@ export default Vue.extend({
     this.contactText = document.getElementById('contactText')
     this.contact = document.getElementById('contact')
     //
+    this.scrollLoopAnimation()
     this.currentTime()
     this.setViewportType()
     this.scrollCurtains()
@@ -420,6 +421,15 @@ export default Vue.extend({
   },
   computed: {},
   methods: {
+    scrollTop () {
+      this.$gsap.to(window, {duration: 1, scrollTo: { y: 0 }, ease: "none"})
+    },
+    scrollLoopAnimation () {
+      const tl = this.$gsap.timeline({ repeat: -1})
+      tl.to('#scrollHint', { height: 60, duration: 0.8}, '<+=0.5')
+      tl.to('#scrollHint', { height: 8, y: -52, duration: 0.8}, '>')
+      tl.to('#scrollHint', { opacity: 0, duration: 0.1}, '>+=1')
+    },
     currentTime () {
       setInterval(() => {
         let today = new Date();
@@ -639,7 +649,7 @@ export default Vue.extend({
             start: '50% 50%',
             pin: true,
             anticipatePin: 1,
-            end: `bottom top`,
+            end: `bottom+=400% top`,
             scrub: 1
           }
         }
@@ -648,7 +658,7 @@ export default Vue.extend({
       tl.from('#websiteBox', { width: 0 })
       tl.from('#websiteBox', { height: 0, y: -100, duration: 4, padding: 0 })
       tl.from('#websiteText', { y: 50, opacity: 0, duration: 1 }, '>')
-      tl.to('#websiteText', { y: -100, opacity: 0, duration: 1 }, '>+=2')
+      tl.to('#websiteText', { y: -100, opacity: 0, duration: 1 }, '>+=5')
       tl.to('#websiteBox', { height: 0, y: -100, duration: 4, padding: 0 }, '>+=2')
       tl.to('#websiteBox', { width: 0 })
       tl.to('#websiteBox', { opacity: 0 })
@@ -798,7 +808,6 @@ export default Vue.extend({
             pin: true,
             anticipatePin: 1,
             end: `bottom+=400% top`,
-            markers: true,
             scrub: 1
           }
         }

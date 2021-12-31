@@ -120,6 +120,9 @@
         </div>
       </div>
     </section>
+    <div class="w-screen h-screen flex flex-col items-center justify-center" style="max-height: 800px;">
+      <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-32 h-32" alt="Stella stilizzata">
+    </div>
     <section id="websiteSection" class="py-32 w-screen flex flex-col items-center justify-center">
       <div class="w-full px-4">
         <div id="searchBar" class="max-w-screen-lg mx-auto rounded-xl md:rounded-full border border-white w-full p-8 md:px-8 md:py-4 h-full md:h-auto relative flex flex-col md:flex-row md:items-center justify-center md:justify-start" style="transform-origin: center center;">
@@ -154,7 +157,7 @@
         <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute top-0 left-0 w-10 lg:w-24 xl:w-32 m-6 lg:m-10 xl:m-16" src="/website/images/shared/davide-logo.svg" alt="Il logo di Davide, bianco, composto da tre ovali in linea">
       </div>
     </section>
-    <section class="relative max-w-screen-xl w-full mx-auto px-4">
+    <section class="relative max-w-screen-xl w-full mx-auto px-4 mb-96">
       <div id="oval1" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
         <p class="relative z-10 text-white font-display text-2xl lg:text-4xl flex flex-col items-center justify-center">
           Performance <span id="ovalText1" class="text-4xl lg:text-6xl">Stellari</span>
@@ -223,8 +226,8 @@
         (grazie RevasOS, il workOS del futuro!)
       </p>
     </section>
-    <section id="partnerTextSection" class="h-screen w-screen flex items-center justify-center p-4">
-      <div class="w-full max-w-screen-lg mx-auto">
+    <section id="partnerTextSection" class="w-screen h-screen flex items-center justify-center p-4 mb-32 md:mb-64 lg:mb-72">
+      <div id="partnerTextSectionContent" class="w-full max-w-screen-lg mx-auto">
         <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display">
           <span id="questionPartner" class="text-white leading-tight">Davide è un buon partner per il mio brand?</span>
           <span id="designPartner" class="text-white opacity-50 leading-tight">progetta dall’inizio alla fine il brand</span>
@@ -289,7 +292,7 @@
         </div>
       </div>
     </section>
-    <section id="lookAtTheProjects" class="w-screen mt-64 font-display text-6xl lg:text-9xl">
+    <section id="lookAtTheProjects" class="w-screen mt-64 font-display text-7xl lg:text-9xl">
       <div id="lookHere">
         <h2 style="text-stroke: 1px white;">
           Guarda qui
@@ -793,8 +796,9 @@ export default Vue.extend({
             trigger: '#partnerTextSection',
             start: '50% 50%',
             pin: true,
-            anticipatePin: 2,
-            end: `+=400%`,
+            anticipatePin: 1,
+            end: `bottom+=400% top`,
+            markers: true,
             scrub: 1
           }
         }

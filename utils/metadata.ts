@@ -1,75 +1,82 @@
-export default ({ title, description, image, url } : { title:any, description:any, image:any, url:any }) => {
-    const meta = []
+export default ({ title, description, image, url, robots } : { title:any, description:any, image:any, url:any, robots?: string }) => {
+  const meta = []
 
-    meta.push({
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary'
+  meta.push({
+      hid: 'twitter:card',
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    }, {
+      hid: 'og:type',
+      property: 'og:type',
+      content: 'website'
+    })
+  
+    if (title && title !== '') {
+      meta.push({
+        hid: 'title',
+        name: 'title',
+        content: title
       }, {
-        hid: 'og:type',
-        property: 'og:type',
-        content: 'website'
+        hid: 'og:title',
+        property: 'og:title',
+        content: title
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: title
       })
-    
-      if (title && title !== '') {
-        meta.push({
-          hid: 'title',
-          name: 'title',
-          content: title
-        }, {
-          hid: 'og:title',
-          property: 'og:title',
-          content: title
-        }, {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: title
-        })
-      }
-    
-      if (description && description !== '') {
-        meta.push({
-          hid: 'description',
-          name: 'description',
-          content: description
-        }, {
-          hid: 'og:description',
-          property: 'og:description',
-          content: description
-        }, {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: description
-        })
-      }
-    
-      if (image && image !== '') {
-        meta.push({
-          hid: 'image',
-          name: 'image',
-          content: image
-        }, {
-          hid: 'og:image',
-          property: 'og:image',
-          content: image
-        }, {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: image
-        })
-      }
+    }
+  
+    if (description && description !== '') {
+      meta.push({
+        hid: 'description',
+        name: 'description',
+        content: description
+      }, {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description
+      }, {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: description
+      })
+    }
+  
+    if (image && image !== '') {
+      meta.push({
+        hid: 'image',
+        name: 'image',
+        content: image
+      }, {
+        hid: 'og:image',
+        property: 'og:image',
+        content: image
+      }, {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: image
+      })
+    }
 
-      if (url && url !== '') {
-        meta.push({
-          hid: 'url',
-          name: 'url',
-          content: url
-        }, {
-          hid: 'og:url',
-          property: 'og:url',
-          content: url
-        })
-      }
-    
-      return meta
+    if (url && url !== '') {
+      meta.push({
+        hid: 'url',
+        name: 'url',
+        content: url
+      }, {
+        hid: 'og:url',
+        property: 'og:url',
+        content: url
+      })
+    }
+
+    if (robots && robots !== '') {
+      meta.push({
+        name: 'robots',
+        content: robots
+      })
+    }
+  
+    return meta
 }

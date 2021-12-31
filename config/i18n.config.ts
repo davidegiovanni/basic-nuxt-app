@@ -1,6 +1,6 @@
 export default {
-  baseUrl: process.env.BASE_URL,
-  seo: false,
+  baseUrl: 'https://davidegiovanni.com',
+  seo: true,
   vuex: false,
   strategy: 'prefix',
   parsePages: false,

@@ -1,11 +1,11 @@
 <template>
   <div class="overflow-hidden">
     <div class="flex items-start w-screen justify-center fixed top-0 inset-x-0 z-50">
-      <img id="curtainLeft" :style="`width: ${(windowWidth - curtainWidth) / 2}px; min-width: 500px;`" class="flex-1" src="/website/images/shared/curtain-left.svg" alt="Parte sinistra della cortina di un teatro">
+      <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  id="curtainLeft" :style="`width: ${(windowWidth - curtainWidth) / 2}px; min-width: 500px;`" class="flex-1" src="/website/images/shared/curtain-left.svg" alt="Parte sinistra della cortina di un teatro">
       <div id="logoWrapper" :style="`width: ${curtainWidth}px; flex: 0 0 ${curtainWidth}px;`" class="relative flex-grow h-24 bg-arancione border-b border-l border-r rounded-b-full border-white overflow-hidden">
-        <img class="absolute top-0 inset-x-0 mt-4 mx-auto" src="/website/images/shared/davide-logo.svg" alt="Logo di Davide, composto da tre ovali in fila">
+        <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  class="absolute top-0 inset-x-0 mt-4 mx-auto w-12 lg:w-16" src="/website/images/shared/davide-logo.svg" alt="Logo di Davide, composto da tre ovali in fila">
         <div id="logoName" class="absolute inset-x-0 mx-auto top-0 inset-y-0 h-full flex items-center justify-center">
-          <img class="transform -translate-x-1" src="/website/images/shared/davide.svg" alt="Immagine con il testo in grassetto Davide">
+          <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  class="h-32 lg:h-40 transform -translate-x-1" src="/website/images/shared/davide.svg" alt="Immagine con il testo in grassetto Davide">
         </div>
         <div id="scrollCommand" class="absolute bottom-0 inset-x-0 mx-auto mb-20 py-2 text-center">
           <p class="text-xl mt-5 translate-y-1 font-medium transform rotate-90 text-white bg-arancione relative z-10">
@@ -14,7 +14,7 @@
           <div class="absolute rounded-full top-0 inset-0 w-0.5 h-32 bg-white mx-auto transform -translate-y-4" />
         </div>
       </div>
-      <img id="curtainRight" :style="`width: ${(windowWidth - curtainWidth) / 2}px; min-width: 500px;`" class="flex-1" src="/website/images/shared/curtain-right.svg" alt="Parte destra della cortina di un teatro">
+      <img width="100%" height="100%" loading="eager" title="davidegiovanni.com"  id="curtainRight" :style="`width: ${(windowWidth - curtainWidth) / 2}px; min-width: 500px;`" class="flex-1" src="/website/images/shared/curtain-right.svg" alt="Parte destra della cortina di un teatro">
     </div>
     <div id="curtainWrapper" class="flex justify-center items-start z-20 overflow-hidden w-screen">
       <div :style="`width: ${(windowWidth - curtainWidth) / 2}px; flex: 0 0 ${(windowWidth - curtainWidth) / 2}px;`" class="flex items-start justify-end">
@@ -61,7 +61,7 @@
             del web
           </h2>
           <div class="relative bottom-0 right-0 text-white font-display text-5xl lg:text-6xl mb-2 inline-flex items-baseline" style="transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0);">
-            <h2 id="conquerText4">del mondo</h2><span class="block relative w-16 h-16" id="o"><img class="absolute top-0 w-full h-full" src="/website/images/homepage/lilplanet.png" alt="Piccola icona di una stellina bianca, molto elegante"></span>
+            <h2 id="conquerText4">del mondo</h2><span class="block relative w-16 h-16" id="o"><img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute top-0 w-full h-full" src="/website/images/homepage/lilplanet.png" alt="Piccola icona di una stellina bianca, molto elegante"></span>
           </div>
         </div>
       </div>
@@ -73,57 +73,57 @@
           E fantastico dentro
         </h2>
       </div>
-      <img id="earth" class="fixed top-0 inset-0 w-full h-full transform scale-600 lg:scale-200 z-20 object-contain" src="/website/images/homepage/earth.png" alt="Immagine della terra vista dallo spazio, una sconfinata distesa blu con terre e nuvole">
-      <img id="core" class="fixed opacity-0 top-0 inset-0 w-full h-full z-10 object-cover" src="/website/images/homepage/core.svg" alt="Una illustrazione di una stella fatta di linee che si intersecano, graziosa e moderna">
+      <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="earth" class="fixed top-0 inset-0 w-full h-full transform scale-600 lg:scale-200 z-20 object-contain" src="/website/images/homepage/earth.png" alt="Immagine della terra vista dallo spazio, una sconfinata distesa blu con terre e nuvole">
+      <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="core" class="fixed opacity-0 top-0 inset-0 w-full h-full z-10 object-cover" src="/website/images/homepage/core.svg" alt="Una illustrazione di una stella fatta di linee che si intersecano, graziosa e moderna">
     </section>
-    <section id="methodSection" class="h-full w-screen flex flex-col items-center justify-center">
-      <div id="orangeCircle" class="relative bg-arancione w-11/12 md:w-1/2 mx-auto rounded-full pb-full md:pb-half">
+    <section id="methodSection" class="h-full w-screen flex flex-col items-center justify-center" style="max-height: 800px;">
+      <div id="orangeCircle" class="relative bg-arancione w-11/12 md:w-1/2 mx-auto rounded-full medallion">
         <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
           <h2 id="processTitle" class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
             Un processo di branding mai visto prima
           </h2>
-         <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/orangediscdeco.svg" alt="Decorazione con stelle e linee per il disco arancione su cui si trova il testo appena letto">
         </div>
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/orangediscdeco.svg" alt="Decorazione con stelle e linee per il disco arancione su cui si trova il testo appena letto">
       </div>
       <div id="whiteCircles" class="h-full absolute top-0 w-full flex items-center justify-start">
-        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
+        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full medallion">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Super pieno di scienza
             </h2>
-            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
           </div>
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
         </div>
-        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
+        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full medallion">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Ispirato al Design Sprint di Google
             </h2>
-            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
           </div>
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
         </div>
-        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
+        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full medallion">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               Per brand che funzionano
             </h2>
-            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
           </div>
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
         </div>
-        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full pb-full md:pb-half">
+        <div id="whiteCircle" class="relative bg-white w-11/12 md:w-1/2 flex-none mx-auto rounded-full medallion">
           <div class="absolute top-0 inset-0 flex items-center justify-between text-center p-4">
             <h2 class="font-display w-full w-2/3 mx-auto text-3xl lg:text-5xl">
               E basta.
             </h2>
-            <img id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
           </div>
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="decorations" class="absolute right-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/whitediscdeco.svg" alt="Decorazione con stelle e linee per il disco bianco su cui si trova il testo appena letto">
         </div>
       </div>
     </section>
     <section id="websiteSection" class="py-32 w-screen flex flex-col items-center justify-center">
       <div class="w-full px-4">
         <div id="searchBar" class="max-w-screen-lg mx-auto rounded-xl md:rounded-full border border-white w-full p-8 md:px-8 md:py-4 h-full md:h-auto relative flex flex-col md:flex-row md:items-center justify-center md:justify-start" style="transform-origin: center center;">
-          <img class="w-24 mr-4 mb-4 md:mb-0" src="/website/images/homepage/search-world.svg" alt="Icona moderna di un globo stilizzato, con linee di meridiani e paralleli">
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="w-24 mr-4 mb-4 md:mb-0" src="/website/images/homepage/search-world.svg" alt="Icona moderna di un globo stilizzato, con linee di meridiani e paralleli">
           <h2 id="www" class="text-white font-display text-4xl lg:text-6xl transform -translate-y-2">
             <span class="hidden">
               World Wide Brands
@@ -148,10 +148,10 @@
         <h3 id="websiteText" class="w-10/12 lg:w-2/3 mx-auto text-2xl md:text-3xl xl:text-5xl 2xl:text-6xl text-white">
           Sviluppa il tuo brand e poi portalo alla conquista del web con un sito web degno della sua bellezza. E con delle performance stellari su ogni tipo di dispositivo.
         </h3>
-        <img class="absolute top-0 inset-0 w-full h-full object-cover mix-blend-overlay" src="/website/images/homepage/scanline.gif" alt="Gif animata di linee statiche di interferenza televisiva">
-        <img class="absolute top-0 inset-0 w-full h-full object-cover opacity-40 mix-blend-hard-light z-50" src="/website/images/homepage/scanline.jpg" alt="Immagine di linee statiche di interferenza televisiva">
-        <img class="absolute bottom-0 right-0 w-10 lg:w-24 xl:w-32 m-6 lg:m-10 xl:m-16" src="/website/images/homepage/lstar.svg" alt="Stella stilizzata bianca">
-        <img class="absolute top-0 left-0 w-10 lg:w-24 xl:w-32 m-6 lg:m-10 xl:m-16" src="/website/images/shared/davide-logo.svg" alt="Il logo di Davide, bianco, composto da tre ovali in linea">
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute top-0 inset-0 w-full h-full object-cover mix-blend-overlay" src="/website/images/homepage/scanline.gif" alt="Gif animata di linee statiche di interferenza televisiva">
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute top-0 inset-0 w-full h-full object-cover opacity-40 mix-blend-hard-light z-50" src="/website/images/homepage/scanline.jpg" alt="Immagine di linee statiche di interferenza televisiva">
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute bottom-0 right-0 w-10 lg:w-24 xl:w-32 m-6 lg:m-10 xl:m-16" src="/website/images/homepage/lstar.svg" alt="Stella stilizzata bianca">
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute top-0 left-0 w-10 lg:w-24 xl:w-32 m-6 lg:m-10 xl:m-16" src="/website/images/shared/davide-logo.svg" alt="Il logo di Davide, bianco, composto da tre ovali in linea">
       </div>
     </section>
     <section class="relative max-w-screen-xl w-full mx-auto px-4">
@@ -160,7 +160,7 @@
           Performance <span id="ovalText1" class="text-4xl lg:text-6xl">Stellari</span>
         </p>
         <div id="ovalBg1" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-          <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/5wWf7GZPPlIvA2DyR6o/giphy.gif?cid=ecf05e475dnh6t2amj7neusm5ys9xuawjbvng97q9b01ww4q&rid=giphy.gif&ct=g" alt="Gif animata di lineee al neon che si intersecano">
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="h-full w-full object-cover" src="https://media2.giphy.com/media/5wWf7GZPPlIvA2DyR6o/giphy.gif?cid=ecf05e475dnh6t2amj7neusm5ys9xuawjbvng97q9b01ww4q&rid=giphy.gif&ct=g" alt="Gif animata di lineee al neon che si intersecano">
         </div>
       </div>
       <div id="oval2" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
@@ -168,7 +168,7 @@
           SEO <span id="ovalText2" class="text-4xl lg:text-6xl">Impeccabile</span>
         </p>
         <div id="ovalBg2" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-          <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/gNIcntbUWI1XO/giphy.gif?cid=ecf05e47h4ii0z15v1ayr34ruv2hsole5hy3t2yea86t004j&rid=giphy.gif&ct=g" alt="Gif animata di linee al neon che si intersecano">
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="h-full w-full object-cover" src="https://media2.giphy.com/media/gNIcntbUWI1XO/giphy.gif?cid=ecf05e47h4ii0z15v1ayr34ruv2hsole5hy3t2yea86t004j&rid=giphy.gif&ct=g" alt="Gif animata di linee al neon che si intersecano">
         </div>
       </div>
       <div id="oval3" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
@@ -176,7 +176,7 @@
           Animazioni <span id="ovalText3" class="text-4xl lg:text-6xl">Brillanti</span>
         </p>
         <div id="ovalBg3" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-          <img class="h-full w-full object-cover" src="https://media3.giphy.com/media/26uf8tQf6WVQPxP9u/giphy.gif?cid=ecf05e47z5q6158s9i9uoxldz8oawhubgll4xnkfjxt56y5z&rid=giphy.gif&ct=g" alt="Gif animata di linee al neon che si intersecano">
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="h-full w-full object-cover" src="https://media3.giphy.com/media/26uf8tQf6WVQPxP9u/giphy.gif?cid=ecf05e47z5q6158s9i9uoxldz8oawhubgll4xnkfjxt56y5z&rid=giphy.gif&ct=g" alt="Gif animata di linee al neon che si intersecano">
         </div>
       </div>
       <div id="oval4" class="border relative overflow-hidden border-white py-16 md:py-32 w-full md:w-2/3 mx-auto flex items-center justify-center mb-16 lg:mb-24" style="border-radius: 100%;">
@@ -184,7 +184,7 @@
           Design <span id="ovalText4" class="text-4xl lg:text-6xl">Unico</span>
         </p>
         <div id="ovalBg4" class="absolute top-0 h-full w-full inset-0 bg-purple-300">
-          <img class="h-full w-full object-cover" src="https://media2.giphy.com/media/dXXujUmfpS3XG/giphy.gif?cid=ecf05e47j852sb0w4phhxdff2e7vkyreabec72qica6rk1qm&rid=giphy.gif&ct=g" alt="Gif animata di linee al neon che si intersecano">
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="h-full w-full object-cover" src="https://media2.giphy.com/media/dXXujUmfpS3XG/giphy.gif?cid=ecf05e47j852sb0w4phhxdff2e7vkyreabec72qica6rk1qm&rid=giphy.gif&ct=g" alt="Gif animata di linee al neon che si intersecano">
         </div>
       </div>
       <h3 id="extensionText" class="max-w-screen-md mx-auto font-display text-center text-4xl lg:text-6xl text-white w-full mx-auto mt-32 mb-64 md:my-64">
@@ -203,7 +203,7 @@
           <p id="popUp1Text" class="mt-10 text-4xl lg:text-6xl text-white pr-16 relative z-10">
             E non solo è bellissimo da vedere
           </p>
-          <img id="popUp1Text" class="absolute top-0 inset-0 object-cover w-full h-full" src="https://media0.giphy.com/media/l0HeaNsyouA7XetWw/giphy.gif?cid=ecf05e475khgv862sq653rb0n102or2ml4qlzcc0ji8x6qia&rid=giphy.gif&ct=g" alt="Una gif animata dai colori molto saturi (rosso, verde, giallo e blu), con uno stile retro, di una ragazza che cammina su una spiaggia al tramonto">
+          <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="popUp1Text" class="absolute top-0 inset-0 object-cover w-full h-full" src="https://media0.giphy.com/media/l0HeaNsyouA7XetWw/giphy.gif?cid=ecf05e475khgv862sq653rb0n102or2ml4qlzcc0ji8x6qia&rid=giphy.gif&ct=g" alt="Una gif animata dai colori molto saturi (rosso, verde, giallo e blu), con uno stile retro, di una ragazza che cammina su una spiaggia al tramonto">
         </div>
         <div class="relative w-full h-600 lg:h-auto transform lg:-translate-x-16 lg:translate-y-32">
           <div id="popUp2" class="w-10/12 md:w-8/12 lg:w-full h-full absolute bottom-0 right-0 lg:-translate-x-16 lg:translate-y-96 lg:relative border border-white px-8 pt-16 pb-8 md:px-16 lg:mr-8 bg-purple-500 overflow-hidden 2xl:max-w-screen-md flex items-center justify-center">
@@ -215,7 +215,7 @@
             <h2 id="popUp2Text" class="font-display text-4xl xl:text-6xl text-white relative z-10">
               Ma è pure una meraviglia da gestire. Anche senza esperienza tecnica
             </h2>
-            <img id="popUp1Text" class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="Sfondo formato da un delicato gradiente viola che sfuma nel color pesca">
+            <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  id="popUp1Text" class="absolute top-0 inset-0 w-full h-full object-cover" src="/website/images/homepage/revas.png" alt="Sfondo formato da un delicato gradiente viola che sfuma nel color pesca">
           </div>
         </div>
       </div>
@@ -262,7 +262,7 @@
             </div>
             <div id="brainTImageBox" class="overflow-hidden  bg-notte w-full pb-64 lg:h-1/2 border-t border-white relative">
               <div id="brainTImage" class="absolute top-0 inset-0 w-full h-full flex items-center justify-center">
-                <img src="/website/images/homepage/logo-crepuscolo.png" alt="Il logo di Davide, composto da tre ovali, di cui due solo contorno bianco e quello al centro blu con una stella in mezzo">
+                <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" class="w-1/2 lg:w-1/3 mx-auto" src="/website/images/homepage/logo-crepuscolo.png" alt="Il logo di Davide, composto da tre ovali, di cui due solo contorno bianco e quello al centro blu con una stella in mezzo">
               </div>
             </div>
           </div>
@@ -278,7 +278,7 @@
           </div>
           <div id="moreTImageBox"  class="overflow-hidden lg:col-span-2 h-72 lg:h-full flex items-center justify-center px-2 py-8 lg:py-16 bg-muschio relative">
             <div id="moreTImage" class="absolute inset-0 w-8/12 mx-auto my-auto h-4/5 flex items-center justify-center">
-              <img class="h-full w-auto mx-auto" src="/website/images/homepage/logo-alba.png" alt="Un ovale con una stella in mezzo">
+              <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="h-full w-auto mx-auto" src="/website/images/homepage/logo-alba.png" alt="Un ovale con una stella in mezzo">
             </div>
           </div>
           <div id="moreDSection" class="bg-black lg:col-span-3 h-full flex items-center justify-center px-2 py-8 lg:py-16">
@@ -289,7 +289,7 @@
         </div>
       </div>
     </section>
-    <section id="lookAtTheProjects" class="w-screen mt-64 font-display text-3xl md:text-4xl lg:text-6xl xl:text-9xl">
+    <section id="lookAtTheProjects" class="w-screen mt-64 font-display text-6xl lg:text-9xl">
       <div id="lookHere">
         <h2 style="text-stroke: 1px white;">
           Guarda qui
@@ -397,6 +397,7 @@ export default Vue.extend({
     this.popUp2 = document.getElementById('popUp2')
     this.contactText = document.getElementById('contactText')
     this.contact = document.getElementById('contact')
+    //
     this.currentTime()
     this.setViewportType()
     this.scrollCurtains()
@@ -577,7 +578,7 @@ export default Vue.extend({
 
       .to('#earth', { scale: () => { return this.windowWidth <= 640 ? 3.50 : 1 }, duration: 5 }, '>-=0.2')
       .from('#inside', { y: 50, opacity: 0, duration: 2 }, '>')
-      .to('#earth', { y: -this.windowHeight, duration: 2 }, '>+=1')
+      .to('#earth', { y: -this.windowHeight * 2, duration: 2 }, '>+=1')
       .to('#inside', { scale: 0, opacity: 0, duration: 6 }, '>')
       .to('#core', { opacity: 100, rotate: 0, y: 0, scale: 1, duration: 5 }, '<+=1')
     },
@@ -782,8 +783,8 @@ export default Vue.extend({
           start: 'top 70%',
           toggleActions: "play none none reverse"
         },
-        opacity: 0, y: 20 })
-    
+        opacity: 0, y: 20 }
+      )
     },
     scrollPartnership () {
       this.$gsap.timeline(
@@ -792,7 +793,7 @@ export default Vue.extend({
             trigger: '#partnerTextSection',
             start: '50% 50%',
             pin: true,
-            anticipatePin: 1,
+            anticipatePin: 2,
             end: `+=400%`,
             scrub: 1
           }
@@ -1084,6 +1085,12 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+
+.medallion:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
 
 h1, h2, h3, h4, h5, h6, p {
   cursor: default;

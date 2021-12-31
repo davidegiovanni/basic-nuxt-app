@@ -33,7 +33,24 @@ export default Vue.extend({
       hideNuxt: true,
       loadAmount: 0,
       loadTl: (() => {}),
-      window: {}
+      window: {},
+    }
+  },
+  head (): any {
+    return {
+      titleTemplate: '%s | Davide G. Steccanella',
+      hasCookiesConsent: '',
+      script: [
+        {
+          json: {
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            'name': 'Davide Giovanni Steccanella',
+            'jobTitle': 'Designer'
+          },
+          type: 'application/ld+json'
+        }
+      ]
     }
   },
   mounted () {
@@ -56,6 +73,15 @@ export default Vue.extend({
     this.loader()
     this.loadWebsite()
     this.mouseMove()
+    //
+    const cookies = localStorage[`davidegiovanni_cookie`]
+    if (cookies) {
+      this.hasCookiesConsent = cookies
+    } else {
+      this.hasCookiesConsent = ''
+    }
+    //
+    console.log("%cI'm a designer with creative development skills - you found me! Nice to meet you, I shake you warmlu by the hand. Wanna get in touch? Just email me at davidegiovanni96@gmail.com","font-size: 15px")
   },
   methods: {
     reload () {
@@ -140,6 +166,10 @@ export default Vue.extend({
         opacity(100)
         setScaleX(1.1)
       });
+    },
+    consentCookies () {
+      this.hasCookiesConsent = 'true'
+      localStorage[`davidegiovanni_cookie`] = 'true'
     }
   },
   computed: {
@@ -154,6 +184,14 @@ export default Vue.extend({
     },
     currentYear () {
       return new Date().getFullYear()
+    },
+    structuredData (): object {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Davide Giovanni Steccanella',
+        jobTitle: 'Designer'
+      }
     }
   }
 })

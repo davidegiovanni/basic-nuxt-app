@@ -21,7 +21,8 @@ export default Vue.extend({
         title: this.$t('index.meta.title'),
         description: this.$t('index.meta.description'),
         url: process.env.BASE_URL + this.$route.path,
-        image: process.env.BASE_URL + '/website/images/shared/og-image.png'
+        image: process.env.BASE_URL + '/website/images/shared/og-image.png',
+        robots: 'index, follow'
       }),
       link: [
         {

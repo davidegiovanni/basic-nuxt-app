@@ -21,7 +21,7 @@
             {{ $t('shared.errors.notfoundpage.action') }}
           </nuxt-link>
         </div>
-        <img class="absolute top-0 left-0 h-full w-full object-cover" src="https://68.media.tumblr.com/a952925d1014a0e34fae29a119b3b357/tumblr_orp0u451NY1r8dxfio1_540.gif" :alt="$t('shared.errors.notfoundpage.title')">
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute top-0 left-0 h-full w-full object-cover" src="https://68.media.tumblr.com/a952925d1014a0e34fae29a119b3b357/tumblr_orp0u451NY1r8dxfio1_540.gif" :alt="$t('shared.errors.notfoundpage.title')">
       </div>
     </div>
   </div>

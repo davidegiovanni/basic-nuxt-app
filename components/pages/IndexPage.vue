@@ -222,9 +222,9 @@
           </div>
         </div>
       </div>
-      <p id="revas" class="font-display text-center text-white w-full mx-auto lg:mt-96">
+      <a href="https://www.revas.app/it/applicazioni-e-servizi/websites" target="_blank" rel="noopener" id="revas" class="underline font-display text-center text-white w-full mx-auto lg:mt-96">
         (grazie RevasOS, il workOS del futuro!)
-      </p>
+      </a>
     </section>
     <section id="partnerTextSection" class="w-screen h-screen flex items-center justify-center p-4 mb-32 md:mb-64 lg:mb-72">
       <div id="partnerTextSectionContent" class="w-full max-w-screen-lg mx-auto">

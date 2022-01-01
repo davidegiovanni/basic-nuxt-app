@@ -24,7 +24,7 @@
           Menu
         </button>
       </div>
-      <div v-if="isMenuOpen" class="w-screen h-screen fixed top-0 inset-0" style="z-index: 998;">
+      <div v-if="isMenuOpen" class="w-screen h-screen fixed top-0 inset-0 p-4 lg:p-8" style="z-index: 998;">
         <div class="w-full h-full border-4 border-white bg-arancione text-white bg-opacity-25 backdrop-filter backdrop-blur-2xl backdrop-saturate-200 overflow-hidden flex flex-col items-center justify-between py-16" style="border-radius: 100%;">
           <div>
             <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16" alt="Stella stilizzata">
@@ -57,7 +57,7 @@
               Davide Giovanni Steccanella
             </p>
             <p class="font-display text-sm">
-              Brand design, prototyping, content and coding
+              Brand design, prototyping, content e coding
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
@@ -65,7 +65,7 @@
               Vercel
             </a>
             <p class="font-display text-sm">
-              Hosting and deploy
+              Hosting e deploy
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
@@ -73,7 +73,7 @@
               Github
             </a>
             <p class="font-display text-sm">
-              Code versioning and CI
+              Versionamento codice e CI
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
@@ -81,7 +81,7 @@
               Figma
             </a>
             <p class="font-display text-sm">
-              Prototyping and assets creation
+              Prototyping e assets creation
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
@@ -109,7 +109,7 @@
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <div class="inline-flex flex-baseline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+            <div class="inline-flex flex-wrap justify-center flex-wrap justify-center flex-baseline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
               <a href="https://httpster.net" class="hover:underline mr-1">Htppster,</a> <a href="https://www.pinterest.com" class="hover:underline mr-1">Pinterest</a> & <a href="https://www.awwwards.com" class="hover:underline ml-1">AWWARDS</a>
             </div>
             <p class="font-display text-sm">
@@ -118,7 +118,7 @@
           </div>
           <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
             <p class="font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              My lovely boyfriend
+              Il mio dolce fidanzato
             </p>
             <p class="font-display text-sm">
               Support and appreciation

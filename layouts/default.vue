@@ -41,10 +41,100 @@
             Davide G. Steccanella — Italy
             <br>
             © {{ currentYear }}
+            <br>
+            <button @click="goToCredits()" class="underline hover:text-arancione">
+              Credits
+            </button>
           </div>
         </div>
       </div>
       <nuxt :class="routeClass" />
+      <div id="credits" class="w-screen text-white px-4 pt-2 pb-32">
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16 mx-auto" alt="Stella stilizzata">
+        <div class="max-w-screen-lg mx-auto flex flex-col lg:flex-row items-center lg:items-baseline flex-wrap justify-center text-center lg:text-left py-16">
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <p class="font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              Davide Giovanni Steccanella
+            </p>
+            <p class="font-display text-sm">
+              Brand design, prototyping, content and coding
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <a href="https://vercel.com" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              Vercel
+            </a>
+            <p class="font-display text-sm">
+              Hosting and deploy
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <a href="https://github.com/davidegiovanni/basic-nuxt-app" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              Github
+            </a>
+            <p class="font-display text-sm">
+              Code versioning and CI
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <a href="https://figma.com" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              Figma
+            </a>
+            <p class="font-display text-sm">
+              Prototyping and assets creation
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <a href="https://nuxtjs.org" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              NuxtJS
+            </a>
+            <p class="font-display text-sm">
+              Frontend framework
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <a href="https://greensock.com" class=" hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              GSAP
+            </a>
+            <p class="font-display text-sm">
+              Web animation
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <a href="https://tailwindcss.com" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              TailwindCSS
+            </a>
+            <p class="font-display text-sm">
+              CSS framework
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <div class="inline-flex flex-baseline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              <a href="https://httpster.net" class="hover:underline mr-1">Htppster,</a> <a href="https://www.pinterest.com" class="hover:underline mr-1">Pinterest</a> & <a href="https://www.awwwards.com" class="hover:underline ml-1">AWWARDS</a>
+            </div>
+            <p class="font-display text-sm">
+              Inspiration & brainstorming
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <p class="font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              My lovely boyfriend
+            </p>
+            <p class="font-display text-sm">
+              Support and appreciation
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
+            <div class="inline-flex flex-baseline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
+              <a class="hover:underline mr-1" href="https://stackoverflow.com">Stackoverflow</a> & <a class="hover:underline ml-1" href="https://greensock.com/forums/">GSAP Forum</a>
+            </div>
+            <p class="font-display text-sm">
+              Debugging and crisis support
+            </p>
+          </div>
+        </div>
+        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16 mx-auto" alt="Stella stilizzata">
+      </div>
     </div>
   </div>
 </template>
@@ -208,7 +298,12 @@ export default Vue.extend({
     },
     goToContacts () {
       this.toggleMenu()
-      const scrollToY = document.body.scrollHeight - 100
+      const scrollToY = document.body.scrollHeight - 500
+      this.$gsap.to(window, {duration: 1, scrollTo: scrollToY, ease: "none"})
+    },
+    goToCredits () {
+      this.toggleMenu()
+      const scrollToY = document.body.scrollHeight
       this.$gsap.to(window, {duration: 1, scrollTo: scrollToY, ease: "none"})
     },
     toggleMenu () {

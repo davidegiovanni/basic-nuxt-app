@@ -59,13 +59,13 @@ export default Vue.extend({
       loadAmount: 0,
       loadTl: (() => {}),
       window: {},
-      isMenuOpen: false
+      isMenuOpen: false,
+      isLoadedTwice: '',
     }
   },
   head (): any {
     return {
       titleTemplate: '%s | Davide G. Steccanella',
-      hasCookiesConsent: '',
       script: [
         {
           json: {
@@ -100,11 +100,15 @@ export default Vue.extend({
     this.loadWebsite()
     this.mouseMove()
     //
-    const cookies = localStorage[`davidegiovanni_cookie`]
+    const cookies = localStorage[`davidegiovanni_loading_check`]
     if (cookies) {
-      this.hasCookiesConsent = cookies
+      this.isLoadedTwice = cookies
     } else {
-      this.hasCookiesConsent = ''
+      this.isLoadedTwice = ''
+    }
+    if (this.isLoadedTwice === '') {
+      this.loadingCheck()
+      document.location.reload()
     }
     //
     console.log("%cI'm a designer with creative development skills - you found me! Nice to meet you, I shake you warmly by the hand. Wanna get in touch? Just email me at davidegiovanni96@gmail.com","font-size: 15px")
@@ -147,7 +151,11 @@ export default Vue.extend({
       let intervalId: any = null
       const load =  () => {
         if (this.loadAmount < 100) {
-          this.loadAmount < 50 ? this.loadAmount += 1 : this.loadAmount += 5 
+          this.isLoadedTwice === '' 
+          ? this.loadAmount = 0
+          : this.loadAmount < 50 
+            ? this.loadAmount += 1 
+            : this.loadAmount += 5 
         } else {
           clearInterval(intervalId)
           this.$store.dispatch('changeIndexReady')
@@ -194,9 +202,9 @@ export default Vue.extend({
         setScaleX(1.1)
       });
     },
-    consentCookies () {
-      this.hasCookiesConsent = 'true'
-      localStorage[`davidegiovanni_cookie`] = 'true'
+    loadingCheck () {
+      this.isLoadedTwice = 'true'
+      localStorage[`davidegiovanni_loading_check`] = 'true'
     },
     goToContacts () {
       this.toggleMenu()

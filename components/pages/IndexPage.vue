@@ -308,22 +308,22 @@
       <div id="projectsGrid" class="max-w-screen-xl mx-auto" style="transform-origin: top center; will-change: transform;">
         <div id="firstGrid" class="grid grid-cols-2 lg:grid-cols-5 gap-4 h-screen mb-4" style="max-height: 500px;">
           <div id="block" class="relative h-full col-span-1 flex flex-col items-end justify-end">
-            <div :style="backgroundImage('/website/images/homepage/projects/revasos.png')" class="bg-red-500 w-full h-4/5" />
+            <a href="https://revas.app" target="_blank" rel="noopener" :style="backgroundImage('/website/images/homepage/projects/revasos.png')" class="block bg-red-500 w-full h-4/5" />
           </div>
           <div id="mainBlock" class="relative h-full col-span-1 lg:col-span-2">
             <div :style="backgroundImage('/website/images/homepage/projects/davide.png')" class="w-full h-full absolute bottom-0 inset-x-0" />
           </div>
           <div class="relative h-full col-span-2 flex lg:flex-col items-start justify-end">
-            <div :style="backgroundImage('/website/images/homepage/projects/voxel.png')" id="block" class="bg-indigo-500 w-7/12 mr-4 lg:w-9/12 h-full lg:h-1/3 mb-4" />
-            <div :style="backgroundImage('/website/images/homepage/projects/holydavid.png')" id="block" class="bg-green-500 w-5/12 lg:w-full h-full lg:h-1/2" />
+            <a href="https://voxel.community" target="_blank" rel="noopener" :style="backgroundImage('/website/images/homepage/projects/voxel.png')" id="block" class="block bg-indigo-500 w-7/12 mr-4 lg:w-9/12 h-full lg:h-1/3 mb-4" />
+            <a href="https://holydavid.art/it" target="_blank" rel="noopener" :style="backgroundImage('/website/images/homepage/projects/holydavid.png')" id="block" class="block bg-green-500 w-5/12 lg:w-full h-full lg:h-1/2" />
           </div>
         </div>
         <div id="secondGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4 h-screen" style="max-height: 500px;">
           <div id="block" class="relative h-full col-span-1 flex items-start justify-end">
-            <div :style="backgroundImage('/website/images/homepage/projects/simulacrum.png')" class="bg-red-500 w-full lg:w-8/12 h-full" />
+            <a href="https://simulacrum.holydavid.art" target="_blank" rel="noopener" :style="backgroundImage('/website/images/homepage/projects/simulacrum.png')" class="block bg-red-500 w-full lg:w-8/12 h-full" />
           </div>
           <div id="block" class="relative h-full col-span-1 flex items-start justify-start">
-            <div :style="backgroundImage('/website/images/homepage/projects/revas.png')" class="bg-blue-500 w-10/12 h-4/5" />
+            <a href="https://revas.io" target="_blank" rel="noopener" :style="backgroundImage('/website/images/homepage/projects/revas.png')" class="block bg-blue-500 w-10/12 h-4/5" />
           </div>
         </div>
       </div>

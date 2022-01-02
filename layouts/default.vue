@@ -30,15 +30,18 @@
             <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16" alt="Stella stilizzata">
           </div>
           <div class="flex flex-col items-center justify-center w-full">
-            <button @click="goToContacts()" class="w-1/2 hover:text-arancione mb-16 pb-16 border-b-2 border-white font-display text-2xl md:text-5xl lg:text-6xl">
-              I. Contact me
+            <button @click="goToContacts()" class="w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl lg:text-6xl">
+              I. Contattami
             </button>
+            <nuxt-link :to="localePath('portfolio')" class="block text-center w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl lg:text-6xl">
+              II. I miei lavori
+            </nuxt-link>
             <button @click="toggleMenu()" class="w-1/2 hover:text-arancione font-display text-2xl md:text-5xl lg:text-6xl">
-              II. Close Menu
+              II. Chiudi il menu
             </button>
           </div>
           <div class="font-display text-center">
-            Davide G. Steccanella — Italy
+            Davide G. Steccanella — Italia
             <br>
             © {{ currentYear }}
             <br>

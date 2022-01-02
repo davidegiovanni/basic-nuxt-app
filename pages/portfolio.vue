@@ -1,23 +1,24 @@
 <template>
   <div id="scroller" class="h-screen w-screen fixed top-0 inset-0 overflow-y-auto">
-    <nuxt-link :to="localePath('/')" id="backButton" class="block overflow-hidden fixed top-0 left-0 bg-black text-white w-32 flex items-center justify-center h-12 border border-white bg-black m-8 z-50" style="border-radius: 100%;">
-      <span class="relative z-10">Back</span>
-      <div id="bg" class="absolute top-0 left-0 w-full h-full bg-arancione block" style="border-radius: 100%;" />
+    <nuxt-link :to="localePath('/')" id="backButton" class="block fixed top-0 left-0 bg-black text-white w-32 flex items-center justify-center h-12 bg-black m-8 z-50" style="border-radius: 100%;">
+      <span id="backText" class="relative z-10">Back</span>
+      <div id="bg" class="absolute top-0 left-0 w-full h-full bg-black border-2 border-white" style="border-radius: 100%;" />
     </nuxt-link>
-    <div class="w-full h-full flex flex-col items-center justify-center relative z-10">
+    <div id="portfolio" class="w-full h-full flex flex-col items-center justify-center relative z-10">
       <h1 class="sr-only">
         Portfolio lavori
       </h1>
-      <div :id="project.id" v-for="project in projects" :key="project.id" class="mb-8 w-2/3 flex items-center justify-center">
+      <div :id="project.id" v-for="project in projects" :key="project.id" class="mb-4 w-2/3 flex items-center justify-center">
         <a :href="project.href" target="_blank" rel="noopener">
-          <h2 @mouseenter="togglePreview(project.id, true)" @mouseleave="togglePreview('', false)" class="font-display text-2xl md:text-4xl lg:text-7xl cursor-pointer text-transparent text-outline inline-block">
+          <h2 @mouseenter="setProject(project.id)" @mouseleave="setProject(project.id)" :id="project.href" class="font-display text-2xl md:text-4xl lg:text-7xl cursor-pointer text-transparent text-outline block">
             {{ project.name }}
           </h2>
         </a>
       </div>
     </div>
-    <div v-if="work !== ''" class="fixed flex items-center justify-center left-0 top-0 w-full h-full p-8" style="opacity: 1 !important;">
-      <img class="w-full h-4/5 object-cover overflow-hidden" :src="`/website/images/homepage/projects/${work}.png`" alt="" style="border-radius: 100%;">
+    <div class="fixed flex items-center justify-center left-0 top-0 w-full h-full p-8" style="opacity: 1 !important;">
+      <!-- <div v-if="work === ''" class="bg-black border-2 border-white w-full h-4/5 object-cover overflow-hidden" style="border-radius: 100%;"/> -->
+      <img id="bgImage" class="w-full h-4/5 object-cover overflow-hidden" :src="`/website/images/homepage/projects/${work}.png`" alt="" style="border-radius: 100%;">
     </div>
   </div>
 </template>
@@ -32,6 +33,7 @@ export default Vue.extend({
   data(): any {
     return {
       isShowingPreview: false,
+      isToggled: false,
       window: {},
       work: '',
       projects: [
@@ -67,15 +69,12 @@ export default Vue.extend({
   },
   mounted () {
     new magneticButton(document.getElementById('backButton'))
-    new magneticButton(document.getElementById('revasos'))
-    new magneticButton(document.getElementById('voxel'))
-    new magneticButton(document.getElementById('revas'))
-    new magneticButton(document.getElementById('holydavid'))
-    new magneticButton(document.getElementById('simulacrum'))
-    new magneticButton(document.getElementById('revas'))
-    new magneticButton(document.getElementById('davide'))
+    new magneticButton(document.getElementById('portfolio'))
+    new magneticButton(document.getElementById('backText'))
+    
     this.window = window
     this.togglebg()
+    this.togglePreview()
 
     new Image().src = '/website/images/homepage/projects/revas.png'
     new Image().src = '/website/images/homepage/projects/revasos.png'
@@ -86,25 +85,80 @@ export default Vue.extend({
   },
   computed: {},
   methods: {
-    togglePreview (workPreview: string) {
-      this.work = workPreview
+    setProject (workPreview: string) {
+      setTimeout(() => {
+        this.work = workPreview
+      }, 1000)
+    },
+    togglePreview () {
+      this.$gsap.set('#bgImage', { opacity: 0 })
+      // timelines
+      const tl = this.$gsap.timeline({
+        speed: 0.2,
+        toggleActions: "play pause reverse restart"
+      })
+      const tl1 = this.$gsap.timeline({
+        speed: 0.2,
+        toggleActions: "play pause reverse restart"
+      })
+      const tl2 = this.$gsap.timeline({ 
+        speed: 0.2,
+        toggleActions: "play pause reverse restart"
+      })
+
+      tl.to('#bgImage', { opacity: 1 })
+
+      tl1.to('#bgImage', { opacity: 0, duration: 1 })
+      tl1.to('#bgImage', { opacity: 1, duration: 1 }, '>+=0.5')
+
+      tl2.to('#bgImage', { opacity: 1 })
+      tl2.to('#bgImage', { opacity: 0 })
+      
+      tl.pause()
+      tl1.pause()
+      tl2.pause()
+
+      let isToggled = false
+
+      // play and pause
+      function play () {
+        if (!isToggled) {
+          tl.play()
+          isToggled = true
+        } else {
+          tl1.restart()
+          tl1.play()
+        }
+      }
+
+      function stop () {
+        tl2.play()
+        isToggled = false
+      }
+
+      // for cycle for every project 
+      for (let i = 0; i < this.projects.length; i++) {
+        const project = this.projects[i];
+        const text = document.getElementById(project.href)
+        text?.addEventListener('mouseenter', play)
+      }
     },
     togglebg() {
       this.$gsap.set('#bg', {
-        yPercent: 100
+        yPercent: 100,
+        opacity: 0
       })
       const backButton = document.getElementById('backButton')
       const tl = this.$gsap.timeline({ speed: 2, toggleActions: "play pause reverse none" })
       function play () {
         tl.play()
-        console.log('play')
       }
       function reverse () {
         tl.reverse()
-        console.log('reverse')
       }
       tl.pause()
       tl.to('#bg', {
+        opacity: 1,
         yPercent: 0,
         ease: 'Power2.easeInOut'
       })

@@ -4,20 +4,21 @@
       <span id="backText" class="relative z-10">Back</span>
       <div id="bg" class="absolute top-0 left-0 w-full h-full bg-black border-2 border-white" style="border-radius: 100%;" />
     </nuxt-link>
-    <div id="portfolio" class="w-full h-full flex flex-col items-center justify-center relative z-10">
+    <div class="w-full h-full flex flex-col items-center justify-center relative z-10">
       <h1 class="sr-only">
         Portfolio lavori
       </h1>
-      <div :id="project.id" v-for="project in projects" :key="project.id" class="mb-4 w-2/3 flex items-center justify-center">
-        <a :href="project.href" target="_blank" rel="noopener">
-          <h2 @mouseenter="setProject(project.id)" @mouseleave="setProject(project.id)" :id="project.href" class="font-display text-2xl md:text-4xl lg:text-7xl cursor-pointer text-transparent text-outline block">
-            {{ project.name }}
-          </h2>
-        </a>
+      <div id="portfolio" class="w-2/3 h-4/5 flex flex-col items-center justify-center">
+        <div :id="project.id" v-for="project in projects" :key="project.id" class="mb-4 w-2/3 flex items-center justify-center">
+          <a :href="project.href" target="_blank" rel="noopener">
+            <h2 @mouseenter="setProject(project.id)" @mouseleave="setProject(project.id)" :id="project.href" class="font-display text-2xl md:text-4xl lg:text-7xl cursor-pointer text-transparent text-outline block">
+              {{ project.name }}
+            </h2>
+          </a>
+        </div>
       </div>
     </div>
     <div class="fixed flex items-center justify-center left-0 top-0 w-full h-full p-8" style="opacity: 1 !important;">
-      <!-- <div v-if="work === ''" class="bg-black border-2 border-white w-full h-4/5 object-cover overflow-hidden" style="border-radius: 100%;"/> -->
       <img id="bgImage" class="w-full h-4/5 object-cover overflow-hidden" :src="`/website/images/homepage/projects/${work}.png`" alt="" style="border-radius: 100%;">
     </div>
   </div>

@@ -20,23 +20,23 @@
     </div>
     <div v-if="!hideNuxt" :class="routeWrapperClass">
       <div v-if="!isMenuOpen" class="w-32 md:w-52 fixed top-0 right-0 flex items-center justify-end pt-4 lg:pt-2 pr-4 lg:pr-8" style="z-index: 55;">
-        <button @click="toggleMenu()" class="w-32 md:w-48 h-12 md:h-16 border border-white text-white bg-black flex items-center justify-center backdrop-filter backdrop-blur-lg hover:bg-white hover:bg-opacity-25 bg-black bg-opacity-25 font-display" style="border-radius: 100%;">
+        <button id="menuButton" @click="toggleMenu()" class="w-32 md:w-48 h-12 md:h-16 border border-white text-white bg-black flex items-center justify-center backdrop-filter backdrop-blur-lg hover:bg-white hover:bg-opacity-25 bg-black bg-opacity-25 font-display" style="border-radius: 100%;">
           Menu
         </button>
       </div>
-      <div v-if="isMenuOpen" class="w-screen h-screen fixed top-0 inset-0 p-4 lg:p-8" style="z-index: 998;">
+      <div v-if="isMenuOpen" class="w-screen h-screen fixed top-0 inset-0 p-4" style="z-index: 998;">
         <div class="w-full h-full border-4 border-white bg-arancione text-white bg-opacity-25 backdrop-filter backdrop-blur-2xl backdrop-saturate-200 overflow-hidden flex flex-col items-center justify-between py-16" style="border-radius: 100%;">
           <div>
-            <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16" alt="Stella stilizzata">
+            <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-12 h-12" alt="Stella stilizzata">
           </div>
           <div class="flex flex-col items-center justify-center w-full">
-            <button @click="goToContacts()" class="w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl lg:text-6xl">
+            <button @click="goToContacts()" class="w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl xl:text-6xl">
               I. Contattami
             </button>
-            <nuxt-link :to="localePath('portfolio')" class="block text-center w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl lg:text-6xl">
+            <nuxt-link :to="localePath('portfolio')" class="block text-center w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl xl:text-6xl">
               II. I miei lavori
             </nuxt-link>
-            <button @click="toggleMenu()" class="w-1/2 hover:text-arancione font-display text-2xl md:text-5xl lg:text-6xl">
+            <button @click="toggleMenu()" class="w-1/2 hover:text-arancione font-display text-2xl md:text-5xl xl:text-6xl mb-8">
               II. Chiudi il menu
             </button>
           </div>
@@ -144,6 +144,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import magneticButton from '@/utils/magneticButton'
 
 export default Vue.extend({
   data (): any {
@@ -175,6 +176,7 @@ export default Vue.extend({
   mounted () {
     this.window = window
     const width: any = window.innerWidth
+
     window.addEventListener('resize', () => {
       if (window.innerWidth !== width) {
         this.hideNuxt = true
@@ -192,6 +194,9 @@ export default Vue.extend({
     this.loader()
     this.loadWebsite()
     this.mouseMove()
+    setTimeout(() => {
+      new magneticButton(document.getElementById('menuButton'))
+    }, 1700)
     //
     const cookies = localStorage[`davidegiovanni_loading_check`]
     if (cookies) {

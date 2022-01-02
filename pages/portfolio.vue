@@ -1,30 +1,23 @@
 <template>
   <div id="scroller" class="h-screen w-screen fixed top-0 inset-0 overflow-y-auto">
-    <div class="w-full h-full flex flex-col items-center justify-center relative z-50 mix-blend-overlay">
+    <nuxt-link :to="localePath('/')" id="backButton" class="block overflow-hidden fixed top-0 left-0 bg-black text-white w-32 flex items-center justify-center h-12 border border-white bg-black m-8 z-50" style="border-radius: 100%;">
+      <span class="relative z-10">Back</span>
+      <div id="bg" class="absolute top-0 left-0 w-full h-full bg-arancione block" style="border-radius: 100%;" />
+    </nuxt-link>
+    <div class="w-full h-full flex flex-col items-center justify-center relative z-10">
       <h1 class="sr-only">
         Portfolio lavori
       </h1>
-      <h2 @mouseenter="togglePreview('revasos', true)" @mouseleave="togglePreview('revasos', false)" class="font-display text-white text-2xl md:text-4xl lg:text-7xl mb-8 cursor-pointer">
-        I. RevasOS
-      </h2>
-      <h2 @mouseenter="togglePreview('voxel', true)" @mouseleave="togglePreview('voxel', true)" class="font-display text-white text-2xl md:text-4xl lg:text-7xl mb-8 cursor-pointer">
-        II. Voxel
-      </h2>
-      <h2 @mouseenter="togglePreview('holydavid', true)" @mouseleave="togglePreview('holydavid', true)" class="font-display text-white text-2xl md:text-4xl lg:text-7xl mb-8 cursor-pointer">
-        III. Holy David
-      </h2>
-      <h2 @mouseenter="togglePreview('simulacrum', true)" @mouseleave="togglePreview('simulacrum', true)" class="font-display text-white text-2xl md:text-4xl lg:text-7xl mb-8 cursor-pointer">
-        IV. Simulacrum
-      </h2>
-      <h2 @mouseenter="togglePreview('revas', true)" @mouseleave="togglePreview('revas', true)" class="font-display text-white text-2xl md:text-4xl lg:text-7xl mb-8 cursor-pointer">
-        V. Revas
-      </h2>
-      <h2 @mouseenter="togglePreview('davide', true)" @mouseleave="togglePreview('davide', false)" class="font-display text-white text-2xl md:text-4xl lg:text-7xl mb-8 cursor-pointer">
-        VI. Davide
-      </h2>
+      <div :id="project.id" v-for="project in projects" :key="project.id" class="mb-8 w-2/3 flex items-center justify-center">
+        <a :href="project.href" target="_blank" rel="noopener">
+          <h2 @mouseenter="togglePreview(project.id, true)" @mouseleave="togglePreview('', false)" class="font-display text-2xl md:text-4xl lg:text-7xl cursor-pointer text-transparent text-outline inline-block">
+            {{ project.name }}
+          </h2>
+        </a>
+      </div>
     </div>
-    <div id="preview" class="bg-arancione fixed left-0 top-0 w-1/3 h-3/4 bg-black overflow-hidden" style="opacity: 1 !important; border-radius: 100%;">
-      <img class="w-full h-full object-cover" :src="`/website/images/homepage/projects/${work}.png`" alt="">
+    <div v-if="work !== ''" class="fixed flex items-center justify-center left-0 top-0 w-full h-full p-8" style="opacity: 1 !important;">
+      <img class="w-full h-4/5 object-cover overflow-hidden" :src="`/website/images/homepage/projects/${work}.png`" alt="" style="border-radius: 100%;">
     </div>
   </div>
 </template>
@@ -32,6 +25,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import metadata from '@/utils/metadata'
+import magneticButton from '@/utils/magneticButton'
 
 export default Vue.extend({
   layout: 'simple',
@@ -39,7 +33,15 @@ export default Vue.extend({
     return {
       isShowingPreview: false,
       window: {},
-      work: ''
+      work: '',
+      projects: [
+        { id: 'revasos', name: 'I. RevasOS', href: 'https://revas.app'},
+        { id: 'voxel', name: 'II. Voxel', href: 'https://voxel.community'},
+        { id: 'holydavid', name: 'III. Holy David', href: 'https://holydavid.art'},
+        { id: 'simulacrum', name: 'IV. Simulacrum', href: 'https://simulacrum.holydavid.art'},
+        { id: 'revas', name: 'V. Revas', href: 'https://revas.io'},
+        { id: 'davide', name: 'VI. Davide', href: 'https://davidegiovanni.com'}
+      ],
     }
   },
   head (): any {
@@ -64,13 +66,16 @@ export default Vue.extend({
     }
   },
   mounted () {
+    new magneticButton(document.getElementById('backButton'))
+    new magneticButton(document.getElementById('revasos'))
+    new magneticButton(document.getElementById('voxel'))
+    new magneticButton(document.getElementById('revas'))
+    new magneticButton(document.getElementById('holydavid'))
+    new magneticButton(document.getElementById('simulacrum'))
+    new magneticButton(document.getElementById('revas'))
+    new magneticButton(document.getElementById('davide'))
     this.window = window
-    this.previewMove()
-
-    this.$gsap.set('#preview', {
-      scale: 0,
-      y: -20
-    })
+    this.togglebg()
 
     new Image().src = '/website/images/homepage/projects/revas.png'
     new Image().src = '/website/images/homepage/projects/revasos.png'
@@ -81,52 +86,30 @@ export default Vue.extend({
   },
   computed: {},
   methods: {
-    previewMove () {
-      const gsap = this.$gsap
-      gsap.set("#preview", {xPercent: -50, yPercent: -50, opacity: 1})
-
-      const pos = { x: this.window.innerWidth / 2, y: this.window.innerHeight / 2 }
-      const mouse = { x: pos.x, y: pos.y };
-      const speed = 0.05;
-
-      const xSet = gsap.quickSetter('#preview', "x", "px")
-      const opacity = gsap.quickSetter('#preview', 'opacity', '%')
-      const ySet = gsap.quickSetter('#preview', "y", "px")
-      const setScaleX = gsap.quickSetter('#preview2', "scaleX")
-
-      this.window.addEventListener("mousemove", (e: any) => {    
-        mouse.x = e.x;
-        mouse.y = e.y;  
-      });
-
-      gsap.ticker.add(() => {
-        const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
-        
-        const x = pos.x += (mouse.x - pos.x) * dt;
-        const y = pos.y += (mouse.y - pos.y) * dt;
-        xSet(x);
-        ySet(y);
-        opacity(100)
-        setScaleX(1.1)
-      });
-    },
-    togglePreview (workPreview: string, toggle: boolean) {
+    togglePreview (workPreview: string) {
       this.work = workPreview
-      this.isShowingPreview = toggle
-      if (this.isShowingPreview) {
-        this.$gsap.to(
-          '#preview', {
-            scale: 1,
-            y: 0
-          }
-        )
-      } else {
-        this.$gsap.to(
-          '#preview', {
-            scale: 0
-          }
-        )
+    },
+    togglebg() {
+      this.$gsap.set('#bg', {
+        yPercent: 100
+      })
+      const backButton = document.getElementById('backButton')
+      const tl = this.$gsap.timeline({ speed: 2, toggleActions: "play pause reverse none" })
+      function play () {
+        tl.play()
+        console.log('play')
       }
+      function reverse () {
+        tl.reverse()
+        console.log('reverse')
+      }
+      tl.pause()
+      tl.to('#bg', {
+        yPercent: 0,
+        ease: 'Power2.easeInOut'
+      })
+      backButton?.addEventListener('mouseenter', play)
+      backButton?.addEventListener('mouseleave', reverse)
     },
     backgroundImage (imagePath: string) {
       return `background-image: url(${imagePath}); background-position: center center; background-size: cover; background-repet: no-repeat;`
@@ -134,3 +117,13 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+.text-outline {
+  -webkit-text-stroke: 1px white;
+}
+
+.text-outline:hover {
+  color: white;
+}
+</style>

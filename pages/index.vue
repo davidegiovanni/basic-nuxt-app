@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="bg-black overflow-hidden">
     <div class="h-600 lg:h-screen w-full px-4 pt-8 mb-32 lg:mb-64 relative border-b-2 border-white" style="max-height: 900px;">
-      <div id="finestra" class="max-w-screen-sm mx-auto w-full overflow-hidden rounded-t-full h-full relative" style="webkit-mask-image: -webkit-radial-gradient(white, black)">
+      <div id="finestra" class="max-w-screen-sm mx-auto w-full overflow-hidden rounded-t-full h-full relative" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
         <div id="stella" class="absolute top-0 inset-x-0 w-full flex items-center justify-center mt-16 z-20">
           <div class="w-24 lg:w-32 h-24 lg:h-32">
             <svg-switcher file="star" />
@@ -45,7 +45,15 @@ import SvgSwitcher from '@/components/shared/SvgSwitcher.vue'
 
 export default Vue.extend({
   data (): any {
-    return {}
+    return {
+      window: {},
+      isMobile: false,
+      isTablet: false,
+      isSmallDesktop: false,
+      isDesktop: false,
+      isBigDesktop: false,
+      isHugeDesktop: false
+    }
   },
   head (): any {
     return {
@@ -69,8 +77,12 @@ export default Vue.extend({
     }
   },
   mounted () {
-    new magneticButton(document.getElementById('logo'))
-    new magneticButton(document.getElementById('logo2'))
+    this.window = window
+    this.setViewportType()
+    if (!this.isMobile && !this.isTablet && !this.isSmallDesktop) {
+      new magneticButton(document.getElementById('logo'))
+      new magneticButton(document.getElementById('logo2'))
+    }
     // animations
 
     this.contactsAnimation()
@@ -82,6 +94,52 @@ export default Vue.extend({
   },
   computed: {},
   methods: {
+    setViewportType () {
+      const windowWidth = window.innerWidth
+      if (windowWidth <= 640) {
+        this.isMobile = true
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 768 && windowWidth > 640) {
+        this.isMobile = false
+        this.isTablet = true
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 1024 && windowWidth > 768) {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = true
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 1280 && windowWidth > 1024) {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = true
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 1536 && windowWidth > 1280) {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = true
+        this.isHugeDesktop = false
+      } else {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = true
+      }
+    },
     headerAnimations () {
       this.$gsap.to('#cielo', {
         scale: 1.25,
@@ -145,6 +203,14 @@ export default Vue.extend({
         duration: 2,
         scrollTrigger: {
           trigger: '#contactbox',
+          start: 'top 50%',
+          toggleActions: "play none none reverse"
+        }
+      })
+      this.$gsap.from('#contactme', {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: '#contactme',
           start: 'top 50%',
           toggleActions: "play none none reverse"
         }

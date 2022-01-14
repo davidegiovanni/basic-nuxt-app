@@ -18,7 +18,7 @@
         <nuxt-link id="backhome" :to="localePath('/')" class="block mb-8 text-white font-medium uppercase underline">
           Torna alla home
         </nuxt-link>
-        <div id="backhome" class="w-1/2 lg:w-1/5 mx-auto">
+        <div id="backhome" class="w-1/2 lg:w-1/5 mx-auto" style="max-width: 200px;">
           <svg-switcher file="ellipse" />
         </div>
       </div>

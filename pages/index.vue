@@ -25,11 +25,11 @@
       </div>
     </div>
     <div class="h-500 lg:h-screen p-4 md:p-8" style="max-height: 900px;">
-      <div id="contactbox" class="overflow-hidden relative max-w-screen-2xl mx-auto w-full h-full flex items-center justify-center rounded-3xl md:rounded-huge">
-        <a id="contactme" @mouseenter="toggleButton(true)" @mouseleave="toggleButton(false)" href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" class="oval block w-11/12 mx-auto py-16 lg:py-32 border-4 border-black relative z-10 text-center text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-medium uppercase">
+      <div id="contactbox" class="overflow-hidden relative max-w-screen-2xl mx-auto w-full h-full flex items-center justify-center rounded-3xl md:rounded-huge" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
+        <a id="contactme" @mouseenter="toggleButton(true)" @mouseleave="toggleButton(false)" href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" class="oval block w-11/12 mx-auto py-16 lg:py-32 border-4 border-black relative z-20 text-center text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-medium uppercase">
           Contattami
         </a>
-        <img id="drape" class="absolute inset-0 object-cover w-full h-full" src="/website/images/homepage/drape.webp" alt="Un drappo color ocra illuminato da una luce morbida">
+        <img id="drape" class="absolute inset-0 object-cover w-full h-full z-10" src="/website/images/homepage/drape.webp" alt="Un drappo color ocra illuminato da una luce morbida">
       </div>
     </div>
   </div>

@@ -1,41 +1,41 @@
 <template>
-  <div>
-    <div class="p-4 relative">
-      <div :class="sectionClass" class="h-screen bg-black flex items-center justify-start">
-        <div class="md:w-3/5 p-6 md:p-12 bg-black rounded-3xl relative z-50">
-          <div class="relative">
-            <h1 :class="titleClass" :style="'background-image: url(https://68.media.tumblr.com/a952925d1014a0e34fae29a119b3b357/tumblr_orp0u451NY1r8dxfio1_540.gif)'" style="filter: saturate(250%); background-clip: text; background-clip: text; -webkit-background-clip: text; color: rgba(250,250,250,0.45);">
-              {{ $t('shared.errors.notfoundpage.title') }}
-            </h1>
+  <div  class="bg-black overflow-hidden">
+      <div class="h-600 lg:h-screen w-full px-4 pt-8 mb-32 lg:mb-64 relative border-b-2 border-white" style="max-height: 900px;">
+      <div id="finestra" class="max-w-screen-sm mx-auto w-full overflow-hidden rounded-t-full h-full relative">
+        <div id="stella" class="absolute top-0 inset-x-0 w-full flex items-center justify-center mt-16 z-20">
+          <div class="w-24 lg:w-32 h-24 lg:h-32">
+            <svg-switcher file="star" />
           </div>
-          <h2 class="mt-2 md:mt-6 mb-4 md:mb-8 md:text-xl text-white">
-            {{ $t('shared.errors.notfoundpage.description1') }}
-            <br>
-            <span class="my-2 rounded text-white bg-white bg-opacity-25 px-2 py-1 inline-block">
-              {{ $route.path }}
-            </span>
-            <br>
-            {{ $t('shared.errors.notfoundpage.description2') }}
-          </h2>
-          <nuxt-link :to="localePath('index')" class="bg-white text-black inline-block rounded-full px-8 py-2 text-xl hover:bg-opacity-75">
-            {{ $t('shared.errors.notfoundpage.action') }}
-          </nuxt-link>
         </div>
-        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com"  class="absolute top-0 left-0 h-full w-full object-cover" src="https://68.media.tumblr.com/a952925d1014a0e34fae29a119b3b357/tumblr_orp0u451NY1r8dxfio1_540.gif" :alt="$t('shared.errors.notfoundpage.title')">
+        <img id="cielo" class="absolute inset-0 w-full h-full object-cover" src="/website/images/homepage/landscape.webp" alt="Una foto mossa di un campo di fiori con una donna in vestito rosso che balla dandoci le spalle">
+      </div>
+      <div class="absolute inset-0 max-w-screen-lg mx-auto w-full text-center h-full flex items-center justify-center mix-blend-lighten z-10 pointer-events-none">
+        <h2 class="text-4xl xl:text-9xl text-white font-display">
+          Questa pagina non esiste
+        </h2>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center transform translate-y-20 lg:translate-y-32">
+        <nuxt-link id="backhome" :to="localePath('/')" class="block mb-8 text-white font-medium uppercase underline">
+          Torna alla home
+        </nuxt-link>
+        <div id="backhome" class="w-1/2 lg:w-1/5 mx-auto">
+          <svg-switcher file="ellipse" />
+        </div>
+      </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
-import {Vue, Component } from 'nuxt-property-decorator'
+import Vue from 'vue'
 import metadata from '@/utils/metadata'
+import magneticButton from '@/utils/magneticButton'
 
-@Component({
-})
-export default class ErrorPage extends Vue {
+import logo from '@/components/shared/TheLogo.vue'
+import SvgSwitcher from '@/components/shared/SvgSwitcher.vue'
 
-  head () {
+export default Vue.extend({
+  head (): any {
     return {
       title: this.$t('shared.errors.notfoundpage.title'),
       meta: metadata({
@@ -54,16 +54,13 @@ export default class ErrorPage extends Vue {
         lang: this.$i18n.locale
       }
     }
+  },
+  components: {
+    logo,
+    SvgSwitcher
+  },
+  mounted () {
+    new magneticButton(document.getElementById('backhome'))
   }
-  
-  // ListPublicContents per tutti i post di una directory e GetPublicDirectory dettagli Directory
-
-  get titleClass () {
-    return 'text-3xl md:text-4xl lg:text-5xl font-bold leading-tight relative z-50'
-  }
-
-  get sectionClass () {
-    return 'rounded-3xl lg:h-screen p-6 md:p-12 overflow-hidden relative'
-  }
-}
+})
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="bg-black overflow-hidden">
     <div class="h-600 lg:h-screen w-full px-4 pt-8 mb-32 lg:mb-64 relative border-b-2 border-white" style="max-height: 900px;">
-      <div id="finestra" class="max-w-screen-sm mx-auto w-full overflow-hidden rounded-t-full h-full relative">
+      <div id="finestra" class="max-w-screen-sm mx-auto w-full overflow-hidden rounded-t-full h-full relative" style="webkit-mask-image: -webkit-radial-gradient(white, black)">
         <div id="stella" class="absolute top-0 inset-x-0 w-full flex items-center justify-center mt-16 z-20">
           <div class="w-24 lg:w-32 h-24 lg:h-32">
             <svg-switcher file="star" />
@@ -15,11 +15,11 @@
       <div class="absolute inset-0 w-full h-full max-w-screen-lg mx-auto flex items-center justify-center mix-blend-overlay z-20 pointer-events-none">
         <logo id="logo2" />
       </div>
-      <div id="scroll" class="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center transform translate-y-20 lg:translate-y-32">
+      <div id="scroll" class="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center transform translate-y-20">
         <div class="mb-8 text-white font-medium uppercase">
           Scroll
         </div>
-        <div class="w-1/2 lg:w-1/5 mx-auto">
+        <div class="w-1/2 lg:w-1/5 mx-auto" style="max-width: 200px;">
           <svg-switcher file="ellipse" />
         </div>
       </div>

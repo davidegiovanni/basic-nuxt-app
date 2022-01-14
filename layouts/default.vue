@@ -4,10 +4,10 @@
     <div id="cursor2" class="hidden lg:block fixed shadow left-0 top-0 w-2 h-2 border border-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
     <div id="scrolling" :class="routeWrapperClass">
       <nuxt :class="routeClass" />
-      <div id="credits" class="w-screen text-white px-4 pt-2 pt-12 lg:pt-24 pb-12">
+      <div id="credits" class="w-screen text-white px-4 mt-2 mt-12 lg:mt-24 mb-12">
         <credits />
       </div>
-      <div id="logodefault" class="w-full text-white px-4 overflow-hidden">
+      <div id="logodefault" class="w-full text-white px-4 overflow-hidden h-64">
         <div class="w-full h-full transform translate-y-4 lg:translate-y-24 flex items-center justify-center">
           <logo id="logo3" />
         </div>

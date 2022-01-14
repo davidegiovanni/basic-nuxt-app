@@ -6,9 +6,9 @@ module.exports = {
   purge: [],
   theme: {
     fontFamily: {
-      'sans': ['itc-avant-garde-gothic-pro', 'sans-serif'],
-      'display': ['tuppence', 'serif'],
-      'mono': ['Basteleur-Bold', 'serif']
+      'sans': ['obviously-wide', 'sans-serif'],
+      'display': ['cheee-bingbong', 'serif'],
+      'mono': ['obviously-compressed', 'serif']
     },
     scale: {
       '0': '0',
@@ -33,6 +33,9 @@ module.exports = {
       screens: {
         '3xl': '1600px',
       },
+      borderRadius: {
+        'huge': '129px'
+      },
       spacing: {
         'half': '48%',
         80: '80%',
@@ -42,7 +45,10 @@ module.exports = {
         300: '300px',
         400: '400px',
         500: '500px',
-        600: '600px'
+        600: '600px',
+        700: '700px',
+        800: '800px',
+        900: '900px'
       },
       width: {
         '50vw': '50vw',

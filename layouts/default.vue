@@ -1,142 +1,16 @@
 <template>
   <div id="layout" :class="mainWrapperClass">
     <div id="cursor" class="hidden lg:block fixed left-0 top-0 shadow w-2 h-2 bg-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
-    <div id="cursor2" class="hidden lg:block fixed shadow left-0 top-0 w-8 h-8 border border-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
-    <div id="showBox" class="fixed pointer-events-none select-none top-0 inset-0 w-screen h-screen flex flex-col items-center justify-center text-white" style="z-index: 1000;">
-      <div class="overflow-hidden mb-8" style="z-index: 1001;">
-        <div id="loader" class="font-display text-6xl xl:text-9xl" style="z-index: 1001;">
-          {{ loadAmount }}
-        </div>
-      </div>
-      <div class="overflow-hidden" style="z-index: 1001;">
-        <div id="show" class="text-white font-display opacity-75" style="z-index: 1001;">
-          Lo spettacolo sta per iniziare
-        </div>
-      </div>
-      <div id="box1" class="w-1/2 h-1/2 absolute top-0 left-0 bg-black" style="z-index: 1000;" />
-      <div id="box2" class="w-1/2 h-1/2 absolute top-0 right-0 bg-black" style="z-index: 1000;" />
-      <div id="box3" class="w-1/2 h-1/2 absolute bottom-0 left-0 bg-black" style="z-index: 1000;" />
-      <div id="box4" class="w-1/2 h-1/2 absolute bottom-0 right-0 bg-black" style="z-index: 1000;" />
-    </div>
-    <div v-if="!hideNuxt" :class="routeWrapperClass">
-      <div v-if="!isMenuOpen" class="w-32 md:w-52 fixed top-0 right-0 flex items-center justify-end pt-4 lg:pt-2 pr-4 lg:pr-8" style="z-index: 55;">
-        <button id="menuButton" @click="toggleMenu()" class="w-32 md:w-48 h-12 md:h-16 border border-white text-white bg-black flex items-center justify-center backdrop-filter backdrop-blur-lg hover:bg-white hover:bg-opacity-25 bg-black bg-opacity-25 font-display" style="border-radius: 100%;">
-          Menu
-        </button>
-      </div>
-      <div v-if="isMenuOpen" class="w-screen h-screen fixed top-0 inset-0 p-4" style="z-index: 998;">
-        <div class="w-full h-full border-4 border-white bg-arancione text-white bg-opacity-25 backdrop-filter backdrop-blur-2xl backdrop-saturate-200 overflow-hidden flex flex-col items-center justify-between py-16" style="border-radius: 100%;">
-          <div>
-            <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-12 h-12" alt="Stella stilizzata">
-          </div>
-          <div class="flex flex-col items-center justify-center w-full">
-            <button @click="goToContacts()" class="w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl xl:text-6xl">
-              I. Contattami
-            </button>
-            <nuxt-link :to="localePath('portfolio')" class="block text-center w-1/2 hover:text-arancione mb-8 pb-8 border-b-2 border-white font-display text-2xl md:text-5xl xl:text-6xl">
-              II. I miei lavori
-            </nuxt-link>
-            <button @click="toggleMenu()" class="w-1/2 hover:text-arancione font-display text-2xl md:text-5xl xl:text-6xl mb-8">
-              II. Chiudi il menu
-            </button>
-          </div>
-          <div class="font-display text-center">
-            Davide G. Steccanella — Italia
-            <br>
-            © {{ currentYear }}
-            <br>
-            <button @click="goToCredits()" class="underline hover:text-arancione">
-              Credits
-            </button>
-          </div>
-        </div>
-      </div>
+    <div id="cursor2" class="hidden lg:block fixed shadow left-0 top-0 w-2 h-2 border border-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
+    <div id="scrolling" :class="routeWrapperClass">
       <nuxt :class="routeClass" />
-      <div id="credits" class="w-screen text-white px-4 pt-2 pb-32">
-        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16 mx-auto" alt="Stella stilizzata">
-        <div class="max-w-screen-lg mx-auto flex flex-col lg:flex-row items-center lg:items-baseline flex-wrap justify-center text-center lg:text-left py-16">
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <p class="font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              Davide Giovanni Steccanella
-            </p>
-            <p class="font-display text-sm">
-              Brand design, prototyping, content e coding
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <a href="https://vercel.com" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              Vercel
-            </a>
-            <p class="font-display text-sm">
-              Hosting e deploy
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <a href="https://github.com/davidegiovanni/basic-nuxt-app" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              Github
-            </a>
-            <p class="font-display text-sm">
-              Versionamento codice e CI
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <a href="https://figma.com" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              Figma
-            </a>
-            <p class="font-display text-sm">
-              Prototyping e assets creation
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <a href="https://nuxtjs.org" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              NuxtJS
-            </a>
-            <p class="font-display text-sm">
-              Frontend framework
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <a href="https://greensock.com" class=" hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              GSAP
-            </a>
-            <p class="font-display text-sm">
-              Web animation
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <a href="https://tailwindcss.com" class="hover:underline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              TailwindCSS
-            </a>
-            <p class="font-display text-sm">
-              CSS framework
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <div class="inline-flex flex-wrap justify-center flex-wrap justify-center flex-baseline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              <a href="https://httpster.net" class="hover:underline mr-1">Htppster,</a> <a href="https://www.pinterest.com" class="hover:underline mr-1">Pinterest</a> & <a href="https://www.awwwards.com" class="hover:underline ml-1">AWWARDS</a>
-            </div>
-            <p class="font-display text-sm">
-              Inspiration & brainstorming
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <p class="font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              Il mio dolce fidanzato
-            </p>
-            <p class="font-display text-sm">
-              Support and appreciation
-            </p>
-          </div>
-          <div class="flex flex-col lg:flex-row items-center lg:items-baseline justify-start pr-4 mb-4">
-            <div class="inline-flex flex-baseline font-display text-xl lg:text-2xl lg:mr-2 uppercase">
-              <a class="hover:underline mr-1" href="https://stackoverflow.com">Stackoverflow</a> & <a class="hover:underline ml-1" href="https://greensock.com/forums/">GSAP Forum</a>
-            </div>
-            <p class="font-display text-sm">
-              Debugging and crisis support
-            </p>
-          </div>
+      <div id="credits" class="w-screen text-white px-4 pt-2 pt-12 lg:pt-24 pb-12">
+        <credits />
+      </div>
+      <div id="logodefault" class="w-full text-white px-4 overflow-hidden">
+        <div class="w-full h-full transform translate-y-4 lg:translate-y-24 flex items-center justify-center">
+          <logo id="logo3" />
         </div>
-        <img width="100%" height="100%" loading="lazy" title="davidegiovanni.com" src="/website/images/homepage/lstar.svg" class="w-16 h-16 mx-auto" alt="Stella stilizzata">
       </div>
     </div>
   </div>
@@ -144,18 +18,35 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import magneticButton from '@/utils/magneticButton'
+
+import logo from '@/components/shared/TheLogo.vue'
+import credits from '@/components/shared/Credits.vue'
 
 export default Vue.extend({
   data (): any {
     return {
-      hideNuxt: true,
-      loadAmount: 0,
-      loadTl: (() => {}),
       window: {},
-      isMenuOpen: false,
-      isLoadedTwice: '',
+      isMobile: false,
+      isTablet: false,
+      isSmallDesktop: false,
+      isDesktop: false,
+      isBigDesktop: false,
+      isHugeDesktop: false
     }
+  },
+  components: {
+    logo,
+    credits
+  },
+  mounted () {
+    this.window = window
+    this.setViewportType()
+    if (!this.isMobile && !this.isTablet && !this.isSmallDesktop) {
+      this.mouseMove()
+    }
+    this.scrollPage()
+    this.showLogo()
+    console.log("%cI'm a designer with creative development skills - you found me! Nice to meet you, I shake you warmly by the hand. Wanna get in touch? Just email me at davidegiovanni96@gmail.com","font-size: 15px")
   },
   head (): any {
     return {
@@ -173,111 +64,68 @@ export default Vue.extend({
       ]
     }
   },
-  mounted () {
-    this.window = window
-    const width: any = window.innerWidth
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth !== width) {
-        this.hideNuxt = true
-        setTimeout(() => {
-          document.location.reload()
-        }, 500)
-        setTimeout(() => {
-          this.hideNuxt = false
-        }, 3000)
-      }
-    });
-    setTimeout(() => {
-      this.hideNuxt = false
-    }, 1500)
-    this.loader()
-    this.loadWebsite()
-    this.mouseMove()
-    setTimeout(() => {
-      new magneticButton(document.getElementById('menuButton'))
-    }, 1700)
-    //
-    const cookies = localStorage[`davidegiovanni_loading_check`]
-    if (cookies) {
-      this.isLoadedTwice = cookies
-    } else {
-      this.isLoadedTwice = ''
-    }
-    if (this.isLoadedTwice === '') {
-      this.loadingCheck()
-      document.location.reload()
-    }
-    //
-    console.log("%cI'm a designer with creative development skills - you found me! Nice to meet you, I shake you warmly by the hand. Wanna get in touch? Just email me at davidegiovanni96@gmail.com","font-size: 15px")
-  },
   methods: {
-    reload () {
-      this.hideNuxt = true
-      setTimeout(() => {
-        document.location.reload()
-      }, 500)
-      setTimeout(() => {
-        this.hideNuxt = false
-      }, 3000)
-    },
-    loader () {
-      const gsap = this.$gsap
-      this.loadTl = gsap.timeline({ speed: 2, paused: true })
-      .to('#show', { y: 100, duration: 1, delay: 0.5, ease: "power2.inOut" })
-      .to('#loader', { y: 200, duration: 2, ease: "power2.inOut" }, '<+=0.2')
-      .to('#box1', 
-        { borderRadius: '0% 0% 50% 0%', duration: 2, ease: "none" }, '>'
-      )
-      .to('#box2', 
-        { borderRadius: '0% 0% 0% 50%', duration: 2, ease: "none" }, '<'
-      )
-      .to('#box3', 
-        { borderRadius: '0% 50% 0% 0%', duration: 2, ease: "none" }, '<'
-      )
-      .to('#box4', 
-        { borderRadius: '50% 0% 0% 0%', duration: 2, ease: "none" }, '<'
-      )
-      .to('#showBox', 
-        { scale: 10, duration: 4, ease: "none" }, '>-=1'
-      )
-      .to('#showBox', 
-        { display: "none" }
-      )
-    },
-    loadWebsite () {
-      let intervalId: any = null
-      const load =  () => {
-        if (this.loadAmount < 100) {
-          this.isLoadedTwice === '' 
-          ? this.loadAmount = 0
-          : this.loadAmount < 50 
-            ? this.loadAmount += 1 
-            : this.loadAmount += 5 
-        } else {
-          clearInterval(intervalId)
-          this.$store.dispatch('changeIndexReady')
-          this.loadTl.paused(!this.loadTl.paused())
-        }
+    setViewportType () {
+      const windowWidth = window.innerWidth
+      if (windowWidth <= 640) {
+        this.isMobile = true
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 768 && windowWidth > 640) {
+        this.isMobile = false
+        this.isTablet = true
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 1024 && windowWidth > 768) {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = true
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 1280 && windowWidth > 1024) {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = true
+        this.isBigDesktop = false
+        this.isHugeDesktop = false
+      } else if (windowWidth <= 1536 && windowWidth > 1280) {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = true
+        this.isHugeDesktop = false
+      } else {
+        this.isMobile = false
+        this.isTablet = false
+        this.isSmallDesktop = false
+        this.isDesktop = false
+        this.isBigDesktop = false
+        this.isHugeDesktop = true
       }
-      intervalId = setInterval(load, 50)
     },
     mouseMove () {
       const gsap = this.$gsap
       gsap.set("#cursor", {xPercent: -50, yPercent: -50, opacity: 1})
-      gsap.set("#cursor2", {xPercent: -50, yPercent: -50, opacity: 1, delay: 0.5})
+      gsap.set("#cursor2", {xPercent: -50, yPercent: -50, opacity: 1})
 
       const pos = { x: this.window.innerWidth / 2, y: this.window.innerHeight / 2 }
       const mouse = { x: pos.x, y: pos.y };
-      const speed = 0.35;
-      const speed2 = 0.9;
+      const speed = 0.2;
+      const speed2 = 0.2;
 
       const xSet = gsap.quickSetter('#cursor', "x", "px")
       const xSet2 = gsap.quickSetter('#cursor2', "x", "px")
       const opacity = gsap.quickSetter('#cursor', 'opacity', '%')
       const ySet = gsap.quickSetter('#cursor', "y", "px")
       const ySet2 = gsap.quickSetter('#cursor2', "y", "px")
-      const setScaleX = gsap.quickSetter('#cursor2', "scaleX")
 
       this.window.addEventListener("mousemove", (e: any) => {    
         mouse.x = e.x;
@@ -297,62 +145,62 @@ export default Vue.extend({
         ySet(y);
         ySet2(y2);
         opacity(100)
-        setScaleX(1.1)
       });
     },
-    loadingCheck () {
-      this.isLoadedTwice = 'true'
-      localStorage[`davidegiovanni_loading_check`] = 'true'
+    scrollPage () {
+      const scroller = document.getElementById('scrolling') as HTMLElement
+      const height = scroller.clientHeight as number
+      document.body.style.height = height + "px"
+      this.$gsap.to(scroller, {
+        y: () => -(height - document.documentElement.clientHeight),
+        ease: "none",
+        scrollTrigger: {
+          trigger: "",
+          start: 'start start',
+          end: 'bottom bottom',
+          scrub: 2,
+          invalidateOnRefresh: true
+        }
+      })
     },
-    goToContacts () {
-      this.toggleMenu()
-      const scrollToY = document.body.scrollHeight - 500
-      this.$gsap.to(window, {duration: 1, scrollTo: scrollToY, ease: "none"})
-    },
-    goToCredits () {
-      this.toggleMenu()
-      const scrollToY = document.body.scrollHeight
-      this.$gsap.to(window, {duration: 1, scrollTo: scrollToY, ease: "none"})
-    },
-    toggleMenu () {
-      this.isMenuOpen = !this.isMenuOpen
+    showLogo () {
+      this.$gsap.from('#logodefault', {
+        opacity: 0,
+        y: 100,
+        scale: 0.75,
+        duration: 2,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: '#credits',
+          start: 'bottom bottom-=5%',
+          toggleActions: "play none none reverse"
+        }
+      })
     }
   },
   computed: {
     mainWrapperClass () {
-      return 'min-h-screen bg-black overflow-x-hidden'
+      return 'fixed inset-0 w-full h-full overflow-hidden bg-black'
     },
     routeWrapperClass () {
-      return 'min-h-screen flex flex-col'
+      return 'min-h-screen flex flex-col overflow-hidden'
     },
     routeClass () {
-      return 'flex-1'
+      return 'flex-1 overflow-hidden'
     },
     currentYear () {
       return new Date().getFullYear()
-    },
-    structuredData (): object {
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Davide Giovanni Steccanella',
-        jobTitle: 'Designer'
-      }
     }
   }
 })
 </script>
 
 <style scoped>
-@font-face {
-  font-family: 'Basteleur-Bold';
-  src: local('Basteleur-Bold'), url('@/static/website/fonts/Basteleur-Bold.woff') format('woff2');
+*::-webkit-scrollbar {
+  display: none !important;
 }
 
-html::-webkit-scrollbar {
-  display: none;
-}
-html {
+* {
   scrollbar-width: none;
 }
 </style>

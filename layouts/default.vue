@@ -3,6 +3,7 @@
     <div id="cursor" class="hidden lg:block fixed left-0 top-0 shadow w-2 h-2 bg-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
     <div id="cursor2" class="hidden lg:block fixed shadow left-0 top-0 w-2 h-2 border border-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
     <nuxt />
+    Hello
   </div>
 </template>
 

@@ -185,8 +185,7 @@ export default Vue.extend({
         trigger: '#contactbox',
         start: "top bottom",
         end: 'center center',
-        scrub: true,
-        markers: true
+        scrub: true
       }
       gsap.from('#contactbox', {
         scale: 0.85,

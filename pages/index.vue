@@ -1,35 +1,82 @@
 <template>
-  <div id="body" class="bg-black overflow-hidden">
-    <div class="h-600 lg:h-screen w-full px-4 pt-8 mb-32 lg:mb-64 relative border-b-2 border-white" style="max-height: 900px;">
-      <div id="finestra" class="max-w-screen-sm mx-auto w-full overflow-hidden rounded-t-full h-full relative" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
-        <div id="stella" class="absolute top-0 inset-x-0 w-full flex items-center justify-center mt-16 z-20">
-          <div class="w-24 lg:w-32 h-24 lg:h-32">
-            <svg-switcher file="star" />
+  <div id="viewport">
+    <div id="content" class="bg-black">
+      <div class="h-500 md:h-600 lg:h-screen w-full px-4 pt-8 mb-32 lg:mb-64 relative border-b-2 border-white" style="max-height: 900px;">
+        <div id="finestra" class="max-w-screen-sm mx-auto w-8/12 md:w-1/2 lg:w-full overflow-hidden rounded-t-full h-full relative" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
+          <div id="stella" class="absolute top-0 inset-x-0 w-full flex items-center justify-center mt-8 lg:mt-16 z-20">
+            <div class="w-20 lg:w-32 h-20 lg:h-32">
+              <svg-switcher file="star" />
+            </div>
+          </div>
+          <img id="cielo" class="absolute inset-0 w-full h-full object-cover" src="/website/images/homepage/sky-gradient.webp" alt="Gradiente di un cielo azzurro pacifico con nuvole rosa">
+        </div>
+        <div class="absolute inset-0 max-w-screen-lg mx-auto w-10/12 md:w-8/12 lg:w-full h-auto lg:h-full flex items-center justify-center mix-blend-lighten z-10 pointer-events-none">
+          <logo id="logo" />
+        </div>
+        <div class="absolute inset-0 w-full h-full max-w-screen-lg mx-auto w-10/12 md:w-8/12 lg:w-full h-auto lg:h-full flex items-center justify-center mix-blend-overlay z-20 pointer-events-none">
+          <logo id="logo2" />
+        </div>
+        <div id="scroll" class="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center transform translate-y-20">
+          <div class="mb-8 text-white font-medium uppercase">
+            Scroll
+          </div>
+          <div class="w-1/2 lg:w-1/5 mx-auto" style="max-width: 200px;">
+            <svg-switcher file="ellipse" />
           </div>
         </div>
-        <img id="cielo" class="absolute inset-0 w-full h-full object-cover" src="/website/images/homepage/sky-gradient.webp" alt="Gradiente di un cielo azzurro pacifico con nuvole rosa">
       </div>
-      <div class="absolute inset-0 max-w-screen-lg mx-auto w-full h-full flex items-center justify-center mix-blend-lighten z-10 pointer-events-none">
-        <logo id="logo" />
-      </div>
-      <div class="absolute inset-0 w-full h-full max-w-screen-lg mx-auto flex items-center justify-center mix-blend-overlay z-20 pointer-events-none">
-        <logo id="logo2" />
-      </div>
-      <div id="scroll" class="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center transform translate-y-20">
-        <div class="mb-8 text-white font-medium uppercase">
-          Scroll
+      <section class="px-4 pb-16 md:pb-24 lg:pb-32">
+        <div class="max-w-screen-xl mx-auto py-8 border-t border-b border-white relative">
+          <h2 class="uppercase uppercase text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-white introText text-white introText">
+            Brand costruiti con un metodo <span class="font-display text-rosa">unico</span>. Siti web pronti per <span class="font-display text-viola">conquistare</span> di tutto. Brand squisiti di <span class="font-display text-ghiaccio">altissima qualità</span>. <span class="font-display text-porpora">Davide</span> è il tuo biglietto per uno spettacolo di <span class="font-display text-cielo">brand</span>
+          </h2>
+          <div class="inline-block absolute bottom-0 right-0 z-10 transform translate-y-4">
+            <p class="uppercase px-4 bg-black text-white">
+              WOW!
+            </p>
+          </div>
         </div>
-        <div class="w-1/2 lg:w-1/5 mx-auto" style="max-width: 200px;">
-          <svg-switcher file="ellipse" />
+      </section>
+      <section id="stripSection" class="overflow-hidden pb-16 md:pb-24 lg:pb-32">
+        <div id="horizontalStrip" class="text-white lg:flex items-center w-screen justify-start max-w-screen-xl mx-auto">
+          <div class="flex-none w-full lg:w-1/3 max-w-screen-sm p-8">
+            <h2>
+              {{ sections[0].title }}
+            </h2>
+          </div>
+          <div style="width: clamp(600px, 100vw, 2500px); webkit-mask-image: -webkit-radial-gradient(white, black);" class="flex-none h-40 lg:h-72 transform translate-x-1/3 lg:translate-x-0 overflow-hidden rounded-full shrink-0 relative px-8">
+            <span class="absolute top-0 left-0 w-32 lg:w-64 h-32 lg:h-64 border border-white z-10 rounded-full m-4" />
+            <img class="absolute top-0 left-0 inset-0 w-full h-full object-cover" :src="sections[0].image" :alt="sections[0].title">
+            <div class="w-full h-full flex items-center justify-center absolute inset-0 z-10">
+              <div class="w-24 lg:w-32 h-24 lg:h-32">
+                <svg-switcher file="star" />
+              </div>
+            </div>
+            <span class="absolute top-0 right-0 w-32 lg:w-64 h-32 lg:h-64 border border-white z-10 rounded-full m-4" />
+          </div>
+          <div class="flex-none w-screen transform translate-x-full lg:translate-x-0 lg:w-1/3 lg:max-w-screen-sm p-8">
+            <p>
+              {{ sections[0].description }}
+            </p>
+          </div>
+          <div class="flex-none w-0 lg:w-1/3 max-w-screen-sm p-8" />
+        </div>
+      </section>
+      <div class="h-500 lg:h-screen p-4 md:p-8" style="max-height: 900px;">
+        <div id="contactbox" class="overflow-hidden relative max-w-screen-2xl mx-auto w-full h-full flex items-center justify-center rounded-3xl md:rounded-huge" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
+          <a id="contactme" @mouseenter="toggleButton(true)" @mouseleave="toggleButton(false)" href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" class="oval block w-11/12 mx-auto py-16 lg:py-32 border-4 border-black relative z-20 text-center text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-medium uppercase">
+            Contattami
+          </a>
+          <img id="drape" class="absolute inset-0 object-cover w-full h-full z-10" src="/website/images/homepage/drape.webp" alt="Un drappo color ocra illuminato da una luce morbida">
         </div>
       </div>
-    </div>
-    <div class="h-500 lg:h-screen p-4 md:p-8" style="max-height: 900px;">
-      <div id="contactbox" class="overflow-hidden relative max-w-screen-2xl mx-auto w-full h-full flex items-center justify-center rounded-3xl md:rounded-huge" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
-        <a id="contactme" @mouseenter="toggleButton(true)" @mouseleave="toggleButton(false)" href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" class="oval block w-11/12 mx-auto py-16 lg:py-32 border-4 border-black relative z-20 text-center text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-medium uppercase">
-          Contattami
-        </a>
-        <img id="drape" class="absolute inset-0 object-cover w-full h-full z-10" src="/website/images/homepage/drape.webp" alt="Un drappo color ocra illuminato da una luce morbida">
+      <div id="credits" class="w-screen text-white px-4 mt-2 mt-12 lg:mt-24 mb-12">
+        <credits />
+      </div>
+      <div id="logodefault" class="w-full text-white px-4 h-16 md:h-24 lg:h-64">
+        <div class="w-full h-full transform translate-y-4 lg:translate-y-24 flex items-center justify-center">
+          <logo id="logo3" />
+        </div>
       </div>
     </div>
   </div>
@@ -39,11 +86,15 @@
 import Vue from 'vue'
 import metadata from '@/utils/metadata'
 import magneticButton from '@/utils/magneticButton'
+import { getters } from '~/store'
+import { gsap } from "gsap"
 
 import logo from '@/components/shared/TheLogo.vue'
+import credits from '@/components/shared/Credits.vue'
 import SvgSwitcher from '@/components/shared/SvgSwitcher.vue'
 
 export default Vue.extend({
+  layout: 'index',
   data (): any {
     return {
       window: {},
@@ -57,12 +108,12 @@ export default Vue.extend({
   },
   head (): any {
     return {
-      title: this.$t('index.meta.title'),
+      title: this.meta.title,
       meta: metadata({
-        title: this.$t('index.meta.title'),
-        description: this.$t('index.meta.description'),
+        title: this.meta.title,
+        description: this.meta.description,
         url: process.env.BASE_URL + this.$route.path,
-        image: process.env.BASE_URL + '/website/images/shared/og-image.png',
+        image: this.meta.image,
         robots: 'index, follow'
       }),
       link: [
@@ -77,22 +128,44 @@ export default Vue.extend({
     }
   },
   mounted () {
+    // pinned animations
+
     this.window = window
+
     this.setViewportType()
     if (!this.isMobile && !this.isTablet && !this.isSmallDesktop) {
       new magneticButton(document.getElementById('logo'))
       new magneticButton(document.getElementById('logo2'))
     }
     // animations
-
-    this.contactsAnimation()
     this.headerAnimations()
   },
   components: {
     logo,
+    credits,
     SvgSwitcher
   },
-  computed: {},
+  computed: {
+    index (): any {
+      return this.$store.getters['indexPage'] as ReturnType<typeof getters.indexPage>
+    },
+    webErr (): any {
+      return this.$store.getters['webErr'] as ReturnType<typeof getters.webErr>
+    },
+    meta(): any {
+      const title = this.index.title !== '' ? this.index.title : this.$t('index.meta.title')
+      const description = this.index.description !== '' ? this.index.description : this.$t('index.meta.description')
+      const image = this.index.image !== '' ? this.index.image : `${process.env.BASE_URL}/website/images/shared/og-image.png`
+
+      const errorTitle = this.$t('shared.errors.notfoundpage.title')
+      const errorDescription = this.$t('shared.errors.notfoundpage.title')
+      const errorImage = `${process.env.BASE_URL}/website/images/shared/og-image.png`
+      return this.webErr ? { errorTitle, errorDescription, errorImage } : { title, description, image }
+    },
+    sections(): any {
+      return this.index.sections
+    }
+  },
   methods: {
     setViewportType () {
       const windowWidth = window.innerWidth
@@ -141,89 +214,39 @@ export default Vue.extend({
       }
     },
     headerAnimations () {
-      this.$gsap.to('#cielo', {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#content',
+          start: "top -10%",
+          end: 'bottom bottom',
+          anticipatePin: 1,
+          scrub: true
+        }
+      })
+      tl.to('#cielo', {
         scale: 1.25,
-        y: 100,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#cielo',
-          start: 'top top',
-          toggleActions: "play none none reverse"
-        }
-      })
+        y: 500
+      }, '<')
       //stella
-      this.$gsap.to('#stella', {
-        rotate: 360,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#scrolling',
-          start: 'top top',
-          toggleActions: "play none none reverse"
-        }
-      })
+      tl.to('#stella', {
+        rotate: 360
+      }, '<')
       // scroll
-      this.$gsap.to('#scroll', {
-        yPercent: -20,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#scrolling',
-          start: 'top -25%',
-          toggleActions: "play none none reverse"
-        }
-      })
+      tl.to('#scroll', {
+        yPercent: -100
+      }, '<')
       // loghi
-      this.$gsap.to('#logo', {
-        y: -100,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#scrolling',
-          start: 'top top',
-          toggleActions: "play none none reverse"
-        }
-      })
-      this.$gsap.to('#logo2', {
-        y: -100,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#scrolling',
-          start: 'top top',
-          toggleActions: "play none none reverse"
-        }
-      })
+      tl.to('#logo', {
+        y: -2000
+      }, '<')
+      tl.to('#logo2', {
+        y: -2000
+      }, '<')
     },
     toggleButton(toggled: boolean) {
-      this.$gsap.to('#contactme', {
+      gsap.to('#contactme', {
         backgroundColor: toggled ? 'white' : 'transparent',
         duration: 2
-      })
-    },
-    contactsAnimation () {
-      this.$gsap.from('#contactbox', {
-        scale: 0.95,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#contactbox',
-          start: 'top 50%',
-          toggleActions: "play none none reverse"
-        }
-      })
-      this.$gsap.from('#contactme', {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: '#contactme',
-          start: 'top 50%',
-          toggleActions: "play none none reverse"
-        }
-      })
-      // drape
-      this.$gsap.from('#drape', {
-        scale: 1.10,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#drape',
-          start: 'top 50%',
-          toggleActions: "play none none reverse"
-        }
       })
     }
   }
@@ -234,4 +257,10 @@ export default Vue.extend({
 .oval {
   border-radius: 100%
 }
+.horizontal-perfect-circle:after {
+  content: "";
+  display: block;
+  padding-left: 100%;
+}
+
 </style>

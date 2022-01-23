@@ -52,6 +52,7 @@ export default {
     id: 'UA-80324273-1'
   },
   build: {
+    transpile: ["gsap"],
     extend (config, ctx) {
       config.module.rules.push({
         test: /\.ya?ml$/,

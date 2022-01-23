@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['obviously-wide', 'sans-serif'],
-      'display': ['cheee-bingbong', 'serif'],
+      'display': ['Pilowlava-Regular', 'serif'],
       'mono': ['obviously-compressed', 'serif']
     },
     scale: {
@@ -63,13 +63,11 @@ module.exports = {
         'volume-shadow-inset': '0px -0.75px 0.75px rgba(0,0,0,0.25),0px 1px 2px rgba(255,255,255,0.2),inset 0px 1px 4px rgba(0,0,0,0.15), 0px -0.75px 0.75px rgba(0,0,0,0.25),0px 1px 2px rgba(255,255,255,0.18),inset 0px 2px 5px rgba(0,0,0,0.2)'
       },
       colors: {
-        'arancione': '#FF7A00',
-        'pesca': '#FF8888',
-        'viola': '#6700A6',
-        'porpora': '#A6001E',
-        'ghiaccio': '#BAFFFB',
-        'notte': '#003667',
-        'muschio': '#007D76'
+        'rosa': '#F4AED7',
+        'viola': '#795ADC',
+        'ghiaccio': '#9ADCFB',
+        'porpora': '#EF65B2',
+        'cielo': '#8FA4FB'
       }
     },
   },

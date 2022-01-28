@@ -28,16 +28,15 @@ export default Vue.extend({
     }
   },
   mounted () {
-    smoothScroll('#content', '#viewport', 2)
-    this.scrollStrip()
-    this.contactsAnimation()
+    // smoothScroll('#content', '#viewport', 2)
+    // this.scrollStrip()
+    // this.contactsAnimation()
 
     this.window = window
     this.setViewportType()
     if (!this.isMobile && !this.isTablet && !this.isSmallDesktop && !this.isDesktop) {
       this.mouseMove()
     }
-    this.showLogo()
     console.log("%cI'm a designer with creative development skills - you found me! Nice to meet you, I shake you warmly by the hand. Wanna get in touch? Just email me at davidegiovanni96@gmail.com","font-size: 15px")
   },
   head (): any {
@@ -152,8 +151,35 @@ export default Vue.extend({
         scrollTrigger: {
           trigger: '#credits',
           start: 'bottom bottom-=5%',
-          toggleActions: "play none none reverse"
+          toggleActions: "play none none reverse",
+          markers: true
         }
+      })
+    },
+    contactsAnimation () {
+      const scrollTriggerObj = {
+        trigger: '#contactbox',
+        start: "top bottom",
+        end: 'center center',
+        scrub: true,
+        markers: true
+      }
+      gsap.from('#contactbox', {
+        scale: 0.85,
+        duration: 2,
+        scrollTrigger: scrollTriggerObj
+      })
+      gsap.from('#contactme', {
+        opacity: 0,
+        duration: 2,
+        scrollTrigger: scrollTriggerObj
+      })
+      // drape
+      gsap.from('#drape', {
+        scale: 1.20,
+        opacity: 0.80,
+        duration: 2,
+        scrollTrigger: scrollTriggerObj
       })
     },
     scrollStrip() {
@@ -180,31 +206,6 @@ export default Vue.extend({
         duration: 2
       })
     },
-    contactsAnimation () {
-      const scrollTriggerObj = {
-        trigger: '#contactbox',
-        start: "top bottom",
-        end: 'center center',
-        scrub: true
-      }
-      gsap.from('#contactbox', {
-        scale: 0.85,
-        duration: 2,
-        scrollTrigger: scrollTriggerObj
-      })
-      gsap.from('#contactme', {
-        opacity: 0,
-        duration: 2,
-        scrollTrigger: scrollTriggerObj
-      })
-      // drape
-      gsap.from('#drape', {
-        scale: 1.20,
-        opacity: 0.80,
-        duration: 2,
-        scrollTrigger: scrollTriggerObj
-      })
-    }
   },
   computed: {
     mainWrapperClass () {

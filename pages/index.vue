@@ -363,8 +363,7 @@ export default Vue.extend({
         scrollTrigger: {
           trigger: '#credits',
           start: 'bottom bottom-=5%',
-          toggleActions: "play none none reverse",
-          markers: true
+          toggleActions: "play none none reverse"
         }
       })
     },
@@ -373,8 +372,7 @@ export default Vue.extend({
         trigger: '#contactbox',
         start: "top bottom",
         end: 'center center',
-        scrub: true,
-        markers: true
+        scrub: true
       }
       gsap.from('#contactbox', {
         scale: 0.85,

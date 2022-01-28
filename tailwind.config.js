@@ -34,7 +34,8 @@ module.exports = {
         '3xl': '1600px',
       },
       borderRadius: {
-        'huge': '129px'
+        'huge': '150px',
+        'gigantic': '600px'
       },
       spacing: {
         'half': '48%',

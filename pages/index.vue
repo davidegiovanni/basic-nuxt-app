@@ -94,6 +94,72 @@
           </div>
         </div>
       </section>
+      <section class="px-4">
+        <div class="w-full flex items-center justify-center transform translate-y-1/2 relative z-10">
+          <p class="inline-block border-2 border-white rounded-full bg-black text-white uppercase py-1 px-4">
+            {{ sections[2].primaryLink.title }}
+          </p>
+        </div>
+        <div class="max-w-screen-xl mx-auto py-16 border-t-2 border-white flex flex-col items-center justify-center relative px-4 overflow-hidden">
+          <div>
+            <div class="flex items-center justify-start mx-auto">
+              <h2 id="world" class="inline-block whitespace-nowrap uppercase text-white font-display" style="font-size: clamp(3rem, -3.7143rem + 16.0714vw, 9rem)">
+                {{ sections[2].title }} 
+              </h2>
+              <span id="bgspan" class="flex-none bg-white rounded-full bg-cover bg-no-repeat bg-center relative" :style="`background-image: url('${sections[2].image}')`" />
+            </div>
+            <div>
+              <h2 id="widebrands" class="inline-block whitespace-nowrap uppercase text-white font-display" style="font-size: clamp(3rem, -3.7143rem + 16.0714vw, 9rem)">
+                {{ sections[2].description }}
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-screen-xl mx-auto mb-8 md:mb-16 lg:mb-32">
+          <div class="w-10/12 lg:w-1/2">
+            <div class="pb-2 lg:pb-6 mb-2 lg:mb-6 border-b-2 border-white">
+              <h3 class="text-white uppercase">
+                {{ sections[3].title }}
+              </h3>
+            </div>
+            <div class="flex">
+              <div class="inline-block flex-none text-white uppercase">
+                {{ sections[3].primaryLink.title }}
+              </div>
+              <p class="uppercase text-white pl-6">
+                {{ sections[3].description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-screen-2xl bg-white mx-auto rounded-t-3xl md:rounded-t-huge p-4 lg:p-8 relative">
+          <div class="absolute top-0 inset-0 z-20 transform translate-y-2">
+            <div class="mx-auto w-12 h-12">
+              <svg-switcher file="darkstar" />
+            </div>
+          </div>
+          <div v-for="n in 2" :key="n" :class="`${n === 1 ? 'left-0' : 'right-0'}`" class="w-12 md:w-24 h-12 md:h-24 absolute top-0 m-2 md:m-12 lg:m-20">
+            <svg-switcher file="sun" />
+          </div>
+          <div class="w-full border-2 border-black rounded-t-gigantic bg-cover bg-no-repeat bg-center relative p-8 lg:p-16" :style="`background-image: url('${sections[4].image}')`" style="height: clamp(500px, 60vh, 1000px)">
+            <div class="w-full h-full flex flex-col items-center justify-center">
+              <div class="grid auto-rows-min grid-flow-row-dense grid-cols-1 lg:grid-cols-2 w-10/12 mx-auto gap-8">
+                <div class="lg:col-span-2">
+                  <h3 class="w-full lg:w-3/5 uppercase" :style="`${fluidType(16, 32, 300, 2400, 1.5)}`">
+                    {{ sections[4].title }}
+                  </h3>
+                </div>
+                <a :href="sections[4].primaryLink.link" target="_blank" rel="noopener" class="uppercase underline" :style="`${fluidType(16, 32, 300, 2400, 1.5)}`">
+                  {{ sections[4].primaryLink.title }}
+                </a>
+                <div class="uppercase text-right">
+                  {{ sections[4].description }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="h-500 lg:h-screen p-4 md:p-8" style="max-height: 900px;">
         <div id="contactbox" class="overflow-hidden relative max-w-screen-2xl mx-auto w-full h-full flex items-center justify-center rounded-3xl md:rounded-huge" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
           <a id="contactme" @mouseenter="toggleButton(true)" @mouseleave="toggleButton(false)" href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" class="oval block w-11/12 mx-auto py-16 lg:py-32 border-4 border-black relative z-20 text-center text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-medium uppercase">
@@ -168,6 +234,7 @@ export default Vue.extend({
     this.scrollStrip()
     this.contactsAnimation()
     this.showLogo()
+    this.worldWideBrands()
 
     this.setViewportType()
     if (!this.isMobile && !this.isTablet && !this.isSmallDesktop) {
@@ -353,6 +420,15 @@ export default Vue.extend({
     },
     fluidType(min: number, max: number, screenMin: number, screenMax: number, line: number) {
       return fluidType(min, max, screenMin, screenMax, line)
+    },
+    worldWideBrands() {
+      const worldwidth = document.getElementById('world')?.offsetWidth as number
+      const worldheight = document.getElementById('world')?.offsetHeight as number
+      const widebrandswidth = document.getElementById('widebrands')?.offsetWidth as number
+      gsap.set('#bgspan', {
+        width: `${widebrandswidth - worldwidth}`,
+        height: `${worldheight / 2}`
+      })
     }
   }
 })

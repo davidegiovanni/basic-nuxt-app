@@ -25,75 +25,77 @@
           </div>
         </div>
       </div>
-      <section class="px-4 pb-16 md:pb-24 lg:pb-32">
-        <div class="max-w-screen-xl mx-auto py-8 border-t border-b border-white relative">
-          <h2 class="uppercase uppercase text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-white introText text-white introText">
-            Brand costruiti con un metodo <span class="font-display text-rosa">unico</span>. Siti web pronti per <span class="font-display text-viola">conquistare</span> di tutto. Brand squisiti di <span class="font-display text-ghiaccio">altissima qualità</span>. <span class="font-display text-porpora">Davide</span> è il tuo biglietto per uno spettacolo di <span class="font-display text-cielo">brand</span>
-          </h2>
-          <div class="inline-block absolute bottom-0 right-0 z-10 transform translate-y-4">
-            <p class="uppercase px-4 bg-black text-white">
-              WOW!
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="stripSection" class="overflow-hidden pb-16 md:pb-24 lg:pb-32">
-        <div id="horizontalStrip" class="text-white lg:flex items-center w-screen justify-start max-w-screen-xl mx-auto">
-          <div class="flex-none w-full lg:w-1/3 max-w-screen-sm p-8">
-            <h2>
-              {{ sections[0].title }}
+      <div id="pinnedCore">
+        <section class="px-4 pb-16 md:pb-24 lg:pb-32">
+          <div class="max-w-screen-xl mx-auto py-8 border-t border-b border-white relative">
+            <h2 class="uppercase uppercase text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-white introText text-white introText">
+              Brand costruiti con un metodo <span class="font-display text-rosa">unico</span>. Siti web pronti per <span class="font-display text-viola">conquistare</span> di tutto. Brand squisiti di <span class="font-display text-ghiaccio">altissima qualità</span>. <span class="font-display text-porpora">Davide</span> è il tuo biglietto per uno spettacolo di <span class="font-display text-cielo">brand</span>
             </h2>
-          </div>
-          <div style="width: clamp(600px, 100vw, 2500px); webkit-mask-image: -webkit-radial-gradient(white, black);" class="flex-none h-40 lg:h-72 transform translate-x-1/3 lg:translate-x-0 overflow-hidden rounded-full shrink-0 relative px-8">
-            <span class="absolute top-0 left-0 w-32 lg:w-64 h-32 lg:h-64 border border-white z-10 rounded-full m-4" />
-            <img class="absolute top-0 left-0 inset-0 w-full h-full object-cover" :src="sections[0].image" :alt="sections[0].title">
-            <div class="w-full h-full flex items-center justify-center absolute inset-0 z-10">
-              <div class="w-24 lg:w-32 h-24 lg:h-32">
-                <svg-switcher file="star" />
-              </div>
-            </div>
-            <span class="absolute top-0 right-0 w-32 lg:w-64 h-32 lg:h-64 border border-white z-10 rounded-full m-4" />
-          </div>
-          <div class="flex-none w-screen transform translate-x-full lg:translate-x-0 lg:w-1/3 lg:max-w-screen-sm p-8">
-            <p>
-              {{ sections[0].description }}
-            </p>
-          </div>
-          <div class="flex-none w-0 lg:w-1/3 max-w-screen-sm p-8" />
-        </div>
-      </section>
-      <section class="px-4">
-        <div class="border-white border-2 rounded-3xl md:rounded-huge p-8 max-w-screen-2xl mx-auto flex items-center justify-center relative" style="height: clamp(500px, 100vh, 1200px);">
-          <div class="relative z-10 max-w-screen-lg px-4">
-            <h2 class="text-white font-display text-center" :style="`${fluidType(32, 96, 300, 2400, 1.5)}`">
-              {{ sections[1].title }}
-            </h2>
-          </div>
-          <div class="absolute w-full h-full inset-0 flex items-center justify-center">
-            <div v-for="n in 4" :key="n" :class="`${n === 1 || n === 2 ? 'top-0' : 'bottom-0'} ${n === 1 || n === 4 ? 'left-0' : 'right-0'}`" class="w-16 md:w-32 h-16 md:h-32 absolute m-4 md:m-16">
-              <svg-switcher file="rays" />
-            </div>
-            <div class="rounded-t-full rounded-b-full h-4/5 w-8/12 md:w-1/2 lg:w-1/3 max-w-screen-sm p-4 bg-cover bg-no-repeat bg-center relative" :style="`background-image: url('${sections[1].image}')`">
-              <div class="w-20 lg:w-32 h-20 lg:h-32 absolute top-0 right-0 transform translate-y-48 translate-x-10 lg:translate-x-16">
-                <svg-switcher file="star" />
-              </div>
-              <div class="h-1/3 rounded-t-full border-2 border-black flex flex-col items-center justify-end">
-                <p class="uppercase">
-                  {{ sections[1].primaryLink.title }}
-                </p>
-              </div>
+            <div class="inline-block absolute bottom-0 right-0 z-10 transform translate-y-4">
+              <p class="uppercase px-4 bg-black text-white">
+                WOW!
+              </p>
             </div>
           </div>
-        </div>
-        <div class="max-w-screen-lg mx-auto mb-8 md:mb-16 lg:mb-32">
-          <div class="text-white uppercase text-center font-medium my-8 md:my-16 lg:my-32" :style="`${fluidType(16, 40, 300, 2400, 1.5)}`">
-            {{ sections[1].description }}
+        </section>
+        <section id="stripSection" class="overflow-hidden pb-16 md:pb-24 lg:pb-32">
+          <div id="horizontalStrip" class="text-white lg:flex items-center w-screen justify-start max-w-screen-xl mx-auto">
+            <div class="flex-none w-full lg:w-1/3 max-w-screen-sm p-8">
+              <h2>
+                {{ sections[0].title }}
+              </h2>
+            </div>
+            <div style="width: clamp(600px, 100vw, 2500px); webkit-mask-image: -webkit-radial-gradient(white, black);" class="flex-none h-40 lg:h-72 transform translate-x-1/3 lg:translate-x-0 overflow-hidden rounded-full shrink-0 relative px-8">
+              <span class="absolute top-0 left-0 w-32 lg:w-64 h-32 lg:h-64 border border-white z-10 rounded-full m-4" />
+              <img class="absolute top-0 left-0 inset-0 w-full h-full object-cover" :src="sections[0].image" :alt="sections[0].title">
+              <div class="w-full h-full flex items-center justify-center absolute inset-0 z-10">
+                <div class="w-24 lg:w-32 h-24 lg:h-32">
+                  <svg-switcher file="star" />
+                </div>
+              </div>
+              <span class="absolute top-0 right-0 w-32 lg:w-64 h-32 lg:h-64 border border-white z-10 rounded-full m-4" />
+            </div>
+            <div class="flex-none w-screen transform translate-x-full lg:translate-x-0 lg:w-1/3 lg:max-w-screen-sm p-8">
+              <p>
+                {{ sections[0].description }}
+              </p>
+            </div>
+            <div class="flex-none w-0 lg:w-1/3 max-w-screen-sm p-8" />
           </div>
-          <div class="mx-auto w-20 lg:w-32 h-20 lg:h-32">
-            <svg-switcher file="star" />
+        </section>
+        <section class="px-4">
+          <div class="border-white border-2 rounded-3xl md:rounded-huge p-8 max-w-screen-2xl mx-auto flex items-center justify-center relative" style="height: clamp(500px, 100vh, 1200px);">
+            <div class="relative z-10 max-w-screen-lg px-4">
+              <h2 class="text-white font-display text-center" :style="`${fluidType(32, 96, 300, 2400, 1.5)}`">
+                {{ sections[1].title }}
+              </h2>
+            </div>
+            <div class="absolute w-full h-full inset-0 flex items-center justify-center">
+              <div v-for="n in 4" :key="n" :class="`${n === 1 || n === 2 ? 'top-0' : 'bottom-0'} ${n === 1 || n === 4 ? 'left-0' : 'right-0'}`" class="w-16 md:w-32 h-16 md:h-32 absolute m-4 md:m-16">
+                <svg-switcher file="rays" />
+              </div>
+              <div class="rounded-t-full rounded-b-full h-4/5 w-8/12 md:w-1/2 lg:w-1/3 max-w-screen-sm p-4 bg-cover bg-no-repeat bg-center relative" :style="`background-image: url('${sections[1].image}')`">
+                <div class="w-20 lg:w-32 h-20 lg:h-32 absolute top-0 right-0 transform translate-y-48 translate-x-10 lg:translate-x-16">
+                  <svg-switcher file="star" />
+                </div>
+                <div class="h-1/3 rounded-t-full border-2 border-black flex flex-col items-center justify-end">
+                  <p class="uppercase">
+                    {{ sections[1].primaryLink.title }}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+          <div class="max-w-screen-lg mx-auto mb-8 md:mb-16 lg:mb-32">
+            <div class="text-white uppercase text-center font-medium my-8 md:my-16 lg:my-32" :style="`${fluidType(16, 40, 300, 2400, 1.5)}`">
+              {{ sections[1].description }}
+            </div>
+            <div class="mx-auto w-20 lg:w-32 h-20 lg:h-32">
+              <svg-switcher file="star" />
+            </div>
+          </div>
+        </section>
+      </div>
       <section class="px-4">
         <div class="w-full flex items-center justify-center transform translate-y-1/2 relative z-10">
           <p class="inline-block border-2 border-white rounded-full bg-black text-white uppercase py-1 px-4">
@@ -397,7 +399,7 @@ export default Vue.extend({
       gsap.utils.toArray("#horizontalStrip").forEach(strip => {
         ScrollTrigger.create({
           trigger: strip as gsap.DOMTarget,
-          pin: true,
+          pin: '#pinnedCore',
           start: "center center",
           end: () => "+=" + (strip as any).offsetWidth
         })
@@ -412,7 +414,7 @@ export default Vue.extend({
         }
       })
       tl.to(strip, {
-        x: -`${strip.offsetWidth + (strip.offsetWidth / 4)}`,
+        x: -`${strip.offsetWidth + (strip.offsetWidth / 2)}`,
         duration: 2
       })
     },

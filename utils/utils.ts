@@ -136,6 +136,12 @@ const smoothScroll = (content: any, viewport: any, smoothness: any) => {
     });
   }
 
+const fluidType = (minType: number, maxType: number, minScreen: number, maxScreen: number, lineHeightMultiplier: number) => {
+  // 32px + (96 - 32) * ((100vw - 300px) / (2400 - 300))
+  const fluidSizeFormula = `font-size: calc(${minType}px + (${maxType} - ${minType}) * ((100vw - ${minScreen}px) / (${maxScreen} - ${minScreen}))); line-height: calc((${minType}px + (${maxType} - ${minType}) * ((100vw - ${minScreen}px) / (${maxScreen} - ${minScreen}))) * ${lineHeightMultiplier});`
+  return fluidSizeFormula
+}
+
 export { 
     map, 
     lerp, 
@@ -146,5 +152,6 @@ export {
     splitByLetter,
     splitByWord,
     splitText,
-    smoothScroll
+    smoothScroll,
+    fluidType
 };

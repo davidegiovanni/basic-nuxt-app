@@ -62,6 +62,38 @@
           <div class="flex-none w-0 lg:w-1/3 max-w-screen-sm p-8" />
         </div>
       </section>
+      <section class="px-4">
+        <div class="border-white border-2 rounded-3xl md:rounded-huge p-8 max-w-screen-2xl mx-auto flex items-center justify-center relative" style="height: clamp(500px, 100vh, 1200px);">
+          <div class="relative z-10 max-w-screen-lg px-4">
+            <h2 class="text-white font-display text-center" :style="`${fluidType(32, 96, 300, 2400, 1.5)}`">
+              {{ sections[1].title }}
+            </h2>
+          </div>
+          <div class="absolute w-full h-full inset-0 flex items-center justify-center">
+            <div v-for="n in 4" :key="n" :class="`${n === 1 || n === 2 ? 'top-0' : 'bottom-0'} ${n === 1 || n === 4 ? 'left-0' : 'right-0'}`" class="w-16 md:w-32 h-16 md:h-32 absolute m-4 md:m-16">
+              <svg-switcher file="rays" />
+            </div>
+            <div class="rounded-t-full rounded-b-full h-4/5 w-8/12 md:w-1/2 lg:w-1/3 max-w-screen-sm p-4 bg-cover bg-no-repeat bg-center relative" :style="`background-image: url('${sections[1].image}')`">
+              <div class="w-20 lg:w-32 h-20 lg:h-32 absolute top-0 right-0 transform translate-y-48 translate-x-10 lg:translate-x-16">
+                <svg-switcher file="star" />
+              </div>
+              <div class="h-1/3 rounded-t-full border-2 border-black flex flex-col items-center justify-end">
+                <p class="uppercase">
+                  {{ sections[1].primaryLink.title }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-screen-lg mx-auto mb-8 md:mb-16 lg:mb-32">
+          <div class="text-white uppercase text-center font-medium my-8 md:my-16 lg:my-32" :style="`${fluidType(16, 40, 300, 2400, 1.5)}`">
+            {{ sections[1].description }}
+          </div>
+          <div class="mx-auto w-20 lg:w-32 h-20 lg:h-32">
+            <svg-switcher file="star" />
+          </div>
+        </div>
+      </section>
       <div class="h-500 lg:h-screen p-4 md:p-8" style="max-height: 900px;">
         <div id="contactbox" class="overflow-hidden relative max-w-screen-2xl mx-auto w-full h-full flex items-center justify-center rounded-3xl md:rounded-huge" style="webkit-mask-image: -webkit-radial-gradient(white, black); clip-path: content-box; -webkit-clip-path: content-box;">
           <a id="contactme" @mouseenter="toggleButton(true)" @mouseleave="toggleButton(false)" href="https://form.typeform.com/to/BR9qD3pl" target="_blank" rel="noopener" class="oval block w-11/12 mx-auto py-16 lg:py-32 border-4 border-black relative z-20 text-center text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-medium uppercase">
@@ -88,7 +120,7 @@ import metadata from '@/utils/metadata'
 import magneticButton from '@/utils/magneticButton'
 import { getters } from '~/store'
 import { gsap } from "gsap"
-import { smoothScroll } from '@/utils/utils'
+import { smoothScroll, fluidType } from '@/utils/utils'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import logo from '@/components/shared/TheLogo.vue'
@@ -96,7 +128,6 @@ import credits from '@/components/shared/Credits.vue'
 import SvgSwitcher from '@/components/shared/SvgSwitcher.vue'
 
 export default Vue.extend({
-  layout: 'index',
   data (): any {
     return {
       window: {},
@@ -316,10 +347,13 @@ export default Vue.extend({
         }
       })
       tl.to(strip, {
-        x: -`${strip.offsetWidth}`,
+        x: -`${strip.offsetWidth + (strip.offsetWidth / 4)}`,
         duration: 2
       })
     },
+    fluidType(min: number, max: number, screenMin: number, screenMax: number, line: number) {
+      return fluidType(min, max, screenMin, screenMax, line)
+    }
   }
 })
 </script>

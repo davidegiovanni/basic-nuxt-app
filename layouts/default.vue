@@ -3,15 +3,12 @@
     <div id="cursor" class="hidden lg:block fixed left-0 top-0 shadow w-2 h-2 bg-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
     <div id="cursor2" class="hidden lg:block fixed shadow left-0 top-0 w-2 h-2 border border-white rounded-full pointer-events-none select-none" style="z-index: 10000; opacity: 1 !important;"/>
     <nuxt />
-    Hello
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { smoothScroll } from '@/utils/utils'
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import logo from '@/components/shared/TheLogo.vue'
 import credits from '@/components/shared/Credits.vue'
@@ -29,11 +26,6 @@ export default Vue.extend({
     }
   },
   mounted () {
-    // smoothScroll('#content', '#viewport', 2)
-    // this.scrollStrip()
-    // this.contactsAnimation()
-    // this.showLogo()
-
     this.window = window
     this.setViewportType()
     if (!this.isMobile && !this.isTablet && !this.isSmallDesktop && !this.isDesktop) {
@@ -142,71 +134,6 @@ export default Vue.extend({
         ySet2(y2);
         opacity(100)
       });
-    },
-    showLogo () {
-      gsap.from('#logodefault', {
-        opacity: 0,
-        y: 100,
-        scale: 0.75,
-        duration: 2,
-        delay: 0.5,
-        scrollTrigger: {
-          trigger: '#credits',
-          start: 'bottom bottom-=5%',
-          toggleActions: "play none none reverse",
-          markers: true
-        }
-      })
-    },
-    scrollStrip() {
-      let strip = document.getElementById('horizontalStrip') as any
-      gsap.utils.toArray("#horizontalStrip").forEach(strip => {
-        ScrollTrigger.create({
-          trigger: strip as gsap.DOMTarget,
-          pin: true,
-          start: "center center",
-          end: () => "+=" + (strip as any).offsetWidth
-        })
-      })
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: strip,
-          start: "center center",
-          end: () => "+=" + strip.offsetWidth,
-          anticipatePin: 1,
-          scrub: true
-        }
-      })
-      tl.to(strip, {
-        x: -`${strip.offsetWidth}`,
-        duration: 2
-      })
-    },
-    contactsAnimation () {
-      const scrollTriggerObj = {
-        trigger: '#contactbox',
-        start: "top bottom",
-        end: 'center center',
-        scrub: true,
-        markers: true
-      }
-      gsap.from('#contactbox', {
-        scale: 0.85,
-        duration: 2,
-        scrollTrigger: scrollTriggerObj
-      })
-      gsap.from('#contactme', {
-        opacity: 0,
-        duration: 2,
-        scrollTrigger: scrollTriggerObj
-      })
-      // drape
-      gsap.from('#drape', {
-        scale: 1.20,
-        opacity: 0.80,
-        duration: 2,
-        scrollTrigger: scrollTriggerObj
-      })
     }
   },
   computed: {

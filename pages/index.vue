@@ -55,7 +55,7 @@
               </div>
               <span class="absolute top-0 right-0 w-32 lg:w-64 h-32 lg:h-64 border border-white z-10 rounded-full m-4" />
             </div>
-            <div class="flex-none w-screen transform translate-x-full lg:translate-x-0 lg:w-1/3 lg:max-w-screen-sm p-8">
+            <div class="flex-none w-full transform translate-x-full lg:translate-x-0 lg:w-1/3 max-w-screen-sm p-8">
               <p>
                 {{ sections[0].description }}
               </p>
@@ -86,7 +86,7 @@
               </div>
             </div>
           </div>
-          <div class="max-w-screen-lg mx-auto mb-8 md:mb-16 lg:mb-32">
+          <div class="max-w-screen-lg mx-auto">
             <div class="text-white uppercase text-center font-medium my-8 md:my-16 lg:my-32" :style="`${fluidType(16, 40, 300, 2400, 1.5)}`">
               {{ sections[1].description }}
             </div>
@@ -96,29 +96,29 @@
           </div>
         </section>
       </div>
-      <section class="px-4">
+      <section class="px-4 mt-8 md:mt-16 lg:mt-32">
         <div class="w-full flex items-center justify-center transform translate-y-1/2 relative z-10">
           <p class="inline-block border-2 border-white rounded-full bg-black text-white uppercase py-1 px-4">
             {{ sections[2].primaryLink.title }}
           </p>
         </div>
-        <div class="max-w-screen-xl mx-auto py-16 border-t-2 border-white flex flex-col items-center justify-center relative px-4 overflow-hidden">
+        <div class="max-w-screen-xl mx-auto py-16 border-t-2 border-white flex flex-col items-center justify-center relative">
           <div>
             <div class="flex items-center justify-start mx-auto">
-              <h2 id="world" class="inline-block whitespace-nowrap uppercase text-white font-display" style="font-size: clamp(3rem, -3.7143rem + 16.0714vw, 9rem)">
+              <h2 id="world" class="inline-block whitespace-nowrap uppercase text-white font-display" style="font-size: clamp(2.5rem, -3.7143rem + 16.0714vw, 9rem)">
                 {{ sections[2].title }} 
               </h2>
               <span id="bgspan" class="flex-none bg-white rounded-full bg-cover bg-no-repeat bg-center relative" :style="`background-image: url('${sections[2].image}')`" />
             </div>
             <div>
-              <h2 id="widebrands" class="inline-block whitespace-nowrap uppercase text-white font-display" style="font-size: clamp(3rem, -3.7143rem + 16.0714vw, 9rem)">
+              <h2 id="widebrands" class="inline-block whitespace-nowrap uppercase text-white font-display" style="font-size: clamp(2.5rem, -3.7143rem + 16.0714vw, 9rem)">
                 {{ sections[2].description }}
               </h2>
             </div>
           </div>
         </div>
         <div class="max-w-screen-xl mx-auto mb-8 md:mb-16 lg:mb-32">
-          <div class="w-10/12 lg:w-1/2">
+          <div class="w-full md:w-10/12 lg:w-1/2">
             <div class="pb-2 lg:pb-6 mb-2 lg:mb-6 border-b-2 border-white">
               <h3 class="text-white uppercase">
                 {{ sections[3].title }}
@@ -135,15 +135,15 @@
           </div>
         </div>
         <div class="max-w-screen-2xl bg-white mx-auto rounded-t-3xl md:rounded-t-huge p-4 lg:p-8 relative">
-          <div class="absolute top-0 inset-0 z-20 transform translate-y-2">
-            <div class="mx-auto w-12 h-12">
+          <div class="absolute top-0 inset-0 z-20 transform translate-y-0.5 lg:translate-y-2 h-12">
+            <div class="mx-auto w-8 md:w-12 h-8 md:h-12">
               <svg-switcher file="darkstar" />
             </div>
           </div>
           <div v-for="n in 2" :key="n" :class="`${n === 1 ? 'left-0' : 'right-0'}`" class="w-12 md:w-24 h-12 md:h-24 absolute top-0 m-2 md:m-12 lg:m-20">
             <svg-switcher file="sun" />
           </div>
-          <div class="w-full border-2 border-black rounded-t-gigantic bg-cover bg-no-repeat bg-center relative p-8 lg:p-16" :style="`background-image: url('${sections[4].image}')`" style="height: clamp(500px, 60vh, 1000px)">
+          <div class="w-full border-2 border-black rounded-t-gigantic bg-cover bg-no-repeat bg-center relative p-8 lg:p-16" :style="`background-image: url('${sections[4].image}')`" style="height: clamp(900px, 60vh, 1200px)">
             <div class="w-full h-full flex flex-col items-center justify-center">
               <div class="grid auto-rows-min grid-flow-row-dense grid-cols-1 lg:grid-cols-2 w-10/12 mx-auto gap-8">
                 <div class="lg:col-span-2">
@@ -396,6 +396,9 @@ export default Vue.extend({
     },
     scrollStrip() {
       let strip = document.getElementById('horizontalStrip') as any
+      let left = strip.getBoundingClientRect().right
+      const scrollAmount = (this.isDesktop || this.isBigDesktop || this.isHugeDesktop) ? left * 2 : left 
+      console.log(scrollAmount, left)
       gsap.utils.toArray("#horizontalStrip").forEach(strip => {
         ScrollTrigger.create({
           trigger: strip as gsap.DOMTarget,
@@ -414,7 +417,7 @@ export default Vue.extend({
         }
       })
       tl.to(strip, {
-        x: -`${strip.offsetWidth + (strip.offsetWidth / 2)}`,
+        x: -`${scrollAmount}`,
         duration: 2
       })
     },

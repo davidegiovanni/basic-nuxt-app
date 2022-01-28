@@ -159,6 +159,10 @@ export default Vue.extend({
   scrollbar-width: none;
 }
 
+html *, body * {
+    cursor: none !important;
+}
+
 @font-face {
   font-family: 'Pilowlava-Regular';
   src: local('Pilowlava-Regular'), url('@/static/website/fonts/Pilowlava-Regular.woff') format('woff');

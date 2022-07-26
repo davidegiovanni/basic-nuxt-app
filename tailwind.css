@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* commento */
+
+img {
+    @apply select-none pointer-events-none
+}
+
+@media screen and (max-width: 767px) {
+    _::-webkit-full-page-media, _:future, :root .safari_only {
+        padding-bottom: 65px !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

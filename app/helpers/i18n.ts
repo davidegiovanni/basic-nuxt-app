@@ -3,9 +3,7 @@ import i18nData from "~/locales/i18n";
 
 const fallbackLocale = 'it-it';
 const locales: { slug: string; label: string }[] = [
-  { slug: "en-us", label: "English (US)" },
-  { slug: "it-it", label: "Italiano" }
-];
+  { slug: "en-us", label: "English (US)" }];
 const _i18n: any = i18nData;
 
 /**

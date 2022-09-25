@@ -137,4 +137,11 @@ export class Feed {
     description: string = ''
     image: string = ''
   }
+
+  export type Attachment = {
+    id: string;
+    mediaType: string;
+    url: string;
+    description: string;
+  }
   

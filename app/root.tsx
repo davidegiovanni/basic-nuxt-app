@@ -65,12 +65,12 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   const matchingLocale = getMatchingLocale(request, incomingLocale)
 
   if (matchingLocale === undefined) {
-    return redirect(`/it-it${pathname}`)
+    return redirect(`/en-us${pathname}`)
   }
   if (pathname === "/") {
     return redirect(`/${fallbackLocale}`)
   }
-  if (incomingLocale !== 'it-it' && incomingLocale !== 'en-us') {
+  if (incomingLocale !== 'en-us') {
     return redirect(`/${fallbackLocale}${url.pathname}`)
   }
   const cookie = createCookie("careers.auctory.io_i18n_cookie_preferences", {
@@ -134,8 +134,8 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div className="fixed inset-0 overflow-hidden selection:bg-gray-300 selection:text-gray-900">
-          <div className="w-full h-full overflow-hidden safari-only">
+        <div className="fixed inset-0 overflow-hidden selection:bg-[#C1FF11] selection:text-[red]">
+          <div className="w-full h-full overflow-hidden">
             <Outlet />
           </div>
         </div>

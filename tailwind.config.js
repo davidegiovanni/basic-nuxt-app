@@ -2,8 +2,7 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
     fontFamily: {
-      'sans': ['bookmania', 'serif'],
-      'display': ['fino', 'serif']
+      'sans': ['Times New Roman', 'serif']
     },
     extend: {},
   },

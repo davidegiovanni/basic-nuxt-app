@@ -1,7 +1,7 @@
 import { pick } from "accept-language-parser";
 import i18nData from "~/locales/i18n";
 
-const fallbackLocale = 'it-it';
+const fallbackLocale = 'en-us';
 const locales: { slug: string; label: string }[] = [
   { slug: "en-us", label: "English (US)" }];
 const _i18n: any = i18nData;

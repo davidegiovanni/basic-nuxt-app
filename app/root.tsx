@@ -91,7 +91,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
     });
   }
 
-  const [websiteRes, websiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/illustrations.davidegiovanni.com?public_key=01exy3y9j9pdvyzhchkpj9vc5w&language_code=it-IT`)
+  const [websiteRes, websiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/davidegiovanni.com?public_key=01exy3y9j9pdvyzhchkpj9vc5w&language_code=en-US`)
   if (websiteErr !== null) {
     throw new Error(`API website: ${websiteErr.message} ${websiteErr.code}`);
   }

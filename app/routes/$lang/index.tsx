@@ -43,7 +43,7 @@ export const meta: MetaFunction = ({ data, location }) => {
   )
 };
 
-const i18nKeys = ["shared"] as const;
+const i18nKeys = [] as const;
 type I18nKeys = typeof i18nKeys[number];
 
 type LoaderData = {
@@ -54,13 +54,14 @@ type LoaderData = {
   primary: string;
   secondary: string;
   origin: string
+  locales: string[];
 };
 
 export const loader: LoaderFunction = async ({request, params}) => {
   const i18n = loadTranslations<I18nKeys>(params.lang as string, i18nKeys);
   const origin = new URL(request.url).origin
 
-  let lang = 'en-US'
+  let lang = params.lang
 
   const [websiteRes, websiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/davidegiovanni.com?public_key=01exy3y9j9pdvyzhchkpj9vc5w&language_code=${lang}`)
   if (websiteErr !== null) {
@@ -79,6 +80,8 @@ export const loader: LoaderFunction = async ({request, params}) => {
 
   const sections: WebSectionModel[] = page.sections
 
+  const locales: string[] = websiteRes.languageCodes
+
   const loaderData: LoaderData = {
     i18n,
     page: page,
@@ -86,15 +89,33 @@ export const loader: LoaderFunction = async ({request, params}) => {
     primary,
     secondary,
     logo,
-    origin
+    origin,
+    locales
   }
 
   return json(loaderData)
 };
 
 export default function Index() {
-  const { i18n, sections, logo, primary, secondary } = useLoaderData<LoaderData>();
+  const { i18n, sections, locales, primary, secondary } = useLoaderData<LoaderData>();
   const params = useParams()
+
+  function getLanguageName (lang: string) {
+    switch (lang) {
+      case 'it-IT':
+        return 'Italiano'
+      case 'en-US':
+        return 'English'
+      case 'fr-FR':
+        return 'Français'
+      case 'es-ES':
+        return 'Espanol'
+      case 'de-DE':
+        return 'Deutsch'
+      default:
+        break;
+    }
+  }
 
   return (
     <div className="flex flex-col h-full w-full overflow-hidden bg-white">
@@ -118,6 +139,18 @@ export default function Index() {
               }
               </span>
             ))
+          }
+          {
+            locales.length > 1 ?
+            <span>
+              ----
+              {locales.map(l => (
+                l !== params.lang ? 
+              <Link to={`/${l}`} className="ml-2 underline text-blue-500 hover:text-blue-800 visited:text-purple-600">
+                { getLanguageName(l)}
+              </Link> : null
+            ))}
+            </span> : null
           }
         </span>
       </div>

@@ -496,6 +496,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -506,6 +511,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .inline-block {
@@ -520,38 +529,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
-
-.h-32 {
-  height: 8rem;
-}
-
 .h-8 {
   height: 2rem;
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
 .w-full {
   width: 100%;
-}
-
-.min-w-full {
-  min-width: 100%;
 }
 
 .max-w-screen-md {
@@ -564,10 +553,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-none {
   flex: none;
-}
-
-.shrink-0 {
-  flex-shrink: 0;
 }
 
 @-webkit-keyframes pulse {
@@ -617,19 +602,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.bg-blue-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#0827F5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 39 245 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-t {
@@ -684,8 +674,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1rem;
 }
 
-.font-medium {
-  font-weight: 500;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold {
@@ -703,6 +694,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -741,16 +737,6 @@ img {
   /* Optional: just make scrollbar invisible */
 }
 
-.selection\:bg-gray-300 *::-moz-selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.selection\:bg-gray-300 *::selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
 .selection\:bg-\[\#C1FF11\] *::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(193 255 17 / var(--tw-bg-opacity));
@@ -761,14 +747,34 @@ img {
   background-color: rgb(193 255 17 / var(--tw-bg-opacity));
 }
 
-.selection\:text-gray-900 *::-moz-selection {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+.selection\:bg-gray-300 *::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.selection\:text-gray-900 *::selection {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+.selection\:bg-gray-300 *::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-yellow-500 *::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-yellow-500 *::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-white *::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-white *::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .selection\:text-\[red\] *::-moz-selection {
@@ -781,14 +787,24 @@ img {
   color: rgb(255 0 0 / var(--tw-text-opacity));
 }
 
-.selection\:bg-gray-300::-moz-selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+.selection\:text-gray-900 *::-moz-selection {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.selection\:bg-gray-300::selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+.selection\:text-gray-900 *::selection {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.selection\:text-white *::-moz-selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.selection\:text-white *::selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .selection\:bg-\[\#C1FF11\]::-moz-selection {
@@ -801,14 +817,34 @@ img {
   background-color: rgb(193 255 17 / var(--tw-bg-opacity));
 }
 
-.selection\:text-gray-900::-moz-selection {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+.selection\:bg-gray-300::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.selection\:text-gray-900::selection {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+.selection\:bg-gray-300::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-yellow-500::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-yellow-500::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-white::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.selection\:bg-white::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .selection\:text-\[red\]::-moz-selection {
@@ -821,12 +857,36 @@ img {
   color: rgb(255 0 0 / var(--tw-text-opacity));
 }
 
+.selection\:text-gray-900::-moz-selection {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.selection\:text-gray-900::selection {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.selection\:text-white::-moz-selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.selection\:text-white::selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .last\:mr-0:last-child {
   margin-right: 0px;
 }
 
 .visited\:text-purple-700:visited {
   color: rgb(126 34 206 );
+}
+
+.visited\:text-purple-600:visited {
+  color: rgb(147 51 234 );
 }
 
 .hover\:text-blue-800:hover {
@@ -838,5 +898,10 @@ img {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }

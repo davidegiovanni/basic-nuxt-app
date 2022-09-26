@@ -47,71 +47,53 @@ export const meta: MetaFunction = ({data}) => {
   };
 };
 
-const i18nKeys = ["shared"] as const;
+const i18nKeys = [] as const;
 type I18nKeys = typeof i18nKeys[number];
 
 type LoaderData = {
   i18n: Record<any, any>;
   primary: string;
   favicon: string;
+  incomingLocale: string;
 };
 
 export const loader: LoaderFunction = async ({ request, params }) => {
-  let incomingLocale: string | undefined = params.lang === undefined ? fallbackLocale : params.lang
+  const incomingLocale = params.lang || ""
   let url = new URL(request.url)
+  const host = url.host.includes('localhost') ? 'davidegiovanni.com' : url.host
 
-  const pathname = url.pathname.replace(`/${incomingLocale}`, '')
-
-  const matchingLocale = getMatchingLocale(request, incomingLocale)
-
-  if (matchingLocale === undefined) {
-    return redirect(`/en-us${pathname}`)
-  }
-  if (pathname === "/") {
-    return redirect(`/${fallbackLocale}`)
-  }
-  if (incomingLocale !== 'en-us') {
-    return redirect(`/${fallbackLocale}${url.pathname}`)
-  }
-  const cookie = createCookie("careers.auctory.io_i18n_cookie_preferences", {
-    path: "/",
-    httpOnly: true,
-    sameSite: "strict",
-  });
-  const cookieHeader = request.headers.get("cookie");
-  let i18nCookie = {
-    lang: matchingLocale.toLowerCase()
-  }
-  let languageCookie = await cookie.parse(cookieHeader);
-  if (languageCookie === undefined) {
-    return redirect(`/${matchingLocale.toLowerCase()}${url.pathname}`, {
-      headers: {
-        "Set-Cookie": await cookie.serialize(i18nCookie),
-      },
-    });
+  if (incomingLocale === "") {
+    const [defaultWebsiteRes, defaultWebsiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/${host}?public_key=01exy3y9j9pdvyzhchkpj9vc5w`)
+    if (defaultWebsiteErr !== null) {
+      throw new Error(`API website: ${defaultWebsiteErr.message} ${defaultWebsiteErr.code}`);
+    }
+    const defaultLocale = defaultWebsiteRes.website.languageCode
+    return redirect(`/${defaultLocale}`)
   }
 
-  const [websiteRes, websiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/davidegiovanni.com?public_key=01exy3y9j9pdvyzhchkpj9vc5w&language_code=en-US`)
-  if (websiteErr !== null) {
-    throw new Error(`API website: ${websiteErr.message} ${websiteErr.code}`);
-  }
+  const [initialWebsiteRes, initialWebsiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/${host}?public_key=01exy3y9j9pdvyzhchkpj9vc5w&language_code=${incomingLocale}`)
+    if (initialWebsiteErr !== null) {
+      const [defaultWebsiteRes, defaultWebsiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/${host}?public_key=01exy3y9j9pdvyzhchkpj9vc5w`)
+      if (defaultWebsiteErr !== null) {
+        throw new Error(`API website: ${defaultWebsiteErr.message} ${defaultWebsiteErr.code}`);
+      }
+      const defaultLocale = defaultWebsiteRes.website.languageCode
+      return redirect(`/${defaultLocale}`)
+    }
+  
+    const primary: string = initialWebsiteRes.website.theme.primaryColor
+    const favicon: string = initialWebsiteRes.website.theme.faviconUrl
+  
+    const i18n = loadTranslations<I18nKeys>(incomingLocale, i18nKeys);
+  
+    const loaderData: LoaderData = {
+      i18n,
+      primary,
+      favicon,
+      incomingLocale
+    }
 
-  const primary: string = websiteRes.website.theme.primaryColor
-  const favicon: string = websiteRes.website.theme.faviconUrl
-
-  const i18n = loadTranslations<I18nKeys>(incomingLocale, i18nKeys);
-
-  const loaderData: LoaderData = {
-    i18n,
-    primary,
-    favicon
-  }
-
-  return json(loaderData, {
-    headers: {
-      "Set-Cookie": await cookie.serialize(languageCookie),
-    },
-  })
+  return json(loaderData)
 };
 
 export default function App() {
@@ -124,7 +106,7 @@ export default function App() {
   const favicon = loaderData.favicon || ""
 
   return (
-    <html lang="en">
+    <html lang={loaderData.incomingLocale}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -148,33 +130,28 @@ export default function App() {
   );
 }
 
-export function CatchBoundary() {
+export function CatchBoundary({ error }: { error: Error }) {
+  const catchError = useCatch()
 
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Website error</title>
+        <title>(Ｔ▽Ｔ)</title>
         <Meta />
         <Links />
       </head>
       <body>
-        <div className="fixed inset-0 overflow-hidden bg-black p-2 selection:bg-gray-300 selection:text-gray-900">
+        <div className="fixed inset-0 overflow-hidden bg-[#0827F5] text-white p-2 selection:bg-white selection:text-white">
           <div className="w-full h-full overflow-hidden safari-only">
-            <div className="w-full h-full bg-white flex flex-col">
-            <div className="w-full flex-1 flex items-center justify-center p-4 max-w-screen-md mx-auto text-center">
-              <div>
-                <h2 className="uppercase text-center" style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
-                  The website didn't load correctly
-                </h2>
-                <p>
-                  Wait a while and then refresh the page
-                </p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-t from-red-600 to-white h-full flex flex-col items-center justify-end pt-8 group" />
-            </div>
+            <h1 style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
+              Error ಥ_ಥ
+            </h1>
+            <p className="text-white my-4">
+              {catchError ? catchError.statusText : error.message} ((({catchError ? catchError.status : error.stack})))
+            </p>
+            <img src="https://c.tenor.com/1zi9Ppr4YDsAAAAj/travolta-lost.gif" alt="" />
           </div>
         </div>
         <ScrollRestoration />
@@ -193,29 +170,19 @@ export function ErrorBoundary({ error }: { error: Error }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Website error</title>
+        <title>(Ｔ▽Ｔ)</title>
         <Meta />
         <Links />
       </head>
       <body>
-        <div className="fixed inset-0 overflow-hidden bg-black p-2 selection:bg-gray-300 selection:text-gray-900">
+      <div className="fixed inset-0 overflow-hidden bg-[#0827F5] text-white p-2 selection:bg-yellow-500 selection:text-white">
           <div className="w-full h-full overflow-hidden safari-only">
-            <div className="w-full h-full bg-white flex flex-col">
-            <div className="w-full flex-1 flex items-center justify-center p-4 max-w-screen-md mx-auto text-center">
-              <div>
-                <h2 className="uppercase text-center" style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
-                  The website didn't load correctly
-                </h2>
-                <p>
-                  Wait a while and then refresh the page.
-                </p>
-                <p className="text-xs opacity-50 mt-2 text-left">
-                  Details: {error.message} {error.stack}
-                </p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-t from-red-600 via-red-500 to-white h-full flex flex-col items-center justify-end pt-8 group" />
-            </div>
+            <h1 style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
+              Error ಥ_ಥ
+            </h1>
+            <p className="text-white mt-4">
+              {error.message} {error.stack}
+            </p>
           </div>
         </div>
         <ScrollRestoration />

@@ -8,13 +8,15 @@ img {
     @apply select-none pointer-events-none
 }
 
-@media screen and (max-width: 767px) {
-    _::-webkit-full-page-media, _:future, :root .safari_only {
-        padding-bottom: 65px !important;
-    }
-}
-
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.body-content a {
+    @apply underline text-blue-600 visited:text-purple-500;
+}
+
+.body-content img {
+    @apply mx-auto max-w-[100px] lg:max-w-[200px];
 }

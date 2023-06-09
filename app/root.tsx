@@ -9,6 +9,7 @@ import {
   redirect,
 } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -19,16 +20,21 @@ import {
   useLoaderData,
   useLocation,
   useMatches,
+  useParams,
 } from "@remix-run/react";
 
 import tailwind from "./styles/tailwind.css"
+import custom from "./styles/index.css"
 import { loadTranslations, fallbackLocale, getMatchingLocale } from "./helpers/i18n";
 import { fluidType } from "./utils/helpers";
 import { safeGet } from "./utils/safe-post";
+import { website } from "./api";
+import { Website } from "./models";
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: tailwind },
+    { rel: "stylesheet", href: custom },
     { rel: "stylesheet", href: 'https://use.typekit.net/ert5ehm.css' },
     { rel: "stylesheet", href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap' },
     { rel: "preconnect", href: 'https://fonts.googleapis.com' },
@@ -51,72 +57,69 @@ const i18nKeys = [] as const;
 type I18nKeys = typeof i18nKeys[number];
 
 type LoaderData = {
-  i18n: Record<any, any>;
-  primary: string;
   favicon: string;
-  incomingLocale: string;
+  fontUrl: string;
+  fontFamily: string;
+  canonical: string;
+  mainColor: string;
 };
 
 export const loader: LoaderFunction = async ({ request, params }) => {
-  const incomingLocale = params.lang || ""
-  let url = new URL(request.url)
-  const host = url.host.includes('localhost') ? 'davidegiovanni.com' : url.host
-
-  if (incomingLocale === "") {
-    const [defaultWebsiteRes, defaultWebsiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/${host}?public_key=01exy3y9j9pdvyzhchkpj9vc5w`)
-    if (defaultWebsiteErr !== null) {
-      throw new Error(`API website: ${defaultWebsiteErr.message} ${defaultWebsiteErr.code}`);
-    }
-    const defaultLocale = defaultWebsiteRes.website.languageCode
-    return redirect(`/${defaultLocale}`)
+  const [webRes, webErr] = await website(request, params)
+  if (webErr !== null) {
+    throw new Response(`Page do not exist: ${webErr.message} ${webErr.code}`, {
+      status: 404,
+    });
   }
 
-  const [initialWebsiteRes, initialWebsiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/${host}?public_key=01exy3y9j9pdvyzhchkpj9vc5w&language_code=${incomingLocale}`)
-    if (initialWebsiteErr !== null) {
-      const [defaultWebsiteRes, defaultWebsiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/${host}?public_key=01exy3y9j9pdvyzhchkpj9vc5w`)
-      if (defaultWebsiteErr !== null) {
-        throw new Error(`API website: ${defaultWebsiteErr.message} ${defaultWebsiteErr.code}`);
-      }
-      const defaultLocale = defaultWebsiteRes.website.languageCode
-      return redirect(`/${defaultLocale}`)
-    }
+  const websiteObject: Website = webRes.website
   
-    const primary: string = initialWebsiteRes.website.theme.primaryColor
-    const favicon: string = initialWebsiteRes.website.theme.faviconUrl
-  
-    const i18n = loadTranslations<I18nKeys>(incomingLocale, i18nKeys);
-  
-    const loaderData: LoaderData = {
-      i18n,
-      primary,
-      favicon,
-      incomingLocale
-    }
+  const favicon = websiteObject.theme.iconUrl
+  const fontUrl = websiteObject.theme.fontFamilyUrl
+  const fontFamily = websiteObject.theme.fontFamily
+
+  const canonical = request.url
+  const mainColor = websiteObject.theme.accentColor
+
+  const loaderData: LoaderData = {
+    favicon,
+    fontUrl,
+    fontFamily,
+    canonical,
+    mainColor
+  }
 
   return json(loaderData)
 };
 
 export default function App() {
-  const matches = useMatches();
-  const match = matches.find((match) => match.data && match.data.canonical);
-  const canonical = match?.data.canonical;
-  const alternates = match?.data.alternates;
   const loaderData = useLoaderData<LoaderData>()
+  const matches = useMatches()
+  const params = useParams()
 
-  const favicon = loaderData.favicon || ""
+  const style = {
+    "--customfont": loaderData.fontFamily,
+    fontFamily: loaderData.fontFamily,
+    backgroundColor: loaderData.mainColor
+  }
+
+  const allCanonicals = matches.map((match) => match.data)
+    .filter((data) => Boolean(data.canonical))
+    .map((data) => data.canonical);
+  const canonical = allCanonicals[1]
 
   return (
-    <html lang={loaderData.incomingLocale}>
+    <html lang={params.lang}>
       <head>
-        <meta charSet="utf-8" />
+      <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
-        {!!canonical && <link rel="canonical" href={canonical} />}
-        {!!favicon && <link rel="icon" type="image/x-icon" href={favicon}></link>}
+        <link rel="canonical" href={canonical} />
+        <link rel="icon" type="image/x-icon" href={loaderData.favicon} />
         <Links />
       </head>
-      <body>
-        <div className="fixed inset-0 overflow-hidden selection:bg-[#C1FF11] selection:text-[red]">
+      <body style={style}>
+        <div className="fixed inset-0 overflow-hidden selection:bg-blue-300 selection:text-blue-900">
           <div className="w-full h-full overflow-hidden">
             <Outlet />
           </div>
@@ -134,7 +137,7 @@ export function CatchBoundary({ error }: { error: Error }) {
   const catchError = useCatch()
 
   return (
-    <html lang="en">
+    <html lang={"en-US"}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -148,9 +151,9 @@ export function CatchBoundary({ error }: { error: Error }) {
             <h1 style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
               Error ಥ_ಥ
             </h1>
-            <p className="text-white my-4">
-              {catchError ? catchError.statusText : error.message} ((({catchError ? catchError.status : error.stack})))
-            </p>
+            <Link to={'/'} className="block underline mb-4 text-white" reloadDocument>
+              Go to homepage
+            </Link>
             <img src="https://c.tenor.com/1zi9Ppr4YDsAAAAj/travolta-lost.gif" alt="" />
           </div>
         </div>
@@ -175,14 +178,18 @@ export function ErrorBoundary({ error }: { error: Error }) {
         <Links />
       </head>
       <body>
-      <div className="fixed inset-0 overflow-hidden bg-[#0827F5] text-white p-2 selection:bg-yellow-500 selection:text-white">
+        <div className="fixed inset-0 overflow-hidden bg-[#0827F5] text-white p-2 selection:bg-yellow-500 selection:text-white">
           <div className="w-full h-full overflow-hidden safari-only">
             <h1 style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
               Error ಥ_ಥ
             </h1>
-            <p className="text-white mt-4">
+            <p className="text-white my-4">
               {error.message} {error.stack}
             </p>
+            <Link to={'/'} className="block underline mb-4 text-white" reloadDocument>
+              Go to homepage
+            </Link>
+            <img src="https://c.tenor.com/1zi9Ppr4YDsAAAAj/travolta-lost.gif" alt="" />
           </div>
         </div>
         <ScrollRestoration />

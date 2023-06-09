@@ -9,6 +9,7 @@ import {
   redirect,
 } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -19,16 +20,21 @@ import {
   useLoaderData,
   useLocation,
   useMatches,
+  useParams,
 } from "@remix-run/react";
 
 import tailwind from "./styles/tailwind.css"
+import custom from "./styles/index.css"
 import { loadTranslations, fallbackLocale, getMatchingLocale } from "./helpers/i18n";
 import { fluidType } from "./utils/helpers";
 import { safeGet } from "./utils/safe-post";
+import { website } from "./api";
+import { Website } from "./models";
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: tailwind },
+    { rel: "stylesheet", href: custom },
     { rel: "stylesheet", href: 'https://use.typekit.net/ert5ehm.css' },
     { rel: "stylesheet", href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap' },
     { rel: "preconnect", href: 'https://fonts.googleapis.com' },
@@ -51,90 +57,69 @@ const i18nKeys = ["shared"] as const;
 type I18nKeys = typeof i18nKeys[number];
 
 type LoaderData = {
-  i18n: Record<any, any>;
-  primary: string;
   favicon: string;
+  fontUrl: string;
+  fontFamily: string;
+  canonical: string;
+  mainColor: string;
 };
 
 export const loader: LoaderFunction = async ({ request, params }) => {
-  let incomingLocale: string | undefined = params.lang === undefined ? fallbackLocale : params.lang
-  let url = new URL(request.url)
-
-  const pathname = url.pathname.replace(`/${incomingLocale}`, '')
-
-  const matchingLocale = getMatchingLocale(request, incomingLocale)
-
-  if (matchingLocale === undefined) {
-    return redirect(`/en-us${pathname}`)
-  }
-  if (pathname === "/") {
-    return redirect(`/${fallbackLocale}`)
-  }
-  if (incomingLocale !== 'en-us') {
-    return redirect(`/${fallbackLocale}${url.pathname}`)
-  }
-  const cookie = createCookie("careers.auctory.io_i18n_cookie_preferences", {
-    path: "/",
-    httpOnly: true,
-    sameSite: "strict",
-  });
-  const cookieHeader = request.headers.get("cookie");
-  let i18nCookie = {
-    lang: matchingLocale.toLowerCase()
-  }
-  let languageCookie = await cookie.parse(cookieHeader);
-  if (languageCookie === undefined) {
-    return redirect(`/${matchingLocale.toLowerCase()}${url.pathname}`, {
-      headers: {
-        "Set-Cookie": await cookie.serialize(i18nCookie),
-      },
+  const [webRes, webErr] = await website(request, params)
+  if (webErr !== null) {
+    throw new Response(`Page do not exist: ${webErr.message} ${webErr.code}`, {
+      status: 404,
     });
   }
 
-  const [websiteRes, websiteErr] = await safeGet<any>(request, `https://cdn.revas.app/websites/v0/websites/illustrations.davidegiovanni.com?public_key=01exy3y9j9pdvyzhchkpj9vc5w&language_code=it-IT`)
-  if (websiteErr !== null) {
-    throw new Error(`API website: ${websiteErr.message} ${websiteErr.code}`);
-  }
+  const websiteObject: Website = webRes.website
+  
+  const favicon = websiteObject.theme.iconUrl
+  const fontUrl = websiteObject.theme.fontFamilyUrl
+  const fontFamily = websiteObject.theme.fontFamily
 
-  const primary: string = websiteRes.website.theme.primaryColor
-  const favicon: string = websiteRes.website.theme.faviconUrl
-
-  const i18n = loadTranslations<I18nKeys>(incomingLocale, i18nKeys);
+  const canonical = request.url
+  const mainColor = websiteObject.theme.accentColor
 
   const loaderData: LoaderData = {
-    i18n,
-    primary,
-    favicon
+    favicon,
+    fontUrl,
+    fontFamily,
+    canonical,
+    mainColor
   }
 
-  return json(loaderData, {
-    headers: {
-      "Set-Cookie": await cookie.serialize(languageCookie),
-    },
-  })
+  return json(loaderData)
 };
 
 export default function App() {
-  const matches = useMatches();
-  const match = matches.find((match) => match.data && match.data.canonical);
-  const canonical = match?.data.canonical;
-  const alternates = match?.data.alternates;
   const loaderData = useLoaderData<LoaderData>()
+  const matches = useMatches()
+  const params = useParams()
 
-  const favicon = loaderData.favicon || ""
+  const style = {
+    "--customfont": loaderData.fontFamily,
+    fontFamily: loaderData.fontFamily,
+    backgroundColor: loaderData.mainColor
+  }
+
+  const allCanonicals = matches.map((match) => match.data)
+    .filter((data) => Boolean(data.canonical))
+    .map((data) => data.canonical);
+  const canonical = allCanonicals[1]
 
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <head>
-        <meta charSet="utf-8" />
+      <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
-        {!!canonical && <link rel="canonical" href={canonical} />}
-        {!!favicon && <link rel="icon" type="image/x-icon" href={favicon}></link>}
+        <link rel="canonical" href={canonical} />
+        <link rel="icon" type="image/x-icon" href={loaderData.favicon} />
         <Links />
       </head>
-      <body>
-        <div className="fixed inset-0 overflow-hidden selection:bg-[#C1FF11] selection:text-[red]">
+      <body style={style}>
+        <div className="fixed inset-0 overflow-hidden selection:bg-blue-300 selection:text-blue-900">
           <div className="w-full h-full overflow-hidden">
             <Outlet />
           </div>
@@ -151,30 +136,24 @@ export default function App() {
 export function CatchBoundary() {
 
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Website error</title>
+        <title>(Ｔ▽Ｔ)</title>
         <Meta />
         <Links />
       </head>
       <body>
-        <div className="fixed inset-0 overflow-hidden bg-black p-2 selection:bg-gray-300 selection:text-gray-900">
+        <div className="fixed inset-0 overflow-hidden bg-[#0827F5] text-white p-2 selection:bg-white selection:text-white">
           <div className="w-full h-full overflow-hidden safari-only">
-            <div className="w-full h-full bg-white flex flex-col">
-            <div className="w-full flex-1 flex items-center justify-center p-4 max-w-screen-md mx-auto text-center">
-              <div>
-                <h2 className="uppercase text-center" style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
-                  The website didn't load correctly
-                </h2>
-                <p>
-                  Wait a while and then refresh the page
-                </p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-t from-red-600 to-white h-full flex flex-col items-center justify-end pt-8 group" />
-            </div>
+            <h1 style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
+              Error ಥ_ಥ
+            </h1>
+            <Link to={'/'} className="block underline mb-4 text-white" reloadDocument>
+              Go to homepage
+            </Link>
+            <img src="https://c.tenor.com/1zi9Ppr4YDsAAAAj/travolta-lost.gif" alt="" />
           </div>
         </div>
         <ScrollRestoration />
@@ -193,29 +172,23 @@ export function ErrorBoundary({ error }: { error: Error }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Website error</title>
+        <title>(Ｔ▽Ｔ)</title>
         <Meta />
         <Links />
       </head>
       <body>
-        <div className="fixed inset-0 overflow-hidden bg-black p-2 selection:bg-gray-300 selection:text-gray-900">
+        <div className="fixed inset-0 overflow-hidden bg-[#0827F5] text-white p-2 selection:bg-yellow-500 selection:text-white">
           <div className="w-full h-full overflow-hidden safari-only">
-            <div className="w-full h-full bg-white flex flex-col">
-            <div className="w-full flex-1 flex items-center justify-center p-4 max-w-screen-md mx-auto text-center">
-              <div>
-                <h2 className="uppercase text-center" style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
-                  The website didn't load correctly
-                </h2>
-                <p>
-                  Wait a while and then refresh the page.
-                </p>
-                <p className="text-xs opacity-50 mt-2 text-left">
-                  Details: {error.message} {error.stack}
-                </p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-t from-red-600 via-red-500 to-white h-full flex flex-col items-center justify-end pt-8 group" />
-            </div>
+            <h1 style={{ fontSize: fluidType(32, 120, 300, 2400, 1.5).fontSize, lineHeight: fluidType(24, 100, 300, 2400, 1.5).lineHeight }}>
+              Error ಥ_ಥ
+            </h1>
+            <p className="text-white my-4">
+              {error.message} {error.stack}
+            </p>
+            <Link to={'/'} className="block underline mb-4 text-white" reloadDocument>
+              Go to homepage
+            </Link>
+            <img src="https://c.tenor.com/1zi9Ppr4YDsAAAAj/travolta-lost.gif" alt="" />
           </div>
         </div>
         <ScrollRestoration />

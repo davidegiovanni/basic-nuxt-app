@@ -1,0 +1,3 @@
+* {
+    @apply underline text-blue-600 visited:text-purple-500;
+}

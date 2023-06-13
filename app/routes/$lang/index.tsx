@@ -6,6 +6,7 @@ import { fluidType, getContrast, isExternalLink } from '~/utils/helpers'
 import { Attachment } from "~/components/Attachment";
 import { website, page, feed } from "~/api";
 import { Feed, FeedItem, Page, Website } from "~/models";
+import { useEffect, useRef, useState } from "react";
 
 export const meta: MetaFunction = ({ data, location }) => {
   let title = 'Website error'
@@ -167,34 +168,60 @@ export default function Index() {
   }
   const currentYear = getCurrentYear();
 
-  function getLanguageName (lang: string) {
-    switch (lang) {
-      case 'it-IT':
-        return 'Italiano'
-      case 'en-US':
-        return 'English'
-      case 'fr-FR':
-        return 'Français'
-      case 'es-ES':
-        return 'Espanol'
-      case 'de-DE':
-        return 'Deutsch'
-      default:
-        break;
-    }
+  const divRef = useRef(null);
+  const layerRef = useRef(null);
+  const constrain = 20;
+
+  function transforms(x: number, y: number, el: HTMLElement | null): string {
+    if (!el) return '';
+
+    const box = el.getBoundingClientRect();
+    const calcX = -(y - box.y - box.height / 2) / constrain;
+    const calcY = (x - box.x - box.width / 2) / constrain;
+
+    return `perspective(400px) rotateX(${calcX}deg) rotateY(${calcY}deg)`;
   }
 
+  function transformElement(el: HTMLElement | null, xyEl: [number, number, HTMLElement | null]): void {
+    if (!el) return;
+
+    el.style.transform = transforms(xyEl[0], xyEl[1], xyEl[2]);
+  }
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>): void {
+    const xy: [number, number, HTMLElement | null] = [e.clientX, e.clientY, layerRef.current];
+    window.requestAnimationFrame(() => {
+      transformElement(layerRef.current, xy);
+    });
+  }
+
+  useEffect(() => {
+    
+    const divElement = document.getElementById("content_body");
+    if (!divElement) {
+      console.error(`Element not found.`);
+      return;
+    }
+
+    const anchorTags = divElement.getElementsByTagName('a');
+    for (let i = 0; i < anchorTags.length; i++) {
+      const anchorTag = anchorTags[i] as HTMLAnchorElement;
+      anchorTag.target = '_blank';
+    }
+  }, []);
+
+
   return (
-    <div style={style} className={`bg-white flex flex-col h-full w-full overflow-hidden items-center justify-center p-[2vmin]`}>
+    <div ref={divRef}  id="ex1" style={style} className={`bg-white flex flex-col h-full w-full overflow-hidden items-center justify-center p-[2vmin]`}>
       <div className="relative z-20 w-full max-w-screen-md h-full flex-1 overflow-hidden flex flex-col items-start justify-between uppercase text-center gap-[2vmin]">
         <div className="w-full flex-none">
           {currentYear}
           <br />
           {title}
         </div>
-        <div className="flex-1 hidden lg:block">
-          <div className="h-full w-full">
-            <Attachment size="object-fill" attachment={{
+        <div className="flex-1 hidden lg:block relative">
+          <div ref={layerRef} id="ex1-layer" onMouseMove={handleMouseMove} className="h-full w-full relative shinyyyy">
+            <Attachment size="object-contain" attachment={{
               id: "",
               mediaType: "image/",
               url: desktopMainImage,
@@ -202,9 +229,9 @@ export default function Index() {
             }} />
           </div>
         </div>
-        <div className="flex-1 lg:hidden">
-          <div className="h-full w-full">
-            <Attachment size="object-fill" attachment={{
+        <div className="flex-1 lg:hidden relative">
+          <div className="h-full w-full relative">
+            <Attachment size="object-contain" attachment={{
               id: "",
               mediaType: "image/",
               url: mobileMainImage,
@@ -212,7 +239,7 @@ export default function Index() {
             }} />
           </div>
         </div>
-        <div className="text-sm lg:text-base flex-none max-w-none body-content">
+        <div id="content_body" className="text-sm lg:text-base flex-none max-w-none body-content">
           {parse(content)}
         </div>
       </div>

@@ -170,7 +170,7 @@ export default function Index() {
 
   const divRef = useRef(null);
   const layerRef = useRef(null);
-  const constrain = 20;
+  const constrain = 15;
 
   function transforms(x: number, y: number, el: HTMLElement | null): string {
     if (!el) return '';
@@ -179,7 +179,7 @@ export default function Index() {
     const calcX = -(y - box.y - box.height / 2) / constrain;
     const calcY = (x - box.x - box.width / 2) / constrain;
 
-    return `perspective(400px) rotateX(${calcX}deg) rotateY(${calcY}deg)`;
+    return `perspective(800px) rotateX(${calcX}deg) rotateY(${calcY}deg)`;
   }
 
   function transformElement(el: HTMLElement | null, xyEl: [number, number, HTMLElement | null]): void {
@@ -212,36 +212,34 @@ export default function Index() {
 
 
   return (
-    <div ref={divRef}  id="ex1" style={style} className={`bg-white flex flex-col h-full w-full overflow-hidden items-center justify-center p-[2vmin]`}>
-      <div className="relative z-20 w-full max-w-screen-md h-full flex-1 overflow-hidden flex flex-col items-start justify-between uppercase text-center gap-[2vmin]">
-        <div className="w-full flex-none">
-          {currentYear}
-          <br />
-          {title}
+    <div ref={divRef}  id="ex1" style={style} className={`bg-white flex flex-col h-full w-full overflow-hidden items-center justify-center p-[2vmin] lg:p-[1vmin] uppercase text-center`}>
+      <div className="w-full flex-none max-w-screen-md">
+        {currentYear}
+        <br />
+        {title}
+      </div>
+      <div className="flex-1 hidden lg:block relative overflow-hidden">
+        <div ref={layerRef} id="ex1-layer" onMouseMove={handleMouseMove} className="h-full w-full relative shinyyyy">
+          <Attachment size="object-contain" attachment={{
+            id: "",
+            mediaType: "image/",
+            url: desktopMainImage,
+            description: loaderData.meta.title
+          }} />
         </div>
-        <div className="flex-1 hidden lg:block relative">
-          <div ref={layerRef} id="ex1-layer" onMouseMove={handleMouseMove} className="h-full w-full relative shinyyyy">
-            <Attachment size="object-contain" attachment={{
-              id: "",
-              mediaType: "image/",
-              url: desktopMainImage,
-              description: loaderData.meta.title
-            }} />
-          </div>
+      </div>
+      <div className="flex-1 lg:hidden relative overflow-hidden">
+        <div className="h-full w-full relative">
+          <Attachment size="object-contain" attachment={{
+            id: "",
+            mediaType: "image/",
+            url: mobileMainImage,
+            description: loaderData.meta.title
+          }} />
         </div>
-        <div className="flex-1 lg:hidden relative">
-          <div className="h-full w-full relative">
-            <Attachment size="object-contain" attachment={{
-              id: "",
-              mediaType: "image/",
-              url: mobileMainImage,
-              description: loaderData.meta.title
-            }} />
-          </div>
-        </div>
-        <div id="content_body" className="text-sm lg:text-base flex-none max-w-none body-content">
-          {parse(content)}
-        </div>
+      </div>
+      <div id="content_body" className="text-sm lg:text-base flex-none max-w-screen-md body-content">
+        {parse(content)}
       </div>
       {
         desktopBackgroundImage !== "" && (

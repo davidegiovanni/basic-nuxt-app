@@ -158,10 +158,12 @@ export default function Index() {
   const desktopBackgroundImage = loaderData.desktopBackgroundImage
   const mobileBackgroundImage = loaderData.mobileBackgroundImage
 
-  const style = {
-    backgroundColor: loaderData.mainColor,
-    color: loaderData.textColor
-  }
+  // const style = {
+  //   backgroundColor: loaderData.mainColor,
+  //   color: loaderData.textColor
+  // }
+
+  const style = {}
 
   function getCurrentYear(): number {
     return new Date().getFullYear();
@@ -212,13 +214,13 @@ export default function Index() {
 
 
   return (
-    <div ref={divRef}  id="ex1" style={style} className={`bg-white flex flex-col h-full w-full overflow-hidden items-center justify-center p-[2vmin] lg:p-[1vmin] uppercase text-center`}>
+    <div ref={divRef}  id="ex1" style={style} className={`bg-white dark:bg-black text-black dark:text-gray-500 flex flex-col h-full w-full overflow-hidden items-center justify-center p-[2vmin] lg:p-[1vmin] uppercase text-center`}>
       <div className="w-full flex-none max-w-screen-md">
         {currentYear}
         <br />
         {title}
       </div>
-      <div className="flex-1 hidden lg:block relative overflow-hidden">
+      <div className="flex-1 hidden lg:block relative overflow-hidden dark:opacity-60">
         <div ref={layerRef} id="ex1-layer" onMouseMove={handleMouseMove} className="h-full w-full relative shinyyyy">
           <Attachment size="object-contain" attachment={{
             id: "",

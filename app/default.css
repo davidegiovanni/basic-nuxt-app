@@ -197,35 +197,47 @@ body {
 /* Columns */
 
 .BlockItemsColumns {
-  @apply w-full py-4 gap-4 columns-1 lg:columns-3;
+  @apply w-full grid gap-4 lg:gap-8 grid-cols-1 lg:grid-cols-3 data-[cols="2"]:lg:grid-cols-2 data-[cols="4"]:lg:grid-cols-4;
+}
+
+.BlockItemsColumns--column {
+  @apply flex flex-col gap-4 lg:gap-8 items-stretch justify-start
 }
 
 .ColumnsBlockItem {
-  @apply w-full block bg-transparent break-inside-avoid-column pb-4 last:pb-0;
+  @apply w-full block bg-transparent break-inside-avoid-column data-[is-item-card=true]:rounded-default data-[is-item-dark=true]:bg-theme-dark data-[is-item-darklight=true]:bg-theme-darklight data-[is-item-light=true]:bg-white data-[is-item-spring=true]:bg-theme-spring data-[is-item-yellow=true]:bg-theme-yellow data-[is-item-green=true]:bg-theme-green data-[is-item-blue=true]:bg-theme-blue data-[is-item-red=true]:bg-theme-red;
 }
 
 .ColumnsBlockItem--container {
-  @apply w-full;
+  @apply w-full flex flex-col gap-2 lg:gap-4 group-data-[is-item-btt=true]:flex-col-reverse items-stretch justify-start;
 }
 
 .ColumnsBlockItemContainer--second-slot {
-  @apply shrink-0 grow flex flex-col gap-2 items-start justify-start w-auto h-auto p-4;
+  @apply shrink-0 grow flex flex-col gap-2 lg:gap-4 items-stretch justify-center w-auto h-auto group-data-[is-item-spaced=true]:p-4 group-data-[is-item-spaced=true]:lg:p-8 group-data-[is-item-card=true]:p-4 group-data-[is-item-card=true]:lg:p-8;
 }
 
 .ColumnsBlockItemContainer--first-slot {
-  @apply shrink-0 w-auto h-auto grow-0;
+  @apply flex-none w-auto h-auto;
 }
 
 .ColumnsBlockItem--title {
-  @apply text-base font-medium text-revas-neutral-800 dark:text-revas-neutral-400;
+  @apply text-base lg:text-lg font-medium text-revas-neutral-800 group-data-[item-accent-light=true]:text-white group-data-[is-item-dark=true]:text-white group-data-[is-item-darklight=true]:text-white;
 }
 
 .ColumnsBlockItem--description {
-  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-sm font-normal text-revas-neutral-700 group-data-[item-accent-light=true]:text-white group-data-[is-item-darklight=true]:text-white group-data-[is-item-dark=true]:text-white group-data-[item-accent-light=true]:opacity-60;
 }
 
 .ColumnsBlockItem--attachment {
-  @apply w-full overflow-hidden rounded-default dark:opacity-80;
+  @apply w-fit max-w-full block rounded-default dark:opacity-80 group-data-[is-item-video=true]:aspect-video;
+}
+
+.ColumnsBlockItem--link {
+  @apply max-w-md inline-flex w-fit items-center justify-center gap-2 font-medium rounded-default text-primary hover:underline group-data-[item-accent-light=true]:text-white group-data-[item-accent-spring=true]:text-theme-spring group-data-[item-accent-yellow=true]:text-theme-yellow group-data-[item-accent-green=true]:text-theme-green group-data-[item-accent-blue=true]:text-theme-blue group-data-[item-accent-red=true]:text-theme-red active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.ColumnsBlockItem--label {
+  @apply max-w-md text-sm uppercase font-medium rounded-full text-primary group-data-[item-accent-light=true]:text-white group-data-[item-accent-spring=true]:text-theme-spring group-data-[item-accent-yellow=true]:text-theme-yellow group-data-[item-accent-green=true]:text-theme-green group-data-[item-accent-blue=true]:text-theme-blue group-data-[item-accent-red=true]:text-theme-red active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 /* Linear */

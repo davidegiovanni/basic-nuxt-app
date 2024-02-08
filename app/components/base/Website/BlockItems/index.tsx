@@ -14,7 +14,7 @@ export type BlockItemsProps = {
 export default function PageBlockItems({ block, index }: BlockItemsProps) {
   const layout = block.itemsLayout;
 
-  const { hasFeed } = BlockProperties(block)
+  const { hasFeed, columns } = BlockProperties(block)
 
   if (hasFeed)
     return (
@@ -33,8 +33,14 @@ export default function PageBlockItems({ block, index }: BlockItemsProps) {
 
   if (layout === "columns")
     return (
-      <div className="BlockItemsColumns OverrideBlockItemsColumns">
-        <ColumnsBlockItems block={block} index={index} />
+      <div ref={blockRef} className="BlockItemsColumns OverrideBlockItemsColumns">
+        <Attributes applyTo={blockRef} attributes={attributes} />
+        <Metadata applyTo={blockRef} metadata={block.metadata} />
+        {
+          Array.from({ length: columns }, (_, i) => (
+            <ColumnsBlockItems key={i} block={block} index={index} column={i} columns={columns} />
+          ))
+        }
       </div>
     );
 

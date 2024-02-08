@@ -72,6 +72,13 @@ function ColumnsBlockItem({ item, itemIndex, blockIndex, block }: ItemProps) {
           <div
             className={`ColumnsBlockItemContainer--second-slot OverrideColumnsBlockItemContainer--second-slot`}
           >
+            {
+              hasLabel && (
+                <p className={`ColumnsBlockItem--label OverrideColumnsBlockItem--label`}>
+                    {label}
+                  </p>
+              )
+            }
             {hasTitle && (
               <Title
                 size={blockIndex === 0 ? "2" : "3"}
@@ -81,16 +88,20 @@ function ColumnsBlockItem({ item, itemIndex, blockIndex, block }: ItemProps) {
               </Title>
             )}
             {hasDescription && (
-              <div className={`ColumnsBlockItem--description OverrideColumnsBlockItem--description`} dangerouslySetInnerHTML={{ __html: item.description}} />
+              <Description
+                size={blockIndex === 0 ? "3" : ""}
+                className={`ColumnsBlockItem--description OverrideColumnsBlockItem--description`}
+              >
+                <div dangerouslySetInnerHTML={{ __html: item.description}} />
+              </Description>
             )}
             {hasLink && (
               <WebsiteLink
                 url={item.linkUrl}
-                className={`TextLink__base-size OverrideTextLink__base-size`}
+                className={`ColumnsBlockItem--link OverrideColumnsBlockItem--link`}
                 metadata={item.linkMetadata}
               >
                 {item.linkTitle}
-                <svg className="DefaultLinkIcon__small-size OverrideDefaultLinkIcon__small-size" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
               </WebsiteLink>
             )}
           </div>
@@ -103,19 +114,27 @@ function ColumnsBlockItem({ item, itemIndex, blockIndex, block }: ItemProps) {
 export default function ColumnsBlockItems({
   block,
   index,
+  columns, 
+  column
 }: ColumnsBlockItemsProps) {
-  return block.items.map((item, bIndex) => (
-    <ColumnsBlockItem
-      key={`${index}-${bIndex}`}
-      item={item}
-      itemIndex={bIndex}
-      block={block}
-      blockIndex={index}
-    />
-  ));
+  return (
+    <div className="BlockItemsColumns--column OverrideBlockItemsColumns--column">
+      {block.items.filter((_, itemIndex) => itemIndex % columns === column).map((item, bIndex) => (
+        <ColumnsBlockItem
+          key={`${index}-${bIndex}`}
+          item={item}
+          itemIndex={bIndex}
+          block={block}
+          blockIndex={index}
+        />
+      ))}
+    </div>
+  );
 }
 
 export type ColumnsBlockItemsProps = {
   block: BlockUI;
   index: number;
+  columns: number;
+  column: number;
 };

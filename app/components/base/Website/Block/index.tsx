@@ -33,6 +33,8 @@ export const BlockProperties = (block: BlockUI) => {
   );
   const hasFeed = block.metadata.hasOwnProperty("feed_url") && block.metadata["feed_url"] !== ""
 
+  const columns = block.metadata.hasOwnProperty("columns") ? parseInt(block.metadata["columns"]) : 3
+
   return {
     hasTitle,
     hasDescription,
@@ -43,5 +45,6 @@ export const BlockProperties = (block: BlockUI) => {
     hasHtml,
     hasFeed,
     attachmentIsVideo,
+    columns
   };
 };

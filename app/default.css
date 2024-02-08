@@ -19,23 +19,23 @@ body {
 /* LINKS */
 
 .SolidLink__base-size {
-  @apply inline-flex w-fit items-center justify-center gap-2 font-medium bg-primary dark:bg-darkerPrimary text-contrast rounded-inner lg:rounded-default hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply cursor-pointer inline-flex w-fit items-center justify-center gap-2 font-medium bg-primary dark:bg-darkerPrimary text-contrast rounded-inner lg:rounded-default hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 .SoftLink__base-size {
-  @apply inline-flex w-fit items-center justify-center gap-2 font-medium bg-white text-primary dark:text-darkerPrimary border shadow rounded-inner lg:rounded-default hover:bg-revas-neutral-100 hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply cursor-pointer inline-flex w-fit items-center justify-center gap-2 font-medium bg-white text-primary dark:text-darkerPrimary border shadow rounded-inner lg:rounded-default hover:bg-revas-neutral-100 hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 .OutlineLink__base-size {
-  @apply inline-flex w-fit items-center justify-center gap-2 font-medium bg-transparent text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 border border-primary dark:border-revas-neutral-200 rounded-inner lg:rounded-default hover:bg-primary dark:hover:bg-revas-neutral-700 hover:text-contrast dark:hover:text-white hover:ring-primary dark:hover:ring-revas-neutral-500 text-xs lg:text-sm px-3 py-1.5 focus:ring-1 focus:ring-offset-2 focus:ring-primary dark:focus:ring-revas-neutral-500 hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply cursor-pointer inline-flex w-fit items-center justify-center gap-2 font-medium bg-transparent text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 border border-primary dark:border-revas-neutral-200 rounded-inner lg:rounded-default hover:bg-primary dark:hover:bg-revas-neutral-700 hover:text-contrast dark:hover:text-white hover:ring-primary dark:hover:ring-revas-neutral-500 text-xs lg:text-sm px-3 py-1.5 focus:ring-1 focus:ring-offset-2 focus:ring-primary dark:focus:ring-revas-neutral-500 hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 .GhostLink__base-size {
-  @apply text-sm inline-flex w-fit items-center justify-center gap-2 font-medium bg-transparent hover:text-primary dark:hover:text-darkerPrimary dark:text-revas-neutral-200 rounded-inner lg:rounded-default hover:opacity-60 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply cursor-pointer text-sm inline-flex w-fit items-center justify-center gap-2 font-medium bg-transparent hover:text-primary dark:hover:text-darkerPrimary dark:text-revas-neutral-200 rounded-inner lg:rounded-default hover:opacity-60 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 .TextLink__base-size {
-  @apply text-sm inline-flex w-fit items-center justify-center gap-1 font-medium bg-transparent text-primary hover:text-darkerPrimary dark:hover:text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply cursor-pointer text-sm inline-flex w-fit items-center justify-center gap-1 font-medium bg-transparent text-primary hover:text-darkerPrimary dark:hover:text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 /* Default block */
@@ -77,7 +77,7 @@ body {
 }
 
 .DefaultBlock--clickable-title {
-  @apply text-lg lg:text-xl font-semibold max-w-4xl text-revas-neutral-800 dark:text-revas-neutral-500 hover:underline;
+  @apply cursor-pointer text-lg lg:text-xl font-semibold max-w-4xl text-revas-neutral-800 dark:text-revas-neutral-500 hover:underline;
 }
 
 .DefaultBlock--description {
@@ -85,7 +85,7 @@ body {
 }
 
 .DefaultBlock--attachment {
-  @apply relative aspect-[4/3] group-data-[is-video=true]:aspect-video w-full rounded-default overflow-hidden dark:opacity-80;
+  @apply relative aspect-[4/3] group-data-[has-text=false]:aspect-[2/1] group-data-[is-video=true]:aspect-video w-full rounded-default overflow-hidden dark:opacity-80;
 }
 
 /* Main block */
@@ -205,7 +205,7 @@ body {
 }
 
 .ColumnsBlockItem {
-  @apply w-full block bg-transparent break-inside-avoid-column data-[is-item-card=true]:rounded-default data-[is-item-dark=true]:bg-theme-dark data-[is-item-darklight=true]:bg-theme-darklight data-[is-item-light=true]:bg-white data-[is-item-spring=true]:bg-theme-spring data-[is-item-yellow=true]:bg-theme-yellow data-[is-item-green=true]:bg-theme-green data-[is-item-blue=true]:bg-theme-blue data-[is-item-red=true]:bg-theme-red;
+  @apply w-full block bg-transparent break-inside-avoid-column data-[is-item-card=true]:rounded-default;
 }
 
 .ColumnsBlockItem--container {
@@ -233,11 +233,7 @@ body {
 }
 
 .ColumnsBlockItem--link {
-  @apply max-w-md inline-flex w-fit items-center justify-center gap-2 font-medium rounded-default text-primary hover:underline group-data-[item-accent-light=true]:text-white group-data-[item-accent-spring=true]:text-theme-spring group-data-[item-accent-yellow=true]:text-theme-yellow group-data-[item-accent-green=true]:text-theme-green group-data-[item-accent-blue=true]:text-theme-blue group-data-[item-accent-red=true]:text-theme-red active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
-}
-
-.ColumnsBlockItem--label {
-  @apply max-w-md text-sm uppercase font-medium rounded-full text-primary group-data-[item-accent-light=true]:text-white group-data-[item-accent-spring=true]:text-theme-spring group-data-[item-accent-yellow=true]:text-theme-yellow group-data-[item-accent-green=true]:text-theme-green group-data-[item-accent-blue=true]:text-theme-blue group-data-[item-accent-red=true]:text-theme-red active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply max-w-md inline-flex w-fit items-center justify-center gap-2 font-medium rounded-default text-primary hover:underline  active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 /* Linear */

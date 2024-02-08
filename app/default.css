@@ -1,0 +1,649 @@
+html {
+  @apply overscroll-none
+}
+
+body {
+  @apply min-h-screen flex flex-col items-stretch justify-start 
+}
+
+/* /LAYOUTS */
+
+.App {
+  @apply bg-white dark:bg-revas-neutral-900 animate-pageShow flex-1 flex flex-col items-stretch justify-start;
+}
+
+.Page {
+  @apply bg-white dark:bg-revas-neutral-900 animate-pageShow flex-1;
+}
+
+/* LINKS */
+
+.SolidLink__base-size {
+  @apply inline-flex w-fit items-center justify-center gap-2 font-medium bg-primary dark:bg-darkerPrimary text-contrast rounded-inner lg:rounded-default hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.SoftLink__base-size {
+  @apply inline-flex w-fit items-center justify-center gap-2 font-medium bg-white text-primary dark:text-darkerPrimary border shadow rounded-inner lg:rounded-default hover:bg-revas-neutral-100 hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.OutlineLink__base-size {
+  @apply inline-flex w-fit items-center justify-center gap-2 font-medium bg-transparent text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 border border-primary dark:border-revas-neutral-200 rounded-inner lg:rounded-default hover:bg-primary dark:hover:bg-revas-neutral-700 hover:text-contrast dark:hover:text-white hover:ring-primary dark:hover:ring-revas-neutral-500 text-xs lg:text-sm px-3 py-1.5 focus:ring-1 focus:ring-offset-2 focus:ring-primary dark:focus:ring-revas-neutral-500 hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.GhostLink__base-size {
+  @apply text-sm inline-flex w-fit items-center justify-center gap-2 font-medium bg-transparent hover:text-primary dark:hover:text-darkerPrimary dark:text-revas-neutral-200 rounded-inner lg:rounded-default hover:opacity-60 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.TextLink__base-size {
+  @apply text-sm inline-flex w-fit items-center justify-center gap-1 font-medium bg-transparent text-primary hover:text-darkerPrimary dark:hover:text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+/* Default block */
+
+.DefaultBlock {
+  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full p-4 lg:p-8 -mb-4 lg:-mb-8 group-data-[has-image=false]:lg:py-12 flex flex-col items-stretch gap-4 lg:gap-8;
+}
+
+.DefaultBlock--container {
+  @apply w-full h-full max-w-screen-xl mx-auto flex gap-4 lg:gap-8 flex-col lg:flex-row items-stretch overflow-hidden;
+}
+
+.DefaultBlockContainer--first-slot {
+  @apply grow shrink gap-2 flex flex-col items-start justify-center w-full h-auto max-w-screen-sm group-data-[has-image=false]:max-w-screen-xl mx-auto;
+}
+
+.DefaultBlockContainer--second-slot {
+  @apply grow shrink-0 p-0 w-full lg:w-1/2 h-auto;
+}
+
+.DefaultBlock--items-wrapper {
+  @apply w-full h-full bg-white dark:bg-revas-neutral-900 relative z-10;
+}
+
+.DefaultBlock--items-container {
+  @apply w-full h-full max-w-screen-xl group-data-[has-image=false]:max-w-screen-xl mx-auto;
+}
+
+.DefaultBlock--columns-container {
+  @apply grow shrink-0 p-0 flex flex-col gap-4 items-start justify-start w-auto h-auto;
+}
+
+.DefaultBlock--title {
+  @apply text-lg lg:text-xl font-semibold max-w-4xl text-revas-neutral-800 dark:text-revas-neutral-500;
+}
+
+.DefaultBlock--icon {
+  @apply w-4 h-4 lg:w-6 lg:h-6 text-current inline-block
+}
+
+.DefaultBlock--clickable-title {
+  @apply text-lg lg:text-xl font-semibold max-w-4xl text-revas-neutral-800 dark:text-revas-neutral-500 hover:underline;
+}
+
+.DefaultBlock--description {
+  @apply text-sm lg:text-base font-normal max-w-3xl text-revas-neutral-600 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+}
+
+.DefaultBlock--attachment {
+  @apply relative aspect-[4/3] group-data-[is-video=true]:aspect-video w-full rounded-default overflow-hidden dark:opacity-80;
+}
+
+/* Main block */
+
+.MainBlock {
+  @apply bg-white dark:bg-revas-neutral-900 w-full data-[has-image=false]:bg-primary -mb-4 pb-4 lg:-mb-8 lg:pb-8 data-[index="0"]:-mb-0;
+}
+
+.MainBlock--container {
+  @apply w-full h-full flex gap-4 flex-col items-stretch;
+}
+
+.MainBlockContainer--first-slot {
+  @apply grow shrink px-4 xl:px-0 py-16 lg:py-24 group-data-[has-image=true]:py-8 group-data-[has-image=true]:lg:py-16 gap-2 flex flex-col items-start justify-center w-full h-auto max-w-screen-xl mx-auto;
+}
+
+.MainBlockContainer--second-slot {
+  @apply grow shrink-0 p-0 w-full group-data-[has-items=true]:-mt-4 h-auto;
+}
+
+.MainBlock--items-wrapper {
+  @apply w-full p-4 lg:p-8 -mt-4 lg:-mt-8 group-data-[has-image=true]:-mt-0 group-data-[index="0"]:-mt-0;
+}
+
+.MainBlock--items-container {
+  @apply w-full max-w-screen-xl mx-auto;
+}
+
+.MainBlock--columns-container {
+  @apply grow shrink-0 p-0 flex flex-col gap-4 items-start justify-start h-auto w-full max-w-screen-xl mx-auto;
+}
+
+.MainBlock--title {
+  @apply text-xl lg:text-2xl font-semibold text-contrast max-w-3xl  group-data-[has-image=true]:text-revas-neutral-800 group-data-[has-image=true]:dark:text-revas-neutral-300;
+}
+
+.MainBlock--icon {
+  @apply w-4 h-4 lg:w-6 lg:h-6 text-current inline-block
+}
+
+.MainBlock--clickable-title {
+  @apply text-xl lg:text-2xl font-semibold text-contrast max-w-3xl  group-data-[has-image=true]:text-revas-neutral-800 group-data-[has-image=true]:dark:text-revas-neutral-300 hover:underline;
+}
+
+.MainBlock--description {
+  @apply text-base lg:text-lg font-medium text-contrast opacity-90 max-w-2xl group-data-[has-image=true]:text-revas-neutral-600 prose prose-p:mt-0 prose-ul:mt-0;
+}
+
+.MainBlock--attachment {
+  @apply relative aspect-[20/9] group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80;
+}
+
+.MainBlock--link {
+  @apply inline-flex w-fit items-center justify-center gap-2 font-medium rounded-inner lg:rounded-default bg-primary dark:bg-darkerPrimary group-data-[has-image=false]:bg-white text-contrast group-data-[has-image=false]:text-primary group-data-[has-image=false]:dark:text-darkerPrimary group-data-[has-image=false]:shadow hover:ring-primary text-sm lg:text-base px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+/* Main Custom HTML block */
+
+.MainCustomHTMLBlock {
+  @apply w-full bg-white dark:bg-revas-neutral-900;
+}
+
+.MainCustomHTMLBlock--container {
+  @apply w-full bg-white dark:bg-revas-neutral-900;
+}
+
+/* Default Custom HTML block */
+
+.DefaultCustomHTMLBlock {
+  @apply bg-revas-white dark:bg-revas-neutral-900 p-4 flex items-center justify-center max-w-screen-xl mx-auto;
+}
+
+/* BLOCK ITEMS */
+
+/* Grid */
+
+.BlockItemsGrid {
+  @apply w-full py-4 grid gap-4 grid-cols-1 lg:grid-cols-3;
+}
+
+.GridBlockItem {
+  @apply w-full h-full block bg-white dark:bg-revas-neutral-800 rounded-default overflow-hidden group-data-[block-layout=default]:border group-data-[block-layout=default]:dark:border-revas-neutral-700;
+}
+
+.GridBlockItem--container {
+  @apply w-full h-full;
+}
+
+.GridBlockItemContainer--second-slot {
+  @apply shrink-0 grow flex flex-col gap-2 items-start justify-start w-auto h-auto p-4;
+}
+
+.GridBlockItemContainer--first-slot {
+  @apply shrink-0 w-auto h-auto grow;
+}
+
+.GridBlockItem--title {
+  @apply text-base font-medium text-revas-neutral-800 dark:text-revas-neutral-400;
+}
+
+.GridBlockItem--description {
+  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+}
+
+.GridBlockItem--attachment {
+  @apply aspect-[3/2] group-data-[is-item-video=true]:aspect-video overflow-hidden w-full dark:opacity-80;
+}
+
+/* Columns */
+
+.BlockItemsColumns {
+  @apply w-full py-4 gap-4 columns-1 lg:columns-3;
+}
+
+.ColumnsBlockItem {
+  @apply w-full block bg-transparent break-inside-avoid-column pb-4 last:pb-0;
+}
+
+.ColumnsBlockItem--container {
+  @apply w-full;
+}
+
+.ColumnsBlockItemContainer--second-slot {
+  @apply shrink-0 grow flex flex-col gap-2 items-start justify-start w-auto h-auto p-4;
+}
+
+.ColumnsBlockItemContainer--first-slot {
+  @apply shrink-0 w-auto h-auto grow-0;
+}
+
+.ColumnsBlockItem--title {
+  @apply text-base font-medium text-revas-neutral-800 dark:text-revas-neutral-400;
+}
+
+.ColumnsBlockItem--description {
+  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+}
+
+.ColumnsBlockItem--attachment {
+  @apply w-full overflow-hidden rounded-default dark:opacity-80;
+}
+
+/* Linear */
+
+.BlockItemsLinear {
+  @apply w-full py-4 flex flex-col gap-4;
+}
+
+.LinearBlockItem {
+  @apply w-full bg-transparent;
+}
+
+.LinearBlockItem--container {
+  @apply w-full h-full flex flex-col lg:flex-row items-stretch gap-4;
+}
+
+.LinearBlockItemContainer--second-slot {
+  @apply flex-1 flex flex-col gap-2 items-start justify-center w-auto h-auto p-0;
+}
+
+.LinearBlockItemContainer--first-slot {
+  @apply flex-none w-auto h-auto grow-0;
+}
+
+.LinearBlockItem--title {
+  @apply text-base font-medium text-revas-neutral-800 dark:text-revas-neutral-400;
+}
+
+.LinearBlockItem--description {
+  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+}
+
+.LinearBlockItem--attachment {
+  @apply aspect-square group-data-[is-item-video=true]:aspect-video overflow-hidden w-16 lg:w-32 rounded-default dark:opacity-80;
+}
+
+/* HEADER */
+
+.Header {
+  @apply sticky top-0 z-50 inset-x-0 h-14;
+}
+
+.Header--desktop-wrapper {
+  @apply px-4 flex h-full items-center overflow-hidden bg-white bg-opacity-50 backdrop-blur-2xl;
+}
+
+.Header--container {
+  @apply w-full h-full flex items-center justify-between gap-4;
+}
+
+.Header--logo {
+  @apply h-10 lg:h-12 flex-none overflow-hidden dark:opacity-80 object-contain object-left;
+}
+
+.Header--desktop-links {
+  @apply hidden lg:flex items-center justify-start gap-4;
+}
+
+.Header--desktop-links-wrapper {
+  @apply flex items-center gap-4;
+}
+
+.Header--menu-button {
+  @apply lg:hidden rounded-inner h-full p-2 flex items-center justify-center aspect-square border dark:border-neutral-500 text-black dark:text-revas-neutral-200 active:bg-revas-neutral-100 dark:active:bg-revas-neutral-800;
+}
+
+.Header--mobile-wrapper {
+  @apply p-8 border-t dark:border-revas-neutral-700 bg-white dark:bg-revas-neutral-900 z-50 rounded-b-default shadow-xl;
+}
+
+.Header--mobile-links {
+  @apply flex flex-col items-center justify-center gap-8;
+}
+
+.Header--mobile-main-action {
+  @apply flex items-center justify-center pt-8 w-full
+}
+
+/* NOTIFICATION */
+
+.Notification {
+  @apply h-fit lg:h-10 p-2 lg:px-4 bg-primary dark:bg-darkerPrimary flex items-center justify-center;
+}
+
+.Notification--container {
+  @apply w-full flex items-center justify-between lg:justify-center gap-2;
+}
+
+.Notification--title {
+  @apply text-contrast font-medium text-sm;
+}
+
+.Notification--description {
+  @apply hidden lg:block text-contrast text-sm;
+}
+
+.Notification--link {
+  @apply px-2 py-0.5 bg-contrast bg-opacity-50 text-primary dark:text-darkerPrimary text-sm rounded-inner lg:rounded-default hover:ring-1 hover:ring-contrast hover:ring-offset-2 focus:ring-1 focus:ring-contrast focus:ring-offset-2 active:scale-[0.98];
+}
+
+/* MAIN ITEM */
+
+.MainItem {
+  @apply bg-white dark:bg-revas-neutral-900 w-full border-t border-revas-neutral-200 dark:border-revas-neutral-700 p-4 lg:p-8;
+}
+
+.MainItem--container {
+  @apply w-full h-full max-w-screen-xl mx-auto flex gap-4 lg:gap-8 flex-col lg:flex-row items-stretch bg-primary dark:bg-darkerPrimary rounded-default overflow-hidden p-4 group-data-[has-image=false]:lg:py-16;
+}
+
+.MainItemContainer--first-slot {
+  @apply grow shrink p-4 gap-4 flex flex-col items-start justify-center w-auto h-auto group-data-[has-image=false]:items-center group-data-[has-image=false]:text-center;
+}
+
+.MainItemContainer--second-slot {
+  @apply grow shrink-0 p-0 w-full lg:w-1/2 h-auto;
+}
+
+.MainItem--title {
+  @apply text-2xl font-semibold text-contrast max-w-xl;
+}
+
+.MainItem--description {
+  @apply text-lg font-medium text-contrast opacity-90  max-w-2xl prose prose-p:mt-0 prose-ul:mt-0;
+}
+
+.MainItem--attachment {
+  @apply relative aspect-[20/9] group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80 rounded-inner shadow-xl;
+}
+
+.MainItem--link {
+  @apply inline-flex w-fit items-center justify-center gap-2 font-medium rounded-inner lg:rounded-default bg-contrast text-primary dark:text-darkerPrimary hover:ring-primary text-sm lg:text-base px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+/* FOOTER */
+
+.Footer {
+  @apply bg-white dark:bg-revas-neutral-900 border-t dark:border-revas-neutral-700;
+}
+
+.Footer--logo {
+  @apply h-4 lg:h-6 overflow-hidden dark:opacity-80;
+}
+
+.Footer--container {
+  @apply p-4 lg:p-12 flex flex-col lg:flex-row gap-4;
+}
+
+.Footer--links {
+  @apply flex flex-col gap-4 items-start justify-start shrink w-full lg:w-1/5;
+}
+
+.Footer--socials {
+  @apply flex flex-col gap-4 items-start justify-start shrink w-full lg:w-1/5;
+}
+
+.Footer--authors {
+  @apply flex flex-col gap-4 items-start justify-start flex-1 w-full lg:w-1/3;
+}
+
+.Footer--foot {
+  @apply h-fit border-t dark:border-revas-neutral-700 p-2 flex gap-2 flex-col lg:flex-row lg:items-center lg:justify-between;
+}
+
+.FooterFoot--container {
+  @apply w-full flex flex-col lg:flex-row lg:items-center justify-start lg:justify-between text-xs font-medium gap-1 lg:gap-2;
+}
+
+/* AUTHOR */
+
+.Author {
+  @apply flex flex-col items-start justify-start gap-2;
+}
+
+.Author--container {
+  @apply shrink-0 grow-0 w-fit h-fit p-0 flex flex-col gap-2 items-start justify-start;
+}
+
+.Author--title {
+  @apply font-semibold max-w-2xl text-base lg:text-lg text-revas-neutral-900 dark:text-revas-neutral-300;
+}
+
+.Author--description {
+  @apply text-sm text-revas-neutral-600 dark:text-revas-neutral-400 max-w-lg;
+}
+
+.Author--image {
+  @apply h-12 overflow-hidden dark:opacity-80 box-content flex items-start justify-start;
+}
+
+.Author--links {
+  @apply flex flex-wrap gap-2 lg:gap-4 items-center justify-start;
+}
+
+.Author--link {
+  @apply inline-flex w-fit items-center justify-center gap-2 text-sm font-medium bg-transparent text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 rounded-inner lg:rounded-default  active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+/* SOCIALS */
+
+.SocialLink--icon {
+  @apply text-current fill-current stroke-current w-5 h-5;
+}
+
+/* ATTACHMENT */
+
+.Attachment--video {
+  @apply h-full w-full;
+}
+
+.Attachment--figure {
+  @apply w-full h-full relative overflow-hidden block data-[is-loaded=false]:bg-revas-neutral-100 data-[is-loaded=false]:animate-pulse;
+}
+
+.AttachmentFigure--picture {
+  @apply h-full w-full overflow-hidden block;
+}
+
+.AttachmentFigure--caption {
+  @apply absolute inset-x-0 bottom-0 translate-y-full z-10 mt-4 text-center text-sm text-revas-neutral-400;
+}
+
+.AttachmentPicture--source {
+  @apply w-full h-full object-cover;
+}
+
+.AttachmentPicture--image {
+  @apply w-full h-full object-cover group-data-[attachment-object=contain]:object-contain group-data-[attachment-width=auto]:w-auto;
+}
+
+/* FEED */
+
+.FeedBlockItem {
+  @apply w-full h-full block data-[has-link=true]:active:scale-[0.98] bg-white dark:bg-revas-neutral-800 rounded-default overflow-hidden border border-revas-neutral-200 dark:border-revas-neutral-700 data-[has-link=true]:hover:ring-2 data-[has-link=true]:hover:ring-revas-neutral-300 hover:dark:ring-revas-neutral-500;
+}
+
+.FeedBlockItem--container {
+  @apply w-full h-full;
+}
+
+.FeedBlockItemContainer--second-slot {
+  @apply shrink-0 grow flex flex-col gap-2 items-stretch justify-start w-auto h-auto p-4;
+}
+
+.FeedBlockItemContainer--first-slot {
+  @apply shrink-0 w-auto h-auto grow;
+}
+
+.FeedBlockItem--title {
+  @apply text-base font-semibold text-revas-neutral-800 dark:text-revas-neutral-400 group-data-[has-link=true]:group-hover:opacity-70;
+}
+
+.FeedBlockItem--description {
+  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 flex-1 line-clamp-3;
+}
+
+.FeedBlockItem--date {
+  @apply text-sm font-normal text-revas-neutral-500 dark:text-revas-neutral-700;
+}
+
+.FeedBlockItem--attachment {
+  @apply aspect-[3/2] relative group-data-[is-item-video=true]:aspect-video overflow-hidden w-full dark:opacity-80;
+}
+
+.FeedBlockItem--attachment-image {
+  @apply group-data-[feed-item=true]:group-hover:scale-110 transition-all duration-300 ease-in-out;
+}
+
+.FeedPage {
+  @apply w-full bg-white dark:bg-revas-neutral-900 flex-1
+}
+
+.FeedPage--header-container {
+  @apply w-full border-b border-revas-neutral-200 dark:border-revas-neutral-600 p-4 lg:p-8
+}
+
+.FeedPage--header {
+  @apply w-full max-w-screen-xl mx-auto flex flex-col gap-4 items-stretch
+}
+
+.FeedPage--title {
+  @apply text-xl font-semibold text-revas-neutral-800 dark:text-revas-neutral-500;
+}
+
+.FeedPage--description {
+  @apply text-base font-normal text-revas-neutral-700 dark:text-revas-neutral-500;
+}
+
+.FeedPage--items-container {
+  @apply w-full p-4 lg:p-8
+}
+
+.FeedPage--items {
+  @apply w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4
+}
+
+/* CONTENT */
+
+.ContentPage {
+  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full flex-1;
+}
+
+.ContentPage--header {
+  @apply p-4 lg:p-8 border-b border-revas-neutral-200 dark:border-revas-neutral-600
+}
+
+.ContentHeader--container {
+  @apply w-full h-full max-w-screen-xl mx-auto flex gap-8 flex-col lg:flex-row items-stretch overflow-hidden;
+}
+
+.ContentHeaderContainer--first-slot {
+  @apply grow shrink gap-2 flex flex-col items-start justify-center w-full lg:w-1/2 h-auto max-w-screen-md;
+}
+
+.ContentHeaderContainer--second-slot {
+  @apply grow shrink-0 p-0 w-full lg:w-1/2 h-auto;
+}
+
+.ContentHeader--feed-title {
+  @apply text-xs lg:text-sm uppercase text-primary hover:underline;
+}
+
+.ContentHeader--title {
+  @apply text-xl lg:text-2xl font-semibold text-revas-neutral-800 dark:text-revas-neutral-500;
+}
+
+.ContentHeader--description {
+  @apply text-lg lg:text-xl font-normal text-revas-neutral-700 dark:text-revas-neutral-500;
+}
+
+.ContentHeader--published-date {
+  @apply text-sm lg:text-base font-normal text-revas-neutral-500 dark:text-revas-neutral-600;
+}
+
+.ContentHeader--attachment {
+  @apply relative aspect-[4/3] group-data-[is-video=true]:aspect-video w-full rounded-default overflow-hidden dark:opacity-80;
+}
+
+.ContentPage--content {
+  @apply prose dark:prose-invert mx-auto w-full max-w-screen-md prose-p:text-sm prose-a:text-sm prose-a:text-primary prose-a:dark:text-revas-neutral-300 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-sm prose-h1:lg:text-3xl prose-h2:lg:text-2xl prose-h3:lg:text-xl prose-h4:lg:text-lg prose-h5:lg:text-base prose-h6:lg:text-base p-4 lg:py-8
+}
+
+/* TOOLBAR */
+
+/* LOCALE CONFIGURATOR */
+
+.Toolbar--locale-configurator {
+  @apply flex relative z-[70] uppercase
+}
+
+.LocaleConfigurator--trigger-button {
+  @apply py-1 px-2 text-sm font-medium leading-none rounded-default active:scale-[0.98] border text-revas-neutral-800 hover:bg-revas-neutral-100 focus:bg-revas-neutral-100 data-[state=open]:bg-revas-neutral-200 uppercase inline-flex items-center justify-center gap-1;
+}
+
+.LocaleConfigurator--trigger-icon {
+  @apply w-4 h-4 text-current;
+}
+
+.LocaleConfigurator--navigation-menu {
+  @apply w-[200px] bg-white rounded-default p-2 shadow-lg border [animation-duration:_400ms] [animation-timing-function:_cubic-bezier(0.16,_1,_0.3,_1)] will-change-[transform,opacity] relative z-50 flex flex-col gap-1
+}
+
+.LocaleNavigationMenu--link {
+  @apply uppercase px-2 py-1 rounded-inner bg-white hover:ring-1 focus:ring-1 hover:ring-revas-neutral-100 focus:ring-revas-neutral-100 data-[state=checked]:bg-revas-neutral-100 data-[state=checked]:opacity-60 data-[state=checked]:pointer-events-none data-[state=checked]:cursor-not-allowed flex-1 text-sm text-center
+}
+
+.LocaleConfigurator--viewport {
+  @apply absolute top-full right-0 flex w-[100px] justify-center
+}
+
+.LocaleConfigurator--viewport-container {
+  @apply data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]
+}
+
+.LocaleConfigurator--label {
+  @apply text-xs font-semibold text-revas-neutral-700
+}
+
+.LocaleConfigurator--radio-group {
+  @apply inline-flex flex-col items-stretch justify-start gap-1
+}
+
+/* ACCESSIBILITY CONFIGURATOR */
+
+.ToolBar--accessibility-configurator {
+  @apply flex z-50
+}
+
+.AccessibilityConfigurator--trigger-button {
+  @apply py-1 px-2 text-sm font-medium leading-none rounded-default active:scale-[0.98] border text-revas-neutral-800 hover:bg-revas-neutral-100 focus:bg-revas-neutral-100 data-[state=open]:bg-revas-neutral-200 inline-flex items-center justify-center gap-1
+}
+
+.AccessibilityConfigurator--trigger-icon {
+  @apply w-4 h-4 text-current;
+}
+
+.AccessibilityConfigurator--menu-content {
+  @apply w-[90vw] lg:w-[28vw] lg:max-w-xs bg-white rounded-inner p-2 shadow-lg border [animation-duration:_400ms] [animation-timing-function:_cubic-bezier(0.16,_1,_0.3,_1)] will-change-[transform,opacity] z-50 flex flex-col gap-1
+}
+
+.AccessibilityMenu--label {
+  @apply text-sm font-semibold text-revas-neutral-700
+}
+
+.AccessibilityMenu--radio-group {
+  @apply inline-flex flex-wrap items-center justify-start rounded-inner border overflow-hidden gap-px bg-revas-neutral-200
+}
+
+.AccessibilityMenu--radio-item {
+  @apply px-2 py-1 bg-white hover:bg-revas-neutral-100 focus:bg-revas-neutral-100 data-[state=checked]:bg-revas-neutral-100 data-[state=checked]:opacity-60 data-[state=checked]:cursor-not-allowed w-fit min-w-[49.8%] shrink-0 grow text-sm text-center cursor-pointer
+}
+
+.AccessibilityMenu--label__small-size {
+  @apply text-xs p-2 text-center text-revas-neutral-700 -mb-1
+}
+
+/* OTHERS */
+
+.DefaultLinkIcon__small-size {
+  @apply w-4 h-4 stroke-1 text-current
+}

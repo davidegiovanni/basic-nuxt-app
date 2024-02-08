@@ -2,33 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-/* commento */
-
-::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
-
-.body-content a {
-    @apply underline underline-offset-2;
-}
-
-.body-content img {
-    @apply mx-auto max-w-[100px] lg:max-w-[200px];
-}
-
-.shinyyyy {
-    -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
-    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
-    -webkit-mask-size: 500%;
-    mask-size: 500%;
-    -webkit-mask-position: 0;
-    mask-position: 0;
-}
-
-.shinyyyy:hover {
-    transition: mask-position 3s ease,-webkit-mask-position 3s ease;
-    -webkit-mask-position: 120%;
-    mask-position: 120%;
-    opacity: 1;
-}
+@import '@radix-ui/themes/styles.css';

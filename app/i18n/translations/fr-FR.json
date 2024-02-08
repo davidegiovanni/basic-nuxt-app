@@ -1,0 +1,25 @@
+{
+    "error_loading_page": "The page did not load correctly",
+    "wait_and_retry": "There was an error loading the page. Wait a minute and then retry.",
+    "page_not_found": "This page does not exist",
+    "page_does_not_exist": "This page does not exist. Try to go back home and retry.",
+    "go_back_home": "Go back home",
+    "website_error": "Website loading error",
+    "wait_website_and_retry": "The website did not load correctly. Wait a while and retry.",
+
+    "change_language": "Change language",
+    "web_standard_accessibility_compliance": "W3C web accessibility standard for WCAG Compliance.",
+
+    "accessibility_settings": "Accessibility",
+    "change_contrast": "Change contrast",
+    "normal_contrast": "Normal",
+    "high_contrast": "High",
+    
+    "change_text_size": "Text size",
+    "normal_text_size": "Normal",
+    "medium_text_size": "50%",
+    "high_text_size": "100%",
+    "max_text_size": "200%",
+
+    "fast_green_accessible_website_thanks_to": "This website is ⚡️fast, 🌱green and ♿️accessibile thanks to "
+}

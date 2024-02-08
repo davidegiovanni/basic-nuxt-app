@@ -1,0 +1,25 @@
+{
+    "error_loading_page": "La pagina non si è caricata correttamente",
+    "wait_and_retry": "La pagina non si sta caricando correttamente a causa di un problema tecnico. Aspetta un po' e poi riprova a caricare la pagina.",
+    "page_not_found": "Questa pagina non esiste",
+    "page_does_not_exist": "La pagina che stai cercando non esiste o è stata spostata. Controlla che l'indirizzo sia giusto oppure torna alla homepage e prova a cercarla da lì",
+    "go_back_home": "Torna alla home",
+    "website_error": "Il sito non si è caricato correttamente",
+    "wait_website_and_retry": "Il sito web non si sta caricando correttamente a causa di un problema tecnico. Aspetta un po' e poi riprova a caricare la pagina.",
+
+    "change_language": "Cambia lingua",
+    "web_standard_accessibility_compliance": "Accessibilità web standard W3C per la WCAG Compliance",
+
+    "accessibility_settings": "Accessibilità",
+    "change_contrast": "Cambia contrasto",
+    "normal_contrast": "Normale",
+    "high_contrast": "Elevato",
+    
+    "change_text_size": "Dimensione del testo",
+    "normal_text_size": "Normale",
+    "medium_text_size": "50%",
+    "high_text_size": "100%",
+    "max_text_size": "200%",
+
+    "fast_green_accessible_website_thanks_to": "Sito web ⚡️veloce, 🌱green e ♿️accessibile grazie a "
+}

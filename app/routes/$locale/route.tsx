@@ -6,14 +6,13 @@ import { asyncGetWebsite } from "~/services/api/websites";
 import type { LoaderData} from "~/services/api/websites/website-data-loader";
 
 import { newLoader as websiteLoader } from "~/services/api/websites/website-data-loader";
-import { Outlet, useLoaderData, useLocation, useSubmit } from "@remix-run/react";
+import { Outlet, useLoaderData } from "@remix-run/react";
 
 import Injection from "~/services/template/code-injection";
 import AppLayout from "~/components/base/Layout/App";
 import CustomTheme from "~/services/template/custom-theme";
 import A11ySetup from "~/services/template/a11y-setup";
 import Error from "~/components/base/Website/Error";
-import Toolbar from "~/components/core/Toolbar";
 import { TranslationsProvider, useTranslationsContext } from "~/services/template/i18n-provider";
 
 export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
@@ -51,9 +50,6 @@ type IndexProps = {
 };
 
 export function IndexComponent({ loaderData }: IndexProps) {
-  const submit = useSubmit()
-  const location = useLocation()
-  const path = location.pathname
 
   const A11Y_VARIABLES = {
     textBaseUnit: loaderData.textBaseUnit, 
@@ -75,7 +71,8 @@ export function IndexComponent({ loaderData }: IndexProps) {
 
   if (websiteError) {
     return (
-      <TranslationsProvider translations={loaderData.translations}>
+      <TranslationsProvider locales={loaderData.availableLanguages}
+      currentLocale={loaderData.selectedLocale} translations={loaderData.translations}>
         <Error title={t("website_error")} description={t("wait_website_and_retry")} linkTitle={""} linkUrl={""} />
       </TranslationsProvider>
     )
@@ -83,33 +80,37 @@ export function IndexComponent({ loaderData }: IndexProps) {
 
   return (
     <>
-      <A11ySetup {...A11Y_VARIABLES} />
-      <CustomTheme {...CUSTOM_THEME} />
-      <Injection code={loaderData.headCodeInjection} position={"head"} />
-      <Injection code={loaderData.bodyCodeInjection} position={"body"} />
-      <TranslationsProvider translations={loaderData.translations}>
-        <Toolbar
-          path={path}
-          currentContrastMode={loaderData.currentContrastMode}
-          currentTextIncreaseAmount={loaderData.textIncreaseAmount}
-          currentLocale={loaderData.websiteLocale}
-          availableLocales={loaderData.availableLanguages}
-          submit={submit} />
-        <AppLayout
-          locale={loaderData.websiteLocale}
-          logoUrl={loaderData.websiteLogoUrl}
-          websiteTitle={loaderData.websiteTitle}
-          navigation={loaderData.navigation}
-          notification={loaderData.notification}
-          mainLink={loaderData.mainLink}
-          authors={loaderData.authors}
-          links={loaderData.links}
-          socials={loaderData.socials}
-          mainItem={loaderData.mainItem}
-          metadata={loaderData.metadata}>
-          <Outlet />
-        </AppLayout>
-      </TranslationsProvider>
+      <A11ySetup {...A11Y_VARIABLES}>
+        <CustomTheme {...CUSTOM_THEME} />
+        <Injection code={loaderData.headCodeInjection} position={"head"} />
+        <Injection code={loaderData.bodyCodeInjection} position={"body"} />
+        <TranslationsProvider
+          translations={loaderData.translations}
+          locales={loaderData.availableLanguages}
+          currentLocale={loaderData.selectedLocale}>
+          {/* <Toolbar
+            path={path}
+            currentContrastMode={loaderData.currentContrastMode}
+            currentTextIncreaseAmount={loaderData.textIncreaseAmount}
+            currentLocale={loaderData.websiteLocale}
+            availableLocales={loaderData.availableLanguages}
+            submit={submit} /> */}
+          <AppLayout
+            locale={loaderData.websiteLocale}
+            logoUrl={loaderData.websiteLogoUrl}
+            websiteTitle={loaderData.websiteTitle}
+            navigation={loaderData.navigation}
+            notification={loaderData.notification}
+            mainLink={loaderData.mainLink}
+            authors={loaderData.authors}
+            links={loaderData.links}
+            socials={loaderData.socials}
+            mainItem={loaderData.mainItem}
+            metadata={loaderData.metadata}>
+            <Outlet />
+          </AppLayout>
+        </TranslationsProvider>
+      </A11ySetup>
     </>
   )
 }

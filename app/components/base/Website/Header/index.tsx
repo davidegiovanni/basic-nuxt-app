@@ -6,6 +6,9 @@ import type { WebsiteLinkUI } from "~/models";
 import NavigationLinks from "~/components/base/Website/Navigation";
 import MainLink from "~/components/base/Website/MainLink";
 import Attachment from "~/components/core/Attachment";
+import { AnimatePresence, motion } from "framer-motion";
+import LocaleConfigurator from "~/components/core/Toolbar/LocaleConfigurator";
+import { useTranslationsContext } from "~/services/template/i18n-provider";
 
 export interface HeaderProps {
   websiteTitle: string;
@@ -20,30 +23,47 @@ export default function Header({
   websiteTitle,
   navigation,
   mainLink,
-  locale,
+  locale
 }: HeaderProps) {
   const [mobileMenuOpen, toggleMobileMenu] = useState<boolean>(false);
+  const { t } = useTranslationsContext()
 
   return (
-    <div className={`Header OverrideHeader group`}>
+    <motion.div 
+      initial={{
+        translateY: "120%"
+      }}
+      animate={{
+        translateY: 0
+      }}
+      transition={{
+        duration: 0.5,
+        delay: 0.3,
+        ease: "easeInOut"
+      }}
+      className={`Header OverrideHeader group`}>
       <div
         className={`Header--desktop-wrapper OverrideHeader--desktop-wrapper`}
       >
         <div className={`Header--container OverrideHeader--container`}>
-          <Link to={`/${locale}`} onClick={() => toggleMobileMenu(false)}>
+          <Link to={`/${locale}`} onClick={() => toggleMobileMenu(false)} className="select-none cursor-pointer">
             {logoUrl !== "" && (
-              <div data-attachment-width="auto" data-attachment-object="contain" className={`Header--logo group OverrideHeader--logo`}>
-                <Attachment
-                  attachmentUrl={logoUrl}
-                  attachmentMediaType={"image/"}
-                  attachmentCaption={""}
-                  attachmentDescription={websiteTitle}
-                  metadata={{}}/>
+              <div className="select-none cursor-pointer">
+                <div data-attachment-width="auto" data-attachment-object="contain" className={`Header--logo group OverrideHeader--logo`}>
+                  <Attachment
+                    attachmentUrl={logoUrl}
+                    attachmentMediaType={"image/"}
+                    attachmentCaption={""}
+                    attachmentDescription={websiteTitle}
+                    metadata={{}}/>
+                </div>
               </div>
             )}
             {logoUrl === "" && (
-              <div className={`Header--title OverrideHeader--title`}>
-                <p>{websiteTitle}</p>
+              <div>
+                <div className={`Header--title OverrideHeader--title`}>
+                  <p>{websiteTitle}</p>
+                </div>
               </div>
             )}
           </Link>
@@ -56,15 +76,20 @@ export default function Header({
               >
                   <NavigationLinks
                     links={navigation}
-                    className={`GhostLink__base-size OverrideGhostLink__base-size`}
+                    className={`Header--desktop-link OverrideHeader--desktop-link`}
                   />
+                  <LocaleConfigurator>
+                    <p className="Header--desktop-link OverrideHeader--desktop-link">
+                      {t("change_language")}
+                    </p>
+                  </LocaleConfigurator>
               </ul>
             )}
             {mainLink && (
-              <span data-hide-on-mobile={mainLink.title.length > 15} className="data-[hide-on-mobile=true]:hidden data-[hide-on-mobile=true]:lg:inline-block" onClick={() => toggleMobileMenu(false)}>
+              <span className="flex-1 lg:flex-none" onClick={() => toggleMobileMenu(false)}>
                 <MainLink
                   link={mainLink}
-                  className={`SolidLink__base-size OverrideSolidLink__base-size`}
+                  className={`Header--desktop-main-link OverrideHeader--desktop-main-link`}
                 />
               </span>
             )}
@@ -110,8 +135,19 @@ export default function Header({
           </nav>
         </div>
       </div>
+      <AnimatePresence>
       {mobileMenuOpen && (
-        <nav
+
+        <motion.nav
+          initial={{
+            translateY: 0
+          }}
+          animate={{
+            translateY: "-100%"
+          }}
+          exit={{
+            translateY: 0
+          }}
           className={`Header--mobile-wrapper OverrideHeader--mobile-wrapper`}
         >
           {navigation && (
@@ -121,20 +157,18 @@ export default function Header({
             >
               <NavigationLinks
                 links={navigation}
-                className={`GhostLink__base-size OverrideGhostLink__base-size`}
+                className={`Header--mobile-link OverrideHeader--mobile-link`}
               />
             </ul>
           )}
-          {mainLink && mainLink.title.length > 15 && (
-          <div className={`Header--mobile-main-action OverrideHeader--mobile-main-action`} onClick={() => toggleMobileMenu(false)}>
-              <MainLink
-                link={mainLink}
-                className={`SolidLink__base-size OverrideSolidLink__base-size`}
-              />
-          </div>
-          )}
-        </nav>
+          <LocaleConfigurator>
+            <p className="Header--mobile-link OverrideHeader--mobile-link">
+              {t("change_language")}
+            </p>
+          </LocaleConfigurator>
+        </motion.nav>
       )}
-    </div>
+      </AnimatePresence>
+    </motion.div>
   );
 }

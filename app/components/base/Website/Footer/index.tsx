@@ -31,12 +31,12 @@ export default function Footer({
       {mainItem && <MainItem item={mainItem} />}
       <div className={`Footer OverrideFooter group`}>
         {((authors && authors.length > 0) || (links && links.length > 0) || (socials && socials.length > 0)) && <div className={`Footer--container OverrideFooter--container`}>
-          {authors && authors.length > 0 && (
+          {authors && (
             <div className={`Footer--authors OverrideFooter--authors`}>
               <Authors authors={authors} />
             </div>
           )}
-          {links && links.length > 0 && (
+          {links && (
             <div className={`Footer--links OverrideFooter--links`}>
               <WebsiteLinks
                 links={links}
@@ -44,7 +44,7 @@ export default function Footer({
               />
             </div>
           )}
-          {socials && socials.length > 0 && (
+          {socials && (
             <div className={`Footer--socials OverrideFooter--socials`}>
               <SocialsLinks
                 links={socials}

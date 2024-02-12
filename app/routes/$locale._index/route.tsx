@@ -77,7 +77,7 @@ export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
   return pageLoader({
     publicKey,
     websiteName,
-    pageSlug: "index",
+    pageSlug: "homepage",
     asyncGetPage
   })(args);
 };

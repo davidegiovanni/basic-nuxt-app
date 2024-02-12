@@ -5,6 +5,9 @@ import LinearBlockItems from "./LinearBlockItems";
 import { isVideo } from "~/components/core/Attachment";
 import FeedItems from "~/components/custom/FeedItems";
 import { BlockProperties } from "../Block";
+import Attributes from "~/services/template/custom-attributes";
+import Metadata from "~/services/template/custom-metadata-style";
+import { useRef } from "react";
 
 export type BlockItemsProps = {
   block: BlockUI;
@@ -13,6 +16,7 @@ export type BlockItemsProps = {
 
 export default function PageBlockItems({ block, index }: BlockItemsProps) {
   const layout = block.itemsLayout;
+  const blockRef = useRef<HTMLDivElement| null>(null)
 
   const { hasFeed, columns } = BlockProperties(block)
 
@@ -34,7 +38,9 @@ export default function PageBlockItems({ block, index }: BlockItemsProps) {
   if (layout === "columns")
     return (
       <div ref={blockRef} className="BlockItemsColumns OverrideBlockItemsColumns">
-        <Attributes applyTo={blockRef} attributes={attributes} />
+        <Attributes applyTo={blockRef} attributes={{
+          "data-cols": columns
+        }} />
         <Metadata applyTo={blockRef} metadata={block.metadata} />
         {
           Array.from({ length: columns }, (_, i) => (

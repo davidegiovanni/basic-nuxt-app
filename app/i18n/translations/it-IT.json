@@ -21,5 +21,11 @@
     "high_text_size": "100%",
     "max_text_size": "200%",
 
+    "language_it-it": "Italiano",
+    "language_en-us": "Inglese",
+    "language_fr-fr": "Francese",
+    "language_de-de": "Tedesco",
+    "language_es-es": "Spagnolo",
+
     "fast_green_accessible_website_thanks_to": "Sito web ⚡️veloce, 🌱green e ♿️accessibile grazie a "
 }

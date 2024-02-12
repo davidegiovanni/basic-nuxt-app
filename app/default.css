@@ -9,7 +9,7 @@ body {
 /* /LAYOUTS */
 
 .App {
-  @apply bg-white dark:bg-revas-neutral-900 animate-pageShow flex-1 flex flex-col items-stretch justify-start;
+  @apply bg-white dark:bg-revas-neutral-900 animate-pageShow flex-1 flex flex-col items-stretch justify-start pb-16;
 }
 
 .Page {
@@ -41,35 +41,35 @@ body {
 /* Default block */
 
 .DefaultBlock {
-  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full p-4 lg:p-8 -mb-4 lg:-mb-8 group-data-[has-image=false]:lg:py-12 flex flex-col items-stretch gap-4 lg:gap-8;
+  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full border-b border-black -mb-[1.5px] overflow-hidden;
 }
 
 .DefaultBlock--container {
-  @apply w-full h-full max-w-screen-xl mx-auto flex gap-4 lg:gap-8 flex-col lg:flex-row items-stretch overflow-hidden;
+  @apply overflow-hidden w-full grid grid-cols-1 lg:grid-cols-2 group-data-[has-text=false]:lg:grid-cols-1 group-data-[has-image=false]:lg:grid-cols-1;
 }
 
 .DefaultBlockContainer--first-slot {
-  @apply grow shrink gap-2 flex flex-col items-start justify-center w-full h-auto max-w-screen-sm group-data-[has-image=false]:max-w-screen-xl mx-auto;
+  @apply flex flex-col gap-4 items-start justify-end p-2 lg:p-4 border-b lg:border-b-0 lg:border-r border-black group-data-[has-image=false]:border-0;
 }
 
 .DefaultBlockContainer--second-slot {
-  @apply grow shrink-0 p-0 w-full lg:w-1/2 h-auto;
+  @apply overflow-hidden;
 }
 
 .DefaultBlock--items-wrapper {
-  @apply w-full h-full bg-white dark:bg-revas-neutral-900 relative z-10;
+  @apply p-0 border-t border-black;
 }
 
 .DefaultBlock--items-container {
-  @apply w-full h-full max-w-screen-xl group-data-[has-image=false]:max-w-screen-xl mx-auto;
+  @apply p-0;
 }
 
 .DefaultBlock--columns-container {
-  @apply grow shrink-0 p-0 flex flex-col gap-4 items-start justify-start w-auto h-auto;
+  @apply p-0;
 }
 
 .DefaultBlock--title {
-  @apply text-lg lg:text-xl font-semibold max-w-4xl text-revas-neutral-800 dark:text-revas-neutral-500;
+  @apply text-sm font-normal w-full max-w-4xl uppercase;
 }
 
 .DefaultBlock--icon {
@@ -77,49 +77,53 @@ body {
 }
 
 .DefaultBlock--clickable-title {
-  @apply cursor-pointer text-lg lg:text-xl font-semibold max-w-4xl text-revas-neutral-800 dark:text-revas-neutral-500 hover:underline;
+  @apply cursor-pointer text-sm font-normal w-full max-w-4xl uppercase hover:underline;
 }
 
 .DefaultBlock--description {
-  @apply text-sm lg:text-base font-normal max-w-3xl text-revas-neutral-600 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-sm font-normal w-full max-w-4xl uppercase;
 }
 
 .DefaultBlock--attachment {
-  @apply relative aspect-[4/3] group-data-[has-text=false]:aspect-[2/1] group-data-[is-video=true]:aspect-video w-full rounded-default overflow-hidden dark:opacity-80;
+  @apply relative aspect-square group-data-[has-text=false]:aspect-[2/1] group-data-[is-video=true]:aspect-video w-full dark:opacity-80;
+}
+
+.DefaultBlock--link {
+  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
 }
 
 /* Main block */
 
 .MainBlock {
-  @apply bg-white dark:bg-revas-neutral-900 w-full data-[has-image=false]:bg-primary -mb-4 pb-4 lg:-mb-8 lg:pb-8 data-[index="0"]:-mb-0;
+  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full -mb-[1.5px] overflow-hidden;
 }
 
 .MainBlock--container {
-  @apply w-full h-full flex gap-4 flex-col items-stretch;
+  @apply w-full h-full;
 }
 
 .MainBlockContainer--first-slot {
-  @apply grow shrink px-4 xl:px-0 py-16 lg:py-24 group-data-[has-image=true]:py-8 group-data-[has-image=true]:lg:py-16 gap-2 flex flex-col items-start justify-center w-full h-auto max-w-screen-xl mx-auto;
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-4 items-start justify-center w-full p-2 lg:p-4 pb-8 lg:pb-24;
 }
 
 .MainBlockContainer--second-slot {
-  @apply grow shrink-0 p-0 w-full group-data-[has-items=true]:-mt-4 h-auto;
+  @apply w-full border-t border-black;
 }
 
 .MainBlock--items-wrapper {
-  @apply w-full p-4 lg:p-8 -mt-4 lg:-mt-8 group-data-[has-image=true]:-mt-0 group-data-[index="0"]:-mt-0;
+  @apply w-full border-t border-black ;
 }
 
 .MainBlock--items-container {
-  @apply w-full max-w-screen-xl mx-auto;
+  @apply w-full;
 }
 
 .MainBlock--columns-container {
-  @apply grow shrink-0 p-0 flex flex-col gap-4 items-start justify-start h-auto w-full max-w-screen-xl mx-auto;
+  @apply mx-auto;
 }
 
 .MainBlock--title {
-  @apply text-xl lg:text-2xl font-semibold text-contrast max-w-3xl  group-data-[has-image=true]:text-revas-neutral-800 group-data-[has-image=true]:dark:text-revas-neutral-300;
+  @apply text-sm font-normal max-w-screen-lg w-full uppercase lg:col-span-2;
 }
 
 .MainBlock--icon {
@@ -127,19 +131,19 @@ body {
 }
 
 .MainBlock--clickable-title {
-  @apply text-xl lg:text-2xl font-semibold text-contrast max-w-3xl  group-data-[has-image=true]:text-revas-neutral-800 group-data-[has-image=true]:dark:text-revas-neutral-300 hover:underline;
+  @apply text-sm font-normal max-w-screen-lg w-full uppercase hover:underline;
 }
 
 .MainBlock--description {
-  @apply text-base lg:text-lg font-medium text-contrast opacity-90 max-w-2xl group-data-[has-image=true]:text-revas-neutral-600 prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-sm font-normal w-full uppercase;
 }
 
 .MainBlock--attachment {
-  @apply relative aspect-[20/9] group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80;
+  @apply relative aspect-[2/1] group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80;
 }
 
 .MainBlock--link {
-  @apply inline-flex w-fit items-center justify-center gap-2 font-medium rounded-inner lg:rounded-default bg-primary dark:bg-darkerPrimary group-data-[has-image=false]:bg-white text-contrast group-data-[has-image=false]:text-primary group-data-[has-image=false]:dark:text-darkerPrimary group-data-[has-image=false]:shadow hover:ring-primary text-sm lg:text-base px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
 }
 
 /* Main Custom HTML block */
@@ -163,149 +167,173 @@ body {
 /* Grid */
 
 .BlockItemsGrid {
-  @apply w-full py-4 grid gap-4 grid-cols-1 lg:grid-cols-3;
+  @apply w-full grid grid-cols-1 lg:grid-cols-3 bg-white;
 }
 
 .GridBlockItem {
-  @apply w-full h-full block bg-white dark:bg-revas-neutral-800 rounded-default overflow-hidden group-data-[block-layout=default]:border group-data-[block-layout=default]:dark:border-revas-neutral-700;
+  @apply w-full h-full border-b border-r border-black -mb-px -mr-px relative overflow-hidden;
 }
 
 .GridBlockItem--container {
-  @apply w-full h-full;
+  @apply w-full h-full flex flex-col items-stretch justify-start;
 }
 
 .GridBlockItemContainer--second-slot {
-  @apply shrink-0 grow flex flex-col gap-2 items-start justify-start w-auto h-auto p-4;
+  @apply flex-1 flex flex-col gap-1 items-start justify-start w-auto h-auto p-2 lg:p-4 border-t border-black group-data-[has-item-image=false]:border-0 bg-white;
 }
 
 .GridBlockItemContainer--first-slot {
-  @apply shrink-0 w-auto h-auto grow;
+  @apply flex-1 w-full h-auto bg-white;
 }
 
 .GridBlockItem--title {
-  @apply text-base font-medium text-revas-neutral-800 dark:text-revas-neutral-400;
+  @apply text-sm uppercase;
 }
 
 .GridBlockItem--description {
-  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-sm uppercase prose prose-p:mt-0 prose-ul:mt-0;
 }
 
 .GridBlockItem--attachment {
-  @apply aspect-[3/2] group-data-[is-item-video=true]:aspect-video overflow-hidden w-full dark:opacity-80;
+  @apply aspect-[3/2] group-data-[is-item-video=true]:aspect-video overflow-hidden data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full;
+}
+
+.GridBlockItem--link {
+  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
 }
 
 /* Columns */
 
 .BlockItemsColumns {
-  @apply w-full grid gap-4 lg:gap-8 grid-cols-1 lg:grid-cols-3 data-[cols="2"]:lg:grid-cols-2 data-[cols="4"]:lg:grid-cols-4;
+  @apply w-full grid grid-cols-1 lg:grid-cols-3 data-[cols="2"]:lg:grid-cols-2 data-[cols="4"]:lg:grid-cols-4 bg-white;
 }
 
 .BlockItemsColumns--column {
-  @apply flex flex-col gap-4 lg:gap-8 items-stretch justify-start
+  @apply flex flex-col gap-px items-stretch justify-start
 }
 
 .ColumnsBlockItem {
-  @apply w-full block bg-transparent break-inside-avoid-column data-[is-item-card=true]:rounded-default;
+  @apply w-full block bg-transparent border-b border-r border-black -mb-px -mr-px relative overflow-hidden;
 }
 
 .ColumnsBlockItem--container {
-  @apply w-full flex flex-col gap-2 lg:gap-4 group-data-[is-item-btt=true]:flex-col-reverse items-stretch justify-start;
+  @apply w-full;
 }
 
 .ColumnsBlockItemContainer--second-slot {
-  @apply shrink-0 grow flex flex-col gap-2 lg:gap-4 items-stretch justify-center w-auto h-auto group-data-[is-item-spaced=true]:p-4 group-data-[is-item-spaced=true]:lg:p-8 group-data-[is-item-card=true]:p-4 group-data-[is-item-card=true]:lg:p-8;
+  @apply shrink-0 grow flex flex-col gap-1 items-stretch justify-center w-auto h-auto border-t border-black group-data-[has-item-image=false]:border-0 bg-white;
 }
 
 .ColumnsBlockItemContainer--first-slot {
-  @apply flex-none w-auto h-auto;
+  @apply flex-none w-auto h-auto bg-white;
 }
 
 .ColumnsBlockItem--title {
-  @apply text-base lg:text-lg font-medium text-revas-neutral-800 group-data-[item-accent-light=true]:text-white group-data-[is-item-dark=true]:text-white group-data-[is-item-darklight=true]:text-white;
+  @apply text-sm font-normal;
 }
 
 .ColumnsBlockItem--description {
-  @apply text-sm font-normal text-revas-neutral-700 group-data-[item-accent-light=true]:text-white group-data-[is-item-darklight=true]:text-white group-data-[is-item-dark=true]:text-white group-data-[item-accent-light=true]:opacity-60;
+  @apply text-sm font-normal;
 }
 
 .ColumnsBlockItem--attachment {
-  @apply w-fit max-w-full block rounded-default dark:opacity-80 group-data-[is-item-video=true]:aspect-video;
+  @apply w-fit max-w-full block dark:opacity-80 group-data-[is-item-video=true]:aspect-video data-[is-clickable=true]:group-data-[is-column-item]:group-hover:opacity-50;
 }
 
 .ColumnsBlockItem--link {
-  @apply max-w-md inline-flex w-fit items-center justify-center gap-2 font-medium rounded-default text-primary hover:underline  active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
 }
 
 /* Linear */
 
 .BlockItemsLinear {
-  @apply w-full py-4 flex flex-col gap-4;
+  @apply w-full;
 }
 
 .LinearBlockItem {
-  @apply w-full bg-transparent;
+  @apply w-full bg-white data-[has-image=true]:border-b data-[has-image=true]:border-black data-[has-image=true]:last:border-0;
 }
 
 .LinearBlockItem--container {
-  @apply w-full h-full flex flex-col lg:flex-row items-stretch gap-4;
+  @apply w-full h-full flex flex-row items-stretch;
 }
 
 .LinearBlockItemContainer--second-slot {
-  @apply flex-1 flex flex-col gap-2 items-start justify-center w-auto h-auto p-0;
+  @apply flex-1 flex flex-col gap-2 items-start justify-center w-auto h-auto p-2 lg:p-4;
 }
 
 .LinearBlockItemContainer--first-slot {
-  @apply flex-none w-auto h-auto grow-0;
+  @apply flex-none w-auto h-auto grow-0 border-r border-black;
 }
 
 .LinearBlockItem--title {
-  @apply text-base font-medium text-revas-neutral-800 dark:text-revas-neutral-400;
+  @apply text-sm uppercase font-normal;
 }
 
 .LinearBlockItem--description {
-  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-sm uppercase font-normal;
 }
 
 .LinearBlockItem--attachment {
-  @apply aspect-square group-data-[is-item-video=true]:aspect-video overflow-hidden w-16 lg:w-32 rounded-default dark:opacity-80;
+  @apply aspect-square group-data-[is-item-video=true]:aspect-video overflow-hidden w-12 lg:w-32 dark:opacity-80;
+}
+
+.LinearBlockItem--link {
+  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
 }
 
 /* HEADER */
 
 .Header {
-  @apply sticky top-0 z-50 inset-x-0 h-14;
+  @apply fixed bottom-0 z-50 inset-x-0 h-16 border-t border-black;
 }
 
 .Header--desktop-wrapper {
-  @apply px-4 flex h-full items-center overflow-hidden bg-white bg-opacity-50 backdrop-blur-2xl;
+  @apply bg-white w-full h-full relative z-20;
 }
 
 .Header--container {
-  @apply w-full h-full flex items-center justify-between gap-4;
+  @apply w-full h-full grid grid-cols-2 gap-px bg-black;
+}
+
+.Header--container > * {
+  @apply bg-white h-full overflow-hidden flex items-center justify-start;
 }
 
 .Header--logo {
-  @apply h-10 lg:h-12 flex-none overflow-hidden dark:opacity-80 object-contain object-left;
+  @apply ml-2 h-10 lg:h-12 overflow-hidden dark:opacity-80 object-contain object-left active:scale-[0.9] transition-all duration-300 ease-in-out;
 }
 
 .Header--desktop-links {
-  @apply hidden lg:flex items-center justify-start gap-4;
+  @apply hidden lg:flex items-stretch justify-start h-full w-full flex-1;
 }
 
 .Header--desktop-links-wrapper {
-  @apply flex items-center gap-4;
+  @apply flex items-stretch justify-between bg-white flex-1 w-full h-full;
+}
+
+.Header--desktop-link {
+  @apply h-full bg-white flex items-center justify-center uppercase underline px-4 decoration-dotted;
+}
+
+.Header--desktop-main-link {
+  @apply h-full flex-1 lg:flex-none bg-black text-white flex items-center justify-center uppercase underline px-2 lg:px-8 decoration-dotted;
 }
 
 .Header--menu-button {
-  @apply lg:hidden rounded-inner h-full p-2 flex items-center justify-center aspect-square border dark:border-neutral-500 text-black dark:text-revas-neutral-200 active:bg-revas-neutral-100 dark:active:bg-revas-neutral-800;
+  @apply lg:hidden h-full p-2 flex items-center justify-center aspect-square text-black dark:text-revas-neutral-200;
 }
 
 .Header--mobile-wrapper {
-  @apply p-8 border-t dark:border-revas-neutral-700 bg-white dark:bg-revas-neutral-900 z-50 rounded-b-default shadow-xl;
+  @apply border-t border-black shadow-xl absolute inset-x-0 top-0 z-10 bg-white;
 }
 
 .Header--mobile-links {
-  @apply flex flex-col items-center justify-center gap-8;
+  @apply flex flex-col items-stretch justify-end;
+}
+
+.Header--mobile-link {
+  @apply w-full block p-4 border-b border-black uppercase text-sm underline decoration-dotted underline-offset-2;
 }
 
 .Header--mobile-main-action {
@@ -365,13 +393,13 @@ body {
 }
 
 .MainItem--link {
-  @apply inline-flex w-fit items-center justify-center gap-2 font-medium rounded-inner lg:rounded-default bg-contrast text-primary dark:text-darkerPrimary hover:ring-primary text-sm lg:text-base px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply inline-flex w-fit items-center justify-center gap-2 font-medium rounded-inner lg:rounded-default bg-contrast text-primary dark:text-darkerPrimary hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
 }
 
 /* FOOTER */
 
 .Footer {
-  @apply bg-white dark:bg-revas-neutral-900 border-t dark:border-revas-neutral-700;
+  @apply bg-white;
 }
 
 .Footer--logo {
@@ -395,7 +423,7 @@ body {
 }
 
 .Footer--foot {
-  @apply h-fit border-t dark:border-revas-neutral-700 p-2 flex gap-2 flex-col lg:flex-row lg:items-center lg:justify-between;
+  @apply h-fit -mt-px border-t border-black uppercase p-2 flex gap-2 flex-col lg:flex-row lg:items-center lg:justify-between;
 }
 
 .FooterFoot--container {
@@ -413,7 +441,7 @@ body {
 }
 
 .Author--title {
-  @apply font-semibold max-w-2xl text-base lg:text-lg text-revas-neutral-900 dark:text-revas-neutral-300;
+  @apply font-semibold max-w-2xl text-sm text-revas-neutral-900 dark:text-revas-neutral-300;
 }
 
 .Author--description {
@@ -467,35 +495,35 @@ body {
 /* FEED */
 
 .FeedBlockItem {
-  @apply w-full h-full block data-[has-link=true]:active:scale-[0.98] bg-white dark:bg-revas-neutral-800 rounded-default overflow-hidden border border-revas-neutral-200 dark:border-revas-neutral-700 data-[has-link=true]:hover:ring-2 data-[has-link=true]:hover:ring-revas-neutral-300 hover:dark:ring-revas-neutral-500;
+  @apply w-full h-full border-b border-r border-black -mb-px -mr-px relative overflow-hidden p-4;
 }
 
 .FeedBlockItem--container {
-  @apply w-full h-full;
+  @apply w-full h-full flex flex-col-reverse gap-4 items-stretch justify-start;
 }
 
 .FeedBlockItemContainer--second-slot {
-  @apply shrink-0 grow flex flex-col gap-2 items-stretch justify-start w-auto h-auto p-4;
+  @apply flex-1 flex flex-col gap-1 items-start justify-start w-auto h-auto bg-white;
 }
 
 .FeedBlockItemContainer--first-slot {
-  @apply shrink-0 w-auto h-auto grow;
+  @apply flex-1 w-full h-auto bg-white;
 }
 
 .FeedBlockItem--title {
-  @apply text-base font-semibold text-revas-neutral-800 dark:text-revas-neutral-400 group-data-[has-link=true]:group-hover:opacity-70;
+  @apply text-sm uppercase;
 }
 
 .FeedBlockItem--description {
-  @apply text-sm font-normal text-revas-neutral-700 dark:text-revas-neutral-500 flex-1 line-clamp-3;
+  @apply text-xs uppercase prose prose-p:mt-0 prose-ul:mt-0;
 }
 
 .FeedBlockItem--date {
-  @apply text-sm font-normal text-revas-neutral-500 dark:text-revas-neutral-700;
+  @apply text-xs px-2 py-0.5 rounded-full bg-revas-neutral-100 uppercase;
 }
 
 .FeedBlockItem--attachment {
-  @apply aspect-[3/2] relative group-data-[is-item-video=true]:aspect-video overflow-hidden w-full dark:opacity-80;
+  @apply aspect-[2/3] group-data-[is-item-video=true]:aspect-video overflow-hidden data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full rounded-default border border-black;
 }
 
 .FeedBlockItem--attachment-image {
@@ -507,73 +535,73 @@ body {
 }
 
 .FeedPage--header-container {
-  @apply w-full border-b border-revas-neutral-200 dark:border-revas-neutral-600 p-4 lg:p-8
+  @apply w-full h-full border-b border-black
 }
 
 .FeedPage--header {
-  @apply w-full max-w-screen-xl mx-auto flex flex-col gap-4 items-stretch
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-4 items-start justify-center w-full p-2 lg:p-4 pb-8 lg:pb-24;
 }
 
 .FeedPage--title {
-  @apply text-xl font-semibold text-revas-neutral-800 dark:text-revas-neutral-500;
+  @apply text-sm font-normal max-w-screen-lg w-full uppercase lg:col-span-2;
 }
 
 .FeedPage--description {
-  @apply text-base font-normal text-revas-neutral-700 dark:text-revas-neutral-500;
+  @apply text-sm font-normal w-full uppercase;
 }
 
 .FeedPage--items-container {
-  @apply w-full p-4 lg:p-8
+  @apply w-full -mb-[1.5px] overflow-hidden border-b
 }
 
 .FeedPage--items {
-  @apply w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4
+  @apply w-full mx-auto grid grid-cols-1 lg:grid-cols-3
 }
 
 /* CONTENT */
 
 .ContentPage {
-  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full flex-1;
+  @apply bg-revas-white dark:bg-revas-neutral-900 w-full flex-1 grid grid-cols-1 lg:grid-cols-2 border-b border-black;
 }
 
 .ContentPage--header {
-  @apply p-4 lg:p-8 border-b border-revas-neutral-200 dark:border-revas-neutral-600
+  @apply bg-white lg:sticky top-0 self-start
 }
 
 .ContentHeader--container {
-  @apply w-full h-full max-w-screen-xl mx-auto flex gap-8 flex-col lg:flex-row items-stretch overflow-hidden;
+  @apply p-4 flex flex-col items-start justify-start gap-4;
 }
 
 .ContentHeaderContainer--first-slot {
-  @apply grow shrink gap-2 flex flex-col items-start justify-center w-full lg:w-1/2 h-auto max-w-screen-md;
+  @apply flex flex-col items-start justify-start gap-2;
 }
 
 .ContentHeaderContainer--second-slot {
-  @apply grow shrink-0 p-0 w-full lg:w-1/2 h-auto;
+  @apply w-full;
 }
 
 .ContentHeader--feed-title {
-  @apply text-xs lg:text-sm uppercase text-primary hover:underline;
+  @apply text-xs uppercase underline underline-offset-2 decoration-dotted
 }
 
 .ContentHeader--title {
-  @apply text-xl lg:text-2xl font-semibold text-revas-neutral-800 dark:text-revas-neutral-500;
+  @apply text-sm uppercase
 }
 
 .ContentHeader--description {
-  @apply text-lg lg:text-xl font-normal text-revas-neutral-700 dark:text-revas-neutral-500;
+  @apply text-xs uppercase prose prose-p:mt-0 prose-ul:mt-0;
 }
 
 .ContentHeader--published-date {
-  @apply text-sm lg:text-base font-normal text-revas-neutral-500 dark:text-revas-neutral-600;
+  @apply text-xs px-2 py-0.5 rounded-full bg-revas-neutral-100 uppercase;
 }
 
 .ContentHeader--attachment {
-  @apply relative aspect-[4/3] group-data-[is-video=true]:aspect-video w-full rounded-default overflow-hidden dark:opacity-80;
+  @apply aspect-[2/3] group-data-[is-item-video=true]:aspect-video overflow-hidden data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full rounded-default border border-black;
 }
 
 .ContentPage--content {
-  @apply prose dark:prose-invert mx-auto w-full max-w-screen-md prose-p:text-sm prose-a:text-sm prose-a:text-primary prose-a:dark:text-revas-neutral-300 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-sm prose-h1:lg:text-3xl prose-h2:lg:text-2xl prose-h3:lg:text-xl prose-h4:lg:text-lg prose-h5:lg:text-base prose-h6:lg:text-base p-4 lg:py-8
+  @apply border-t lg:border-l lg:border-t-0 border-black prose-sm dark:prose-invert mx-auto w-full max-w-screen-md prose-p:text-sm prose-a:text-sm prose-a:underline prose-a:underline-offset-2 prose-a:decoration-dotted prose-a:text-primary prose-a:dark:text-revas-neutral-300 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-h1:lg:text-3xl prose-h2:lg:text-2xl prose-h3:lg:text-xl prose-h4:lg:text-lg prose-h5:lg:text-sm prose-h6:lg:text-sm p-4 lg:p-8
 }
 
 /* TOOLBAR */
@@ -593,11 +621,11 @@ body {
 }
 
 .LocaleConfigurator--navigation-menu {
-  @apply w-[200px] bg-white rounded-default p-2 shadow-lg border [animation-duration:_400ms] [animation-timing-function:_cubic-bezier(0.16,_1,_0.3,_1)] will-change-[transform,opacity] relative z-50 flex flex-col gap-1
+  @apply w-[200px] bg-white border border-black shadow-lg [animation-duration:_400ms] [animation-timing-function:_cubic-bezier(0.16,_1,_0.3,_1)] will-change-[transform,opacity] relative z-50 flex flex-col
 }
 
 .LocaleNavigationMenu--link {
-  @apply uppercase px-2 py-1 rounded-inner bg-white hover:ring-1 focus:ring-1 hover:ring-revas-neutral-100 focus:ring-revas-neutral-100 data-[state=checked]:bg-revas-neutral-100 data-[state=checked]:opacity-60 data-[state=checked]:pointer-events-none data-[state=checked]:cursor-not-allowed flex-1 text-sm text-center
+  @apply uppercase p-4 border-b border-black bg-white hover:bg-neutral-100 underline decoration-dotted underline-offset-2 data-[state=checked]:bg-revas-neutral-100 data-[state=checked]:opacity-60 data-[state=checked]:pointer-events-none data-[state=checked]:cursor-not-allowed flex-1 text-sm text-center
 }
 
 .LocaleConfigurator--viewport {

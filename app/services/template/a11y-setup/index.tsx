@@ -1,12 +1,14 @@
+import type { ReactNode} from "react";
 import { useEffect } from "react";
 
 export type A11ySetupProps = {
   textBaseUnit: number;
   textLineBaseUnit: number;
   spacingBaseUnit: number;
+  children: ReactNode;
 };
 
-export default function A11ySetup({ textBaseUnit, textLineBaseUnit, spacingBaseUnit }: A11ySetupProps) {
+export default function A11ySetup({ textBaseUnit, textLineBaseUnit, spacingBaseUnit, children }: A11ySetupProps) {
   useEffect(() => {
     const A11Y_VARIABLES: Record<string, any> = {
       "--text-base-unit": `${textBaseUnit}rem`,
@@ -21,5 +23,5 @@ export default function A11ySetup({ textBaseUnit, textLineBaseUnit, spacingBaseU
     }
   }, [spacingBaseUnit, textBaseUnit, textLineBaseUnit]);
 
-  return null
+  return children
 }

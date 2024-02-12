@@ -67,6 +67,7 @@ export const Feed = function FeedLayout({ title, description, items, metadata }:
           >
             <FeedItems items={items} />
           </div>
+          <div className="w-full h-px border-t border-black -mt-px" />
         </div>
       )}
     </div>

@@ -49,7 +49,8 @@ export default function MainBlock({ index, block }: MainBlockProps) {
   }
 
   return (
-    <section ref={blockRef} className={`MainBlock OverrideMainBlock group`}>
+    <>
+      <section ref={blockRef} className={`MainBlock OverrideMainBlock group`}>
       <Attributes applyTo={blockRef} attributes={attributes} />
       <Metadata applyTo={blockRef} metadata={block.metadata} />
       <div className={`MainBlock--container OverrideMainBlock--container`}>
@@ -128,5 +129,7 @@ export default function MainBlock({ index, block }: MainBlockProps) {
         </div>
       )}
     </section>
+    <div className="w-full h-[1.5px] relative z-10 border-t border-black -mb-[1.5px]" />
+    </>
   );
 }

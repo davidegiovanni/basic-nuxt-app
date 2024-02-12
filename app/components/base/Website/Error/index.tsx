@@ -19,16 +19,17 @@ export default function Error({ title, description, linkTitle, linkUrl }: ErrorP
 
   return (
     <div className="w-full h-full p-4 aspect-video flex flex-col items-center justify-center gap-4 lg:gap-8">
-      <A11ySetup {...A11Y_VARIABLES} />
-      {title !== "" && <Title size="1" className="text-2xl font-bold">
-        {title}
-      </Title>}
-      {description !== "" && <Description size="2" className="text-sm text-revas-neutral-500">
-        {description}
-      </Description>}
-      {linkUrl !== "" && <WebsiteLink url={linkUrl} metadata={{}} className="underline text-base">
-        {linkTitle}
-      </WebsiteLink>}
+      <A11ySetup {...A11Y_VARIABLES}>
+        {title !== "" && <Title size="1" className="text-sm uppercase">
+          {title}
+        </Title>}
+        {description !== "" && <Description size="2" className="text-sm uppercase">
+          {description}
+        </Description>}
+        {linkUrl !== "" && <WebsiteLink url={linkUrl} metadata={{}} className="uppercase underline text-sm underline-offset-2 decoration-dotted">
+          {linkTitle}
+        </WebsiteLink>}
+      </A11ySetup>
     </div>
   )
 }

@@ -343,7 +343,7 @@ body {
 /* NOTIFICATION */
 
 .Notification {
-  @apply h-fit lg:h-10 p-2 lg:px-4 bg-primary dark:bg-darkerPrimary flex items-center justify-center;
+  @apply h-fit lg:h-8 p-2 lg:px-4 bg-primary dark:bg-darkerPrimary flex items-center justify-center;
 }
 
 .Notification--container {
@@ -351,15 +351,15 @@ body {
 }
 
 .Notification--title {
-  @apply text-contrast font-medium text-sm;
+  @apply text-contrast text-xs uppercase;
 }
 
 .Notification--description {
-  @apply hidden lg:block text-contrast text-sm;
+  @apply hidden lg:block text-contrast text-xs uppercase;
 }
 
 .Notification--link {
-  @apply px-2 py-0.5 bg-contrast bg-opacity-50 text-primary dark:text-darkerPrimary text-sm rounded-inner lg:rounded-default hover:ring-1 hover:ring-contrast hover:ring-offset-2 focus:ring-1 focus:ring-contrast focus:ring-offset-2 active:scale-[0.98];
+  @apply underline underline-offset-2 decoration-dotted uppercase;
 }
 
 /* MAIN ITEM */

@@ -601,7 +601,7 @@ body {
 }
 
 .ContentPage--content {
-  @apply border-t lg:border-l lg:border-t-0 border-black prose-sm dark:prose-invert mx-auto w-full max-w-screen-md prose-p:text-sm prose-a:text-sm prose-a:underline prose-a:underline-offset-2 prose-a:decoration-dotted prose-a:text-primary prose-a:dark:text-revas-neutral-300 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-h1:lg:text-3xl prose-h2:lg:text-2xl prose-h3:lg:text-xl prose-h4:lg:text-lg prose-h5:lg:text-sm prose-h6:lg:text-sm p-4 lg:p-8
+  @apply border-t lg:h-full lg:border-l lg:border-t-0 border-black prose-sm dark:prose-invert mx-auto w-full max-w-screen-md prose-p:text-sm prose-a:text-sm prose-a:underline prose-a:underline-offset-2 prose-a:decoration-dotted prose-a:text-primary prose-a:dark:text-revas-neutral-300 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-h1:lg:text-3xl prose-h2:lg:text-2xl prose-h3:lg:text-xl prose-h4:lg:text-lg prose-h5:lg:text-sm prose-h6:lg:text-sm p-4 lg:p-8
 }
 
 /* TOOLBAR */

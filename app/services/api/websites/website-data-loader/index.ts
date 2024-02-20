@@ -108,9 +108,9 @@ export const newLoader = ({
     contrastMode = a11yParsedCookie.contrastMode
     if (contrastModeParam !== "") contrastMode = contrastModeParam
 
-    let textBaseUnit = 0.155 + 0.155 * increaseAmount
-    let textLineBaseUnit = 0.155 + (increaseAmount / 10)
-    let spacingBaseUnit = Math.abs(0.155 - (increaseAmount / (increaseAmount === 0 ? 1 : 20 * increaseAmount)))
+    let textBaseUnit = 0.125 + 0.125 * increaseAmount
+    let textLineBaseUnit = 0.125 + (increaseAmount / 10)
+    let spacingBaseUnit = Math.abs(0.125 - (increaseAmount / (increaseAmount === 0 ? 1 : 20 * increaseAmount)))
     let isHighContrastMode = contrastMode === "high"
 
     let selectedLocale = ""
@@ -129,11 +129,11 @@ export const newLoader = ({
       borderRadiusAmount: 16,
       fontFamily: "",
       fontFamilyUrl: "",
-      faviconUrl: "/defaultlogo.png",
+      faviconUrl: "https://cdn.revas.app/v0/01f9ekbw2n7m4sfc4xhtftyarv/01hnbgnjq95d67vs559k7phqbm/01hq168p1gwzgtxrnf8267b2wj/davidillo-favicon-png.png",
       websiteLocale: "",
       canonicalUrl,
       metadata: {},
-      websiteLogoUrl: "/defaultlogo.png",
+      websiteLogoUrl: "https://cdn.revas.app/v0/01f9ekbw2n7m4sfc4xhtftyarv/01hnbgnjq95d67vs559k7phqbm/01hp2ztraz9tq2cmw418175egr/davdiegiovannichrome-3-png.png",
       websiteTitle: "",
       navigation: [],
       authors: [],

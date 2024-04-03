@@ -19,9 +19,10 @@ export type GetDefaultWebsiteFunction = {
 
 export const asyncGetDefaultWebsite: GetDefaultWebsiteFunction = async ({ websiteName, publicKey }: GetDefaultWebsiteArgs) => {
   const [res, err] = await safeGet<any>(
-    `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/websites/v2/websites/${websiteName}?publicKey=${publicKey}`,
+    `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/themes/websites/v2/websites/${websiteName}?publicKey=${publicKey}`,
   );
   if (err !== null) {
+    console.log(err)
     return [
       {
         website: {} as Website
@@ -69,9 +70,10 @@ export type GetWebsiteFunction = {
 
 export const asyncGetWebsite: GetWebsiteFunction = async ({websiteName, publicKey, locale}: GetWebsiteArgs) => {
   const [res, err] = await safeGet<any>(
-    `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/websites/v2/websites/${websiteName}?publicKey=${publicKey}&languageCode=${locale}`,
+    `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/themes/websites/v2/websites/${websiteName}?publicKey=${publicKey}&languageCode=${locale}`,
   );
   if (err !== null) {
+    console.log(err)
     return [
       {
         website: {} as Website

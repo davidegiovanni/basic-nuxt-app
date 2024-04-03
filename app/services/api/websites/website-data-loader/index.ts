@@ -209,15 +209,15 @@ export const newLoader = ({
       })
     }
 
-    if (website.theme) {
-      loaderData.primaryColor = isHighContrastMode ? "#000000" : website.theme.accentColor
-      loaderData.contrastColor = isHighContrastMode ? "#ffffff" :getContrastFrom(website.theme.accentColor)
-      loaderData.borderRadiusAmount = parseInt(website.theme.borderRadius)
-      loaderData.fontFamily = website.theme.fontFamily
-      loaderData.fontFamilyUrl = website.theme.fontFamilyUrl
-      loaderData.faviconUrl = website.theme.iconUrl
-      loaderData.websiteLogoUrl = website.theme.logoUrl
-    }
+    // if (website.theme) {
+    //   loaderData.primaryColor = isHighContrastMode ? "#000000" : website.theme.accentColor
+    //   loaderData.contrastColor = isHighContrastMode ? "#ffffff" :getContrastFrom(website.theme.accentColor)
+    //   loaderData.borderRadiusAmount = parseInt(website.theme.borderRadius)
+    //   loaderData.fontFamily = website.theme.fontFamily
+    //   loaderData.fontFamilyUrl = website.theme.fontFamilyUrl
+    //   loaderData.faviconUrl = website.theme.iconUrl
+    //   loaderData.websiteLogoUrl = website.theme.logoUrl
+    // }
 
     if (website.notification) {
       loaderData.notification = {

@@ -21,7 +21,7 @@ export type GetPageFunction = {
 
 export const asyncGetPage: GetPageFunction = async ({websiteName, publicKey, pageSlug, locale}: GetPageArgs) => {
   const [res, err] = await safeGet<any>(
-    `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/websites/v2/websites/${websiteName}/pages/${pageSlug}?publicKey=${publicKey}&languageCode=${locale}`,
+    `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/themes/websites/v2/websites/${websiteName}/pages/${pageSlug}?publicKey=${publicKey}&languageCode=${locale}`,
   );
 
   if (err !== null) {

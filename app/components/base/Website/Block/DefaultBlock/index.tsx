@@ -131,7 +131,7 @@ export default function DefaultBlock({ index, block }: DefaultBlockProps) {
           </div>
         )}
       </section>
-      <div className="w-full h-[1.5px] relative z-10 border-t border-black -mb-[1.5px]" />
+
     </>
   );
 }

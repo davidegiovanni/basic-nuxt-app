@@ -3,17 +3,17 @@ html {
 }
 
 body {
-  @apply min-h-screen flex flex-col items-stretch justify-start 
+  @apply min-h-screen flex flex-col items-stretch justify-start bg-white
 }
 
 /* /LAYOUTS */
 
 .App {
-  @apply bg-white dark:bg-revas-neutral-900 animate-pageShow flex-1 flex flex-col items-stretch justify-start pb-16;
+  @apply animate-pageShow flex-1 flex flex-col items-stretch justify-start pb-20 lg:pb-0;
 }
 
 .Page {
-  @apply bg-white dark:bg-revas-neutral-900 animate-pageShow flex-1;
+  @apply animate-pageShow flex-1;
 }
 
 /* LINKS */
@@ -41,35 +41,35 @@ body {
 /* Default block */
 
 .DefaultBlock {
-  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full border-b border-black -mb-[1.5px] overflow-hidden;
+  @apply relative w-full pt-4 pb-8 -mb-4 overflow-hidden flex flex-col items-stretch justify-start gap-4;
 }
 
 .DefaultBlock--container {
-  @apply overflow-hidden w-full grid grid-cols-1 lg:grid-cols-2 group-data-[has-text=false]:lg:grid-cols-1 group-data-[has-image=false]:lg:grid-cols-1;
+  @apply px-4 overflow-hidden w-full grid grid-cols-1 lg:grid-cols-2 gap-4 group-data-[has-text=false]:lg:grid-cols-1 group-data-[has-image=false]:lg:grid-cols-1 group-data-[has-items=true]:border-b group-data-[has-items=true]:pb-4;
 }
 
 .DefaultBlockContainer--first-slot {
-  @apply flex flex-col gap-4 items-start justify-end p-2 lg:p-4 border-b lg:border-b-0 lg:border-r border-black group-data-[has-image=false]:border-0;
+  @apply flex flex-col gap-4 items-start justify-start rounded-default overflow-hidden;
 }
 
 .DefaultBlockContainer--second-slot {
-  @apply overflow-hidden;
+  @apply overflow-hidden rounded-default;
 }
 
 .DefaultBlock--items-wrapper {
-  @apply p-0 border-t border-black;
+  @apply overflow-hidden rounded-default;
 }
 
 .DefaultBlock--items-container {
-  @apply p-0;
+  @apply px-4
 }
 
 .DefaultBlock--columns-container {
-  @apply p-0;
+  @apply px-4;
 }
 
 .DefaultBlock--title {
-  @apply text-sm font-normal w-full max-w-4xl uppercase;
+  @apply text-sm lg:text-base uppercase text-neutral-400 font-medium w-full max-w-4xl;
 }
 
 .DefaultBlock--icon {
@@ -81,37 +81,37 @@ body {
 }
 
 .DefaultBlock--description {
-  @apply text-sm font-normal w-full max-w-4xl uppercase;
+  @apply text-xl lg:text-3xl font-normal w-full max-w-4xl;
 }
 
 .DefaultBlock--attachment {
-  @apply relative aspect-square group-data-[has-text=false]:aspect-[2/1] group-data-[is-video=true]:aspect-video w-full dark:opacity-80;
+  @apply relative rounded-default overflow-hidden aspect-square group-data-[has-text=false]:aspect-auto group-data-[is-video=true]:aspect-video w-full dark:opacity-80;
 }
 
 .DefaultBlock--link {
-  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
+  @apply text-sm px-2 py-1 rounded-full border border-black hover:border-neutral-300;
 }
 
 /* Main block */
 
 .MainBlock {
-  @apply relative bg-revas-white dark:bg-revas-neutral-900 w-full -mb-[1.5px] overflow-hidden;
+  @apply relative w-full pt-4 pb-8 overflow-hidden flex flex-col gap-8 -mb-4;
 }
 
 .MainBlock--container {
-  @apply w-full h-full;
+  @apply px-4 w-full h-full flex flex-col items-stretch justify-start gap-4 group-data-[has-items=true]:border-b group-data-[has-items=true]:pb-4;
 }
 
 .MainBlockContainer--first-slot {
-  @apply grid grid-cols-1 lg:grid-cols-3 gap-4 items-start justify-center w-full p-2 lg:p-4 pb-8 lg:pb-24;
+  @apply flex flex-col lg:flex-row items-end justify-end lg:justify-between pt-32 lg:pt-0 aspect-auto lg:aspect-[3/1] gap-4 lg:gap-0 w-full;
 }
 
 .MainBlockContainer--second-slot {
-  @apply w-full border-t border-black;
+  @apply w-full rounded-default overflow-hidden lg:col-span-2 ;
 }
 
 .MainBlock--items-wrapper {
-  @apply w-full border-t border-black ;
+  @apply w-full px-4;
 }
 
 .MainBlock--items-container {
@@ -123,7 +123,7 @@ body {
 }
 
 .MainBlock--title {
-  @apply text-sm font-normal max-w-screen-lg w-full uppercase lg:col-span-2;
+  @apply text-2xl lg:text-3xl w-full lg:w-1/2 flex-none flex items-end justify-start
 }
 
 .MainBlock--icon {
@@ -135,15 +135,15 @@ body {
 }
 
 .MainBlock--description {
-  @apply text-sm font-normal w-full uppercase;
+  @apply flex flex-col items-start lg:items-end justify-start lg:justify-end text-sm lg:text-right w-full lg:w-1/2 flex-none gap-4
 }
 
 .MainBlock--attachment {
-  @apply relative aspect-[2/1] group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80;
+  @apply relative aspect-[2/1] group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80 rounded-default;
 }
 
 .MainBlock--link {
-  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
+  @apply text-sm px-2 py-1 rounded-full border border-black hover:border-neutral-300;
 }
 
 /* Main Custom HTML block */
@@ -167,19 +167,19 @@ body {
 /* Grid */
 
 .BlockItemsGrid {
-  @apply w-full grid grid-cols-1 lg:grid-cols-3 bg-white;
+  @apply w-full grid grid-cols-1 lg:grid-cols-3 data-[cols="2"]:lg:grid-cols-2 data-[cols="4"]:lg:grid-cols-4 gap-4;
 }
 
 .GridBlockItem {
-  @apply w-full h-full border-b border-r border-black -mb-px -mr-px relative overflow-hidden;
+  @apply w-full h-full relative;
 }
 
 .GridBlockItem--container {
-  @apply w-full h-full flex flex-col items-stretch justify-start;
+  @apply w-full h-full flex flex-col items-stretch justify-start gap-2;
 }
 
 .GridBlockItemContainer--second-slot {
-  @apply flex-1 flex flex-col gap-1 items-start justify-start w-auto h-auto p-2 lg:p-4 border-t border-black group-data-[has-item-image=false]:border-0 bg-white;
+  @apply flex-1 flex flex-col gap-1 items-start justify-start w-auto h-auto;
 }
 
 .GridBlockItemContainer--first-slot {
@@ -187,33 +187,33 @@ body {
 }
 
 .GridBlockItem--title {
-  @apply text-sm uppercase;
+  @apply text-xl text-black;
 }
 
 .GridBlockItem--description {
-  @apply text-sm uppercase prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-base opacity-60 ;
 }
 
 .GridBlockItem--attachment {
-  @apply aspect-[3/2] group-data-[is-item-video=true]:aspect-video overflow-hidden data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full;
+  @apply group-data-[is-item-video=true]:aspect-video overflow-hidden rounded-default data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full;
 }
 
 .GridBlockItem--link {
-  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
+  @apply text-sm bg-neutral-100 rounded-full px-3 py-1 hover:bg-black hover:text-white;
 }
 
 /* Columns */
 
 .BlockItemsColumns {
-  @apply w-full grid grid-cols-1 lg:grid-cols-3 data-[cols="2"]:lg:grid-cols-2 data-[cols="4"]:lg:grid-cols-4 bg-white;
+  @apply w-full grid grid-cols-1 lg:grid-cols-3 data-[cols="2"]:lg:grid-cols-2 data-[cols="4"]:lg:grid-cols-4 gap-4 bg-white;
 }
 
 .BlockItemsColumns--column {
-  @apply flex flex-col gap-px items-stretch justify-start
+  @apply flex flex-col gap-4 items-stretch justify-start
 }
 
 .ColumnsBlockItem {
-  @apply w-full block bg-transparent border-b border-r border-black -mb-px -mr-px relative overflow-hidden;
+  @apply w-full block bg-transparent relative overflow-hidden;
 }
 
 .ColumnsBlockItem--container {
@@ -237,7 +237,7 @@ body {
 }
 
 .ColumnsBlockItem--attachment {
-  @apply w-fit max-w-full block dark:opacity-80 group-data-[is-item-video=true]:aspect-video data-[is-clickable=true]:group-data-[is-column-item]:group-hover:opacity-50;
+  @apply w-fit max-w-full border rounded-default overflow-hidden block dark:opacity-80 group-data-[is-item-video=true]:aspect-video data-[is-clickable=true]:group-data-[is-column-item]:group-hover:opacity-50;
 }
 
 .ColumnsBlockItem--link {
@@ -247,153 +247,165 @@ body {
 /* Linear */
 
 .BlockItemsLinear {
-  @apply w-full;
+  @apply w-full flex flex-col items-stretch justify-start;
+}
+
+.BlockItemsLinear > * {
+  @apply border-b py-4 lg:py-8;
+}
+
+.BlockItemsLinear :last-child {
+  @apply border-none;
 }
 
 .LinearBlockItem {
-  @apply w-full bg-white data-[has-image=true]:border-b data-[has-image=true]:border-black data-[has-image=true]:last:border-0;
+  @apply w-full;
 }
 
 .LinearBlockItem--container {
-  @apply w-full h-full flex flex-row items-stretch;
-}
-
-.LinearBlockItemContainer--second-slot {
-  @apply flex-1 flex flex-col gap-2 items-start justify-center w-auto h-auto p-2 lg:p-4;
+  @apply w-full h-full grid grid-cols-12 gap-4;
 }
 
 .LinearBlockItemContainer--first-slot {
-  @apply flex-none w-auto h-auto grow-0 border-r border-black;
+  @apply hidden;
+}
+
+.LinearBlockItemContainer--second-slot {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-4 col-span-12;
 }
 
 .LinearBlockItem--title {
-  @apply text-sm uppercase font-normal;
+  @apply text-sm uppercase font-normal col-span-1 lg:col-span-4;
 }
 
 .LinearBlockItem--description {
-  @apply text-sm uppercase font-normal;
+  @apply text-sm uppercase font-normal col-span-1 lg:col-span-6;
 }
 
 .LinearBlockItem--attachment {
-  @apply aspect-square group-data-[is-item-video=true]:aspect-video overflow-hidden w-12 lg:w-32 dark:opacity-80;
+  @apply aspect-square group-data-[is-item-video=true]:aspect-video overflow-hidden rounded-default w-8 dark:opacity-80;
 }
 
 .LinearBlockItem--link {
-  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase;
+  @apply text-sm font-normal underline underline-offset-2 decoration-dotted uppercase lg:col-span-2 flex items-center justify-start gap-2;
 }
 
 /* HEADER */
 
 .Header {
-  @apply fixed bottom-0 z-50 inset-x-0 h-16 border-t border-black;
+  @apply fixed lg:static bottom-0 z-50 inset-x-0 w-full mx-auto p-4;
 }
 
 .Header--desktop-wrapper {
-  @apply bg-white w-full h-full relative z-20;
+  @apply w-full h-full relative z-30;
 }
 
 .Header--container {
-  @apply w-full h-full grid grid-cols-2 gap-px bg-black;
+  @apply w-full h-full flex items-center justify-between gap-px;
 }
 
-.Header--container > * {
-  @apply bg-white h-full overflow-hidden flex items-center justify-start;
+.Header--title {
+  @apply flex items-center relative z-30 justify-center uppercase underline px-4 decoration-dotted rounded-full py-2 border border-black bg-white lg:bg-transparent lg:border-none
 }
 
 .Header--logo {
-  @apply ml-2 h-10 lg:h-12 overflow-hidden dark:opacity-80 object-contain object-left active:scale-[0.9] transition-all duration-300 ease-in-out;
+  @apply h-10 lg:h-12 relative z-30 flex-none overflow-hidden dark:opacity-80 object-contain object-left active:scale-[0.9] transition-all duration-300 ease-in-out;
 }
 
 .Header--desktop-links {
-  @apply hidden lg:flex items-stretch justify-start h-full w-full flex-1;
+  @apply items-center justify-between gap-4 flex-1 flex;
 }
 
 .Header--desktop-links-wrapper {
-  @apply flex items-stretch justify-between bg-white flex-1 w-full h-full;
+  @apply flex-1 flex items-center justify-between;
 }
 
 .Header--desktop-link {
-  @apply h-full bg-white flex items-center justify-center uppercase underline px-4 decoration-dotted;
+  @apply hidden lg:flex items-center justify-center uppercase underline px-4 decoration-dotted;
 }
 
 .Header--desktop-main-link {
-  @apply h-full flex-1 lg:flex-none bg-black text-white flex items-center justify-center uppercase underline px-2 lg:px-8 decoration-dotted;
+  @apply  hidden lg:flex items-center justify-center gap-1 uppercase underline px-4 decoration-dotted;
 }
 
 .Header--menu-button {
-  @apply lg:hidden h-full p-2 flex items-center justify-center aspect-square text-black dark:text-revas-neutral-200;
+  @apply lg:hidden h-full z-30 flex items-center justify-center rounded-full bg-white border p-4 text-black dark:text-revas-neutral-200;
 }
 
 .Header--mobile-wrapper {
-  @apply border-t border-black shadow-xl absolute inset-x-0 top-0 z-10 bg-white;
+  @apply shadow-xl absolute inset-x-0 bottom-0 px-4 pt-8 z-20 bg-white pb-20 lg:hidden data-[hide=true]:opacity-0 data-[hide=true]:pointer-events-none data-[hide=true]:sr-only;
 }
 
 .Header--mobile-links {
-  @apply flex flex-col items-stretch justify-end;
+  @apply flex flex-wrap gap-8 items-start justify-start;
 }
 
 .Header--mobile-link {
-  @apply w-full block p-4 border-b border-black uppercase text-sm underline decoration-dotted underline-offset-2;
+  @apply w-full block text-3xl underline decoration-dotted underline-offset-2;
 }
 
-.Header--mobile-main-action {
-  @apply flex items-center justify-center pt-8 w-full
+.Header--mobile-main-link {
+  @apply rounded-default mt-8 px-4 py-2 text-3xl bg-neutral-100 flex-1 flex items-center justify-center gap-2
+}
+
+.Header--mobile-main-link svg {
+  @apply hidden lg:block
 }
 
 /* NOTIFICATION */
 
 .Notification {
-  @apply h-fit lg:h-8 p-2 lg:px-4 bg-primary dark:bg-darkerPrimary flex items-center justify-center;
+  @apply p-2 lg:p-4 w-full border-b h-fit;
 }
 
 .Notification--container {
-  @apply w-full flex items-center justify-between lg:justify-center gap-2;
+  @apply  w-full flex items-center justify-between lg:justify-center gap-4;
 }
 
 .Notification--title {
-  @apply text-contrast text-xs uppercase;
+  @apply text-black text-sm lg:text-base;
 }
 
 .Notification--description {
-  @apply hidden lg:block text-contrast text-xs uppercase;
+  @apply hidden lg:block text-black text-base;
 }
 
 .Notification--link {
-  @apply underline underline-offset-2 decoration-dotted uppercase;
+  @apply text-black text-sm lg:text-base underline underline-offset-2 decoration-dotted flex items-center justify-center gap-1;
 }
 
 /* MAIN ITEM */
 
 .MainItem {
-  @apply bg-white dark:bg-revas-neutral-900 w-full border-t border-revas-neutral-200 dark:border-revas-neutral-700 p-4 lg:p-8;
+  @apply w-full border-y border-revas-neutral-200 dark:border-revas-neutral-700 p-4 lg:p-8;
 }
 
 .MainItem--container {
-  @apply w-full h-full max-w-screen-xl mx-auto flex gap-4 lg:gap-8 flex-col lg:flex-row items-stretch bg-primary dark:bg-darkerPrimary rounded-default overflow-hidden p-4 group-data-[has-image=false]:lg:py-16;
+  @apply flex flex-col items-center justify-center gap-4 lg:gap-8 group-data-[has-image=false]:lg:py-16;
 }
 
 .MainItemContainer--first-slot {
-  @apply grow shrink p-4 gap-4 flex flex-col items-start justify-center w-auto h-auto group-data-[has-image=false]:items-center group-data-[has-image=false]:text-center;
+  @apply grow shrink p-4 gap-4 flex flex-col items-center justify-center w-auto h-auto group-data-[has-image=false]:items-center group-data-[has-image=false]:text-center;
 }
 
 .MainItemContainer--second-slot {
-  @apply grow shrink-0 p-0 w-full lg:w-1/2 h-auto;
+  @apply grow shrink-0 p-0 w-full h-auto;
 }
 
 .MainItem--title {
-  @apply text-2xl font-semibold text-contrast max-w-xl;
+  @apply text-2xl lg:text-4xl max-w-xl;
 }
 
 .MainItem--description {
-  @apply text-lg font-medium text-contrast opacity-90  max-w-2xl prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-xl opacity-70  max-w-2xl list-disc list-inside;
 }
 
 .MainItem--attachment {
-  @apply relative aspect-[20/9] group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80 rounded-inner shadow-xl;
+  @apply relative group-data-[is-video=true]:aspect-video w-full overflow-hidden dark:opacity-80 rounded-default;
 }
 
 .MainItem--link {
-  @apply inline-flex w-fit items-center justify-center gap-2 font-medium rounded-inner lg:rounded-default bg-contrast text-primary dark:text-darkerPrimary hover:ring-primary text-sm px-4 py-2 focus:ring-1 focus:ring-offset-2 focus:ring-primary hover:shadow hover:ring-1 hover:ring-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply rounded-full px-4 py-2 border border-black hover:border-neutral-300 text-base;
 }
 
 /* FOOTER */
@@ -407,11 +419,19 @@ body {
 }
 
 .Footer--container {
-  @apply p-4 lg:p-12 flex flex-col lg:flex-row gap-4;
+  @apply p-4 flex flex-col lg:flex-row gap-4 pb-16;
+}
+
+.Footer--links-header {
+  @apply text-sm opacity-60
 }
 
 .Footer--links {
   @apply flex flex-col gap-4 items-start justify-start shrink w-full lg:w-1/5;
+}
+
+.Footer--link {
+  @apply flex items-center justify-center uppercase underline decoration-dotted text-sm
 }
 
 .Footer--socials {
@@ -423,11 +443,11 @@ body {
 }
 
 .Footer--foot {
-  @apply h-fit -mt-px border-t border-black uppercase p-2 flex gap-2 flex-col lg:flex-row lg:items-center lg:justify-between;
+  @apply h-fit flex gap-2 flex-col p-4 lg:flex-row lg:items-center lg:justify-between text-neutral-400;
 }
 
 .FooterFoot--container {
-  @apply w-full flex flex-col lg:flex-row lg:items-center justify-start lg:justify-between text-xs font-medium gap-1 lg:gap-2;
+  @apply w-full flex flex-col lg:flex-row lg:items-center justify-start lg:justify-between text-sm gap-1 lg:gap-2;
 }
 
 /* AUTHOR */
@@ -441,11 +461,11 @@ body {
 }
 
 .Author--title {
-  @apply font-semibold max-w-2xl text-sm text-revas-neutral-900 dark:text-revas-neutral-300;
+  @apply max-w-2xl text-sm text-revas-neutral-900 dark:text-revas-neutral-300;
 }
 
 .Author--description {
-  @apply text-sm text-revas-neutral-600 dark:text-revas-neutral-400 max-w-lg;
+  @apply text-sm text-revas-neutral-500 dark:text-revas-neutral-500 max-w-lg;
 }
 
 .Author--image {
@@ -457,13 +477,13 @@ body {
 }
 
 .Author--link {
-  @apply inline-flex w-fit items-center justify-center gap-2 text-sm font-medium bg-transparent text-primary dark:text-darkerPrimary dark:text-revas-neutral-200 rounded-inner lg:rounded-default  active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  @apply flex items-center justify-center underline decoration-dotted text-sm;
 }
 
 /* SOCIALS */
 
 .SocialLink--icon {
-  @apply text-current fill-current stroke-current w-5 h-5;
+  @apply text-current fill-current stroke-current w-4 h-4;
 }
 
 /* ATTACHMENT */
@@ -495,15 +515,15 @@ body {
 /* FEED */
 
 .FeedBlockItem {
-  @apply w-full h-full border-b border-r border-black -mb-px -mr-px relative overflow-hidden p-4;
+  @apply w-full h-full relative overflow-hidden;
 }
 
 .FeedBlockItem--container {
-  @apply w-full h-full flex flex-col-reverse gap-4 items-stretch justify-start;
+  @apply w-full h-full flex flex-col-reverse items-stretch justify-start gap-4 overflow-hidden;
 }
 
 .FeedBlockItemContainer--second-slot {
-  @apply flex-1 flex flex-col gap-1 items-start justify-start w-auto h-auto bg-white;
+  @apply flex-1 flex flex-col gap-1 items-start justify-start w-auto h-auto;
 }
 
 .FeedBlockItemContainer--first-slot {
@@ -511,97 +531,97 @@ body {
 }
 
 .FeedBlockItem--title {
-  @apply text-sm uppercase;
+  @apply text-xl text-black;
 }
 
 .FeedBlockItem--description {
-  @apply text-xs uppercase prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-base opacity-60 prose prose-p:mt-0 prose-ul:mt-0;
 }
 
 .FeedBlockItem--date {
-  @apply text-xs px-2 py-0.5 rounded-full bg-revas-neutral-100 uppercase;
+  @apply text-base opacity-60 prose prose-p:mt-0 prose-ul:mt-0;
 }
 
 .FeedBlockItem--attachment {
-  @apply aspect-[2/3] group-data-[is-item-video=true]:aspect-video overflow-hidden data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full rounded-default border border-black;
+  @apply aspect-[3/2] group-data-[is-item-video=true]:aspect-video overflow-hidden rounded-default data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full;
 }
 
 .FeedBlockItem--attachment-image {
-  @apply group-data-[feed-item=true]:group-hover:scale-110 transition-all duration-300 ease-in-out;
+  @apply  aspect-[3/2] group-data-[is-item-video=true]:aspect-video overflow-hidden rounded-default data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full group-data-[feed-item=true]:group-hover:scale-110 transition-all duration-300 ease-in-out  h-full relative;
 }
 
 .FeedPage {
-  @apply w-full bg-white dark:bg-revas-neutral-900 flex-1
+  @apply w-full bg-white dark:bg-revas-neutral-900 flex-1 flex flex-col items-stretch justify-start gap-8 pb-8
 }
 
 .FeedPage--header-container {
-  @apply w-full h-full border-b border-black
+  @apply px-4 w-full h-full flex flex-col items-stretch justify-start gap-4 border-b pb-4
 }
 
 .FeedPage--header {
-  @apply grid grid-cols-1 lg:grid-cols-3 gap-4 items-start justify-center w-full p-2 lg:p-4 pb-8 lg:pb-24;
+  @apply flex flex-col lg:flex-row items-end justify-end lg:justify-between pt-32 lg:pt-0 aspect-auto lg:aspect-[3/1] gap-4 lg:gap-0 w-full;
 }
 
 .FeedPage--title {
-  @apply text-sm font-normal max-w-screen-lg w-full uppercase lg:col-span-2;
+  @apply text-2xl lg:text-3xl w-full lg:w-1/2 flex-none flex items-end justify-start
 }
 
 .FeedPage--description {
-  @apply text-sm font-normal w-full uppercase;
+  @apply flex flex-col items-start lg:items-end justify-start lg:justify-end text-sm lg:text-right w-full lg:w-1/2 flex-none gap-4
 }
 
 .FeedPage--items-container {
-  @apply w-full -mb-[1.5px] overflow-hidden border-b
+  @apply w-full px-4;
 }
 
 .FeedPage--items {
-  @apply w-full mx-auto grid grid-cols-1 lg:grid-cols-3
+  @apply w-full mx-auto grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-16
 }
 
 /* CONTENT */
 
 .ContentPage {
-  @apply bg-revas-white dark:bg-revas-neutral-900 w-full flex-1 grid grid-cols-1 lg:grid-cols-2 border-b border-black;
+  @apply relative w-full pt-4 pb-8 overflow-hidden flex flex-col items-stretch justify-start gap-4;
 }
 
 .ContentPage--header {
-  @apply bg-white lg:sticky top-0 self-start
+  @apply w-full
 }
 
 .ContentHeader--container {
-  @apply p-4 flex flex-col items-start justify-start gap-4;
+  @apply px-4 overflow-hidden w-full grid grid-cols-1 lg:grid-cols-2 gap-4 group-data-[has-text=false]:lg:grid-cols-1 group-data-[has-image=false]:lg:grid-cols-1 border-b pb-4
 }
 
 .ContentHeaderContainer--first-slot {
-  @apply flex flex-col items-start justify-start gap-2;
+  @apply flex flex-col gap-4 items-start justify-start rounded-default overflow-hidden;
 }
 
 .ContentHeaderContainer--second-slot {
-  @apply w-full;
+  @apply overflow-hidden rounded-default;
 }
 
 .ContentHeader--feed-title {
-  @apply text-xs uppercase underline underline-offset-2 decoration-dotted
+  @apply text-sm lg:text-base uppercase text-neutral-400 font-medium w-full max-w-4xl;
 }
 
 .ContentHeader--title {
-  @apply text-sm uppercase
+  @apply text-xl lg:text-3xl font-normal w-full max-w-4xl;
 }
 
 .ContentHeader--description {
-  @apply text-xs uppercase prose prose-p:mt-0 prose-ul:mt-0;
+  @apply text-lg lg:text-xl font-normal w-full max-w-4xl;
 }
 
 .ContentHeader--published-date {
-  @apply text-xs px-2 py-0.5 rounded-full bg-revas-neutral-100 uppercase;
+  @apply text-sm px-2 py-1 rounded-full border border-neutral-300
 }
 
 .ContentHeader--attachment {
-  @apply aspect-[2/3] group-data-[is-item-video=true]:aspect-video overflow-hidden data-[is-clickable=true]:group-data-[is-grid-item]:group-hover:opacity-50 w-full rounded-default border border-black;
+  @apply relative rounded-default overflow-hidden aspect-square group-data-[has-text=false]:aspect-auto group-data-[is-video=true]:aspect-video w-full dark:opacity-80;
 }
 
 .ContentPage--content {
-  @apply border-t lg:h-full lg:border-l lg:border-t-0 border-black prose-sm dark:prose-invert mx-auto w-full max-w-screen-md prose-p:text-sm prose-a:text-sm prose-a:underline prose-a:underline-offset-2 prose-a:decoration-dotted prose-a:text-primary prose-a:dark:text-revas-neutral-300 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-h1:lg:text-3xl prose-h2:lg:text-2xl prose-h3:lg:text-xl prose-h4:lg:text-lg prose-h5:lg:text-sm prose-h6:lg:text-sm p-4 lg:p-8
+  @apply prose-sm dark:prose-invert mx-auto w-full max-w-screen-md prose-p:text-sm prose-a:text-sm prose-a:underline prose-a:underline-offset-2 prose-a:decoration-dotted prose-a:text-primary prose-a:dark:text-revas-neutral-300 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-h1:lg:text-3xl prose-h2:lg:text-2xl prose-h3:lg:text-xl prose-h4:lg:text-lg prose-h5:lg:text-sm prose-h6:lg:text-sm p-4 lg:p-8
 }
 
 /* TOOLBAR */
@@ -682,4 +702,12 @@ body {
 
 .DefaultLinkIcon__small-size {
   @apply w-4 h-4 stroke-1 text-current
+}
+
+.rt-ScrollAreaViewport > div {
+  @apply min-h-[100%] flex flex-col items-stretch justify-start
+}
+
+.rt-ScrollAreaViewport > div {
+  display: flex !important;
 }

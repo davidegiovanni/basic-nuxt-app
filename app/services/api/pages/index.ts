@@ -25,6 +25,7 @@ export const asyncGetPage: GetPageFunction = async ({websiteName, publicKey, pag
   );
 
   if (err !== null) {
+    console.log(err)
     return [
       {
         page: {} as Page

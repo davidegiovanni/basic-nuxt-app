@@ -22,7 +22,6 @@ export const asyncGetDefaultWebsite: GetDefaultWebsiteFunction = async ({ websit
     `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/themes/websites/v2/websites/${websiteName}?publicKey=${publicKey}`,
   );
   if (err !== null) {
-    console.log(err)
     return [
       {
         website: {} as Website
@@ -73,7 +72,6 @@ export const asyncGetWebsite: GetWebsiteFunction = async ({websiteName, publicKe
     `https://revas-os-web-proxy-webcdn-cz23hhnfha-lz.a.run.app/themes/websites/v2/websites/${websiteName}?publicKey=${publicKey}&languageCode=${locale}`,
   );
   if (err !== null) {
-    console.log(err)
     return [
       {
         website: {} as Website

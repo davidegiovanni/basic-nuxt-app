@@ -1,25 +1,12 @@
-import { LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction } from "@remix-run/node";
 
-export const loader: LoaderFunction = ({ request }) => {
-  const url = request.url
-  const origin = new URL(url).host
-
-  let websiteName = origin;
-
-  if (process.env.REVAS_OS_WEB_UI_PUBLIC_KEY) {
-    websiteName = process.env.REVAS_OS_WEB_UI_WEBSITE_NAME || "";
-  }
-
-  const headerWebsiteName = request.headers.get("Revas-Public-Key");
-  if (headerWebsiteName) {
-    websiteName = request.headers.get("Revas-Authority") || "";
-  }
+export const loader: LoaderFunction = () => {
 
   const robotText = `
     User-agent: *
     Allow: /
 
-    Sitemap: https://${websiteName}/sitemap.xml
+    Sitemap: https://www.davidegiovanni.com/sitemap.xml
     `
   // return the text content, a status 200 success response, and set the content type to text/plain 
   return new Response(robotText, {

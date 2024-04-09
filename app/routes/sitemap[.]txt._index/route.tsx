@@ -41,28 +41,21 @@ export const loader: LoaderFunction = async ({ request }) => {
   await processPages();
 
   const content =
-`<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
->
+`
 ${pagesUrl.map(page =>
-`<url>
-  <loc>${page}</loc>
-</url>`
+`${page}
+
+`
 ).join("")
 }
-</urlset>
+
 `.trim()
 
   // Return the response with the content, a status 200 message, and the appropriate headers for an XML page
   return new Response(content, {
     status: 200,
     headers: {
-      "Content-Type": "application/xml",
-      "xml-version": "1.0",
-      "encoding": "UTF-8"
+      "Content-Type": "text/plain"
     }
   });
 };
